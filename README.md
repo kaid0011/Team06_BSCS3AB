@@ -23,6 +23,6 @@
 >  :boy:  **GUEVARRA**, Ezekiel | zekbranch
 >  :boy:  **PINPIN**, Marshal | PinpinBranch
 >  :woman:  **ROMERO**, Allana Mae | allanaBranch
->  :boy:  **Yusoph**, Jihad | jibranch
+>  :boy:  **YUSOPH**, Jihad | jibranch
  
 </p></details>

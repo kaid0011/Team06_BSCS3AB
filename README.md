@@ -21,7 +21,7 @@
 >  :boy:  **CAMAÑAG**, Christopher | Tophbranch
 >  :woman:  **ESTRELLA**, Joana Marie | wanaBranch
 >  :boy:  **GUEVARRA**, Ezekiel | zekbranch
->  :boy:  **PINPIN**, Marshal | PinpinBranch
+>  :boy:  **PINPIN**, Marshal Amieron | PinpinBranch
 >  :woman:  **ROMERO**, Allana Mae | allanaBranch
 >  :boy:  **YUSOPH**, Jihad | jibranch
  

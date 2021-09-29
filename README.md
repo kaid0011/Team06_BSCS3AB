@@ -14,7 +14,7 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------
 <details><p>
-  <summary><b>Get to know the contributors!  :sparkles:</b><br></summary>
+  <summary><b>Get to know the contributors!  :sparkles::sparkles::sparkles:</b><br></summary>
   
 > Contributor's Name    | Branch Name
 >------------------------|------------------------------------
@@ -22,7 +22,7 @@
 >  :boy:  **CAMAÑAG**, Christopher | Tophbranch
 >  :woman:  **ESTRELLA**, Joana Marie | wanaBranch
 >  :boy:  **GUEVARRA**, Ezekiel | zekbranch
->  :boy:  **PINPIN**, Marshal | PinpinBranch
+>  :boy:  **PINPIN**, Marshal Amieron | PinpinBranch
 >  :woman:  **ROMERO**, Allana Mae | allanaBranch
 >  :boy:  **YUSOPH**, Jihad | jibranch
  

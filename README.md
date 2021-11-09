@@ -11,9 +11,6 @@
   <i> GIF by: strryblstar </i>
 </p>
 
-<<<<<<< HEAD
-Testing - Pinpin
-=======
 -------------------------------------------------------------------------------------------------------------------------------------
 <details><p>
   <summary><b>Get to know the contributors!  :sparkles::sparkles::sparkles:</b><br></summary>

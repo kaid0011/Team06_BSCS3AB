@@ -14,7 +14,7 @@
 
 -------------------------------------------------------------------------------------------------------------------------------------
 <details><p>
-  <summary><b>Get to know the contributors!  :sparkles::sparkles::sparkles:</b><br></summary>
+  <summary><b>Get to know the contributors!  :sparkles:</b><br></summary>
   
 > Contributor's Name    | Branch Name
 >------------------------|------------------------------------

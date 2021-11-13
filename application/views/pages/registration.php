@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div class="container">
-          <a href="<?php echo base_url(); ?>home" class="navbar-brand">Project logo</a>
+          <a href="<?php echo base_url(); ?>home" class="navbar-brand">logo ng hotdog</a>
           <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">

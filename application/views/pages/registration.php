@@ -29,7 +29,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-md p-5">
-                    <img src="imgs/pic3.png" class="img-fluid" >
+                    <img src="assets/images/registration/pic3.png" class="img-fluid" >
                 </div>
                 <div class="col-md p-5">
                     <h1 class="h1 mb-4 pt-4" style="color:#329bba;">Registration</h1>

@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>Diary ni Kim</title>
@@ -12,7 +16,7 @@
 <!--navbar section-->
     <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
-            <a href="<?php echo base_url(); ?>home" class="navbar-brand">Diary ni Kim</a>
+            <a href="<?php echo base_url(); ?>" class="navbar-brand">Diary ni Kim</a>
             <button 
             class="navbar-toggler" 
             type="button" 
@@ -24,13 +28,13 @@
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="<?php echo base_url(); ?>registration" class="nav-link">Register</a>
+                        <a href="<?php echo base_url(); ?>registration" class="nav-link text-light">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo base_url(); ?>login" class="nav-link">Log In</a>
+                        <a href="<?php echo base_url(); ?>login" class="nav-link text-light">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#learn" class="nav-link">About Us</a>
+                        <a href="#aboutUs" class="nav-link text-light">About Us</a>
                     </li>
                 </ul>
             </div>
@@ -43,10 +47,10 @@
         <div class="d-sm-flex align-items-center justify-content-between">
             <div class="lead my-4">
                 <h1>Keep track your <span class="text-info"> Daily Life</span></h1>
-                <p>
+                <p style="font-family: 'sans-serif', sans-serif;">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ullam rerum reprehenderit tenetur, omnis recusandae nisi fuga nobis accusantium itaque impedit eligendi molestias. Impedit cupiditate repellat voluptatibus a optio magni!
                 </p>
-                <a href=""><button class="btn btn-primary btn-lg">Learn More</button></a>
+                <a href=""><button class="btn btn-warning btn-lg">Learn More</button></a>
             </div>
             <img class="img-fluid w-50 d-none d-sm-block" src="./homepagelogo.svg" alt=""/>
         </div>
@@ -54,8 +58,8 @@
 </section>
 <!-- end of header -->
 <!-- Card Section  -->
-<section class="p-5">
-    <div class="display-1 text-center p-4  text-primary">Features</div>
+<section class="p-5" style="background-color: #e9ecef;">
+    <div class="display-1 text-center p-4 fw-normal" style="color: #329bba;">Features</div>
     <div class="container">
         <div class="row text-center g-4">
             <div class="col-md">
@@ -64,7 +68,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-book-half"></i>
                         </div>
-                        <h3 class="card-title">
+                        <h3 class="card-title text-light">
                             Public Notebook
                         </h3>
                         <p class="card-text">
@@ -79,7 +83,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-book"></i>
                         </div>
-                        <h3 class="card-title">
+                        <h3 class="card-title text-light">
                             Private Notebook
                         </h3>
                         <p class="card-text">
@@ -94,7 +98,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-calendar"></i>
                         </div>
-                        <h3 class="card-title">
+                        <h3 class="card-title text-light">
                             Sticky Notes Wall
                         </h3>
                         <p class="card-text">
@@ -112,7 +116,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-emoji-heart-eyes"></i>
                         </div>
-                        <h3 class="card-title">
+                        <h3 class="card-title text-light">
                             Reactions
                         </h3>
                         <p class="card-text">
@@ -127,7 +131,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-chat-quote"></i>
                         </div>
-                        <h3 class="card-title">
+                        <h3 class="card-title text-light">
                             Discussion
                         </h3>
                         <p class="card-text">
@@ -142,7 +146,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-emoji-angry"></i>
                         </div>
-                        <h3 class="card-title">
+                        <h3 class="card-title text-light">
                             Report
                         </h3>
                         <p class="card-text">
@@ -216,7 +220,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
-                        <img src="./Homepage/bagasona.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
+                        <img src="./Homepage/pinpin.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="pinpin">
                         <h4 class="card-title mb-3 text-light">Marshal Amieron <br> Pinpin <br> <span class="h6 text-warning mb-3">Back-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
@@ -238,8 +242,8 @@
 </section>
 <!-- end of about creators -->
 <!-- frequently ask question -->
-<section id="question" class="p-5" style="background-color: #eeeeee;">
-    <div class="display-5 text-center p-4  text-dark">Frequently Ask Question</div>
+<section id="question" class="p-5" style="background-color: #e9ecef;">
+    <div class="display-5 text-center p-4  text-dark fw-normal">Frequently Asked Question</div>
     <div class="accordion accordion-flush" id="accordionFlushExample">
         <!-- question#1 -->
         <div class="accordion-item">
@@ -283,7 +287,7 @@
         <p class="lead text-center">Copyright &copy; T6-2021. All Rights Reserved</p>
         <p>Ayala Blvd, Ermita, Manila, 1000 Metro Manila</p>
         <a href="#" class="position-absolute p-5 bottom-0 end-0">
-            <i class="bi bi-arrow-up-circle h1"></i>
+            <i class="bi bi-arrow-up-circle h1" style="color: #329bba;"></i>
         </a>
     </div>
 </footer>

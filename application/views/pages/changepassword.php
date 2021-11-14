@@ -13,23 +13,19 @@
 </head>
 <body style="background-color: #e9ecef;">
 
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 pt-3 pb-1 fixed-top">
+    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
-          <a href="<?php echo base_url(); ?>home" class="navbar-brand">Project logo</a>
-          <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-              </li>
+          <a href="<?php echo base_url(); ?>home" class="navbar-brand">Virtual Diary</a>
 </div>
 </nav>  
     <section id="learn" class="p-5">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-md p-5">
+                <div class="col-md p-5 ptt-9">
                     <img src="assets/images/login/pic4.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md p-5">
-                    <h1 class="h1 mb-4 pt-4 " style="color:#329bba;" >Change Password</h1>
+                    <h1 class="h1 mb-4 pt-4 text-dark" >Change Password</h1>
                     <p class="lead"> 
                         <form>
                            
@@ -42,8 +38,8 @@
                                     
         
                                 </div>
-                                <button type="button"  class="btn-lg btn-warning border border-3 border-dark me-2 "><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>login"> Confirm</a></button>
-                        <button type="button"  class="btn-lg btn-warning border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>confirmation"> Back</a></button>                    
+                                <button type="button" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark me-2 "><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>login"> Confirm</a></button>
+                                <button type="button" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>confirmation"> Back</a></button>                    
                            
                           </form>
                     </p>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
-    <title>Log In</title>
+    <title>Change Password</title>
 </head>
 <body style="background-color: #e9ecef;">
 
@@ -19,9 +19,6 @@
           <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <p class="text-muted">
-                    No account yet? <a href="<?php echo base_url(); ?>registration" class="text-reset">Register</a> now.
-                  </p>
               </li>
 </div>
 </nav>  
@@ -29,24 +26,24 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-md p-5">
-                    <img src="imgs/pic1.png" class="img-fluid" alt="">
+                    <img src="imgs/pic4.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md p-5">
-                    <h1 class="h1 mb-4 pt-4 " style="color:#329bba;" >Log In</h1>
+                    <h1 class="h1 mb-4 pt-4 " style="color:#329bba;" >Change Password</h1>
                     <p class="lead"> 
                         <form>
-                            <div class="mb-5">
-                                <label for="exampleInputusername1" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="exampleusername1" aria-describedby="emailHelp">
+                           
                                 <div class="mb-5">
-                                    <label for="exampleInewPassword1" class="form-label"> Password</label>
+                                    <label for="exampleInewPassword1" class="form-label"> New Password</label>
                                     <input type="password" class="form-control" id="exampleInputPassword1">
-                                    <div class="mb-5" class=" ">
-                                        <label class="text" for="exampleCheck1"  ><a style="color:#329bba;" href="<?php echo base_url(); ?>forgotpassword">Forgot Password?</a> </label>
-                                      </div>
+                                    <div class="mb-5">
+                                    <label for="exampleInewPassword1" class="form-label"> Confirm Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                    
         
                                 </div>
-                                <button type="submit"  class="btn-lg btn-warning border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>main"> Log In</a></button>
+                                <button type="button"  class="btn-lg btn-warning border border-3 border-dark me-2 "><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>login"> Confirm</a></button>
+                        <button type="button"  class="btn-lg btn-warning border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>confirmation"> Back</a></button>                    
                            
                           </form>
                     </p>

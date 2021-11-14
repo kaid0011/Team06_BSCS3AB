@@ -52,7 +52,7 @@
                 </p>
                 <a href=""><button class="btn btn-warning btn-lg">Learn More</button></a>
             </div>
-            <img class="img-fluid w-50 d-none d-sm-block" src="./homepagelogo.svg" alt=""/>
+            <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/home/hp.png" alt=""/>
         </div>
     </div>
 </section>

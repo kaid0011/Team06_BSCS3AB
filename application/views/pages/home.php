@@ -172,7 +172,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/guevarra.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="guevarra">
-                        <h4 class="card-title mb-3 text-light">Ezekiel <br> Guevarra <br> <span class="h6 text-warning mb-3">Front-end Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Ezekiel <br> Guevarra <br> <span style="color: #f0b63a;" class="h6 mb-3">Front-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/bagasona.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="bagasona">
-                        <h4 class="card-title mb-3 text-light">Kim Dianne <br> Bagasona <br> <span class="h6 text-warning mb-3">Full Stack Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Kim Dianne <br> Bagasona <br> <span style="color: #f0b63a;" class="h6 mb-3">Full Stack Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/romero.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="romero">
-                        <h4 class="card-title mb-3 text-light">Allana <br> Romero <br> <span class="h6 text-warning mb-3">Back-end Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Allana <br> Romero <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -202,7 +202,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/yusoph.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="jihad">
-                        <h4 class="card-title mb-3 text-light">Jihad <br> Yusoph <br> <span class="h6 text-warning mb-3">Front-end Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Jihad <br> Yusoph <br> <span style="color: #f0b63a;" class="h6 mb-3">Front-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -212,7 +212,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/camanag.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="camanag">
-                        <h4 class="card-title mb-3 text-light">Christopher <br> Camañag <br> <span class="h6 text-warning mb-3">Back-end Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Christopher <br> Camañag <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -222,7 +222,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/pinpin.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="pinpin">
-                        <h4 class="card-title mb-3 text-light">Marshal Amieron <br> Pinpin <br> <span class="h6 text-warning mb-3">Back-end Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Marshal Amieron <br> Pinpin <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/estrella.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="estrella">
-                        <h4 class="card-title mb-3 text-light">Joana Marie <br> Estrella <br> <span class="h6 text-warning mb-3">Back-end Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Joana Marie <br> Estrella <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>

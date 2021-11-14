@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css">
-    <title>Verification</title>
+    <title>Forgot Password</title>
 </head>
 <body style="background-color: #e9ecef;">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 pt-3 pb-1 fixed-top">
@@ -24,20 +24,20 @@
                 <img src="imgs/pic5.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg p-5">
-                <h1 class="h1 mb-5 pt-4" style="color:#329bba;">Verification</h1>
+                <h1 class="h1 mb-5 pt-4" style="color:#329bba;">Forgot Password</h1>
                 <p class="lead"> 
                     <form>
                     
                           <div class="mb-5">
-                            <label for="basic-url" class="form-label">We sent a verification code to your e-mail</label>
+                            <label for="basic-url" class="form-label">We sent a confirmation code to your e-mail</label>
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="Enter verification code" aria-label="Enter Verification" aria-describedby="inputGroup-sizing-lg">
+                                <input type="text" class="form-control" placeholder="Enter confirmation code" aria-label="Enter Confirmation" aria-describedby="inputGroup-sizing-lg">
                                 <button class="input-group-text"style="background-color:#ced4da;"  id="basic-addon2">Resend</button>
                               </div>   
                     
                         </div>
-                        <button type="button"  class="btn-lg btn-warning border border-3 border-dark me-2"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>main"> Verify</a></button>
-                        <button type="button"  class="btn-lg btn-warning border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>registration"> Back</a></button>                    </form>
+                        <button type="button"  class="btn-lg btn-warning border border-3 border-dark me-2"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>changepassword"> Confirm</a></button>
+                        <button type="button"  class="btn-lg btn-warning border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>forgotpassword"> Back</a></button>                    </form>
                 </p>
             </div>
 

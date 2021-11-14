@@ -14,9 +14,9 @@
 </head>
 <body>
 <!--navbar section-->
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
-            <a href="<?php echo base_url(); ?>" class="navbar-brand">Diary ni Kim</a>
+            <a href="<?php echo base_url(); ?>" class="navbar-brand">Virtual Diary</a>
             <button 
             class="navbar-toggler" 
             type="button" 
@@ -31,10 +31,10 @@
                         <a href="<?php echo base_url(); ?>registration" class="nav-link text-light">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo base_url(); ?>login" class="nav-link text-light">Log In</a>
+                        <a href="<?php echo base_url(); ?>login" class="nav-link text-light ms-2">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#aboutUs" class="nav-link text-light">About Us</a>
+                        <a href="#aboutUs" class="nav-link text-light ms-2 pe-0">About Us</a>
                     </li>
                 </ul>
             </div>
@@ -45,12 +45,12 @@
 <section class="bg-dark text-light p-5 text-center text-sm-start">
     <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between">
-            <div class="lead my-4">
-                <h1>Keep track your <span class="text-info"> Daily Life</span></h1>
-                <p style="font-family: 'sans-serif', sans-serif;">
+            <div class="lead my-4 pe-2">
+                <h1 class="mb-3">Keep track your Daily Life</h1>
+                <p class="mb-4">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ullam rerum reprehenderit tenetur, omnis recusandae nisi fuga nobis accusantium itaque impedit eligendi molestias. Impedit cupiditate repellat voluptatibus a optio magni!
                 </p>
-                <a href=""><button class="btn btn-warning btn-lg">Learn More</button></a>
+                <a href=""><button class="btn btn-lg mb-4" style="background-color: #f0b63a;"><h5 class="mb-1">Learn More</h5></button></a>
             </div>
             <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/home/hp.png" alt=""/>
         </div>
@@ -59,7 +59,7 @@
 <!-- end of header -->
 <!-- Card Section  -->
 <section class="p-5" style="background-color: #e9ecef;">
-    <div class="display-1 text-center p-4 fw-normal" style="color: #329bba;">Features</div>
+    <div class="h1 text-center p-4 text-dark">Features</div>
     <div class="container">
         <div class="row text-center g-4">
             <div class="col-md">
@@ -68,7 +68,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-book-half"></i>
                         </div>
-                        <h3 class="card-title text-light">
+                        <h3 class="card-title" style="color: #f0b63a;">
                             Public Notebook
                         </h3>
                         <p class="card-text">
@@ -83,7 +83,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-book"></i>
                         </div>
-                        <h3 class="card-title text-light">
+                        <h3 class="card-title" style="color: #f0b63a;">
                             Private Notebook
                         </h3>
                         <p class="card-text">
@@ -98,7 +98,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-calendar"></i>
                         </div>
-                        <h3 class="card-title text-light">
+                        <h3 class="card-title" style="color: #f0b63a;">
                             Sticky Notes Wall
                         </h3>
                         <p class="card-text">
@@ -109,14 +109,14 @@
             </div>
         </div>
         <div class="mb-4"></div>
-        <div class="row text-center g-4">
+        <div class="row text-center g-4 mb-4">
             <div class="col-md">
                 <div class="card bg-dark text-light">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
                             <i class="bi bi-emoji-heart-eyes"></i>
                         </div>
-                        <h3 class="card-title text-light">
+                        <h3 class="card-title" style="color: #f0b63a;">
                             Reactions
                         </h3>
                         <p class="card-text">
@@ -131,7 +131,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-chat-quote"></i>
                         </div>
-                        <h3 class="card-title text-light">
+                        <h3 class="card-title" style="color: #f0b63a;">
                             Discussion
                         </h3>
                         <p class="card-text">
@@ -146,7 +146,7 @@
                         <div class="h1 mb-3">
                             <i class="bi bi-emoji-angry"></i>
                         </div>
-                        <h3 class="card-title text-light">
+                        <h3 class="card-title" style="color: #f0b63a;">
                             Report
                         </h3>
                         <p class="card-text">
@@ -162,7 +162,7 @@
 <!-- about creators -->
 <section id="aboutUs" class="p-5 bg-dark">
     <div class="container">
-        <div class="h1 text-center p-4 text-warning">About Developers</div>
+        <div class="h1 text-center p-4 text-light">About Developers</div>
         <p class="lead text-center mb-5 text-light">
             The developers consist of aspiring third year students of the Technological University of the Philippines - Manila under the course of BS in Computer Science (2021-2022)
         </p>
@@ -182,7 +182,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/bagasona.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="bagasona">
-                        <h4 class="card-title mb-3 text-light">Kim Dianne Bagasona <br> <span class="h6 text-warning mb-3">Full Stack Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Kim Dianne <br> Bagasona <br> <span class="h6 text-warning mb-3">Full Stack Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-4 col-lg-3 mb-4">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
                         <img src="assets/images/home/pinpin.jpg" class="rounded-circle mb-3 img-fluid" style=" border: 5px solid #333333; 
@@ -243,7 +243,7 @@
 <!-- end of about creators -->
 <!-- frequently ask question -->
 <section id="question" class="p-5" style="background-color: #e9ecef;">
-    <div class="display-5 text-center p-4  text-dark fw-normal">Frequently Asked Question</div>
+    <div class="h1 text-center p-4 text-dark" >Frequently Asked Question</div>
     <div class="accordion accordion-flush" id="accordionFlushExample">
         <!-- question#1 -->
         <div class="accordion-item">
@@ -268,7 +268,7 @@
           </div>
         </div>
         <!-- question#3 -->
-        <div class="accordion-item">
+        <div class="accordion-item mb-4">
           <h2 class="accordion-header" id="flush-headingThree">
             <button class="accordion-button collapsed text-dark border border-3 border-dark mb-1" style="background-color: #f0b63a;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
                 Is our Data on this Website Secure?

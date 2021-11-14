@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-md p-5">
-                    <img src="assets/Homepage/pic4.png" class="img-fluid" alt="">
+                    <img src="assets/images/changepassword/pic4.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-md p-5">
                     <h1 class="h1 mb-4 pt-4 " style="color:#329bba;" >Change Password</h1>

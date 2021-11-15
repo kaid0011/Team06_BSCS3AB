@@ -13,13 +13,21 @@
 </head>
 <body style="background-color: #e9ecef;">
 
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 pt-3 pb-1 fixed-top">
+    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
-          <a href="<?php echo base_url(); ?>" class="navbar-brand">Project logo</a>
+            <a href="<?php echo base_url(); ?>" class="navbar-brand">Virtual Diary</a>
+            <button 
+            class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navmenu"
+            >
+              <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <p class="text-muted">
+                <p class="text-muted pt-2 mb-0">
                     Already have an account? <a href="<?php echo base_url(); ?>login" class="text-reset">Log In</a>.
                   </p>
               </li>
@@ -28,11 +36,13 @@
     <section id="learn" class="p-5">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-md p-5">
+                <div class="col-md p-5 mt-0">
                     <img src="assets/images/registration/pic3.png" class="img-fluid" >
                 </div>
                 <div class="col-md p-5">
-                    <h1 class="h1 mb-4 pt-4" style="color:#329bba;"></h1>
+
+                    <h1 class="h1 mb-4 pt-4 text-dark">Registration</h1>
+
                     <p class="lead"> 
                         <form method="post" action="<?= base_url() ?>Register/addUser">
                             <div class="mb-3">
@@ -59,7 +69,9 @@
                               
                               <label class="form-check-label" for="exampleCheck1"><p class="text-muted"> By signing up, you agree to the <a href="#" class="text-reset"> Terms of Service </a> and <a href="#" class="text-reset">Privacy Policy</a> </p></label>
                             </div>
-                            <button type="submit" name="signupbtn" class="btn-lg btn-warning border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>verification"> Register</a></button>
+
+                            <button type="submit" name="signupbtn" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>verification"> Register</a></button>
+
                           </form>
                     </p>
                 </div>

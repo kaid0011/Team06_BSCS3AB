@@ -1,8 +1,17 @@
 <?php
     class Register_model extends CI_model{
-        function insert($data){
+        public function __construct()
+        {
+            parent::__construct();
+            
+        }
+        
+        public function addNewUser($data)
+        {
             $this->db->insert('accounts', $data);
-            return $this->db->insert_id();
+            echo $this->db->last_query();
+            exit;
+            return true;
         }
     }
 ?>

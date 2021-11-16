@@ -3,14 +3,13 @@
         public function __construct()
         {
             parent::__construct();
-            
         }
         
         public function addNewUser($data)
         {
             $this->db->insert('accounts', $data);
-            echo $this->db->last_query();
-            exit;
+            #echo $this->db->last_query();
+            #exit;
             return true;
         }
     }

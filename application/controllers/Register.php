@@ -11,11 +11,8 @@
         }
 
         public function addUser()
-        {
-        
-            
+        {          
             $var = $this->input->post();
-            
 
             if(isset($var) && $var != null)
             {

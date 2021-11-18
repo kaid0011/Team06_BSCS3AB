@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2021 at 06:41 AM
+-- Generation Time: Nov 18, 2021 at 11:54 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -176,10 +176,17 @@ CREATE TABLE `user` (
   `email` text NOT NULL,
   `password` varchar(128) NOT NULL,
   `status` varchar(36) NOT NULL,
-  `dateCreated` date NOT NULL,
+  `dateCreated` datetime NOT NULL DEFAULT current_timestamp(),
   `verification_Key` varchar(36) NOT NULL,
   `is_verification_correct` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_ID`, `userName`, `displayName`, `email`, `password`, `status`, `dateCreated`, `verification_Key`, `is_verification_correct`) VALUES
+(5, 'try3', 'try3', 'try3@email.com', '202cb962ac59075b964b07152d234b70', '', '2021-11-18 18:16:04', '130be0bf5fc9b2c0247a9847f9aa2c1a', 0);
 
 --
 -- Indexes for dumped tables
@@ -336,7 +343,7 @@ ALTER TABLE `support_team`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

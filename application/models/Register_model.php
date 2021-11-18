@@ -7,7 +7,7 @@
         
         public function addNewUser($data)
         {
-            $this->db->insert('accounts', $data);
+            $this->db->insert('user', $data);
             #echo $this->db->last_query();
             #exit;
             return true;

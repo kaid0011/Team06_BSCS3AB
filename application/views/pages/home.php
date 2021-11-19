@@ -72,7 +72,7 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Public Notebook
                         </h3>
-                        <p class="card-text">
+                        <p class="card-text" style= "height: 50px;">
                             Everyone can see your post
                         </p>
                     </div>
@@ -87,7 +87,7 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Private Notebook
                         </h3>
-                        <p class="card-text">
+                        <p class="card-text" style= "height: 50px;">
                             Only you can access this Section
                         </p>
                     </div>
@@ -102,7 +102,7 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Sticky Notes Wall
                         </h3>
-                        <p class="card-text">
+                        <p class="card-text" style= "height: 50px;">
                             Public anonymous posting area
                         </p>
                     </div>
@@ -120,7 +120,7 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Reactions
                         </h3>
-                        <p class="card-text">
+                        <p class="card-text" style= "height: 50px;">
                             You can react  in styles to other user post and Stickynotes
                         </p>
                     </div>
@@ -135,7 +135,7 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Discussion
                         </h3>
-                        <p class="card-text">
+                        <p class="card-text" style= "height: 50px;">
                             Forum for different topics you might be interested
                         </p>
                     </div>

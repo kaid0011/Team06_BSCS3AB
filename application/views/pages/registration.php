@@ -10,13 +10,13 @@
     
     <link rel="stylesheet" href="style.css">
     <title>Virtual Diary - Register</title>
-    <link rel="shortcut icon" href="assets/images/vd_logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?=base_url('assets/images/vd_logo.ico')?>" type="image/x-icon">
 </head>
 <body style="background-color: #e9ecef;">
 
     <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
-            <a href="<?php echo base_url(); ?>" class="navbar-brand"><img src="assets/images/vdLogo.png" height="40px"/></a>
+            <a href="<?=base_url()?>" class="navbar-brand"><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"/></a>
             <button 
             class="navbar-toggler" 
             type="button" 
@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-md p-5 mt-0">
-                    <img src="assets/images/registration/pic3.png" class="img-fluid" >
+                    <img src="<?=base_url('assets/images/registration/pic3.png')?>" class="img-fluid" >
                 </div>
                 <div class="col-md p-5">
 

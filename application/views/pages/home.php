@@ -163,7 +163,7 @@
 <!-- about creators -->
 <section id="aboutUs" class="p-5 bg-dark">
     <div class="container">
-        <div class="h1 text-center p-4 text-light">About Developers</div>
+        <div class="h1 text-center p-4 text-light">About the Developers</div>
         <p class="lead text-center mb-5 text-light">
             The developers consist of aspiring third year students of the Technological University of the Philippines - Manila under the course of BS in Computer Science (2021-2022)
         </p>

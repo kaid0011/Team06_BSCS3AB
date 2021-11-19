@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Diary ni Kim</title>
+    <title>Virtual Diary</title>
+    <link rel="shortcut icon" href="assets/images/vd_logo.ico" type="image/x-icon">
 </head>
 <body>
 <!--navbar section-->
     <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
-            <a href="<?php echo base_url(); ?>" class="navbar-brand">Virtual Diary</a>
+            <a href="<?php echo base_url(); ?>" class="navbar-brand"><img src="assets/images/vdLogo.png" height="40px"/></a>
             <button 
             class="navbar-toggler" 
             type="button" 

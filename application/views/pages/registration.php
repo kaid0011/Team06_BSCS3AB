@@ -49,7 +49,7 @@
                               <label for="exampleInputlastname1" class="form-label">Username</label>
                               <input type="text" class="form-control" id="examplelastname1" aria-describedby="emailHelp" name="userName"
                                 value="<?php echo set_value('userName'); ?>" />
-                                <span class="text-danger"><?php echo form_error('userName'); ?></span>
+                                <span class="text-danger"><?php echo form_error('userName'); ?></span>   <!-- print error message if there is any -->
 
                             <div class="mb-3">
                               <label for="examplefirstname1" class="form-label">Display Name</label>

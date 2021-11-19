@@ -7,10 +7,10 @@
         
         public function addNewUser($data)
         {
-            $this->db->insert('user', $data);
+            $this->db->insert('user', $data);       #load database then insert $data in 'user' table in database
             #echo $this->db->last_query();
             #exit;
-            return true;
+            return true;                            #return true if successful
         }
     }
 ?>

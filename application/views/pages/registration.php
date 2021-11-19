@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"/>
     
     <link rel="stylesheet" href="style.css">
-    <title>Register</title>
+    <title>Virtual Diary - Register</title>
+    <link rel="shortcut icon" href="assets/images/vd_logo.ico" type="image/x-icon">
 </head>
 <body style="background-color: #e9ecef;">
 
     <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
-            <a href="<?php echo base_url(); ?>" class="navbar-brand">Virtual Diary</a>
+            <a href="<?php echo base_url(); ?>" class="navbar-brand"><img src="assets/images/vdLogo.png" height="40px"/></a>
             <button 
             class="navbar-toggler" 
             type="button" 

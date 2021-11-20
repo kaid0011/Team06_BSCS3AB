@@ -64,7 +64,7 @@
                 $response = $this->Register_model->addNewUser($data);
                 if($response == true)
                 {
-                    echo "mama mo";
+                    redirect('verification');
                 }
                 else
                 {

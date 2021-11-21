@@ -1,16 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <link rel="icon" type="image/png" href="./favicon.png">
-    <title>Visited Profile</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="VisitedProfile.css" /> 
-  </head>
+<!--navbar main -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+        <div class="container">
+            <a href="#" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"></a>
+        <button type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        class="navbar-toggler" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">  </span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <form action="<?= base_url() ?>Main/finduser" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
+                <input type="text" name="userName" class="form-control me-2">
+                <button type="submit" class="btn btn-outline btn-warning">Search</button>
+            </form>                                                 <!--changes-->
+            <ul class="navbar-nav align-items-center navbar-right">
+                <li class="navbar-item text-light px-5 ms-5">
+                    <a href="#" class="nav-link text-light">Name <br><span class="text-secondary">Username</span> </a>
+                </li>
+                <li class="navbar-item dropdown">
+                    <a href="#" 
+                    class="nav-link dropdown-toggle text-white" 
+                    id="navbarDropdown" 
+                    role="button" 
+                    data-bs-toggle="dropdown">
+                    <i class="bi bi-person-circle h1" style="color: white;"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a href="#" class="dropdown-item ">Edit Profile</a></li>
+                        <li><a href="#" class="dropdown-item ">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+<!--navbar main --> 
+  
   <body style="background-color: #e9ecef;">
     <header>
       <nav class="navbar navbar-expand-lg  "style="background-color:#e9ecef;">
@@ -68,7 +96,7 @@ width: auto;"
 <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
 <div class="text-white">
   <div class="d-flex">
-  <a href="#"><img src="imgs/profile.png" class="rounded-circle ms-5 shadow-lg" alt="..." ></a></div>
+  <a href="#"><img src="<?=base_url('assets/images/visitedprofile/profile.png')?>" class="rounded-circle ms-5 shadow-lg" alt="..." ></a></div>
   <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal">
     Name<br >
    <a class="text-secondary  " style="text-decoration: none;"> Username </a>
@@ -145,7 +173,7 @@ width: auto;"
                   <div class="card-body text-dark">
                     <div class="received-chats">
                       <div class="received-chats-img ">
-                          <img src="imgs/profile.png" style="display: inline-block;">
+                          <img src="<?=base_url('assets/images/visitedprofile/profile.png')?>" style="display: inline-block;">
   
                       </div>
                       <div class="received-msg " style="   display: inline-block;
@@ -172,7 +200,7 @@ width: auto;"
                                 </div>
                                 </div>
                                 <div class="outgoing-chats-img " style="display: inline-block;">
-                                  <img src="imgs/profile.png" style="display: inline-block;">
+                                  <img src="<?=base_url('assets/images/visitedprofile/profile.png')?>" style="display: inline-block;">
                                   </div>
                   </div>
                   </div>
@@ -255,11 +283,4 @@ width: auto;"
         </div>
 
     </div> 
-    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-  </body>
-</html>
+

@@ -1,4 +1,4 @@
-
+<!-- Reg Navbar -->
     <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
             <a href="<?=base_url()?>" class="navbar-brand"><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"/></a>
@@ -13,21 +13,23 @@
           <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <p class="text-muted pt-2 mb-0">
-                    Already have an account? <a href="<?php echo base_url(); ?>login" class="text-reset">Log In</a>.
+                <p class="text-light pt-2 mb-0">
+                    Already have an account? <a href="<?php echo base_url(); ?>login" class="text-reset">Log In</a>
                   </p>
               </li>
-</div>
-</nav>  
-    <section id="learn" class="p-5">
+        </div>
+    </nav>  
+<!-- Reg Navbar End-->
+
+    <section id="learn" class="p-5" style="background-color: #e9ecef;">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-md p-5 mt-0">
+                <div class="col-md p-0 mt-0 ">
                     <img src="<?=base_url('assets/images/registration/pic3.png')?>" class="img-fluid" >
                 </div>
                 <div class="col-md p-5">
 
-                    <h1 class="h1 mb-4 pt-4 text-dark">Registration</h1>
+                    <h1 class="h1 mb-4 pt-1 text-dark">Registration</h1>
 
                     <p class="lead"> 
                         <form method="post" action="<?= base_url() ?>Register/validation" autocomplete="off">

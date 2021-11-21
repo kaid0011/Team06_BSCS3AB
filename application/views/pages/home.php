@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Virtual Diary</title>
-    <link rel="shortcut icon" href="assets/images/vd_logo.ico" type="image/x-icon">
-</head>
-<body>
 <!--navbar section-->
     <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
         <div class="container">
@@ -282,17 +266,3 @@
       </div>
     </section>
 <!-- end of questions   -->
-<!-- footer  -->
-<footer class="p-5 bg-dark text-light text-center position-relative">
-    <div class="container">
-        <p class="lead text-center">Copyright &copy; T6-2021. All Rights Reserved</p>
-        <p>Ayala Blvd, Ermita, Manila, 1000 Metro Manila</p>
-        <a href="#" class="position-absolute p-5 bottom-0 end-0">
-            <i class="bi bi-arrow-up-circle h1" style="color: #329bba;"></i>
-        </a>
-    </div>
-</footer>
-<!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
-</html>

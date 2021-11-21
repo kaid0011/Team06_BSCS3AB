@@ -1,5 +1,3 @@
 <?=$header?>
-
 <?=$content?>
-
 <?=$footer?>

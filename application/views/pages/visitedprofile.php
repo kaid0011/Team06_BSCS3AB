@@ -284,3 +284,85 @@ width: auto;"
 
     </div> 
 
+<style>
+  
+
+
+
+.scrollspy-example{
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+
+}
+.scrollspy-example::-webkit-scrollbar{
+    width:10px;
+   
+
+}
+.scrollspy-example::-webkit-scrollbar-track{
+    -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius:0px;
+  
+    border-radius: 3px;
+}
+.scrollspy-example::-webkit-scrollbar-thumb{
+    -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-border-radius:0px;
+    background: rgb(149, 153, 165);
+    border-radius: 3px;
+    height: 5px;
+}
+.card-text{
+    min-height: 200px;
+}
+.tag{
+    width: 100px;
+    height: 100px;
+    background: rgb(131, 126, 122);
+    position: relative;
+    top: 500px;
+    left: 800px;
+    border-radius: 50%;
+}
+
+.title{
+   
+   color: #fff;
+    margin: 5px;
+}
+
+.items{
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    margin: 10px;
+    padding: 5px;
+}
+
+img
+{
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.active h4{
+    font-size: 20px;
+    margin-left: 10px;
+    color: #fff;
+}
+.received-chats-img{
+  
+ width: 30px;
+ float: left;
+ 
+   
+}
+.outgoing-chats-img{
+    width: 30px;
+    float: right;
+}
+
+
+
+
+</style>

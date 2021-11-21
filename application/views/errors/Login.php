@@ -30,7 +30,7 @@
                 <p class="text-muted pt-2 mb-0">
                     No account yet? <a href="<?php echo base_url(); ?>registration" class="text-reset">Register</a> now.
                   </p>
-              </li>
+              </li> //
 </div>
 </nav>  
     <section id="learn" class="p-5">
@@ -41,6 +41,28 @@
                 </div>
                 <div class="col-md p-5">
                     <h1 class="h1 mb-4 pt-4 text-dark" >Log In</h1>
+
+                    /////////////////////////////////////////
+                    <?php
+
+                    if($this->session->flashdata('message'))
+                    {
+                        echo'
+                        <div class=alert alert-success">'.$this->session->flashdata("message").'</div>';
+                        
+                    }
+                    
+                    
+                    ?>
+
+
+                    /////////////////////////////////////////////
+
+
+
+
+
+                    
                     <p class="lead"> 
                         <form method="post" action="<?php echo base_url();?>login/validation">
                             <div class="mb-5">

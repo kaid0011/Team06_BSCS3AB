@@ -33,7 +33,7 @@
             </form>                                                 <!--changes-->
             <ul class="navbar-nav align-items-center navbar-right">
                 <li class="navbar-item text-light px-5 ms-5">
-                    <a href="#" class="nav-link text-light">Name <br><span class="text-secondary">Username</span> </a>
+                    <a href="#" class="nav-link text-light">Name<br><span class="text-secondary">Username</span> </a>
                 </li>
                 <li class="navbar-item dropdown">
                     <a href="#" 
@@ -45,7 +45,7 @@
                 </a>
                     <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                         <li><a href="#" class="dropdown-item ">Edit Profile</a></li>
-                        <li><a href="#" class="dropdown-item ">Logout</a></li>
+                        <li><a href="<?php echo base_url();?>Login/logout" class="dropdown-item ">Logout</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,48 +1,69 @@
 <?php
-defined('BASEPATH') OR exit('No Direct script Access allowed');
+    defined('BASEPATH') OR exit('No Direct script Access allowed');
 
-class Login extends CI_Controller 
-{
-
-    public function __construct()
+    class Login extends CI_Controller 
     {
-    parent::__construct();
-    $this->load->library('form_validation');
-    //$this->load->library('encrypt')
-    $this->load->model('login_model');
-    }
 
-function index()
-{
-    $this->load->view('login');
-}
-
-function validation()
-{
-    $this->form_validation->set_rules('userName', 'Username', 'required|trim|valid_email');
-    $this->form_validation->set_rules('password', 'Password', 'required');
-    if($this->form_validation->run())
-    {
-        //////////////////////////////////////////////////////
-        $result=$this->login_model->can_login($this->input->post('userName'),$this->inputpost('password'));
-        if($result == '')
-        {  
-            #redirects the user to a page upon login, might be changed in the future.
-            redirect('private_area');
-        }
-        else
+        public function __construct()
         {
-            $this->session->set_flashdata('message',$result);
-            redirect('login');
+            parent::__construct();
+            $this->load->library('form_validation');
+            $this->load->library('session');
+            //$this->load->library('encrypt')
+            $this->load->model('Login_model');
         }
-        /////////////////////////////////////////////////////
-        echo "successful";
-        exit();
-    } else
-    {
-        echo "failed";
-        exit();
-        $this->index();
+
+        function index()
+        {
+            $this->load->view('pages/login');
+        }
+
+        function logged_in()
+        {
+            if(!$this->session->userdata('status'))
+            {
+                redirect('login');
+            }
+        }
+
+        function validation()
+        {
+            $this->form_validation->set_rules('userName', 'Username', 'required');
+            $this->form_validation->set_rules('password', 'Password', 'required');
+
+            if($this->form_validation->run())
+            {
+                $username = $this->input->post('userName');
+                $password = md5($this->input->post('password'));
+
+                $result=$this->Login_model->can_login($username, $password);
+                if($result)
+                {  
+                    $userdata = array(
+                        'user_ID' => $result->user_ID,
+                        'userName' => $result->userName,
+                        'displayName' => $result->displayName,
+                        'status' => TRUE
+                    );
+                    $this->session->set_userdata($userdata);
+                    redirect('mainpage');
+                }
+                else
+                {
+                    $this->session->set_flashdata('message', 'Invalid Username or Password');
+                    redirect('login');
+                }
+            }
+            else
+            {
+                $this->index();
+            }
+        }
+
+        public function logout()
+        {
+            $this->session->sess_destroy();
+            redirect('home');
+        }
     }
-    }
-}
+?>

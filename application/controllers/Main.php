@@ -17,7 +17,7 @@
             $data['h'] = $this->Main_model->get_Data($user);
             
             //print_r($data);
-            $this->load->view('pages/finduser', $data);
+            $this->sitelayout->loadTemplate('pages/visitedprofile', $data);
             
         }
     }

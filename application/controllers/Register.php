@@ -1,6 +1,6 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
-
+    
     class Register extends CI_Controller
     {
         public function __construct()
@@ -39,7 +39,7 @@
             }
             else    #If there is error,
             {
-                $this->load->view('pages/registration');                        #load registration page again with error messages.
+                $this->sitelayout->loadTemplate('pages/registration');                        #load registration page again with error messages.
             }
 
         }
@@ -71,7 +71,7 @@
                     echo "Error";
                 }
             }
-            $this->load->view('pages/registration');
+            $this->sitelayout->loadTemplate('pages/registration', $data);
         }
     }
 ?>

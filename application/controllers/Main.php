@@ -14,7 +14,7 @@
         public function findUser()
         { 
             $user = $this->input->post('userName');
-            $data['h'] = $this->Main_model->get_Data($user);
+            $data['findUser'] = $this->Main_model->get_Data($user);
             
             //print_r($data);
             $this->sitelayout->loadTemplate('pages/visitedprofile', $data);

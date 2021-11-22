@@ -1,9 +1,7 @@
-<!-- this is navbar for mainpage -->
-
-<!--navbar section-->
-<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+<!--navbar main -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark ">
         <div class="container">
-            <a href="#" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="assets/images/vdLogo.png" height="40px"></a>
+            <a href="#" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"></a>
         <button type="button" 
         data-bs-toggle="collapse" 
         data-bs-target="#navbarNav" 
@@ -39,4 +37,4 @@
         </div>
         </div>
     </nav>
-<!-- end of navbar section -->
+<!--navbar main end -->

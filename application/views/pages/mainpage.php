@@ -1,7 +1,7 @@
 <!--navbar main -->
     <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
         <div class="container">
-            <a href="#" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"></a>
+            <a href="#" class="navbar-brand mr-auto h1 text-light"><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"></a>
         <button type="button" 
         data-bs-toggle="collapse" 
         data-bs-target="#navbarNav" 
@@ -12,12 +12,12 @@
         <span class="navbar-toggler-icon">  </span>
     </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <form action="<?= base_url() ?>Main/finduser" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
+            <form action="<?= base_url() ?>Main/finduser" method ="post" class="form d-flex mx-auto col-sm-7"> <!--changes-->
                 <input type="text" name="userName" class="form-control me-2">
                 <button type="submit" class="btn btn-outline btn-warning">Search</button>
             </form>                                                 <!--changes-->
-            <ul class="navbar-nav align-items-center navbar-right">
-                <li class="navbar-item text-light px-5 ms-5">
+            <ul class="navbar-nav align-items-center ml-auto">
+                <li class="navbar-item text-light">
                     <a href="#" class="nav-link text-light">Name <br><span class="text-secondary">Username</span> </a>
                 </li>
                 <li class="navbar-item dropdown">
@@ -41,7 +41,7 @@
 
 <!-- background -->
 <div style="background-color: #ced4da;">
-<section class="projects">
+<section class="projects pb-5">
     <!-- <h1 class="display-3 text-dark fw-normal">Virtual Diary</h1>
     <p class="lead">Pindutin para malaman ang hinaharap</p> -->
     <div class="row pt-4">
@@ -57,7 +57,7 @@
                 <h3>rose <br> baby <br> blackpink</h3>
             </div>
         </div>
-        <div class="project-col">
+        <div class="project-col res">
             <img src="assets/images/baby.jpg" alt="project3">
             <div class="layer">
                 <h3>rose <br> baby <br> blackpink</h3>
@@ -67,6 +67,11 @@
 </section>
 </div>
 <style>
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
 .projects {
   width: 80%;
   margin: auto;
@@ -111,39 +116,5 @@
 .layer:hover h3 {
   bottom: 49%;
   opacity: 1;
-}
-/* footer section */
-.footer {
-  background: #111;
-  width: 100%;
-  text-align: center;
-  padding: 25px 0 10px 0;
-}
-.footer h4 {
-  margin-bottom: 20px;
-  margin-top: 15px;
-  font-weight: 600;
-  color: #edf0f1;
-}
-.footer fa {
-  margin: 0 13px;
-  cursor: pointer;
-  padding: 18px 0;
-}
-.footer i {
-  font-size: 20px;
-}
-.footerBot {
-  background: #000;
-  text-align: center;
-}
-.footerBot span {
-  color: #a1e8cc;
-}
-.footer i {
-  color: #edf0f1;
-}
-.icons a i:hover {
-  color: #a1e8cc;
 }
 </style>

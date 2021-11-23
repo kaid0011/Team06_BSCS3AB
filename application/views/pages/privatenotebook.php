@@ -1,208 +1,150 @@
-<!--navbar main -->
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark ">
-        <div class="container">
-            <a href="#" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"></a>
-        <button type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarNav" 
-        class="navbar-toggler" 
-        aria-controls="navbarNav" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">  </span>
-    </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="form d-flex px-5 mx-5 col-sm-7">
-                <input type="text" class="form-control me-2">
-                <button type="submit" class="btn btn-outline btn-warning">Search</button>
-            </div>
-            <ul class="navbar-nav align-items-center navbar-right">
-                <li class="navbar-item text-light px-5 ms-5">
-                    <a href="#" class="nav-link text-light">Name <br><span class="text-secondary">Username</span> </a>
-                </li>
-                <li class="navbar-item dropdown">
-                    <a href="#" 
-                    class="nav-link dropdown-toggle text-white" 
-                    id="navbarDropdown" 
-                    role="button" 
-                    data-bs-toggle="dropdown">
-                    <i class="bi bi-person-circle h1" style="color: white;"></i>
-                </a>
-                    <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                        <li><a href="#" class="dropdown-item ">Edit Profile</a></li>
-                        <li><a href="#" class="dropdown-item ">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        </div>
-    </nav>
-<!--navbar main end -->
 
-	<a  class="logo" >
-		<img src="<?=base_url('assets/images/vdLogo.png')?>" alt="logo">
-	</a>
-
-	<div class="section">
-		<div class="container">
-			<div class="row full-height justify-content-center">
-				<div class="col-12 text-center align-self-center py-5">
-					<div class="section pb-5 pt-5 pt-sm-2 text-center">
-						<h6 class="mb-0 pb-3 "style="color:#000;"><span>View </span><span>Update</span></h6>
-			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-			          	<label for="reg-log"></label>
-						<div class="card-3d-wrap mx-auto">
-							<div class="card-3d-wrapper">
-								<div class="card-front">
-									<div class="d-flex p-3">
-										<div class="section ">
-										
-										
-												
-                      <div class="input-group input-group-icon"><div class="btn-group ">
-                    
-                        <button type="button " disabled class="btn btn-secondary dropdown-toggle " data-bs-toggle="dropdown"  aria-expanded="false">
-                        Theme
-                        </button>
-                        <ul class="dropdown-menu  ">
-                          <li><button class="dropdown-item" type="button">Pogi</button></li>
-                          <li><button class="dropdown-item" type="button">Cute</button></li>
-                          <li><button class="dropdown-item" type="button">Ako</button></li>
-                        </ul>
-                        <button type="button"disabled class="btn btn-secondary dropdown-toggle ms-2" data-bs-toggle="dropdown"  aria-expanded="false">
-                           Font
-                           </button>
-                           <ul class="dropdown-menu ">
-                             <li><button class="dropdown-item" type="button">Red</button></li>
-                             <li><button class="dropdown-item" type="button">Blue</button></li>
-                             <li><button class="dropdown-item" type="button">Green</button></li>
-                           </ul>
-                           
-                            <label for="appt-time">Timer </label>
-                            <input id="appt-time"disabled type="time" name="appt-time">
-                          
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+    <div class="container">
+        <a href="#" class="navbar-brand mb-0 h1 text-light mr-auto">Logo</a>
+    <button type="button" 
+    data-bs-toggle="collapse" 
+    data-bs-target="#navbarNav" 
+    class="navbar-toggler" 
+    aria-controls="navbarNav" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">  </span>
+</button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="form d-flex mx-auto">
+            <input type="text" class="form-control me-2">
+            <button type="submit" class="btn btn-outline btn-primary">Search</button>
+        </div>
+        <ul class="navbar-nav align-items-center navbar-right">
+            <li class="navbar-item text-light ml-auto">
+                <a href="#" class="nav-link text-light">Name <br><span class="text-secondary">Username</span> </a>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#" 
+                class="nav-link dropdown-toggle text-white" 
+                id="navbarDropdown" 
+                role="button" 
+                data-bs-toggle="dropdown">
+                <i class="bi bi-person-circle h3" style="color: white;"></i>
+            </a>
+                <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                    <li><a href="#" class="dropdown-item ">Edit Profile</a></li>
+                    <li><a href="#" class="dropdown-item ">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<!-- zek changes -->
+<div class="container my-5">		
+	<div class="card-3d-wrap mx-auto">
+		<div class="card-front">
+			<div class="d-flex p-5">
+			  <div class="section ">
+            <div class="row">
+              <div class="col mr-auto  h5">
+                <div class="mb-2">Theme</div>
+                  <div class="row">
+                    <div class="col">
+                      
+                      <button class="p-2 btn  ">Light</button>
+                      <!-- <button class="p-2 btn btn-outline-primary text-light border border-3 border-primary"disabled>Primary</button> -->
+                    </div>
+                    <div class="col">
+                      <button class="p-2 btn "> Dark</button>
+                      <!--<button class="p-2 btn btn-outline-warning text-light border border-3 border-warning"disabled> Warning</button>-->
+                    </div>
+                    <div class="col">
+                      <button class="p-2 btn   ">Apple</button>
+                      <!-- <button class="p-2 btn btn-outline-success text-light border border-3 border-success"disabled>Success</button>-->
+                    </div>
+                    <div class="col">
+                      <button class="p-2 btn   ">Orange</button>
+                      <!--<button class="p-2 btn btn-outline-dark text-light border border-3 border-dark"disabled>Dark</button>-->
+                    </div>
+                    <div class="col">
+                      <button class="p-2 btn   ">Kiwi</button>
+                      <!--  <button class="p-2 btn btn-outline-light text-light border border-3 border-light"disabled>Light</button>-->
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col ml-auto h5">
+                  <div class="mb-2">Timer</div>
+                    <div class="row">
+                      <div class="col mt-2">
+                        <input type="time" id="appt" name="appt"  min="09:00" max="18:00" required>
+                        <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled>-->
                       </div>
-                        <div class="input-icon"></div>
-                    </div>
-                    <hr class="bg-dark">
-                    <div class="mb-3">
-                      <label for="exampleFormControlTextarea1" class="form-label"></label>
-                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="13"disabled></textarea>
-                      <hr class="bg-dark">
-                      <button class="btn btn-secondary btn-sm  float-start mt-1" type="button" disabled><i class="bi bi-trash-fill h4"></i></button>
-                      <button class="btn btn-secondary btn-sm  float-end mt-1" type="button" disabled>Submit</button>
-                    </div>
-							
-                       
-				      					</div>
-			      					</div>
-			      				</div>
-								<div class="card-back">
-									<div class="d-flex p-3">
-										<div class="section text-center">
-							
-									    <div class="input-group input-group-icon"><div class="btn-group  ">
-                    
-                        <button type="button " class="btn btn-secondary dropdown-toggle btn-outline-dark" data-bs-toggle="dropdown"  aria-expanded="false">
-                        Theme
-                        </button>
-                        <ul class="dropdown-menu  ">
-                          <li><button class="dropdown-item" type="button">Pogi</button></li>
-                          <li><button class="dropdown-item" type="button">Cute</button></li>
-                          <li><button class="dropdown-item" type="button">Ako</button></li>
-                        </ul>
-                        <button type="button" class="btn btn-secondary dropdown-toggle ms-2" data-bs-toggle="dropdown"  aria-expanded="false">
-                           Font
-                           </button>
-                           <ul class="dropdown-menu ">
-                             <li><button class="dropdown-item" type="button">Red</button></li>
-                             <li><button class="dropdown-item" type="button">Blue</button></li>
-                             <li><button class="dropdown-item" type="button">Green</button></li>
-                           </ul>
-                          
-                            <label for="appt-time" class="text-light">Timer </label>
-                            <input id="appt-time" type="time" name="appt-time">
-                          
+                      <div class="col mx-auto ms-5 ">
+                        <button class="p-2 btn"><a href="viewprivatenotebook.html"style="text-decoration:none;color:#000;">View/Update</a></button>
+                      
                       </div>
-                     
+                      <div class="col ">
+                        <button class="p-2 btn  "><i class="bi bi-trash-fill h4"></i></button>
+                        <!--<button class="p-2 btn btn-outline-white btn-secondary"disabled><i class="bi bi-trash-fill h4"></i></button>-->
+                      </div>
                     </div>
-                    
-                    <hr class="bg-light">
+                </div>    
+              
+              </div>
+<!-- end of changes			                                                                                                                                                                                                                                                               -->
+<hr class="bg-light">
+<!-- END OF THEME, FONT and TIMER BUTTONS-->
+                        <!--INPUT BOX-->
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label"></label>
                         <textarea class="form-control" id="" rows="13"></textarea>
+                        <!-- <textarea class="form-control" id="" rows="13"disabled></textarea>-->
+                        <!--END of INPUT BOX-->
                         <hr class="bg-light">
-                        <button class="btn btn btn-secondary btn-sm  float-start mt-1" type="button"><i class="bi bi-trash-fill h4"></i></button>
-                        <button class="btn btn-secondary btn-sm  float-end mt-1 " type="button" >Submit</button>
-                                       </div>
-                                       </div>
-                                       </div>
-            
+                        <!--SUBMIT BUTTON-->
+                        <button class="btn  float-end mt-1 " type="button" >Submit</button>
+                        <!--   <button class="btn btn-secondary  float-end mt-1 " type="button" disabled>Submit</button>-->
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
                     
-                
-                                      </div>
-               
-                    
-                                   </div>
-                  
-                                 </div>
-              
-            
-                           </div>
-										   	</div>
-									
-				      					</div>
-			      					</div>
-			      				</div>
-			      			</div>
-			      		</div>
-			      	</div>
-		      	</div>
-	      	</div>
-	    </div>
-	</div>
 
-  <style>
-    
+                                                                        																			      					      					      					      					        		       
+
+<style>
+  
 body{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
 	font-size: 15px;
-	line-height: 1.7;
-	color: #343a40;
-	background-color: #e9ecef;
+	background-image:url(assets/images/themes/Theme1_Apple.jpg);
+     /*if theme is dark,
+        background-color: #495057;
+    if theme is light,
+        background-color: #e9ecef;
+    if theme is Apple,
+        background-image:url(assets/images/themes/Theme1_Apple.jpg);
+     if theme is Orange,
+        background-image:url(assets/images/themes/Theme2_Orange.jpg);
+     if theme is Kiwi,
+        background-image:url(assets/images/themes/Theme3_Kiwi.jpg);*/
 	overflow-x: hidden;
-}
-a {
-	cursor: pointer;
-  transition: all 200ms linear;
-}
-a:hover {
-	text-decoration: none;
-}
-.link {
-  color: #000;
-}
-.link:hover {
-  color: #dee2e6;
 }
 p {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.7;
 }
-h4 {
-  font-weight: 600;
-}
 h6 span{
   padding: 0 20px;
   text-transform: uppercase;
-  font-weight: 700;
 }
 .section{
   position: relative;
   width: 100%;
-  display: block;
 }
 .full-height{
   min-height: 100vh;
@@ -217,128 +159,63 @@ h6 span{
   position: relative;
   display: block;
   text-align: center;
-  width: 60px;
+  width: 100px;
   height: 16px;
   border-radius: 8px;
   padding: 0;
-  margin: 10px auto;
   cursor: pointer;
   background-color: #adb5bd;
 }
-.checkbox:checked + label:before,
-.checkbox:not(:checked) + label:before{
-  position: absolute;
-  display: block;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  color: #000;
-  background-color: #00FFFF;
-  font-family: 'unicons';
-  content: '\eb4f';
-  z-index: 20;
-  top: -10px;
-  left: -10px;
-  line-height: 36px;
-  text-align: center;
-  font-size: 24px;
-  transition: all 0.5s ease;
-}
-.checkbox:checked + label:before {
-  transform: translateX(44px) rotate(-270deg);
-}
-
-
 .card-3d-wrap {
   position: relative;
-  width: 500px;
+  width: 1200px;
   max-width: 100%;
-  height: 550px;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  perspective: 700px;
-  margin-top: 40px;
+  height: 600px; 
 }
-.card-3d-wrapper {
+.btn{
+    color: #212529;
+    background-color: #e9ecef;
+     /*if theme is dark,
+         background-color: #adb5bd;
+    if theme is light,
+         background-color: #adb5bd;
+    if theme is Apple,
+         background-color: #adb5bd;
+     if theme is Orange,
+        background-color: #adb5bd;
+     if theme is Kiwi,
+       background-color: #adb5bd; */
+}
+
+.card-front {
   width: 100%;
   height: 100%;
-  position:absolute;    
-  top: 0;
-  left: 0;  
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  transition: all 600ms ease-out; 
-}
-.card-front, .card-back {
-  width: 100%;
-  height: 100%;
-  background-color: #495057;;
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: 300%;
+  color: #212529;
+  background-image:url(assets/images/themes/Applecard.jpg);
+  /*if theme is dark,
+        color: #f8f9fa;
+        background-color: #212529;
+    if theme is light,
+        color: #212529;
+        background-color: #adb5bd;
+    if theme is Apple,
+        color: #212529;
+        background-image:url(assets/images/themes/Applecard.jpg);
+     if theme is Orange,
+        color: #212529;
+        background-image:url(assets/images/themes/Orangecard.jpg);
+     if theme is Kiwi,
+        color: #212529;
+        background-image:url(assets/images/themes/Kiwicard.jpg);*/
   position: absolute;
-  border-radius: 6px;
-  left: 0;
-  top: 0;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+  border-radius: 10px;
 }
-.card-back {
-  transform: rotateY(180deg);
-}
-.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
-  transform: rotateY(180deg);
-}
-
-
-
 .form-group{ 
   position: relative;
   display: block;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding:0;
 }
-
-.btn{  
-  border-radius: 4px;
-  height: 44px;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  -webkit-transition : all 200ms linear;
-  transition: all 200ms linear;
-  padding: 0 30px;
-  letter-spacing: 1px;
-  display: inline-flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center;
-  text-align: center;
-  background-color: #ffeba7;
-  color: #102770;
-  border-style: solid;border-width: 3px;
-  border-color: #000;
-  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
-}
-.btn:active,
-.btn:focus{  
-  background-color: #102770;
-  color: #ffeba7;
-  
-  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-}
-.btn:hover{  
-  background-color: #102770;
-  color: #ffeba7;
-  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
-}
-
 .logo {
 	position: absolute;
 	top: 30px;
@@ -352,7 +229,4 @@ h6 span{
 	width: 100px;
 	display: block;
 }
-
-
-
-  </style>
+</style>

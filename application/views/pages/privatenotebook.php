@@ -110,6 +110,7 @@
                     </div>
                     </div>
                     </div>
+                    
 
                                                                         																			      					      					      					      					        		       
 
@@ -119,17 +120,17 @@ body{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
 	font-size: 15px;
-	background-color: #e9ecef;
+	background-image:url(assets/images/themes/Theme1_Apple.jpg);
      /*if theme is dark,
         background-color: #495057;
     if theme is light,
         background-color: #e9ecef;
     if theme is Apple,
-        background-image:url(Theme1_Apple.jpg);
+        background-image:url(assets/images/themes/Theme1_Apple.jpg);
      if theme is Orange,
-        background-image:url(Theme2_Orange.jpg);
+        background-image:url(assets/images/themes/Theme2_Orange.jpg);
      if theme is Kiwi,
-        background-image:url(Theme3_Kiwi.jpg);*/
+        background-image:url(assets/images/themes/Theme3_Kiwi.jpg);*/
 	overflow-x: hidden;
 }
 p {
@@ -189,23 +190,23 @@ h6 span{
 .card-front {
   width: 100%;
   height: 100%;
-  color: #f8f9fa;
-  background-color: #adb5bd;
+  color: #212529;
+  background-image:url(assets/images/themes/Applecard.jpg);
   /*if theme is dark,
         color: #f8f9fa;
         background-color: #212529;
     if theme is light,
-         color: #212529;
+        color: #212529;
         background-color: #adb5bd;
     if theme is Apple,
-         color: #212529;
-        background-image:url(Applecard.jpg);
+        color: #212529;
+        background-image:url(assets/images/themes/Applecard.jpg);
      if theme is Orange,
-         color: #212529;
-        background-image:url(Orangecard.jpg);
+        color: #212529;
+        background-image:url(assets/images/themes/Orangecard.jpg);
      if theme is Kiwi,
-         color: #212529;
-        background-image:url(Kiwicard.jpg);*/
+        color: #212529;
+        background-image:url(assets/images/themes/Kiwicard.jpg);*/
   position: absolute;
   border-radius: 10px;
 }

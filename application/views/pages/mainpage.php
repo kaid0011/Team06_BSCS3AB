@@ -16,9 +16,11 @@
                 <input type="text" name="userName" class="form-control me-2">
                 <button type="submit" class="btn btn-outline btn-warning">Search</button>
             </form>                                                 <!--changes-->
+
             <ul class="navbar-nav align-items-center ml-auto">
                 <li class="navbar-item text-light">
                     <a href="#" class="nav-link text-light">Name <br><span class="text-secondary">Username</span> </a>
+
                 </li>
                 <li class="navbar-item dropdown">
                     <a href="#" 
@@ -30,7 +32,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a href="#" class="dropdown-item ">Edit Profile</a></li>
-                        <li><a href="#" class="dropdown-item ">Logout</a></li>
+                        <li><a href="<?php echo base_url();?>Login/logout" class="dropdown-item ">Logout</a></li>
                     </ul>
                 </li>
             </ul>

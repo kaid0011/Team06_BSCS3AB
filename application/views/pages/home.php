@@ -1,31 +1,3 @@
-<!--navbar section-->
-    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
-        <div class="container">
-            <a href="<?php echo base_url(); ?>" class="navbar-brand"><img src="assets/images/vdLogo.png" height="40px"/></a>
-            <button 
-            class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navmenu"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="<?php echo base_url(); ?>registration" class="nav-link text-light">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?php echo base_url(); ?>login" class="nav-link text-light ms-2">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#aboutUs" class="nav-link text-light ms-2 pe-0">About Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-<!-- end of navbar section -->
 <!-- header -->
 <section class="bg-dark text-light p-5 text-center text-sm-start">
     <div class="container">

@@ -1,26 +1,3 @@
-<!-- Reg Navbar -->
-    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
-        <div class="container">
-            <a href="<?=base_url()?>" class="navbar-brand"><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"/></a>
-            <button 
-            class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navmenu"
-            >
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <p class="text-light pt-2 mb-0">
-                    Already have an account? <a href="<?php echo base_url(); ?>login" class="text-reset">Log In</a>
-                  </p>
-              </li>
-        </div>
-    </nav>  
-<!-- Reg Navbar End-->
-
     <section id="learn" class="p-5" style="background-color: #e9ecef;">
         <div class="container">
             <div class="row align-items-center justify-content-between">

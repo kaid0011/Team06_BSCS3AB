@@ -42,7 +42,7 @@
 <!--navbar main -->
 
 <!-- background -->
-<div style="background-color: #ced4da;">
+<div style="background-color: #ced4da; height: 3100px">
 <section class="projects pb-5">
     <!-- <h1 class="display-3 text-dark fw-normal">Virtual Diary</h1>
     <p class="lead">Pindutin para malaman ang hinaharap</p> -->
@@ -69,7 +69,7 @@
 </section>
 </div>
 <style>
-@media (max-width: 700px) {
+@media (max-width: 990px) {
   .row {
     flex-direction: column;
   }

@@ -71,6 +71,7 @@
                     echo "Error";
                 }
             }
+
             $this->sitelayout->loadTemplate('pages/registration', $data);
         }
     }

@@ -56,7 +56,7 @@
             }
             else
             {
-                $this->index();
+                $this->sitelayout->loadTemplate('pages/login');
             }
         }
 

@@ -79,7 +79,7 @@
                         <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled>-->
                       </div>
                       <div class="col mx-auto ms-5 ">
-                        <button class="p-2 btn"><a href="viewprivatenotebook.html"style="text-decoration:none;color:#000;">View/Update</a></button>
+                        <button class="p-2 btn">View/Update</button>
                       
                       </div>
                       <div class="col ">
@@ -228,5 +228,11 @@ h6 span{
 	height: auto;
 	width: 100px;
 	display: block;
+}
+.btn:hover{  
+  background-color: #6c757d;
+  color: #dee2e6;
+
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 </style>

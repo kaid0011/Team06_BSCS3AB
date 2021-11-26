@@ -1,3 +1,4 @@
+
 <!-- zek changes -->
 <div class="container my-5">		
 	<div class="card-3d-wrap mx-auto">
@@ -7,53 +8,53 @@
             <div class="row">
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
-                  <div class="row">
-                    <div class="col">
-                      
-                      <button class="p-2 btn  ">Light</button>
-                      <!-- <button class="p-2 btn "disabled>Primary</button> -->
-                    </div>
-                    <div class="col">
-                      <button class="p-2 btn "> Dark</button>
-                      <!--<button class="p-2 btn "disabled> Warning</button>-->
-                    </div>
-                    <div class="col">
-                      <button class="p-2 btn   ">Apple</button>
-                      <!-- <button class="p-2 btn "disabled>Success</button>-->
-                    </div>
-                    <div class="col">
-                      <button class="p-2 btn   ">Orange</button>
-                      <!--<button class="p-2 btn "disabled>Dark</button>-->
-                    </div>
-                    <div class="col">
-                      <button class="p-2 btn   ">Kiwi</button>
-                      <!--  <button class="p-2 btn "disabled>Light</button>-->
-                    </div>
+                <div class="row">
+                  <div class="col">
+                    <button class="p-2 btn  ">Light</button>
+
+                    <!-- <button class="p-2 btn btn-outline-primary text-light border border-3 border-primary"disabled>Primary</button> -->
+                  </div>
+                  <div class="col">
+                    <button class="p-2 btn "> Dark</button>
+                    <!--<button class="p-2 btn btn-outline-warning text-light border border-3 border-warning"disabled> Warning</button>-->
+                  </div>
+                  <div class="col">
+                    <button class="p-2 btn   ">Apple</button>
+                    <!-- <button class="p-2 btn btn-outline-success text-light border border-3 border-success"disabled>Success</button>-->
+                  </div>
+                  <div class="col">
+                    <button class="p-2 btn   ">Orange</button>
+                    <!--<button class="p-2 btn btn-outline-dark text-light border border-3 border-dark"disabled>Dark</button>-->
+                  </div>
+                  <div class="col">
+                    <button class="p-2 btn   ">Kiwi</button>
+                    <!--  <button class="p-2 btn btn-outline-light text-light border border-3 border-light"disabled>Light</button>-->
                   </div>
                 </div>
-              
-                <div class="col ml-auto h5">
-                  <div class="mb-2">Timer</div>
-                    <div class="row">
-                      <div class="col mt-2">
-                        <input type="time" id="appt" name="appt"  min="09:00" max="18:00" required>
-                        <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled>-->
-                      </div>
-                      <div class="col mx-auto ms-5 ">
-                        <button class="p-2 btn">View/Update</button>
-                      
-                      </div>
-                      <div class="col ">
-                        <button class="p-2 btn  "><i class="bi bi-trash-fill h4"></i></button>
-                        <!--<button class="p-2 btn"disabled><i class="bi bi-trash-fill h4"></i></button>-->
-                      </div>
-                    </div>
-                </div>    
-              
               </div>
+                <!-- if input font-->
+              <div class="col ml-auto h5">
+                <div class="mb-2"><br></div>
+                <div class="row">
+                  <div class="col ">
+                    
+                   
+                  </div>
+                  <div class="col mx-auto ms-5 ">
+                 <!-- <button class="btn p-2" href="">View/Update</button> -->
+                
+                  </div>
+                  <div class="col ">
+      
+                    <!--<button class="p-2 btn"><i class="bi bi-trash-fill h4"></i></button>-->
+                  </div>
+                </div>
+              </div>
+              
+            </div>
 <!-- end of changes			                                                                                                                                                                                                                                                               -->
 <hr class="bg-light">
-<!-- END OF THEME, FONT and TIMER BUTTONS-->
+<!-- END OF THEME, FONT -->
                         <!--INPUT BOX-->
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label"></label>
@@ -62,36 +63,33 @@
                         <!--END of INPUT BOX-->
                         <hr class="bg-light">
                         <!--SUBMIT BUTTON-->
+                        <button class="btn bi bi-star h5 me-2"></button> # of reacts
                         <button class="btn  float-end mt-1 " type="button" >Submit</button>
                         <!--   <button class="btn btn-secondary  float-end mt-1 " type="button" disabled>Submit</button>-->
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    
 
-                                                                        																			      					      					      					      					        		       
+
+                                                                             																			      					      					      					      					        		       
+                      </div>
+
+
 
 <style>
   
-body{
+  body{
 	font-family: 'Poppins', sans-serif;
 	font-weight: 300;
 	font-size: 15px;
-	background-image:url(assets/images/themes/Theme1_Apple.jpg);
+  background-color: #495057;
      /*if theme is dark,
         background-color: #495057;
     if theme is light,
         background-color: #e9ecef;
     if theme is Apple,
-        background-image:url(assets/images/themes/Theme1_Apple.jpg);
+        background-image:url(Theme1_Apple.jpg);
      if theme is Orange,
-        background-image:url(assets/images/themes/Theme2_Orange.jpg);
+        background-image:url(Theme2_Orange.jpg);
      if theme is Kiwi,
-        background-image:url(assets/images/themes/Theme3_Kiwi.jpg);*/
+        background-image:url(Theme3_Kiwi.jpg);*/
 	overflow-x: hidden;
 }
 p {
@@ -131,15 +129,15 @@ h6 span{
   position: relative;
   width: 1200px;
   max-width: 100%;
-  height: 600px; 
+  height: 610px; 
 }
 .btn{
     color: #212529;
-    background-color: #e9ecef;
+    background-color:  #adb5bd;
      /*if theme is dark,
          background-color: #adb5bd;
     if theme is light,
-         background-color: #adb5bd;
+         background-color: #dee2e6;
     if theme is Apple,
          background-color: #adb5bd;
      if theme is Orange,
@@ -151,23 +149,23 @@ h6 span{
 .card-front {
   width: 100%;
   height: 100%;
-  color: #212529;
-  background-image:url(assets/images/themes/Applecard.jpg);
+  color: #f8f9fa;
+  background-color:  #212529;
   /*if theme is dark,
         color: #f8f9fa;
         background-color: #212529;
     if theme is light,
-        color: #212529;
+         color: #212529;
         background-color: #adb5bd;
     if theme is Apple,
-        color: #212529;
-        background-image:url(assets/images/themes/Applecard.jpg);
+         color: #212529;
+        background-image:url(Applecard.jpg);
      if theme is Orange,
-        color: #212529;
-        background-image:url(assets/images/themes/Orangecard.jpg);
+         color: #212529;
+        background-image:url(Orangecard.jpg);
      if theme is Kiwi,
-        color: #212529;
-        background-image:url(assets/images/themes/Kiwicard.jpg);*/
+         color: #212529;
+        background-image:url(Kiwicard.jpg);*/
   position: absolute;
   border-radius: 10px;
 }

@@ -1,8 +1,9 @@
 <!--navbar main -->
  <nav class="navbar navbar-expand-lg navbar-light bg-dark ">
-        <div class="container">
-            <a href="#" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"></a>
-        <button type="button" 
+
+    <div class="container">
+        <a href="#" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px"></a>
+    <button type="button" 
         data-bs-toggle="collapse" 
         data-bs-target="#navbarNav" 
         class="navbar-toggler" 
@@ -44,41 +45,42 @@
       <nav class="navbar navbar-expand-lg  "style="background-color:#e9ecef;">
         <div class="container-fluid">
           
-          <div>
-            <nav class="navbar navbar-dark  ms-5">
-              <div class="container-fluid">
-                
-               
-              </div>
-            </nav>
-          </div>
-          <div>
-            <nav class="navbar">
-              <div class="container me-5">
-                <a class="navbar-brand" href="#" style="color: #eee;">
-                  
-                </a>
-              </div>
-            </nav>
-          </div>
-          <div>
-           
+          <li class="navbar-item dropdown">
+
+            <a href="#" 
+              class="nav-link dropdown-toggle text-white" 
+              id="navbarDropdown" 
+              role="button" 
+              data-bs-toggle="dropdown">
+              <i class="bi bi-person-circle h1" style="color: white;"></i>
+            </a>
             
-                  
-              
-              
-              </a>
-                
-              
-          </ul>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a href="#" class="dropdown-item ">Edit Profile</a></li>
+              <li><a href="#" class="dropdown-item ">Logout</a></li>
+            </ul>
+
+          </li>
+        </ul>
       </div>
-      </div> 
-                          
-                 
-               
+    </div>
+  </nav>
+<!--navbar main end--> 
 
+<nav class="navbar navbar-expand-lg  "style="background-color:#e9ecef;">
+  <div class="container-fluid">
+    
+    <div>
+      <nav class="navbar navbar-dark  ms-5">
+        <div class="container-fluid"></div>
+      </nav>
+    </div>
+    
+    <div>
+      <nav class="navbar">
+        <div class="container me-5">
+          <a class="navbar-brand" href="#" style="color: #eee;"></a>
         </div>
-
       </nav>
    
     </header>
@@ -312,19 +314,15 @@ width: auto;"
     height: 300px;
     overflow-y: scroll;
     overflow-x:hidden;
-
 }
 .scrollspy-example::-webkit-scrollbar{
     width:10px;
-   
-
 }
 .scrollspy-example::-webkit-scrollbar-track{
     -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.3);
     -webkit-border-radius:0px;
-  
     border-radius: 3px;
-}
+} 
 .scrollspy-example::-webkit-scrollbar-thumb{
     -webkit-box-shadow:inset 0 0 6px rgba(0,0,0,0.5);
     -webkit-border-radius:0px;
@@ -346,7 +344,6 @@ width: auto;"
 }
 
 .title{
-   
    color: #fff;
     margin: 5px;
 }
@@ -370,18 +367,12 @@ img
     color: #fff;
 }
 .received-chats-img{
-  
- width: 30px;
- float: left;
- 
-   
+    width: 30px;
+    float: left;
 }
 .outgoing-chats-img{
     width: 30px;
     float: right;
 }
-
-
-
 
 </style>

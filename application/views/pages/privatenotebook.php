@@ -11,23 +11,23 @@
                     <div class="col">
                       
                       <button class="p-2 btn  ">Light</button>
-                      <!-- <button class="p-2 btn btn-outline-primary text-light border border-3 border-primary"disabled>Primary</button> -->
+                      <!-- <button class="p-2 btn "disabled>Primary</button> -->
                     </div>
                     <div class="col">
                       <button class="p-2 btn "> Dark</button>
-                      <!--<button class="p-2 btn btn-outline-warning text-light border border-3 border-warning"disabled> Warning</button>-->
+                      <!--<button class="p-2 btn "disabled> Warning</button>-->
                     </div>
                     <div class="col">
                       <button class="p-2 btn   ">Apple</button>
-                      <!-- <button class="p-2 btn btn-outline-success text-light border border-3 border-success"disabled>Success</button>-->
+                      <!-- <button class="p-2 btn "disabled>Success</button>-->
                     </div>
                     <div class="col">
                       <button class="p-2 btn   ">Orange</button>
-                      <!--<button class="p-2 btn btn-outline-dark text-light border border-3 border-dark"disabled>Dark</button>-->
+                      <!--<button class="p-2 btn "disabled>Dark</button>-->
                     </div>
                     <div class="col">
                       <button class="p-2 btn   ">Kiwi</button>
-                      <!--  <button class="p-2 btn btn-outline-light text-light border border-3 border-light"disabled>Light</button>-->
+                      <!--  <button class="p-2 btn "disabled>Light</button>-->
                     </div>
                   </div>
                 </div>
@@ -45,7 +45,7 @@
                       </div>
                       <div class="col ">
                         <button class="p-2 btn  "><i class="bi bi-trash-fill h4"></i></button>
-                        <!--<button class="p-2 btn btn-outline-white btn-secondary"disabled><i class="bi bi-trash-fill h4"></i></button>-->
+                        <!--<button class="p-2 btn"disabled><i class="bi bi-trash-fill h4"></i></button>-->
                       </div>
                     </div>
                 </div>    

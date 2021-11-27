@@ -28,7 +28,7 @@
                         </div>
                         <!-- Forgot Password -->
                         <div class="mb-5" class=" ">
-                            <label class="text" for="exampleCheck1 ><a style=" color:#329bba;" href="<?php echo base_url(); ?>forgotpassword">Forgot Password?</a></label>
+                            <label class="text" for="exampleCheck1"><a style="color:#329bba;" href="<?php echo base_url(); ?>forgotpassword">Forgot Password?</a></label>
                         </div>
                         
                         <!-- Log In Button -->

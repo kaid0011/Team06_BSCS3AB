@@ -16,9 +16,7 @@
             $user = $this->input->post('userName');
             $data['findUser'] = $this->Main_model->get_Data($user);
             
-            //print_r($data);
             $this->sitelayout->loadTemplate('pages/visitedprofile', $data);
-            
         }
     }
 

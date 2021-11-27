@@ -11,23 +11,23 @@
                     <div class="col">
                       
                       <button class="p-2 btn  ">Light</button>
-                      <!-- <button class="p-2 btn btn-outline-primary text-light border border-3 border-primary"disabled>Primary</button> -->
+                      <!-- <button class="p-2 btn "disabled>Primary</button> -->
                     </div>
                     <div class="col">
                       <button class="p-2 btn "> Dark</button>
-                      <!--<button class="p-2 btn btn-outline-warning text-light border border-3 border-warning"disabled> Warning</button>-->
+                      <!--<button class="p-2 btn "disabled> Warning</button>-->
                     </div>
                     <div class="col">
                       <button class="p-2 btn   ">Apple</button>
-                      <!-- <button class="p-2 btn btn-outline-success text-light border border-3 border-success"disabled>Success</button>-->
+                      <!-- <button class="p-2 btn "disabled>Success</button>-->
                     </div>
                     <div class="col">
                       <button class="p-2 btn   ">Orange</button>
-                      <!--<button class="p-2 btn btn-outline-dark text-light border border-3 border-dark"disabled>Dark</button>-->
+                      <!--<button class="p-2 btn "disabled>Dark</button>-->
                     </div>
                     <div class="col">
                       <button class="p-2 btn   ">Kiwi</button>
-                      <!--  <button class="p-2 btn btn-outline-light text-light border border-3 border-light"disabled>Light</button>-->
+                      <!--  <button class="p-2 btn "disabled>Light</button>-->
                     </div>
                   </div>
                 </div>
@@ -40,6 +40,7 @@
                         <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled>-->
                       </div>
                       <div class="col mx-auto ms-5 ">
+
                         <button class="p-2 btn"><a href="viewprivatenotebook.html"style="text-decoration:none;color:#000;">View/Update</a></button>
               
                       </div>
@@ -49,7 +50,7 @@
                         <!--<button class="p-2 btn btn-outline-white btn-secondary"disabled><i class="bi bi-trash-fill h4"></i></button>-->
                         <script></script>
                     </form>
-                      </div>
+
                     </div>
                 </div>    
               
@@ -192,5 +193,11 @@ h6 span{
 	height: auto;
 	width: 100px;
 	display: block;
+}
+.btn:hover{  
+  background-color: #6c757d;
+  color: #dee2e6;
+
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 </style>

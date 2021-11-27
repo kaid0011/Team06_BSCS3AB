@@ -40,13 +40,17 @@
                         <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled>-->
                       </div>
                       <div class="col mx-auto ms-5 ">
-                        <button class="p-2 btn">View/Update</button>
-                      
+
+                        <button class="p-2 btn"><a href="viewprivatenotebook.html"style="text-decoration:none;color:#000;">View/Update</a></button>
+              
                       </div>
                       <div class="col ">
-                        <button class="p-2 btn  "><i class="bi bi-trash-fill h4"></i></button>
-                        <!--<button class="p-2 btn"disabled><i class="bi bi-trash-fill h4"></i></button>-->
-                      </div>
+                      <form>
+                        <button href="#" class="delete_data" action="<?= base_url(); ?>delete/delete_data/"><i class="bi bi-trash-fill h4"></i></button>
+                        <!--<button class="p-2 btn btn-outline-white btn-secondary"disabled><i class="bi bi-trash-fill h4"></i></button>-->
+                        <script></script>
+                    </form>
+
                     </div>
                 </div>    
               

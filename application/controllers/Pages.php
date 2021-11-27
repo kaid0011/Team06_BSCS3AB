@@ -7,16 +7,14 @@
                 show_404();
             }
             #$data['title'] = ucfirst($page);
-            #$this->load->view('templates/header');
             
             switch($page) {
-                case 'view':
                 case 'home':
                     $data['navbar'] = 'home';
                     break;
                 case 'registration':
                 case 'verification':
-                    $data['navbar'] = 'reg';
+                    $data['navbar'] = 'registration';
                     break;
                 case 'login':
                 case 'forgotpassword':
@@ -26,12 +24,11 @@
                     break;
                 case 'mainpage':
                 case 'privatenotebook':
+                case 'visitedprofile':
                 default:
                     $data['navbar'] = 'main';
             }
            
             $this->sitelayout->loadTemplate('pages/'.$page, $data);
-            #$this->load->view('templates/footer');
          }
     }
-?>

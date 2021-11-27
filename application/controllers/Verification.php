@@ -40,7 +40,7 @@
                         'authentication' => TRUE
                     );
                     $this->session->set_userdata('userdata', $userdata['userName']);
-                    redirect('main');
+                    redirect('mainpage');
                 }
                 else
                 {

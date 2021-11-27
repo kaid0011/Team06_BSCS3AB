@@ -111,7 +111,9 @@
                 </div>
                 <ul class="navbar-nav align-items-center navbar-right">
                     <li class="navbar-item text-light px-5 ms-5">
-                        <a href="#" class="nav-link text-light">Name <br><span class="text-secondary">Username</span> </a>
+                        <!-- added echo to display user info -->
+                        <a href="#" class="nav-link text-light"> <?php echo $this->session->userdata('displayName'); ?> <br><span class="text-secondary"> <?php echo $this->session->userdata('userName'); ?> </span> </a>
+                        <!-- added echo to display user info -->
                     </li>
                     <li class="navbar-item dropdown">
                         <a href="#" 

@@ -1,32 +1,4 @@
-<!--navbar section-->
-    <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
-        <div class="container">
-            <a href="<?php echo base_url(); ?>" class="navbar-brand"><img src="assets/images/vdLogo.png" height="40px"/></a>
-            <button 
-            class="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navmenu"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="<?php echo base_url(); ?>registration" class="nav-link text-light">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?php echo base_url(); ?>login" class="nav-link text-light ms-2">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#aboutUs" class="nav-link text-light ms-2 pe-0">About Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-<!-- end of navbar section -->
-<!-- header -->
+<!-- Header -->
 <section class="bg-dark text-light p-5 text-center text-sm-start">
     <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between">
@@ -35,18 +7,23 @@
                 <p class="mb-4">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ullam rerum reprehenderit tenetur, omnis recusandae nisi fuga nobis accusantium itaque impedit eligendi molestias. Impedit cupiditate repellat voluptatibus a optio magni!
                 </p>
-                <a href=""><button class="btn btn-lg mb-4" style="background-color: #f0b63a;"><h5 class="mb-1">Learn More</h5></button></a>
+                <a href=""><button class="btn btn-lg mb-4" style="background-color: #f0b63a;">
+                        <h5 class="mb-1">Learn More</h5>
+                    </button></a>
             </div>
-            <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/home/hp.png" alt=""/>
+            <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/home/hp.png" alt="" />
         </div>
     </div>
 </section>
-<!-- end of header -->
-<!-- Card Section  -->
+<!-- (end) Header -->
+
+<!-- Features Section (Cards) -->
 <section class="p-5" style="background-color: #e9ecef;">
     <div class="h1 text-center p-4 text-dark">Features</div>
     <div class="container">
+
         <div class="row text-center g-4">
+            <!-- Public Notebook -->
             <div class="col-md">
                 <div class="card bg-dark text-light">
                     <div class="card-body text-center">
@@ -56,12 +33,13 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Public Notebook
                         </h3>
-                        <p class="card-text" style= "height: 50px;">
+                        <p class="card-text" style="height: 50px;">
                             Everyone can see your post
                         </p>
                     </div>
                 </div>
             </div>
+            <!-- Private Notebook -->
             <div class="col-md ">
                 <div class="card bg-dark text-light">
                     <div class="card-body text-center">
@@ -71,12 +49,13 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Private Notebook
                         </h3>
-                        <p class="card-text" style= "height: 50px;">
+                        <p class="card-text" style="height: 50px;">
                             Only you can access this Section
                         </p>
                     </div>
                 </div>
             </div>
+            <!-- Sticky Notes Wall -->
             <div class="col-md ">
                 <div class="card bg-dark text-light">
                     <div class="card-body text-center">
@@ -86,15 +65,18 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Sticky Notes Wall
                         </h3>
-                        <p class="card-text" style= "height: 50px;">
+                        <p class="card-text" style="height: 50px;">
                             Public anonymous posting area
                         </p>
                     </div>
                 </div>
             </div>
+
         </div>
+
         <div class="mb-4"></div>
         <div class="row text-center g-4 mb-4">
+            <!-- Reactions -->
             <div class="col-md">
                 <div class="card bg-dark text-light">
                     <div class="card-body text-center">
@@ -104,12 +86,13 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Reactions
                         </h3>
-                        <p class="card-text" style= "height: 50px;">
-                            You can react  in styles to other user post and Stickynotes
+                        <p class="card-text" style="height: 50px;">
+                            You can react in styles to other user post and Stickynotes
                         </p>
                     </div>
                 </div>
             </div>
+            <!-- Discussion -->
             <div class="col-md ">
                 <div class="card bg-dark text-light">
                     <div class="card-body text-center">
@@ -119,13 +102,14 @@
                         <h3 class="card-title" style="color: #f0b63a;">
                             Discussion
                         </h3>
-                        <p class="card-text" style= "height: 50px;">
+                        <p class="card-text" style="height: 50px;">
                             Forum for different topics you might be interested
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-md ">
+                <!-- Report -->
                 <div class="card bg-dark text-light">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
@@ -140,11 +124,14 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+
 </section>
-<!-- end of features -->
-<!-- about creators -->
+<!-- (end) Features Section -->
+
+<!-- About the Developers -->
 <section id="aboutUs" class="p-5 bg-dark">
     <div class="container">
         <div class="h1 text-center p-4 text-light">About the Developers</div>
@@ -152,6 +139,7 @@
             The developers consist of aspiring third year students of the Technological University of the Philippines - Manila under the course of BS in Computer Science (2021-2022)
         </p>
         <div class="row g-4 justify-content-center">
+            <!-- Guevarra -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
@@ -162,6 +150,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Bagasona -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
@@ -172,6 +161,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Romero -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
@@ -182,6 +172,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Yusoph -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
@@ -192,6 +183,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Camañag -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
@@ -202,6 +194,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Pinpin -->
             <div class="col-md-4 col-lg-3 mb-4">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
@@ -212,6 +205,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Estrella -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark">
                     <div class="card-body text-center">
@@ -225,44 +219,45 @@
         </div>
     </div>
 </section>
-<!-- end of about creators -->
-<!-- frequently ask question -->
+<!-- (end) About the Developers-->
+
+<!-- Frequently Asked Questions -->
 <section id="question" class="p-5" style="background-color: #e9ecef;">
-    <div class="h1 text-center p-4 text-dark" >Frequently Asked Question</div>
+    <div class="h1 text-center p-4 text-dark">Frequently Asked Questions</div>
     <div class="accordion accordion-flush" id="accordionFlushExample">
-        <!-- question#1 -->
+        <!-- Question #1 -->
         <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed text-dark border border-3 border-dark mb-1" style="background-color: #f0b63a;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
-              How do I sign up?
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">Just Click the <span class="text-primary">register</span> button at the navbar section to create account.</div>
-          </div>
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed text-dark border border-3 border-dark mb-1" style="background-color: #f0b63a;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne">
+                    How do I sign up?
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Just Click the <span class="text-primary">register</span> button at the navbar section to create account.</div>
+            </div>
         </div>
-        <!-- question#2 -->
+        <!-- Question #2 -->
         <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed text-dark border border-3 border-dark mb-1" style="background-color: #f0b63a;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
-              Do you have membership fee?
-            </button>
-          </h2>
-          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">We want our website to be accessible for everyone, This is totally free!</div>
-          </div>
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed text-dark border border-3 border-dark mb-1" style="background-color: #f0b63a;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo">
+                    Do you have membership fee?
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">We want our website to be accessible for everyone, This is totally free!</div>
+            </div>
         </div>
-        <!-- question#3 -->
+        <!-- Question #3 -->
         <div class="accordion-item mb-4">
-          <h2 class="accordion-header" id="flush-headingThree">
-            <button class="accordion-button collapsed text-dark border border-3 border-dark mb-1" style="background-color: #f0b63a;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
-                Is our Data on this Website Secure?
-            </button>
-          </h2>
-          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">We care about our user, we make sure that all user data is secure!</div>
-          </div>
+            <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed text-dark border border-3 border-dark mb-1" style="background-color: #f0b63a;" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree">
+                    Is our Data on this Website Secure?
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">We care about our user, we make sure that all user data is secure!</div>
+            </div>
         </div>
-      </div>
-    </section>
-<!-- end of questions   -->
+    </div>
+</section>
+<!-- (end) Frequently Asked Questions   -->

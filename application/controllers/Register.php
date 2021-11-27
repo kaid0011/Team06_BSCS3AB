@@ -33,7 +33,7 @@
 
             if($this->form_validation->run())   #If no error,
             {
-                $verification_key = md5(rand());                                #create random string for verification,
+                $verification_key = random_string('numeric', 6);                                #create random string for verification,
                 $encrypted_password = md5($this->input->post('password'));      #create hash value for password,
                 $this->addUser($verification_key, $encrypted_password);         #then proceed to addUser function.
             }
@@ -64,14 +64,29 @@
                 $response = $this->Register_model->addNewUser($data);
                 if($response == true)
                 {
+                    //$this->session->set_userdata('user', $data['userName']);
                     redirect('verification');
+                    //$this->sendEmail($data['verification_Key']);
                 }
                 else
                 {
                     echo "Error";
                 }
             }
+
             $this->sitelayout->loadTemplate('pages/registration', $data);
         }
+
+        /*
+        public function sendEmail($key)
+        {
+            $subject = "Verify your email";
+            $message = "
+            <p>Hello, ".$this->input->post('userName')."!</p>
+            <p>Here is your verification code.</p>
+            <h3>$key</h3>
+            ";
+            
+        } */
     }
 ?>

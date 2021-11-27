@@ -7,11 +7,28 @@
                 show_404();
             }
             #$data['title'] = ucfirst($page);
-
-            #$this->load->view('templates/header');
+            
+            switch($page) {
+                case 'home':
+                    $data['navbar'] = 'home';
+                    break;
+                case 'registration':
+                case 'verification':
+                    $data['navbar'] = 'registration';
+                    break;
+                case 'login':
+                case 'forgotpassword':
+                case 'changepassword':
+                case 'confirmation':
+                    $data['navbar'] = 'login';
+                    break;
+                case 'mainpage':
+                case 'privatenotebook':
+                case 'visitedprofile':
+                default:
+                    $data['navbar'] = 'main';
+            }
            
-            $this->sitelayout->loadTemplate('pages/'.$page);
-            #$this->load->view('templates/footer');
+            $this->sitelayout->loadTemplate('pages/'.$page, $data);
          }
     }
-?>

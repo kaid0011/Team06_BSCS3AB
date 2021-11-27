@@ -26,6 +26,13 @@
             <div class="col-lg p-5">
                 <h1 class="h1 mb-5 pt-4 text-dark">Verification</h1>
                 <p class="lead"> 
+                    <!-- display error message -->
+                    <?php
+                        if($this->session->flashdata('message'))
+                        {
+                            echo '<div class="alert alert-danger">'.$this->session->flashdata("message").'</div>';                            }
+                    ?>
+                    <!-- display error message -->
                     <form method="post" action="<?= base_url() ?>Verification/validation" autocomplete="off">
                        
                           <div class="mb-5">

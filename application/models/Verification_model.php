@@ -6,8 +6,9 @@
             parent::__construct();
         }
 
-        public function verify($verification_Key)
+        public function verify($verification_Key, $username)
         {
+            $this->db->where('userName', $username);
             $this->db->where('verification_Key', $verification_Key);
             $this->db->limit(1);
             $query = $this->db->get('user');

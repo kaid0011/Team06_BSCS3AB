@@ -45,7 +45,7 @@
                       </div>
                       <div class="col ">
                       <form>
-                        <button href="#" class="delete_data" action="<?= base_url(); ?>main/delete_data/"><i class="bi bi-trash-fill h4"></i></button>
+                        <button href="#" class="delete_data" action="<?= base_url(); ?>delete/delete_data/"><i class="bi bi-trash-fill h4"></i></button>
                         <!--<button class="p-2 btn btn-outline-white btn-secondary"disabled><i class="bi bi-trash-fill h4"></i></button>-->
                         <script></script>
                     </form>

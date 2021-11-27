@@ -1,4 +1,3 @@
-<!-- footer  -->
 <footer class="p-5 bg-dark text-light text-center position-relative">
     <div class="container">
         <p class="lead text-center">Copyright &copy; T6-2021. All Rights Reserved</p>

@@ -1,4 +1,4 @@
-<section id="learn" class="p-5">
+<section id="learn" class="p-5" style="background-color: #e9ecef; min-height: 75vh;">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-md p-5 pt-9">
@@ -17,18 +17,19 @@
                         <!-- Username -->
                         <div class="mb-5">
                             <label for="exampleInputusername1" class="form-label">Username</label>
-                            <input type="text" name="userName" id="exampleusername1" class="form-control" value="<?php echo set_value('userName'); ?>" aria-describedby="emailHelp" />
+                            <input type="text" name="userName" id="exampleusername1" class="form-control mb-1" value="<?php echo set_value('userName'); ?>" aria-describedby="emailHelp" />
                             <span class="text-danger"><?php echo form_error('userName'); ?></span>
-                        </div>
+                        
                         <!-- Password -->
                         <div class="mb-5">
                             <label for="exampleInewPassword1" class="form-label"> Password</label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword1" value="<?php echo set_value('password'); ?>" />
+                            <input type="password" name="password" class="form-control mb-1" id="exampleInputPassword1" value="<?php echo set_value('password'); ?>" />
                             <span class="text-danger"><?php echo form_error('password'); ?></span>
-                        </div>
+                        
                         <!-- Forgot Password -->
                         <div class="mb-5" class=" ">
-                            <label class="text" for="exampleCheck1 ><a style=" color:#329bba;" href="<?php echo base_url(); ?>forgotpassword">Forgot Password?</a></label>
+                            <label class="text" for="exampleCheck1" ><a style=" color:#329bba;" href="<?php echo base_url(); ?>forgotpassword">Forgot Password?</a></label>
+                        </div>
                         </div>
                         
                         <!-- Log In Button -->

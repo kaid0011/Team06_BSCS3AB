@@ -62,8 +62,9 @@ CREATE TABLE `privatenb_pages` (
   `privateNBPage_ID` int(11) NOT NULL,
   `privateNB_ID` int(11) NOT NULL,
   `pageInput` text NOT NULL,
-  `pageTheme` enum('Dark','Light','Apple','Orange','Kiwi') NOT NULL DEFAULT 'Dark',
-  `pageTimer` time DEFAULT '00:00:00'
+  `pageTheme` enum('Happy','Horror') NOT NULL,
+  `pageFont` enum('Arial','Times New Roman') NOT NULL,
+  `pageTimer` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -87,8 +88,9 @@ CREATE TABLE `publicnb_pages` (
   `publicNBPage_ID` int(11) NOT NULL,
   `publicNB_ID` int(11) NOT NULL,
   `pageInput` text DEFAULT NULL,
-  `pageTheme` enum('Dark','Light','Apple','Orange','Kiwi') DEFAULT 'Dark',
-  `pageDate` datetime DEFAULT current_timestamp(),
+  `pageTheme` enum('Happy','Horror') DEFAULT NULL,
+  `pageFont` enum('Arial','Times New Roman') DEFAULT NULL,
+  `pageDate` date DEFAULT NULL,
   `pageReact_Count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -143,7 +145,8 @@ CREATE TABLE `report` (
 CREATE TABLE `sticky_notes` (
   `stickyNotes_ID` int(11) NOT NULL,
   `user_ID` int(11) NOT NULL,
-  `noteTheme` enum('Dark','Light','Apple','Orange','Kiwi') NOT NULL DEFAULT 'Dark',
+  `noteFont` enum('Arial','Times New Roman') NOT NULL,
+  `noteTheme` enum('Happy','Horror') NOT NULL,
   `noteInput` text DEFAULT NULL,
   `noteReceiver` varchar(36) NOT NULL,
   `noteReact_Count` int(11) NOT NULL
@@ -171,12 +174,19 @@ CREATE TABLE `user` (
   `userName` varchar(30) NOT NULL,
   `displayName` varchar(30) NOT NULL,
   `email` text NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `status` enum('Active','Warned','Banned','Deactivated') NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `status` varchar(36) NOT NULL,
   `dateCreated` datetime NOT NULL DEFAULT current_timestamp(),
   `verification_Key` varchar(36) NOT NULL,
   `is_verification_correct` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_ID`, `userName`, `displayName`, `email`, `password`, `status`, `dateCreated`, `verification_Key`, `is_verification_correct`) VALUES
+(5, 'try3', 'try3', 'try3@email.com', '202cb962ac59075b964b07152d234b70', '', '2021-11-18 18:16:04', '130be0bf5fc9b2c0247a9847f9aa2c1a', 0);
 
 --
 -- Indexes for dumped tables
@@ -333,7 +343,7 @@ ALTER TABLE `support_team`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

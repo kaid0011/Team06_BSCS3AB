@@ -18,11 +18,11 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url();?>registration" class="nav-link text-light">Register</a>
+                            <a href="<?php echo base_url('registration')?>" class="nav-link text-light">Register</a>
                         </li>
                         <!-- Log In -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url();?>login" class="nav-link text-light ms-2">Log In</a>
+                            <a href="<?php echo base_url('login')?>" class="nav-link text-light ms-2">Log In</a>
                         </li>
                         <!-- About Us -->
                         <li class="nav-item">
@@ -55,7 +55,7 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Log In -->
                         <li class="nav-item">
-                            <p class="text-light pt-2 mb-0">Already have an account? <a href="<?php echo base_url(); ?>login" class="text-reset">Log In</a></p>
+                            <p class="text-light pt-2 mb-0">Already have an account? <a href="<?php echo base_url('login'); ?>" class="text-reset">Log In</a></p>
                         </li>
                     </ul>
                 </div>
@@ -84,7 +84,7 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <p class="text-light pt-2 mb-0">No account yet? <a href="<?php echo base_url(); ?>registration" class="text-reset">Register</a> now.</p>
+                            <p class="text-light pt-2 mb-0">No account yet? <a href="<?php echo base_url('registration'); ?>" class="text-reset">Register</a> now.</p>
                         </li>
                     </ul>
                 </div>
@@ -111,7 +111,7 @@ switch ($navbar) {
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <!-- Search (Find User) -->
-                    <form action="<?= base_url() ?>Main/finduser" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
+                    <form action="<?= base_url('Main/finduser') ?>" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
                         <input type="text" name="userName" class="form-control me-2">
                         <button type="submit" class="btn btn-outline btn-warning">Search</button>
                     </form>         
@@ -132,7 +132,7 @@ switch ($navbar) {
                             </a>
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                                 <li><a href="#" class="dropdown-item ">Edit Profile</a></li>
-                                <li><a href="<?=base_url()?>login/logout" class="dropdown-item ">Logout</a></li>
+                                <li><a href="<?=base_url('login/logout')?>" class="dropdown-item ">Logout</a></li>
                             </ul>
                         </li>
                     </ul>

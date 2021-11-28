@@ -131,7 +131,7 @@ switch ($navbar) {
                                 <i class="bi bi-person-circle h1" style="color: white;"></i>
                             </a>
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
-                                <li><a href="#" class="dropdown-item ">Edit Profile</a></li>
+                                <li><a href="<?=base_url('updateprofile')?>" class="dropdown-item ">Edit Profile</a></li>
                                 <li><a href="<?=base_url('login/logout')?>" class="dropdown-item ">Logout</a></li>
                             </ul>
                         </li>

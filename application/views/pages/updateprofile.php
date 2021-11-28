@@ -33,17 +33,21 @@
                         <label for="exampleInputEmail1" class="form-label">E-mail Address</label>
                         <input type="email" class="form-control mb-1" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<?php echo set_value('email'); ?>" autocomplete="off" />
                     
-                        <!-- Password -->
+                        <!-- Old Password -->
                         <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Old Password</label>
                         <input type="password" class="form-control mb-1" id="exampleInputPassword1" name="oldpassword" value="<?php echo set_value('password'); ?>" autocomplete="off" />
                         
-                        <!-- Confirm Password -->
+                        <!-- New Password -->
                         <div class="mb-3">
                         <label for="exampleInputconfirmpassword1" class="form-label">New Password</label>
                         <input type="password" class="form-control mb-1" id="exampleInputconfirmpassword1" name="newpassword" value="<?php echo set_value('confirm_password'); ?>" />
                         
-                        
+                        <!-- Deactivate Account -->
+                        <div class="mb-5" class=" ">
+                            <label class="text" for="exampleCheck1" ><a style="color: #495057" href="<?php echo base_url('updateprofile/deactivateaccount')?>">Deactivate Account</a></label>
+                        </div>
+
                         </div>
                         </div>
                         </div>

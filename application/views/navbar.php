@@ -18,7 +18,7 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url('registration')?>" class="nav-link text-light">Register</a>
+                            <a href="<?php echo base_url('register')?>" class="nav-link text-light">Register</a>
                         </li>
                         <!-- Log In -->
                         <li class="nav-item">
@@ -111,7 +111,7 @@ switch ($navbar) {
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <!-- Search (Find User) -->
-                    <form action="<?= base_url('Main/finduser') ?>" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
+                    <form action="<?= base_url('main/finduser') ?>" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
                         <input type="text" name="userName" class="form-control me-2">
                         <button type="submit" class="btn btn-outline btn-warning">Search</button>
                     </form>         

@@ -13,7 +13,7 @@
                         echo '<div class="alert alert-danger">' . $this->session->flashdata("message") . '</div>';
                     }
                     ?>
-                    <form method="post" action="<?php echo base_url(); ?>Login/validation">
+                    <form method="post" action="<?php echo base_url('login/validation'); ?>">
                         <!-- Username -->
                         <div class="mb-5">
                             <label for="exampleInputusername1" class="form-label">Username</label>
@@ -33,7 +33,7 @@
                         </div>
                         
                         <!-- Log In Button -->
-                        <button type="submit" name="submit" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark"><a style="text-decoration: none; color: #212529;"> Log In</a></button>
+                        <input type="submit" name="action" value="Log In" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark">
                         
                     </form>
                 </p>

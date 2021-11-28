@@ -14,6 +14,12 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/updateprofile', $data); 
         }
+
+        public function deactivateaccount() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/updateprofile', $data); 
+        }
     }
 
 ?>

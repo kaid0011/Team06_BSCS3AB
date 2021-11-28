@@ -40,7 +40,9 @@
                         'displayName' => $response->displayName,
                         'authentication' => TRUE
                     );
+
                     $this->session->set_userdata($userdata);
+
                     redirect('mainpage');
                 }
                 else

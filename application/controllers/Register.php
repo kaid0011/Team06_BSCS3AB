@@ -12,6 +12,11 @@
             $this->load->model('Register_model');       #preload Register_model for registration
         }
 
+        public function index() {
+            $data['navbar'] = 'registration';
+            $this->sitelayout->loadTemplate('pages/registration/registration', $data); 
+        }
+
         public function validation()
         {
             # $this->form_validation->set_rules([variable(?)], [name], [rules])
@@ -33,25 +38,29 @@
 
             if($this->form_validation->run())   #If no error,
             {
-                $verification_key = md5(rand());                                #create random string for verification,
+                $verification_key = random_string('numeric', 6);                #create random string for verification,
                 $encrypted_password = md5($this->input->post('password'));      #create hash value for password,
                 $this->addUser($verification_key, $encrypted_password);         #then proceed to addUser function.
             }
             else    #If there is error,
             {
-                $this->sitelayout->loadTemplate('pages/registration');                        #load registration page again with error messages.
+                $data['navbar'] = 'registration';
+                $this->sitelayout->loadTemplate('pages/registration/registration', $data);                        #load registration page again with error messages.
             }
 
         }
 
         public function addUser($verification_key, $encrypted_password)
         {          
+            $data['navbar'] = 'registration';
+            $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
+
             $var = $this->input->post();
 
             if(isset($var) && $var != null)
             {
                 #create $data variable for array containing keys(userName, displayName, etc.) with assigned values
-                $data = array(
+                $userdata = array(
                     'userName' => $this->input->post('userName'),
                     'displayName' => $this->input->post('displayName'),
                     'email' => $this->input->post('email'),
@@ -61,18 +70,33 @@
                 
                 #get a response from Register_model if insert to database is succesful
                 #pass $data array to model
-                $response = $this->Register_model->addNewUser($data);
+                $response = $this->Register_model->addNewUser($userdata);
                 if($response == true)
                 {
-                    redirect('verification');
+                    $this->session->set_userdata('userName', $userdata['userName']);
+                    $data['navbar'] = 'registration';
+                    $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
+                    //$this->sendEmail($data['verification_Key']);
                 }
                 else
                 {
                     echo "Error";
                 }
             }
-
-            $this->sitelayout->loadTemplate('pages/registration', $data);
+            $data['navbar'] = 'registration';
+            $this->sitelayout->loadTemplate('pages/registration/registration', $data);
         }
+
+        /*
+        public function sendEmail($key)
+        {
+            $subject = "Verify your email";
+            $message = "
+            <p>Hello, ".$this->input->post('userName')."!</p>
+            <p>Here is your verification code.</p>
+            <h3>$key</h3>
+            ";
+            
+        } */
     }
 ?>

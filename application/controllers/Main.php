@@ -11,14 +11,19 @@
             $this->load->model('Main_model');  
         }
 
+        public function index() {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
+        }
+
         public function findUser()
         { 
             $user = $this->input->post('userName');
             $data['findUser'] = $this->Main_model->get_Data($user);
             
-            //print_r($data);
-            $this->sitelayout->loadTemplate('pages/visitedprofile', $data);
-            
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/finduser/visitedprofile', $data); 
         }
     }
+
 ?>

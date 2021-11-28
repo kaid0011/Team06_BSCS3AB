@@ -13,6 +13,7 @@ class Login_model extends CI_model
         $this->db->where('password', $password);
         $this->db->limit(1);
         $query = $this->db->get('user');
+        
         if($query->num_rows() == 1)
         {
             return $query->row();

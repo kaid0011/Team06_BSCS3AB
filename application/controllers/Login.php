@@ -3,7 +3,6 @@ defined('BASEPATH') or exit('No Direct script Access allowed');
 
 class Login extends CI_Controller
 {
-
     public function __construct()
     {
         parent::__construct();
@@ -13,50 +12,63 @@ class Login extends CI_Controller
         $this->load->model('Login_model');
     }
 
-    function index()
-    {
-        $this->load->view('pages/login');
+    public function index() {
+        $data['navbar'] = 'login';
+        $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
     }
 
     function logged_in()
     {
         if (!$this->session->userdata('status')) {
-            redirect('login');
+        $data['navbar'] = 'login';
+        $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
         }
     }
 
     function validation()
     {
-        $this->form_validation->set_rules('userName', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
+        $action = $this->input->post('action');
 
-        if ($this->form_validation->run()) {
-            $username = $this->input->post('userName');
-            $password = md5($this->input->post('password'));
+        if($action == 'Log In') {
 
-            $result = $this->Login_model->can_login($username, $password);
-            if ($result) {
-                $userdata = array(
-                    'user_ID' => $result->user_ID,
-                    'userName' => $result->userName,
-                    'displayName' => $result->displayName,
-                    'status' => TRUE
-                );
-                $this->session->set_userdata($userdata);
-                redirect('mainpage');
+            $this->form_validation->set_rules('userName', 'Username', 'required');
+            $this->form_validation->set_rules('password', 'Password', 'required');
+
+            if ($this->form_validation->run()) {
+                $username = $this->input->post('userName');
+                $password = md5($this->input->post('password'));
+
+                $result = $this->Login_model->can_login($username, $password);
+                if ($result) {
+                    $userdata = array(
+                        'user_ID' => $result->user_ID,
+                        'userName' => $result->userName,
+                        'displayName' => $result->displayName,
+                        'status' => TRUE
+                    );
+                    $this->session->set_userdata($userdata);
+                    $data['navbar'] = 'main';
+                    $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
+                } else {
+                    $this->session->set_flashdata('message', 'Invalid Username or Password');
+                    $data['navbar'] = 'login';
+                    $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
+                }
             } else {
-                $this->session->set_flashdata('message', 'Invalid Username or Password');
-                redirect('login');
+                $data['navbar'] = 'login';
+                $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
             }
-        } else {
-            $this->sitelayout->loadTemplate('pages/login');
+        }
+        else {
+            
         }
     }
 
     public function logout()
     {
         $this->session->sess_destroy();
-        redirect('home');
+        $data['navbar'] = 'home';
+        $this->sitelayout->loadTemplate('pages/home/home', $data); 
     }
 }
 

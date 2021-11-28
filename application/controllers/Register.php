@@ -50,6 +50,12 @@
 
         }
 
+        public function code()
+        {
+            $verification_key = random_string('numeric', 6);
+            
+        }
+
         public function addUser($verification_key, $encrypted_password)
         {          
             $data['navbar'] = 'registration';
@@ -73,10 +79,10 @@
                 $response = $this->Register_model->addNewUser($userdata);
                 if($response == true)
                 {
-                    $this->session->set_userdata('userName', $userdata['userName']);
-                    $data['navbar'] = 'registration';
-                    $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
-                    //$this->sendEmail($data['verification_Key']);
+                    $this->session->set_userdata($userdata);
+                    //$data['navbar'] = 'registration';
+                    //$this->sitelayout->loadTemplate('pages/registration/verification', $data); 
+                    $this->sendEmail();
                 }
                 else
                 {
@@ -87,16 +93,51 @@
             $this->sitelayout->loadTemplate('pages/registration/registration', $data);
         }
 
-        /*
-        public function sendEmail($key)
+        public function sendEmail()
         {
+            $key = $this->session->userdata('verification_Key');
+            $name = $this->session->userdata('userName');
+
             $subject = "Verify your email";
             $message = "
-            <p>Hello, ".$this->input->post('userName')."!</p>
-            <p>Here is your verification code.</p>
-            <h3>$key</h3>
+            <h3>Hello, ".$name."!</h3>
+            <p>Here is your verification code.</p><br>
+            <h4>$key</h4>
             ";
+            $to = $this->input->post('email');
+
+            $config = array(
+                'protocol'  => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_port' => 465,
+                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
+                'smtp_pass' => 'team6@3ab',
+                'mailtype'  => 'html', 
+                'charset'   => 'iso-8859-1'
+            );
             
-        } */
+            $this->load->library('email');
+            $this->email->initialize($config);
+
+            $this->email->set_newline("\r\n");
+            
+            $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
+            $this->email->to($to);
+
+            $this->email->subject($subject);
+            $this->email->message($message);
+
+            $send = $this->email->send();
+
+            if($send)
+            {
+                $data['navbar'] = 'registration';
+                $this->sitelayout->loadTemplate('pages/registration/verification', $data);
+            }
+            else
+            {
+                echo "Error";
+            }
+        }
     }
 ?>

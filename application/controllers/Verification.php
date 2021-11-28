@@ -42,6 +42,7 @@
                 $data['navbar'] = 'registration';
                 $this->sitelayout->loadTemplate('pages/registration/registration', $data); 
             }
+            
         }
 
         public function verifyEmail()

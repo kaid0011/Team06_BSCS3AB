@@ -4,17 +4,17 @@
     <div class="row align-items-center my-5 g-4"> 
 		  <div class="section ">
         <div class="d-flex justify-content-center">
-          <div class="row">
+          <div class="row g-4">
 
             <!-- Light Theme Button -->   
             <div class="col">
-              <button class="p-2 btn">Light</button>
+              <button class="p-2 btn light">Light</button>
               <!-- <button class="p-2 btn" disabled>Light</button> -->
             </div>
             
             <!-- Dark Theme Button -->
             <div class="col">
-              <button class="p-2 btn"> Dark</button>
+              <button class="p-2 btn dark"> Dark</button>
               <!-- <button class="p-2 btn" disabled>Dark</button> -->
             </div>
             
@@ -25,8 +25,8 @@
             </div>
             
             <!-- Orange Theme Button -->
-            <div class="col">
-              <button class="p-2 btn">Orange</button>
+            <div class="col orange">
+              <button class="p-2 btn  ">Orange</button>
               <!-- <button class="p-2 btn" disabled>Orange</button> -->
             </div>
             
@@ -41,11 +41,11 @@
 
         <div class="mt-3 row justify-content-center">
           <div class="row position-absolute my-3">
-            <div class="col-lg-5 text-end"></div>
+            <div class="col-4 text-end"></div>
 
-            <div class="col-lg-2 col-6">   
+            <div class="col col-4 justify-content-center inputbox">   
               <div class="input-group boxbox mt-2">
-                To :<input type="text" class="form-control" placeholder="Enter Username..." /> 
+                To :<input type="text" class="form-control" placeholder="Enter Name..." /> 
               </div>
             </div>
 
@@ -115,14 +115,21 @@
     box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 450px) {
     .toinput {
       width: 300px;
       padding: 1px;
       margin: 1px;
     }
+    .inputbox{
+    width: 1000px;
   }
-
+  }
+  @media (max-width:720px) and (min-width:451px){
+    .inputbox{
+    width: 400px;
+  }
+  }
   .boxbox {
     padding: 3px;
     align-items: center;
@@ -132,5 +139,30 @@
   .inputSize {
     width: 400px;
     margin-bottom: 1rem;
+  }
+  @media (min-width:1230px){
+    .inputSize {
+    width: 500px;
+    margin-bottom: 1rem;
+  }
+  }
+  @media (max-width:320px){
+    .orange{
+      margin-left:35px;
+    }
+    .light{
+      margin-left:10px;
+    }
+    .dark{
+      margin-left:10px;
+    }
+  }
+  @media (max-width:375px) and (min-width:321px){
+    .light{
+      margin: 0 35px ;
+    }
+    .orange{
+      margin-left:60px;
+    }
   }
 </style>

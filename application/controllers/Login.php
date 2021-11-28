@@ -10,6 +10,7 @@ class Login extends CI_Controller
         $this->load->library('session');
         //$this->load->library('encrypt')
         $this->load->model('Login_model');
+        $this->load->model('Mainpage_model');
     }
 
     public function index() {
@@ -47,23 +48,21 @@ class Login extends CI_Controller
                         'status' => TRUE
                     );
                     $this->session->set_userdata($userdata);
-
-                    $data['navbar'] = 'main';
-                    $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
-                } else {
+                    redirect('mainpage'); 
+                } 
+                else {
                     $this->session->set_flashdata('message', 'Invalid Username or Password');
                     
                     $data['navbar'] = 'login';
                     $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
                 }
-            } else {
+            } 
+            else {
                 $data['navbar'] = 'login';
                 $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
             }
         }
-        else {
-            
-        }
+        else { }
     }
 
     public function logout()

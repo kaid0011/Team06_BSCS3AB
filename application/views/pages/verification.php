@@ -22,13 +22,13 @@
                                 <input type="text" class="form-control" placeholder="Enter verification code" aria-label="Enter Verification" aria-describedby="inputGroup-sizing-lg"
                                     name="ver_code" value="<?php echo set_value('ver_code'); ?>">
                                 <!-- Resend Button -->
-                                <button class="input-group-text"style="background-color:#ced4da;" id="basic-addon2">Resend</button>
+                                <input type="submit" value="Resend" name="action" class="input-group-text"style="background-color:#ced4da;" id="basic-addon2">
                                 <span class="text-danger"><?php echo form_error('ver_code'); ?></span>
                             </div>   
                         </div>
 
                         <!-- Verify Button -->
-                        <button type="button" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark me-2"><a style="text-decoration: none; color: #212529;"> Verify</a></button>
+                        <input type="submit" value="Verify" name="action" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark me-2">
                         <!-- Back Button -->
                         <button type="button" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark"><a style="text-decoration: none; color: #212529;" href="<?php echo base_url(); ?>registration"> Back</a></button>                    
                     

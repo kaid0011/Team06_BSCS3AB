@@ -14,16 +14,26 @@
 
         public function validation()
         {
-            $this->form_validation->set_rules('ver_code', 'Verification Code', 'required');
-
-            if($this->form_validation->run())
+            $action = $this->input->post('action');
+            if($action == 'Resend')
             {
-                $this->verifyEmail();
+                echo "resend";
+                exit;
             }
             else
             {
-                $this->load->view('pages/verification');
+                $this->form_validation->set_rules('ver_code', 'Verification Code', 'required');
+
+                if($this->form_validation->run())
+                {
+                    $this->verifyEmail();
+                }
+                else
+                {
+                    $this->load->view('pages/verification');
+                }
             }
+            
         }
 
         public function verifyEmail()

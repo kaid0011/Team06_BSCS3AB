@@ -7,7 +7,7 @@ switch ($navbar) {
             <div class="container">
                 
                 <!-- Logo Image-->
-                <a href="<?= base_url() ?>" class="navbar-brand"><img src="assets/images/vdLogo.png" height="40px" /></a>
+                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?=base_url('assets/images/vdLogo.png')?>" height="40px" /></a>
                 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -113,7 +113,7 @@ switch ($navbar) {
                     <!-- Search (Find User) -->
                     <form action="<?= base_url('mainpage/finduser') ?>" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
                         <input type="text" name="userName" class="form-control me-2">
-                        <button type="submit" class="btn btn-outline btn-warning">Search</button>
+                        <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
                     </form>         
 
                     <ul class="navbar-nav align-items-center navbar-right">

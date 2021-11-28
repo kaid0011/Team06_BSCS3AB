@@ -59,7 +59,7 @@
   body {
     font-weight: 300;
     font-size: 15px;
-    background-image: url(assets/images/themes/Theme1_Apple.jpg);
+    background-image: url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>);
     /*if theme is dark,
         background-color: #495057;
     if theme is light,
@@ -139,7 +139,7 @@
     width: 100%;
     height: 100%;
     color: #212529;
-    background-image: url(assets/images/themes/Applecard.jpg);
+    background-image: url(<?=base_url('assets/images/themes/Applecard.jpg')?>);
     /*if theme is dark,
         color: #f8f9fa;
         background-color: #212529;

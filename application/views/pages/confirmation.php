@@ -1,4 +1,4 @@
-<section id="learn" class="p-5">
+<section id="learn" class="p-5" style="background-color: #e9ecef; min-height: 75vh;">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-md p-5 pt-9">

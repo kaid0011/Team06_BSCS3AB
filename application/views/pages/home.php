@@ -233,7 +233,7 @@
                 </button>
             </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">Just Click the <span class="text-primary">register</span> button at the navbar section to create account.</div>
+                <div class="accordion-body">Just click the <a href="<?=base_url('registration')?>" style="text-decoration: none;">register</a> button at the navbar section to create account.</div>
             </div>
         </div>
         <!-- Question #2 -->
@@ -255,7 +255,7 @@
                 </button>
             </h2>
             <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">We care about our user, we make sure that all user data is secure!</div>
+                <div class="accordion-body">We care about our users. We make sure that all user data is secure!</div>
             </div>
         </div>
     </div>

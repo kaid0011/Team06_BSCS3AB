@@ -13,7 +13,7 @@
 
         public function index() {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/finduser/visitedprofile', $data); 
+            $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
         }
 
         public function findUser()

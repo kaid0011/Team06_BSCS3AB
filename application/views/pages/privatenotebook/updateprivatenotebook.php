@@ -1,95 +1,99 @@
-<div class="container my-5">
-  <div class="card-3d-wrap mx-auto">
-    <div class="card-front">
-      <div class="d-flex p-5">
-        <div class="section ">
-          <div class="row">
-            <div class="col mr-auto  h5">
-              <div class="mb-2">Theme</div>
+<section id="learn" class="p-5" style="min-height: 75vh;">
+  <div class="container my-5">
+    <div class="card-3d-wrap mx-auto">
+      <div class="card-front">
+        <div class="d-flex p-5">
+          <div class="section ">
+            <div class="row">
+              <div class="col mr-auto  h5">
+                <div class="mb-2">Theme</div>
 
-              <div class="row">
+                <div class="row">
 
-                <!-- Light Theme Button -->
-                <div class="col">
-                  <button class="p-2 btn">Light</button>
-                  <!-- <button class="p-2 btn" disabled>Light</button> -->
-                </div>
-                
-                <!-- Dark Theme Button -->
-                <div class="col">
-                  <button class="p-2 btn"> Dark</button>
-                  <!-- <button class="p-2 btn" disabled>Dark</button> -->
-                </div>
-                
-                <!-- Apple Theme Button -->
-                <div class="col">
-                  <button class="p-2 btn">Apple</button>
-                  <!-- <button class="p-2 btn" disabled>Apple</button> -->
-                </div>
-                
-                <!-- Orange Theme Button -->
-                <div class="col">
-                  <button class="p-2 btn">Orange</button>
-                  <!-- <button class="p-2 btn" disabled>Orange</button> -->
-                </div>
+                  <!-- Light Theme Button -->
+                  <div class="col">
+                    <button class="p-2 btn">Light</button>
+                    <!-- <button class="p-2 btn" disabled>Light</button> -->
+                  </div>
 
-                <!-- Kiwi Theme Button -->
-                <div class="col">
-                  <button class="p-2 btn">Kiwi</button>
-                  <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
-                </div>
+                  <!-- Dark Theme Button -->
+                  <div class="col">
+                    <button class="p-2 btn"> Dark</button>
+                    <!-- <button class="p-2 btn" disabled>Dark</button> -->
+                  </div>
 
-              </div>
-            </div>
+                  <!-- Apple Theme Button -->
+                  <div class="col">
+                    <button class="p-2 btn">Apple</button>
+                    <!-- <button class="p-2 btn" disabled>Apple</button> -->
+                  </div>
 
-            <!-- Timer -->
-            <div class="col ml-auto h5">
-              <div class="mb-2"><br></div>
+                  <!-- Orange Theme Button -->
+                  <div class="col">
+                    <button class="p-2 btn">Orange</button>
+                    <!-- <button class="p-2 btn" disabled>Orange</button> -->
+                  </div>
 
-              <div class="row">
-                <div class="col">
-                 
-                </div>
+                  <!-- Kiwi Theme Button -->
+                  <div class="col">
+                    <button class="p-2 btn">Kiwi</button>
+                    <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
+                  </div>
 
-           
-                
-              
-                <div class="col ">
-                  <form>
-                  
-                  <button href="#" class="delete_data" action="<?= base_url(); ?>delete/delete_data/"><i class="bi bi-trash-fill h4"></i></button>
-                  </form>
                 </div>
               </div>
 
-            </div>	  
-                                                                                                                                                                                                                                                                         
-            <hr class="bg-light">
+              <!-- Timer -->
+              <div class="col ml-auto h5">
+                <div class="mb-2">Timer</div>
+
+                <div class="row">
+                  <div class="col mt-2">
+                    <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                    <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled> -->
+                  </div>
+
+
+                  <div class="col ">
+                    <form>
+
+                      <button href="#" class="delete_data" action="<?= base_url(); ?>delete/delete_data/"><i class="bi bi-trash-fill h4"></i></button>
+                    </form>
+                  </div>
+                </div>
+
+              </div>
+
+              <hr class="bg-light">
               <!--Input Area-->
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                 <textarea class="form-control" id="" rows="13"></textarea>
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
-              
-            <hr class="bg-light">
-              <!-- Submit Button-->
-              <button class="btn float-end mt-1" type="button">Save</button>
-         
-            </div>
 
+                <hr class="bg-light">
+                <!-- Submit Button-->
+                <button class="btn float-end mt-1" type="button">Update</button>
+                <!-- <button class="btn float-end mt-1" type="button" disabled>Submit</button> -->
+                <!-- Back Button -->
+                <a href="<?= base_url('privatenotebook') ?>">
+                  <button class="p-2 btn float-end mt-1 me-4">Back</button>
+                </a>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <style>
   body {
-    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-size: 15px;
-    background-image: url(assets/images/themes/Theme1_Apple.jpg);
+    background-image: url(<?= base_url('assets/images/themes/Theme1_Apple.jpg') ?>);
     /*if theme is dark,
         background-color: #495057;
     if theme is light,
@@ -150,7 +154,7 @@
   }
 
   .btn {
-    width:80px;
+    width: 80px;
     color: #212529;
     background-color: #e9ecef;
     /*if theme is dark,
@@ -169,7 +173,7 @@
     width: 100%;
     height: 100%;
     color: #212529;
-    background-image: url(assets/images/themes/Applecard.jpg);
+    background-image: url(<?= base_url('assets/images/themes/Applecard.jpg') ?>);
     /*if theme is dark,
         color: #f8f9fa;
         background-color: #212529;

@@ -47,10 +47,12 @@ class Login extends CI_Controller
                         'status' => TRUE
                     );
                     $this->session->set_userdata($userdata);
+
                     $data['navbar'] = 'main';
                     $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
                 } else {
                     $this->session->set_flashdata('message', 'Invalid Username or Password');
+                    
                     $data['navbar'] = 'login';
                     $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
                 }

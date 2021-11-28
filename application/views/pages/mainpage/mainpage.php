@@ -7,26 +7,32 @@
 
       <!-- Private Notebook -->
       <div class="project-col">
-        <img src="assets/images/baby.jpg" alt="project1">
-        <div class="layer">
-          <h3>Private<br>Notebook</h3>
-        </div>
+        <a href="<?=base_url('privatenotebook')?>">
+          <img src="<?=base_url('assets/images/baby.jpg')?>" alt="project1">
+          <div class="layer">
+            <h3>Private<br>Notebook</h3>
+          </div>
+        </a>
       </div>
 
       <!-- Public Notebook -->
       <div class="project-col">
-        <img src="assets/images/baby.jpg" alt="project2">
-        <div class="layer">
-          <h3>Public<br>Notebook</h3>
-        </div>
+        <a href="<?=base_url('publicnotebook')?>">
+          <img src="<?=base_url('assets/images/baby.jpg')?>" alt="project2">
+          <div class="layer">
+            <h3>Public<br>Notebook</h3>
+          </div>
+        </a>
       </div>
 
       <!-- Sticky Notes Wall -->
       <div class="project-col res">
-        <img src="assets/images/baby.jpg" alt="project3">
-        <div class="layer">
-          <h3>Sticky<br>Notes<br>Wall</h3>
-        </div>
+        <a href="<?=base_url('stickynoteswall')?>">
+          <img src="<?=base_url('assets/images/baby.jpg')?>" alt="project3">
+          <div class="layer">
+            <h3>Sticky<br>Notes<br>Wall</h3>
+          </div>
+        </a>
       </div>
 
     </div>

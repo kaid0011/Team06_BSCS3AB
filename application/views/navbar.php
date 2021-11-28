@@ -111,7 +111,7 @@ switch ($navbar) {
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <!-- Search (Find User) -->
-                    <form action="<?= base_url('main/finduser') ?>" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
+                    <form action="<?= base_url('mainpage/finduser') ?>" method ="post" class="form d-flex px-5 mx-5 col-sm-7"> <!--changes-->
                         <input type="text" name="userName" class="form-control me-2">
                         <button type="submit" class="btn btn-outline btn-warning">Search</button>
                     </form>         

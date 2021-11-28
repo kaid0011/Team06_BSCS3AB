@@ -29,8 +29,9 @@
         public function verifyEmail()
         {
             $verification_Key = $this->input->post('ver_code');
+            $username = $this->session->userdata('userName');
 
-            $response = $this->Verification_model->verify($verification_Key);
+            $response = $this->Verification_model->verify($verification_Key, $username);
             if($response)
                 {  
                     $userdata = array(
@@ -39,7 +40,9 @@
                         'displayName' => $response->displayName,
                         'authentication' => TRUE
                     );
-                    $this->session->set_userdata('userdata', $userdata['userName']);
+
+                    $this->session->set_userdata($userdata);
+
                     redirect('mainpage');
                 }
                 else

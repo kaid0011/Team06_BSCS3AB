@@ -64,7 +64,7 @@
                 $response = $this->Register_model->addNewUser($data);
                 if($response == true)
                 {
-                    //$this->session->set_userdata('user', $data['userName']);
+                    $this->session->set_userdata('userName', $data['userName']);
                     redirect('verification');
                     //$this->sendEmail($data['verification_Key']);
                 }

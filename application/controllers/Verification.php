@@ -12,16 +12,20 @@
             $this->load->model('Verification_model');
         }
 
+        public function index() {
+            $data['navbar'] = 'registration';
+            $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
+        }
+
+
         public function validation()
         {
             $action = $this->input->post('action');
-            if($action == 'Resend')
-            {
-                echo "resend";
-                exit;
+
+            if($action == 'Resend') {
+                echo "Wala pang resend :)";
             }
-            else
-            {
+            else if($action == "Verify") {
                 $this->form_validation->set_rules('ver_code', 'Verification Code', 'required');
 
                 if($this->form_validation->run())
@@ -30,8 +34,13 @@
                 }
                 else
                 {
-                    $this->load->view('pages/verification');
+                    $data['navbar'] = 'registration';
+                    $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
                 }
+            }
+            else {
+                $data['navbar'] = 'registration';
+                $this->sitelayout->loadTemplate('pages/registration/registration', $data); 
             }
             
         }
@@ -53,12 +62,15 @@
 
                     $this->session->set_userdata($userdata);
 
-                    redirect('mainpage');
+                    $data['navbar'] = 'main';
+                    $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
                 }
                 else
                 {
                     $this->session->set_flashdata('message', 'Invalid Code');
-                    redirect('verification');
+
+                    $data['navbar'] = 'registration';
+                    $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
                 }
         }
     }

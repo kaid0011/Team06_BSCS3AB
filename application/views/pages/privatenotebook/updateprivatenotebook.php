@@ -45,7 +45,7 @@
 
               <!-- Timer -->
               <div class="col ml-auto h5">
-                <div class="mb-2">Timer</div>
+                <div class="mb-2">Reset Timer</div>
 
                 <div class="row">
                   <div class="col mt-2">

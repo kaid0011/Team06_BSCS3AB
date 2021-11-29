@@ -10,19 +10,11 @@
 
                 public function get_PrivateNotebookInput($privateNB_ID){
 
-                        $pvNB_ID = $this->session->userdata('user_ID');
-                        if($pvNB_ID == $privateNB_ID)
-                        {
-                            $this->db->where('privateNB_ID', $privateNB_ID);
-                            $this->db->select('pageInput');
-                            $query = $this->db->get("privatenb_pages");
-                            return $query;
-                        }
-                        else
-                        {
-                            return NULL;
-                        }
-                        
+                        $this->db->where('privateNB_ID', $privateNB_ID);
+                        $this->db->select('pageInput, pageTheme, pageTimer');
+                        $query = $this->db->get("privatenb_pages");
+                        return $query;
+        
                 }
         }
 

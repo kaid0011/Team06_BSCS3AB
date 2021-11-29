@@ -7,7 +7,7 @@
 
       <!-- Private Notebook -->
       <div class="project-col">
-        <a href="<?=base_url('privatenotebook/viewprivatenotebook')?>">
+        <a href="<?=base_url('privatenotebook')?>">
           <img src="<?=base_url('assets/images/baby.jpg')?>" alt="project1">
           <div class="layer">
             <h3>Private<br>Notebook</h3>

@@ -40,11 +40,23 @@
               <hr class="bg-light">
               <!--Input Area-->
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"></label>
-                <textarea class="form-control" id="" rows="14"></textarea>
-                <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
+                <?php
+                  if($viewPrivateNotebook->num_rows() > 0)
+                    {
+                     
+                      foreach($viewPrivateNotebook->result() as $row)
+                      {
+                        ?>
+                          <textarea class="form-control" id="" rows="14" disabled ><?php echo $row->pageInput;?></textarea>
+                        <?php
+                      }
+                     
+                    }
+                ?>           
+                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
 
                 <hr class="bg-light">
+
               </div>
 
 

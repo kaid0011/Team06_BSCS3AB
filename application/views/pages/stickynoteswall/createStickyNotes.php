@@ -41,15 +41,15 @@
 
         <div class="mt-3 row justify-content-center">
           <div class="row position-absolute my-3">
-            <div class="col-4 text-end"></div>
+            <div class="col-4 col-xl-5 text-end"></div>
 
-            <div class="col col-4 justify-content-center inputbox">   
+            <div class="col-4 col-xl-2 justify-content-center inputbox">   
               <div class="input-group boxbox mt-2">
                 To :<input type="text" class="form-control" placeholder="Enter Name..." /> 
               </div>
             </div>
 
-            <div class="col-lg-4"></div>
+            <div class="col-lg-4 col-xl-4"></div>
           </div>
           
           <div class="my-2"></div>
@@ -125,9 +125,18 @@
     width: 1000px;
   }
   }
-  @media (max-width:720px) and (min-width:451px){
+  @media (max-width:620px) and (min-width:451px){
     .inputbox{
     width: 400px;
+    display: block;
+    margin : 0 auto;
+  }
+  }
+  @media (max-width:764 px) and (min-width:620 px){
+    .inputbox{
+    width: 200px;
+    display: block;
+    margin : 0 auto;
   }
   }
   .boxbox {

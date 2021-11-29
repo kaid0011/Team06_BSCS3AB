@@ -8,7 +8,6 @@
             parent::__construct();
             
             $this->load->library('form_validation');    #preload form_validation library
-            #$this->load->library('encrypt');
             $this->load->model('Register_model');       #preload Register_model for registration
         }
 
@@ -80,8 +79,6 @@
                 if($response == true)
                 {
                     $this->session->set_userdata($userdata);
-                    //$data['navbar'] = 'registration';
-                    //$this->sitelayout->loadTemplate('pages/registration/verification', $data); 
                     $this->sendEmail();
                 }
                 else

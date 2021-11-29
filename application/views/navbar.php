@@ -132,7 +132,7 @@ switch ($navbar) {
                             </a>
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                                 <li><a href="<?=base_url('updateprofile')?>" class="dropdown-item ">Edit Profile</a></li>
-                                <li><a href="<?=base_url('login/logout')?>" class="dropdown-item ">Logout</a></li>
+                                <li><a href="<?=base_url('logout')?>" class="dropdown-item ">Logout</a></li>
                             </ul>
                         </li>
                     </ul>

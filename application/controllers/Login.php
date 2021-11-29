@@ -8,22 +8,20 @@ class Login extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->library('session');
-        //$this->load->library('encrypt')
         $this->load->model('Login_model');
-        $this->load->model('Mainpage_model');
+
+        #redirect to login if userID exists
+        if($this->session->userdata('user_ID'))
+        {
+            redirect('mainpage');
+            //$data['navbar'] = 'main';
+            //$this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data);
+        }
     }
 
     public function index() {
         $data['navbar'] = 'login';
-        $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
-    }
-
-    function logged_in()
-    {
-        if (!$this->session->userdata('status')) {
-        $data['navbar'] = 'login';
-        $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
-        }
+        $this->sitelayout->loadTemplate('pages/authentication/login', $data);
     }
 
     function validation()
@@ -63,13 +61,6 @@ class Login extends CI_Controller
             }
         }
         else { }
-    }
-
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        $data['navbar'] = 'home';
-        $this->sitelayout->loadTemplate('pages/home/home', $data); 
     }
 }
 

@@ -8,7 +8,13 @@
         {
             parent::__construct();
     
-            $this->load->model('Mainpage_model');  
+            $this->load->model('Mainpage_model');
+
+            #redirect to login if userID is NULL
+            if(!$this->session->userdata('user_ID'))
+            {
+                redirect('login');
+            }
         }
 
         public function index() {

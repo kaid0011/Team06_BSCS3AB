@@ -13,6 +13,11 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/stickynoteswall/viewstickynotes', $data); 
         }
+
+        public function createstickynotes() {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/stickynoteswall/createstickynotes', $data); 
+        }
     }
 
 ?>

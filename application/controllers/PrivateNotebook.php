@@ -30,6 +30,20 @@
                 $pageTimer = $this->input->post('appt');
                 $response = $this->PrivateNB_model->updateTimer($pageTimer, $id);
     
+                
+            
+        }
+
+        public function updatePrivPage()
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/privatenotebook/updateprivatenotebook', $data); 
+            
+            
+                $id = $this->session->userdata('user_ID');
+                $pageTimer = $this->input->post('appt');
+                $response = $this->PrivateNB_model->updateTimer($pageTimer, $id);
+    
                 if($response)
                 {
                     echo 'kahitano';
@@ -37,13 +51,8 @@
     
                 else
                 {
-                    echo 'garaba';
+                    echo 'gara ba';
                 }
-            
-        }
-
-        public function updateTimer()
-        {
             
            
         }

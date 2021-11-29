@@ -8,6 +8,7 @@
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
 
+                <form method="post" action="<?=base_url('privatenotebook/updatePrivPage')?>" >
                 <div class="row">
 
                   <!-- Light Theme Button -->
@@ -20,7 +21,7 @@
                   <div class="col">
                     <button class="p-2 btn"> Dark</button>
                     <!-- <button class="p-2 btn" disabled>Dark</button> -->
-                  </div>
+                  </div> 
 
                   <!-- Apple Theme Button -->
                   <div class="col">
@@ -72,15 +73,15 @@
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
 
                 <hr class="bg-light">
-                <!-- Submit Button-->
-                <button class="btn float-end mt-1" type="button">Update</button>
+                <!-- Button-->
+                <input type="submit" value= "update" name="action" class="btn float-end mt-1">
                 <!-- <button class="btn float-end mt-1" type="button" disabled>Submit</button> -->
                 <!-- Back Button -->
-                <a href="<?= base_url('privatenotebook') ?>">
+                <a href="<?= base_url('privatenotebook')?>">
                   <button class="p-2 btn float-end mt-1 me-4">Back</button>
                 </a>
               </div>
-
+              </form>
             </div>
           </div>
         </div>

@@ -21,5 +21,18 @@
                 return false;
             }
         }
+
+        public function resendCode($verification_key, $userName)
+        {
+            $this->db->where('userName', $userName);
+            $this->db->set('verification_Key', $verification_key);
+                    
+            $result = $this->db->update('user');
+
+            if($result == true)
+            {
+                return true;
+            }
+        }
     }
 ?>

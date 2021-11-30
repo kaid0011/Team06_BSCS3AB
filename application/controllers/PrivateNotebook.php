@@ -17,42 +17,44 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/privatenotebook/viewprivatenotebook', $data); 
 
-            $action = $this->input->post('action');
-            if($action == 'Update')
-            {
-                $this->updatePrivateNotebook();
-            }
+
         }
 
         public function updatePrivateNotebook()
         {
+            $id = $this->session->userdata('user_ID');
+            $data['viewPageNotebook']=$this->PrivateNotebook_model->get_PrivateNotebookInput($id);
+
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/privatenotebook/updateprivatenotebook', $data); 
-
-                $id = $this->session->userdata('user_ID');
-                $pageTimer = $this->input->post('appt');
-                $response = $this->PrivateNB_model->updateTimer($pageTimer, $id);
         }
 
-        public function updatePrivPage()
+        public function updatedprivatepage()
         {
-            $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/privatenotebook/updateprivatenotebook', $data); 
+
+            $id = $this->session->userdata('user_ID');
+            $action = $this->input->post('action');
+            $pageTheme = $this->input->post('theme');
             
-            
-                $id = $this->session->userdata('user_ID');
+
+            if($action == 'Update')
+            {
                 $pageTimer = $this->input->post('appt');
-                $response = $this->PrivateNB_model->updateTimer($pageTimer, $id);
-    
-                if($response)
-                {
-                    echo 'kahitano';
-                }
-    
-                else
-                {
-                    echo 'gara ba';
-                }
+                $pageTheme = $this->input->post('theme');
+                $pageInput = $this->input->post('input');
+                $this->PrivateNotebook_model->updateTimer($pageTimer, $pageTheme, $pageInput, $id);
+                $this->index();
+            }
+            else if($action == 'Back')
+            {
+                $this->index();
+            }
+            else
+            {  
+                $this->PrivateNotebook_model->updateTimer("00:00:00", "Light", NULL, $id);
+                $this->index();
+            }
+  
         }
     }
 ?>

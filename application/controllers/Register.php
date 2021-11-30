@@ -49,12 +49,6 @@
 
         }
 
-        public function code()
-        {
-            $verification_key = random_string('numeric', 6);
-            
-        }
-
         public function addUser($verification_key, $encrypted_password)
         {          
             $data['navbar'] = 'registration';

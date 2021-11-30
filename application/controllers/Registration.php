@@ -1,14 +1,14 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     
-    class Register extends CI_Controller
+    class Registration extends CI_Controller
     {
         public function __construct()
         {
             parent::__construct();
             
             $this->load->library('form_validation');    #preload form_validation library
-            $this->load->model('Register_model');       #preload Register_model for registration
+            $this->load->model('Registration_model');       #preload Registration_model for registration
         }
 
         public function index() {
@@ -67,9 +67,9 @@
                     'verification_Key' => $verification_key
                 );
                 
-                #get a response from Register_model if insert to database is succesful
+                #get a response from Registration_model if insert to database is succesful
                 #pass $data array to model
-                $response = $this->Register_model->addNewUser($userdata);
+                $response = $this->Registration_model->addNewUser($userdata);
                 if($response == true)
                 {
                     $this->session->set_userdata($userdata);

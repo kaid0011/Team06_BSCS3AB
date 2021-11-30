@@ -67,7 +67,7 @@
                   <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
                     <button class="p-2 btn float-end">Update</button>
                   </a>
-                  <div class="mb-2 me-5 float-end mt-2" >Reset Timer<textarea style = "height: 34px; width: 100px" disabled><?php echo $row->pageTimer; ?></textarea> </div>
+                  <div class="mb-2 me-5 float-end" >Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer)); echo $time; ?></span> </div>
 
                   <div class="row">
                     <div class="col mt-2">
@@ -101,7 +101,7 @@
                 ?>
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
 
-                <hr class="bg-light">
+                <hr id ="inputbox" class="bg-light">
 
               </div>
 
@@ -132,6 +132,10 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 1.7;
+  }
+
+  .inputbox {
+    background-color: #f8f9fa;
   }
 
   h6 span {

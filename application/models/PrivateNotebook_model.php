@@ -16,6 +16,33 @@
                         return $query;
         
                 }
-        }
+
+                public function updateTimer($pageTimer, $pageTheme, $pageInput, $id)
+                {
+
+                    $this->db->where('privateNB_ID',$id);
+                    $this->db->set('pageTimer',$pageTimer);
+                    $this->db->set('pageTheme',$pageTheme);
+                    $this->db->set('pageInput',$pageInput);
+                    
+                    
+                    $result = $this->db->update('privatenb_pages');
+                
+                    
+
+                    if($result == true)
+                    {
+                        return true;
+                    }
+
+                    else
+                    {
+                        return false;
+                    }
+                    
+                
+
+                }
+       }
 
 ?>

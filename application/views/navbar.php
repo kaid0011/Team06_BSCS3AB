@@ -18,7 +18,7 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url('register')?>" class="nav-link text-light">Register</a>
+                            <a href="<?php echo base_url('registration')?>" class="nav-link text-light">Register</a>
                         </li>
                         <!-- Log In -->
                         <li class="nav-item">
@@ -102,7 +102,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image -->
-                <a href="<?= base_url() ?>" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px"></a>
+                <a href="<?= base_url('mainpage') ?>" class="navbar-brand mb-0 h1 text-light pe-5 me-5 "><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px"></a>
                 
                 <!-- Hamburger Menu -->
                 <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,7 +119,7 @@ switch ($navbar) {
                     <ul class="navbar-nav align-items-center navbar-right">
                         <li class="navbar-item text-light px-5 ms-5">
                             <!-- added echo to display user info -->
-                            <a href="#" class="nav-link text-light"> <?php echo $this->session->userdata('displayName'); ?> <br><span class="text-secondary"> <?php echo $this->session->userdata('userName'); ?> </span> </a>
+                            <a href="#" class="nav-link text-light" style="font-size: 15px; font-weight: 300;"> <?php echo $this->session->userdata('displayName'); ?> <br><span class="text-secondary"> <?php echo $this->session->userdata('userName'); ?> </span> </a>
                             <!-- added echo to display user info -->
                         </li>
                         <li class="navbar-item dropdown">

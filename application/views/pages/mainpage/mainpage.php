@@ -1,5 +1,5 @@
 <!-- background -->
-<div style="background-color: #ced4da; height: 3100px">
+<div style="background-color: #ced4da; min-height: 75vh;">
   <section class="projects pb-5">
     <!-- <h1 class="display-3 text-dark fw-normal">Virtual Diary</h1>
     <p class="lead">Pindutin para malaman ang hinaharap</p> -->

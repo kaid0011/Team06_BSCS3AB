@@ -7,7 +7,6 @@
             <div class="row">
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
-
                 <div class="row">
 
                   <!-- Light Theme Button -->
@@ -42,46 +41,28 @@
 
                 </div>
               </div>
-
-              <!-- Timer -->
               <div class="col ml-auto h5">
                 <div class="mb-2"><br></div>
-
-                <div class="row">
-                  <div class="col">
-
-                  </div>
-
-
-
-
-                  <div class="col ">
+                  <div class="col float-end me-5">
                     <form>
-
-                      <button href="#" class="delete_data" action="<?= base_url(); ?>delete/delete_data/"><i class="bi bi-trash-fill h4"></i></button>
+                      <button href="#" class="delete_data" action="<?= base_url(); ?>delete/delete_data/"><i class="bi bi-trash-fill h4 "></i></button>
                     </form>
-                  </div>
-                </div>
-
+                  </div>             
               </div>
-
               <hr class="bg-light">
               <!--Input Area-->
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                 <textarea class="form-control" id="" rows="13"></textarea>
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
-
                 <hr class="bg-light">
                 <!-- Submit Button-->
                 <button class="btn float-end mt-1" type="button">Save</button>
                 <!-- Back Button -->
                 <a href="<?= base_url('publicnotebook') ?>">
-                  <button class="p-2 btn float-end me-4">Back</button>
+                  <button class="btn float-end me-4 mt-1">Back</button>
                 </a>
-
               </div>
-
             </div>
           </div>
         </div>
@@ -108,17 +89,6 @@
     overflow-x: hidden;
   }
 
-  p {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  h6 span {
-    padding: 0 20px;
-    text-transform: uppercase;
-  }
-
   .section {
     position: relative;
     width: 100%;
@@ -126,25 +96,6 @@
 
   .full-height {
     min-height: 100vh;
-  }
-
-  [type="checkbox"]:checked,
-  [type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-
-  .checkbox:checked+label,
-  .checkbox:not(:checked)+label {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 100px;
-    height: 16px;
-    border-radius: 8px;
-    padding: 0;
-    cursor: pointer;
-    background-color: #adb5bd;
   }
 
   .card-3d-wrap {
@@ -200,22 +151,6 @@
     margin: 0;
     padding: 0;
   }
-
-  .logo {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    display: block;
-    z-index: 100;
-    transition: all 250ms linear;
-  }
-
-  .logo img {
-    height: auto;
-    width: 100px;
-    display: block;
-  }
-
   .btn:hover {
     background-color: #6c757d;
     color: #dee2e6;

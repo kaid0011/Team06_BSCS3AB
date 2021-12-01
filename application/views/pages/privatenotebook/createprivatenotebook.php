@@ -7,7 +7,6 @@
             <div class="row">
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
-
                 <div class="row">
 
                   <!--  Light Theme Button -->
@@ -39,49 +38,29 @@
                     <button class="p-2 btn">Kiwi</button>
                     <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
                   </div>
-
                 </div>
               </div>
-
               <!-- Timer -->
               <div class="col ml-auto h5 ms-5">
-                <div class="mb-2 ms-5">Reset Timer</div>
-
+                <div class="mb-2 ms-5 me-2">Reset Timer</div>
                 <div class="row">
                   <div class="col mt-2 ms-5 ">
                     <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
                     <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled> -->
-                  </div>
-
-                  <!-- View Update Button -->
-                  <div class="col mx-auto ms-5 ">
-
-                  </div>
-
-                  <!-- Delete Button -->
-                  <div class="col ">
-                    <form>
-
-                      <!--<button class="p-2 btn btn-outline-white btn-secondary" disabled><i class="bi bi-trash-fill h4"></i></button>-->
-                    </form>
-                  </div>
+                  </div>            
                 </div>
-
               </div>
-
               <hr class="bg-light">
               <!--Input Area-->
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                 <textarea class="form-control" id="" rows="13"></textarea>
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
-
                 <hr class="bg-light">
                 <!-- Submit Button-->
                 <button class="btn float-end mt-1" type="button">Submit</button>
                 <!-- <button class="btn float-end mt-1" type="button" disabled>Submit</button> -->
               </div>
-
             </div>
           </div>
         </div>
@@ -108,44 +87,11 @@
     overflow-x: hidden;
   }
 
-  p {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  h6 span {
-    padding: 0 20px;
-    text-transform: uppercase;
-  }
-
   .section {
     position: relative;
     width: 100%;
   }
 
-  .full-height {
-    min-height: 100vh;
-  }
-
-  [type="checkbox"]:checked,
-  [type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-
-  .checkbox:checked+label,
-  .checkbox:not(:checked)+label {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 100px;
-    height: 16px;
-    border-radius: 8px;
-    padding: 0;
-    cursor: pointer;
-    background-color: #adb5bd;
-  }
 
   .card-3d-wrap {
     position: relative;
@@ -201,20 +147,6 @@
     padding: 0;
   }
 
-  .logo {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    display: block;
-    z-index: 100;
-    transition: all 250ms linear;
-  }
-
-  .logo img {
-    height: auto;
-    width: 100px;
-    display: block;
-  }
 
   .btn:hover {
     background-color: #6c757d;

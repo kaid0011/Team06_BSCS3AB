@@ -98,6 +98,7 @@
                 <div class="row">
                   <div class="col mt-2">
                     <input type="time" id="appt" name="appt" value="<?php echo $row->pageTimer; ?>">
+                    <!-- Theme cheat hidden -->
                     <input type="text" name="theme" id="submittext" class="btn float-end mt-1" hidden value="<?php echo $row->pageTheme ?>">
                     <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled> -->
                   </div>
@@ -219,7 +220,7 @@
   .card-front {
     width: 100%;
     height: 100%;
-    color: <?php echo $$themecardcolor ?>;
+    color: <?php echo $themecardcolor ?>;
     background-color: <?php echo $themecardbgcolor ?>;
     background-image: url(<?= base_url($themecardbgurl) ?>);
     position: absolute;
@@ -231,21 +232,6 @@
     display: block;
     margin: 0;
     padding: 0;
-  }
-
-  .logo {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    display: block;
-    z-index: 100;
-    transition: all 250ms linear;
-  }
-
-  .logo img {
-    height: auto;
-    width: 100px;
-    display: block;
   }
 
   .btn:hover {

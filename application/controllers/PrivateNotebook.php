@@ -39,9 +39,14 @@
 
             if($action == 'Update')
             {
-                $pageTimer = $this->input->post('appt');
-                $pageTheme = $this->input->post('theme');
-                $pageInput = $this->input->post('input');
+                $pageTimer = $this->input->post('appt'); //Timer
+                if($pageTimer == "00:00:00")
+                {
+                    date_default_timezone_set("Asia/Manila");
+                    $pageTimer = date("H:i s");
+                }
+                $pageTheme = $this->input->post('theme'); //Theme
+                $pageInput = $this->input->post('input'); //Input
                 $this->PrivateNotebook_model->updateTimer($pageTimer, $pageTheme, $pageInput, $id);
                 $this->index();
             }

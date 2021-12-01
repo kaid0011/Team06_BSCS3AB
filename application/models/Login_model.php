@@ -1,6 +1,7 @@
 <?php
 class Login_model extends CI_model
 {
+
     public function __construct()
     {
         parent::__construct();
@@ -20,6 +21,7 @@ class Login_model extends CI_model
         else
         {
             return false;
+
         }
     }
 }

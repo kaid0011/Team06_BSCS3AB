@@ -7,7 +7,7 @@
       <div class="col-md p-5">
         <h1 class="h1 mb-4 pt-1 text-dark">Registration</h1>
         <p class="lead">
-          <form method="post" action="<?= base_url('register/validation') ?>" autocomplete="off">
+          <form method="post" action="<?= base_url('registration/validation') ?>" autocomplete="off">
             <!-- Username -->
             <div class="mb-3">
               <label for="exampleInputlastname1" class="form-label">Username</label>

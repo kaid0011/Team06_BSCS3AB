@@ -1,15 +1,14 @@
 <?php
     defined('BASEPATH') OR exit('No direct script access allowed');
     
-    class Register extends CI_Controller
+    class Registration extends CI_Controller
     {
         public function __construct()
         {
             parent::__construct();
             
             $this->load->library('form_validation');    #preload form_validation library
-            #$this->load->library('encrypt');
-            $this->load->model('Register_model');       #preload Register_model for registration
+            $this->load->model('Registration_model');       #preload Registration_model for registration
         }
 
         public function index() {
@@ -68,15 +67,13 @@
                     'verification_Key' => $verification_key
                 );
                 
-                #get a response from Register_model if insert to database is succesful
+                #get a response from Registration_model if insert to database is succesful
                 #pass $data array to model
-                $response = $this->Register_model->addNewUser($userdata);
+                $response = $this->Registration_model->addNewUser($userdata);
                 if($response == true)
                 {
-                    $this->session->set_userdata('userName', $userdata['userName']);
-                    $data['navbar'] = 'registration';
-                    $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
-                    //$this->sendEmail($data['verification_Key']);
+                    $this->session->set_userdata($userdata);
+                    $this->sendEmail();
                 }
                 else
                 {
@@ -87,16 +84,51 @@
             $this->sitelayout->loadTemplate('pages/registration/registration', $data);
         }
 
-        /*
-        public function sendEmail($key)
+        public function sendEmail()
         {
+            $key = $this->session->userdata('verification_Key');
+            $name = $this->session->userdata('userName');
+
             $subject = "Verify your email";
             $message = "
-            <p>Hello, ".$this->input->post('userName')."!</p>
-            <p>Here is your verification code.</p>
-            <h3>$key</h3>
+            <h3>Hello, ".$name."!</h3>
+            <p>Here is your verification code.</p><br>
+            <h4>$key</h4>
             ";
+            $to = $this->input->post('email');
+
+            $config = array(
+                'protocol'  => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_port' => 465,
+                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
+                'smtp_pass' => 'team6@3ab',
+                'mailtype'  => 'html', 
+                'charset'   => 'iso-8859-1'
+            );
             
-        } */
+            $this->load->library('email');
+            $this->email->initialize($config);
+
+            $this->email->set_newline("\r\n");
+            
+            $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
+            $this->email->to($to);
+
+            $this->email->subject($subject);
+            $this->email->message($message);
+
+            $send = $this->email->send();
+
+            if($send)
+            {
+                $data['navbar'] = 'registration';
+                $this->sitelayout->loadTemplate('pages/registration/verification', $data);
+            }
+            else
+            {
+                echo "Error";
+            }
+        }
     }
 ?>

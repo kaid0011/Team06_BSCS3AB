@@ -8,21 +8,20 @@ class Login extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->library('session');
-        //$this->load->library('encrypt')
         $this->load->model('Login_model');
+
+        #redirect to login if userID exists
+        if($this->session->userdata('user_ID'))
+        {
+            redirect('mainpage');
+            //$data['navbar'] = 'main';
+            //$this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data);
+        }
     }
 
     public function index() {
         $data['navbar'] = 'login';
-        $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
-    }
-
-    function logged_in()
-    {
-        if (!$this->session->userdata('status')) {
-        $data['navbar'] = 'login';
-        $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
-        }
+        $this->sitelayout->loadTemplate('pages/authentication/login', $data);
     }
 
     function validation()
@@ -47,31 +46,23 @@ class Login extends CI_Controller
                         'status' => TRUE
                     );
                     $this->session->set_userdata($userdata);
-
-                    $data['navbar'] = 'main';
-                    $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
-                } else {
+                    redirect('mainpage'); 
+                } 
+                else {
                     $this->session->set_flashdata('message', 'Invalid Username or Password');
                     
                     $data['navbar'] = 'login';
                     $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
                 }
-            } else {
+            } 
+            else {
                 $data['navbar'] = 'login';
                 $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
             }
         }
-        else {
-            
-        }
-    }
-
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        $data['navbar'] = 'home';
-        $this->sitelayout->loadTemplate('pages/home/home', $data); 
+        else { }
     }
 }
 
 ?>
+

@@ -1,4 +1,4 @@
-<section style="background-color: #e9ecef; min-height: 75vh; padding-top: 80px">
+<section style="background-color: #e9ecef; min-height: 75vh; padding-top: 80px; padding-bottom: 20px;">
   <div class="container">
     <!--div class="p-5 text-center bg-image" style="background-image: url('imgs/white.png'); height: 300px; width: auto;"-->
     <div>
@@ -78,7 +78,7 @@
           } else {
         ?>
 
-          <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal">User doesn't exists.<br>
+          <h1 class="lead text-center text-dark mt-4 ms-5 mb-5 fw-normal" style="padding-top: 25vh;">User doesn't exists.<br>
 
       <?php
         }

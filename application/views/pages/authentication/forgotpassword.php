@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-md p-5 pt-9">
-                <img src="assets/images/login/pic6.png" class="img-fluid" alt="">
+                <img src="<?= base_url('assets/images/login/pic6.png')?>" class="img-fluid" alt="">
             </div>
             <div class="col-lg p-5">
                 <h1 class="h1 mb-5 pt-4 text-dark">Forgot Password</h1>

@@ -51,17 +51,6 @@
         <div class="d-flex p-5">
           <div class="section ">
             <div class="row">
-<<<<<<< HEAD
-              <div class="col mr-auto  h5">
-                <!-- Timer -->
-                <div class="col ml-auto h5">
-                  <!-- Update Button-->
-                <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
-                  <button class="p-2 btn float-end">Update</button>
-                </a>
-                  <div class="mb-2 me-5 float-end mt-2">Reset Timer<input class="ms-2"type="time" id="appt" name="appt" min="09:00" max="18:00" disabled> </div>   
-                </div>
-=======
               <?php
                 if ($viewPrivateNotebook->num_rows() > 0) 
                 {
@@ -78,27 +67,8 @@
                   <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
                     <button class="p-2 btn float-end">Update</button>
                   </a>
-                  <div class="mb-2 me-5 float-end" >Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer)); echo $time; ?></span> </div>
-
-                  <div class="row">
-                    <div class="col mt-2">
-                      
-
-                    </div>
-
-
-
-
-
-                    <div class="col ">
-                      <form>
-                    </div>
-
-                    <!--<button class="p-2 btn btn-outline-white btn-secondary" disabled><i class="bi bi-trash-fill h4"></i></button>-->
-                    </form>
-                  </div>
-
->>>>>>> 4788e752f3dd879f30db48291cd4e706730f62d6
+                  <div class="mb-2 me-5 float-end" >Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer)); echo $time; ?></span> </div>             
+                </div>
                 </div>
               <hr class="bg-light">
               <!--Input Area-->
@@ -110,13 +80,9 @@
                 }
                 ?>
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
-<<<<<<< HEAD
-                <hr class="bg-light">
-=======
 
                 <hr id ="inputbox" class="bg-light">
 
->>>>>>> 4788e752f3dd879f30db48291cd4e706730f62d6
               </div>
             </div>
           </div>
@@ -135,43 +101,12 @@
     overflow-x: hidden;
   }
 
-<<<<<<< HEAD
-=======
-  textarea 
-  {
-    resize: none;
-  }
 
-  p {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .inputbox {
-    background-color: #f8f9fa;
-  }
-
-  h6 span {
-    padding: 0 20px;
-    text-transform: uppercase;
-  }
-
->>>>>>> 4788e752f3dd879f30db48291cd4e706730f62d6
   .section {
     position: relative;
     width: 100%;
   }
 
-  .full-height {
-    min-height: 100vh;
-  }
-
-  [type="checkbox"]:checked,
-  [type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
 
   .card-3d-wrap {
     position: relative;

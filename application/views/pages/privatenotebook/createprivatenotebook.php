@@ -92,9 +92,6 @@
     width: 100%;
   }
 
-  .full-height {
-    min-height: 100vh;
-  }
 
   .card-3d-wrap {
     position: relative;

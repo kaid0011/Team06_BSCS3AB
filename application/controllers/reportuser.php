@@ -9,10 +9,12 @@
             parent::__construct(); 
         }
 
-        public function index() {
+        public function index() 
+        {
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/reportuser/reportuser', $data); 
         }
+        
     }
 
 ?>

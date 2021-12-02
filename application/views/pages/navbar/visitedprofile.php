@@ -58,7 +58,9 @@
                         <div class="card-footer bg-transparent border-dark">
                           <div>
                             <button class="btn btn-none btn-sm float-start"> <i class="bi bi-star h4"></i></button>
-                            <button class="btn btn-secondary btn-sm float-end mt-1" type="button">Report</button>
+                            <a href="<?=base_url('reportuser')?>">
+                              <button class="btn btn-secondary btn-sm float-end mt-1" type="button">Report</button>
+                            </a>
                           </div>
                         </div>
 

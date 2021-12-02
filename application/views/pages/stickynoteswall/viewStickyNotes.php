@@ -49,7 +49,9 @@
                         <p class="card-text py-5">
                             Kim lang malakas gumamit ng aqua
                         </p>
-                        <button class="d-flex flex-row">Report</button>
+                        <a href="<?= base_url('reportuser/reportuser') ?>">
+                            <button class="d-flex flex-row">Report</button>
+                        </a>
                     </div>
                 </div>
             </div>

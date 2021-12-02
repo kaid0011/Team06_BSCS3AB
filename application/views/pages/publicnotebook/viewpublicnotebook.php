@@ -6,11 +6,7 @@
           <div class="section ">
             <div class="row">
               <div class="col ml-auto h5">
-
-
                 <div class="row">
-
-
                   <div class="col ">
                     <!-- New Page Button -->
                     <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
@@ -22,7 +18,6 @@
                     </a>
                   </div>
                 </div>
-
               </div>
 
               <hr class="bg-light">
@@ -36,10 +31,7 @@
               <!-- Submit Button-->
               <div class="col ">
                 <i class="bi bi-star " disabled></i> # of reacts
-
               </div>
-
-
             </div>
           </div>
         </div>
@@ -66,17 +58,6 @@
     overflow-x: hidden;
   }
 
-  p {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  h6 span {
-    padding: 0 20px;
-    text-transform: uppercase;
-  }
-
   .section {
     position: relative;
     width: 100%;
@@ -84,25 +65,6 @@
 
   .full-height {
     min-height: 100vh;
-  }
-
-  [type="checkbox"]:checked,
-  [type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-
-  .checkbox:checked+label,
-  .checkbox:not(:checked)+label {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 100px;
-    height: 16px;
-    border-radius: 8px;
-    padding: 0;
-    cursor: pointer;
-    background-color: #adb5bd;
   }
 
   .card-3d-wrap {
@@ -159,20 +121,6 @@
     padding: 0;
   }
 
-  .logo {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    display: block;
-    z-index: 100;
-    transition: all 250ms linear;
-  }
-
-  .logo img {
-    height: auto;
-    width: 100px;
-    display: block;
-  }
 
   .btn:hover {
     background-color: #6c757d;

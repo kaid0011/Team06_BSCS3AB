@@ -53,44 +53,34 @@
                 <div class="mb-2">Theme</div>
 
                 <form method="post" id ="updateform" action="<?=base_url('privatenotebook/updatedprivatepage')?>">
-                <div class="row">
-               
-                 
+                <div class="row">           
                   <!-- Light Theme Button -->
                   <div class="col">
                     <input type="button" onclick="changeColor('#e9ecef', '#adb5bd', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
-
                     <!-- <button class="p-2 btn" disabled>Light</button> -->
-                  </div>
-
+                    </div>
                   <!-- Dark Theme Button -->
                   <div class="col">
                   <input type="button" onclick="changeColor('#495057', '#212529', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
                     <!-- <button class="p-2 btn" disabled>Dark</button> -->
-                  </div> 
-                  
+                  </div>                   
                   <!-- Apple Theme Button -->
                   <div class="col">
                   <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/Applecard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
                     <!-- <button class="p-2 btn" disabled>Apple</button> -->
-                  </div>
-
+                    </div>
                   <!-- Orange Theme Button -->
                   <div class="col">
                   <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/Orangecard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
                     <!-- <button class="p-2 btn" disabled>Orange</button> -->
-                  </div>
-
+                    </div>
                   <!-- Kiwi Theme Button -->
                   <div class="col">
                   <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
                     <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
                   </div>
-
-
                 </div>
-              </div>
-              
+              </div>          
               <!-- Timer -->
               <div class="col ml-auto h5">
                 <div class="mb-2">Reset Timer</div>
@@ -102,18 +92,12 @@
                     <input type="text" name="theme" id="submittext" class="btn float-end mt-1" hidden value="<?php echo $row->pageTheme ?>">
                     <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled> -->
                   </div>
-
-
-                  <div class="col ">
-      
-                    
+                  <div class="col ">                  
                  <!-- <button href="#" class="delete_data" action="<?= base_url(); ?>delete/delete_data/"><i class="bi bi-trash-fill h4"></i></button> -->
                     <input type="submit" value="Delete" name="action" class="p-2 btn float-end mt-1 me-4" >
                   </div>
                 </div>
-
               </div>
-
               <hr class="bg-light">
               
               <!--Input Area-->
@@ -126,17 +110,15 @@
                     <textarea name="input" class="form-control" id="" rows="13"><?php echo $row->pageInput; ?></textarea>
                     <?php
                   }
-                ?>
-
-                <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
+                ?>     
                 <hr id="inputbox" class="bg-light">
                 <!-- Button-->
                 <input type="submit" value= "Update" name="action" onclick="updateTheme()" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
             
-                </a>
-              </div>
+                  </a>
+                </div>
               </form>
             </div>
           </div>
@@ -156,52 +138,9 @@
     overflow-x: hidden;
   }
 
-  p {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .inputbox {
-    background-color: #f8f9fa;
-  }
-
-  textarea 
-  {
-    resize: none;
-  }
-
-  h6 span {
-    padding: 0 20px;
-    text-transform: uppercase;
-  }
-
   .section {
     position: relative;
     width: 100%;
-  }
-
-  .full-height {
-    min-height: 100vh;
-  }
-
-  [type="checkbox"]:checked,
-  [type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-
-  .checkbox:checked+label,
-  .checkbox:not(:checked)+label {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 100px;
-    height: 16px;
-    border-radius: 8px;
-    padding: 0;
-    cursor: pointer;
-    background-color: #adb5bd;
   }
 
   .card-3d-wrap {

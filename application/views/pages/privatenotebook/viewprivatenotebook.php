@@ -67,29 +67,9 @@
                   <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
                     <button class="p-2 btn float-end">Update</button>
                   </a>
-                  <div class="mb-2 me-5 float-end" >Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer)); echo $time; ?></span> </div>
-
-                  <div class="row">
-                    <div class="col mt-2">
-                      
-
-                    </div>
-
-
-
-
-
-                    <div class="col ">
-                      <form>
-                    </div>
-
-                    <!--<button class="p-2 btn btn-outline-white btn-secondary" disabled><i class="bi bi-trash-fill h4"></i></button>-->
-                    </form>
-                  </div>
-
+                  <div class="mb-2 me-5 float-end" >Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer)); echo $time; ?></span> </div>             
                 </div>
-              </div>
-
+                </div>
               <hr class="bg-light">
               <!--Input Area-->
               <div class="mb-3">
@@ -104,8 +84,6 @@
                 <hr id ="inputbox" class="bg-light">
 
               </div>
-
-
             </div>
           </div>
         </div>
@@ -123,53 +101,12 @@
     overflow-x: hidden;
   }
 
-  textarea 
-  {
-    resize: none;
-  }
-
-  p {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  .inputbox {
-    background-color: #f8f9fa;
-  }
-
-  h6 span {
-    padding: 0 20px;
-    text-transform: uppercase;
-  }
 
   .section {
     position: relative;
     width: 100%;
   }
 
-  .full-height {
-    min-height: 100vh;
-  }
-
-  [type="checkbox"]:checked,
-  [type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-
-  .checkbox:checked+label,
-  .checkbox:not(:checked)+label {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 100px;
-    height: 16px;
-    border-radius: 8px;
-    padding: 0;
-    cursor: pointer;
-    background-color: #adb5bd;
-  }
 
   .card-3d-wrap {
     position: relative;
@@ -201,20 +138,6 @@
     padding: 0;
   }
 
-  .logo {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    display: block;
-    z-index: 100;
-    transition: all 250ms linear;
-  }
-
-  .logo img {
-    height: auto;
-    width: 100px;
-    display: block;
-  }
 
   .btn:hover {
     background-color: #6c757d;

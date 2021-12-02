@@ -28,7 +28,7 @@
             $data['findUser'] = $this->Mainpage_model->get_Data($user);
             
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/finduser/visitedprofile', $data); 
+            $this->sitelayout->loadTemplate('pages/navbar/visitedprofile', $data); 
         }
     }
 

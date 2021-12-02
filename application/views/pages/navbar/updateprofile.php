@@ -14,7 +14,7 @@
 
       <div class="col-md p-5 d-flex justify-content-center align-items-center">
         <p class="lead align-center">
-        <form method="post" action="<?= base_url('updateprofile') ?>" autocomplete="off">
+        <form method="post" action="<?= base_url('updateprofile/updatepassword') ?>" autocomplete="off">
           <!-- Username -->
           <div class="mb-3 text-start text-secondary" style="width: 600px;">
             <label for="exampleInputlastname1" class="form-label ps-2">Username</label>
@@ -46,22 +46,22 @@
               <span class="text-danger"><?php echo form_error('confirm_password'); ?></span>
            -->
 
-              </div>
-            </div>
-          </div>
+           
   <div class="col-md d-flex justify-content-start align-items-center">
           <!-- Change Password Button -->
-  <input type="submit" name="changepassbtn" value="Change Password" class="btn btn-sm text-secondary" style="text-decoration: underline; margin-top: -15px;"></input>
+  <input type="submit" name="action" value="Change Password" class="btn btn-sm text-secondary mt-1" style="text-decoration: underline; margin-top: -15px;"></input>
   </div>
   <div class="col-md pt-3 d-flex justify-content-end align-items-center">
-   <!-- Register Button -->
-  <input type="submit" name="updatebtn" value="Update" style="background-color: #f0b63a;" class="btn btn-sm border border-3 border-dark btn-end p-2"></input>
+   <!-- Update Button -->
+  <input type="submit" name="action" value="Update" style="background-color: #f0b63a;" class="btn btn-sm border border-3 border-dark btn-end p-2"></input>
   </div>
       </div>
     </div>
   </div>
 
-  
+     </div>
+            </div>
+          </div>
  
 
   </form>
@@ -106,40 +106,4 @@
     height: 5px;
   }
 
-  /*  .card-text {
-    min-height: 200px;
-  }
-  .tag {
-    width: 100px;
-    height: 100px;
-    background: rgb(131, 126, 122);
-    position: relative;
-    top: 500px;
-    left: 800px;
-    border-radius: 50%;
-  }
-  .title {
-    color: #fff;
-    margin: 5px;
-  }
-  .items {
-    background-color: #fff;
-    border: 1px solid #d1d1d1;
-    margin: 10px;
-    padding: 5px;
-  }
-  .active h4 {
-    font-size: 20px;
-    margin-left: 10px;
-    color: #fff;
-  }
-  .received-chats-img {
-    width: 30px;
-    float: left;
-  }
-  .outgoing-chats-img {
-    width: 30px;
-    float: right;
-  }
-*/
 </style>

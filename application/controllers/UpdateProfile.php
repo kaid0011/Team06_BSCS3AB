@@ -12,13 +12,13 @@
         public function index() 
         {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/updateprofile', $data); 
+            $this->sitelayout->loadTemplate('pages/finduser/updateprofile', $data); 
         }
 
         public function deactivateaccount() 
         {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/updateprofile', $data); 
+            $this->sitelayout->loadTemplate('pages/finduser/updateprofile', $data); 
         }
     }
 

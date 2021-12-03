@@ -49,20 +49,26 @@
         {
             $verification_Key = $this->input->post('ver_code');
             $username = $this->session->userdata('userName');
+            $is_verification_correct = '1';
 
             $response = $this->Verification_model->verify($verification_Key, $username);
             if($response)
-                {  
-                    $userdata = array(
-                        'user_ID' => $response->user_ID,
-                        'userName' => $response->userName,
-                        'displayName' => $response->displayName,
-                    );
+                {
+                    $result = $this->Verification_model->updateStatus($is_verification_correct, $username);
+                    
+                    if($result)
+                    {
+                        $userdata = array(
+                            'user_ID' => $response->user_ID,
+                            'userName' => $response->userName,
+                            'displayName' => $response->displayName,
+                        );
 
-                    $this->session->set_userdata($userdata);
+                        $this->session->set_userdata($userdata);
 
-                    $data['navbar'] = 'main';
-                    $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
+                        $data['navbar'] = 'main';
+                        $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
+                    }
                 }
                 else
                 {
@@ -86,6 +92,7 @@
             else
             {
                 echo 'waaa';
+                #will change laturrr
             }
         }
 
@@ -133,6 +140,7 @@
             else
             {
                 echo "Error";
+                #will change laturrr
             }
         }
     }

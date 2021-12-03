@@ -64,6 +64,7 @@
                     'displayName' => $this->input->post('displayName'),
                     'email' => $this->input->post('email'),
                     'password' => $encrypted_password,
+                    'status'    => 'Pending',
                     'verification_Key' => $verification_key
                 );
                 

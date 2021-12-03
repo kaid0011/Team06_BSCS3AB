@@ -6,31 +6,31 @@
     <div class="row pt-4">
 
       <!-- Private Notebook -->
-      <div class="project-col">
+      <div class="project-col p-5">
         <a href="<?=base_url('privatenotebook')?>">
-          <img src="<?=base_url('assets/images/baby.jpg')?>" alt="project1">
+          <img src="<?=base_url('assets/images/mainpage/privatenotebook.png')?>" alt="project1">
           <div class="layer">
-            <h3>Private<br>Notebook</h3>
+            <!-- <h3>Private<br>Notebook</h3> -->
           </div>
         </a>
       </div>
 
       <!-- Public Notebook -->
-      <div class="project-col">
+      <div class="project-col p-5">
         <a href="<?=base_url('publicnotebook')?>">
-          <img src="<?=base_url('assets/images/baby.jpg')?>" alt="project2">
+          <img src="<?=base_url('assets/images/mainpage/publicnotebook.png')?>" alt="project2">
           <div class="layer">
-            <h3>Public<br>Notebook</h3>
+            <!--<h3>Public<br>Notebook</h3>-->
           </div>
         </a>
       </div>
 
       <!-- Sticky Notes Wall -->
-      <div class="project-col res">
+      <div class="project-col p-5">
         <a href="<?=base_url('stickynoteswall')?>">
-          <img src="<?=base_url('assets/images/baby.jpg')?>" alt="project3">
+          <img src="<?=base_url('assets/images/mainpage/stickynoteswall.png')?>" alt="project3">
           <div class="layer">
-            <h3>Sticky<br>Notes<br>Wall</h3>
+            <!--<h3>Sticky<br>Notes<br>Wall</h3>-->
           </div>
         </a>
       </div>
@@ -85,7 +85,7 @@
   }
 
   .layer:hover {
-    background: rgba(68, 104, 101, 0.7);
+    background: rgba(68, 104, 101, 0.2);
   }
 
   .layer h3 {

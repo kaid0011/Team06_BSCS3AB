@@ -12,13 +12,26 @@
         public function index() 
         {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/updateprofile', $data); 
+            $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
         }
 
         public function deactivateaccount() 
         {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/updateprofile', $data); 
+            $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+        }
+        
+        public function updatepassword() 
+        {
+            $action = $this->input->post('action');
+
+            if($action == 'Change Password') {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data); 
+            }
+            else {
+                $this->index();
+            }
         }
     }
 

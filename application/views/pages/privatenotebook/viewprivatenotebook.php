@@ -58,21 +58,21 @@
                   foreach ($viewPrivateNotebook->result() as $row) 
                   {
                     ?>
-              <div class="col mr-auto  h5">
+                    <div class="col mr-auto  h5">
 
     
-                <!-- Timer -->
-                <div class="col ml-auto h5">
-                  <!-- Update Button-->
-                  <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
+                    <!-- Timer -->
+                    <div class="col ml-auto h5">
+                    <!-- Update Button-->
+                    <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
                     <button class="p-2 btn float-end">Update</button>
-                  </a>
-                  <div class="mb-2 me-5 float-end" >Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer)); echo $time; ?></span> </div>             
-                </div>
-                </div>
-              <hr class="bg-light">
-              <!--Input Area-->
-              <div class="mb-3">
+                    </a>
+                    <div class="mb-2 me-5 float-end" >Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer)); echo $time; ?></span> </div>             
+                    </div>
+                    </div>
+                    <hr class="bg-light">
+                    <!--Input Area-->
+                    <div class="mb-3">
                 
                         <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
                     <?php

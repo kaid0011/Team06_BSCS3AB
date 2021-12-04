@@ -2,7 +2,7 @@
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
-      <div class="card-front">
+      <div class="card-front" id="card">
         <div class="d-flex p-5">
           <div class="section ">
            
@@ -44,7 +44,8 @@
               <div class="col ml-auto h5">           
                 <div class="row">   
                   <!-- Theme cheat hidden -->
-                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" value=""> </input>                                   
+                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1"> </input>   
+                                                   
                 </div>
               </div>
               <hr class="bg-light">
@@ -141,18 +142,18 @@
   const name = document.querySelector(".name");
 
   function changeColor(color, cardcolor, textcolor, theme) {
+    document.getElementById("submittheme").value = theme;
     document.body.style.background = color;
     document.getElementById("card").style.background = cardcolor;
     document.getElementById("card").style.color = textcolor;
-    document.getElementById("submittheme").value = theme;
     
   }
 
   function changeImgFruits(color, cardcolor, textcolor, theme) {
+    document.getElementById("submittheme").value = theme;
     document.body.style.backgroundImage = color;
     document.getElementById("card").style.backgroundImage = cardcolor;
     document.getElementById("card").style.color = textcolor;
-    document.getElementById("submittheme").value = theme;
   }
 
 </script>

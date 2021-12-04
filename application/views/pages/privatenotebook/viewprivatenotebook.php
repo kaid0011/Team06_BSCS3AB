@@ -124,7 +124,7 @@
   .card-front {
     width: 100%;
     height: 100%;
-    color: <?php echo $$themecardcolor ?>;
+    color: <?php echo $themecardcolor ?>;
     background-color: <?php echo $themecardbgcolor ?>;
     background-image: url(<?= base_url($themecardbgurl) ?>);
     position: absolute;

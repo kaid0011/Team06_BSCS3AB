@@ -49,6 +49,8 @@ class Login extends CI_Controller
                             'user_ID' => $response->user_ID,
                             'userName' => $response->userName,
                             'displayName' => $response->displayName,
+                            'password' => $response->password,
+                            'email' => $response->email
                         );
                         $this->session->set_userdata($userdata);
                         redirect('mainpage'); 

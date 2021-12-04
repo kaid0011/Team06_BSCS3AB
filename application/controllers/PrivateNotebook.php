@@ -29,7 +29,7 @@
             $this->sitelayout->loadTemplate('pages/privatenotebook/updateprivatenotebook', $data); 
         }
 
-        public function updatedprivatepage()
+        public function updatePrivatePage()
         {
 
             $id = $this->session->userdata('user_ID');
@@ -47,7 +47,7 @@
                 }
                 $pageTheme = $this->input->post('theme'); //Theme
                 $pageInput = $this->input->post('input'); //Input
-                $this->PrivateNotebook_model->updateTimer($pageTimer, $pageTheme, $pageInput, $id);
+                $this->PrivateNotebook_model->updatePage($pageTimer, $pageTheme, $pageInput, $id);
                 $this->index();
             }
             else if($action == 'Back')
@@ -56,7 +56,7 @@
             }
             else
             {  
-                $this->PrivateNotebook_model->updateTimer("00:00:00", "Light", NULL, $id);
+                $this->PrivateNotebook_model->updatePage("00:00:00", "Light", NULL, $id);
                 $this->index();
             }
   

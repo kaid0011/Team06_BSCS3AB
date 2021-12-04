@@ -17,7 +17,7 @@
         
                 }
 
-                public function updateTimer($pageTimer, $pageTheme, $pageInput, $id)
+                public function updatePage($pageTimer, $pageTheme, $pageInput, $id)
                 {
 
                     $this->db->where('privateNB_ID',$id);

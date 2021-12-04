@@ -19,12 +19,7 @@
             $this->sitelayout->loadTemplate('pages/publicnotebook/viewpublicnotebook', $data); 
         }
 
-        public function updatePublicNotebook() {
-            $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/publicnotebook/updatepublicnotebook', $data); 
-        }
-
-        public function createPublicNotebook() {
+       /* public function createPublicNotebook() {
 
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data);
@@ -68,5 +63,41 @@
             {
                 $this->index();
             }
+        }*/
+
+        public function updatePublicNotebook()
+        {
+            $id = $this->session->userdata('user_ID');
+            $data['viewPageNotebook']=$this->PublicNotebook_model->get_PublicNotebookInput($id);
+
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/publicnotebook/updatepublicnotebook', $data); 
+        }
+
+        public function updatedPublicPage()
+        {
+
+            $id = $this->session->userdata('user_ID');
+            $action = $this->input->post('action');
+            $pageTheme = $this->input->post('theme');
+            
+
+            if($action == 'Update')
+            {
+                $pageInput = $this->input->post('input'); //Input
+                $this->PublicNotebook_model->updatePage($pageTheme, $pageInput, $id);
+                $this->index();
+            }
+            else if($action == 'Back')
+            {
+                $this->index();
+            }
+            else
+            {  
+                $this->PublicNotebook_model->updatePage("Light", NULL, $id);
+                $this->index();
+            }
+  
         }
     }
+?>

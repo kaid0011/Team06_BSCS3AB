@@ -52,7 +52,7 @@
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
 
-                <form method="post" id ="updateform" action="<?=base_url('privatenotebook/updatedprivatepage')?>">
+                <form method="post" id ="updateform" action="<?=base_url('privatenotebook/updateprivatepage')?>">
                 <div class="row">           
                   <!-- Light Theme Button -->
                   <div class="col">
@@ -98,6 +98,7 @@
                   </div>
                 </div>
               </div>
+
               <hr class="bg-light">
               
               <!--Input Area-->
@@ -113,7 +114,7 @@
                 ?>     
                 <hr id="inputbox" class="bg-light">
                 <!-- Button-->
-                <input type="submit" value= "Update" name="action" onclick="updateTheme()" class="p-2 btn float-end mt-1">
+                <input type="submit" value= "Update" name="action" onclick="updatePage()" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
             

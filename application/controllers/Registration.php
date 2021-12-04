@@ -74,6 +74,7 @@
                 if($response == true)
                 {
                     $this->session->set_userdata($userdata);
+                    $this->session->set_userdata('status', 'Active');
                     $this->sendEmail();
                 }
                 else

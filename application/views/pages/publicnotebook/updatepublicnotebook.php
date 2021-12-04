@@ -1,3 +1,4 @@
+<form method="post" id ="updateform" action="<?=base_url('publicnotebook/updatedpublicpage')?>">
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -52,7 +53,7 @@
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
 
-                <form method="post" id ="updateform" action="<?=base_url('publicnotebook/updatedpublicpage')?>">
+                
                 <div class="row">           
                   <!-- Light Theme Button -->
                   <div class="col">

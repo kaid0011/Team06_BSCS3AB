@@ -19,14 +19,36 @@
             $this->sitelayout->loadTemplate('pages/publicnotebook/viewpublicnotebook', $data); 
         }
 
-       /* public function createPublicNotebook() {
-
-            $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data);
-            
+       public function createPublicNotebook() {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data);         
         }
         
-        public function createNewPage()
+        public function createdPublicPage() {
+            $id = $this->session->userdata('user_ID');
+            $action = $this->input->post('action');
+            $input = $this->input->post('input');
+            $theme = $this->input->post('theme');
+
+            $data = array(
+                'publicNB_ID' => $id,
+                'pageInput' => $input,
+                'pageTheme' => $theme,
+                'pageReact_Count' => 0
+            );
+
+            if($action == 'Submit')
+            {
+                $this->PublicNotebook_model->createPublicPage($data);
+                $this->index();
+            }
+            else if($action == 'Back')
+            {
+                $this->index();
+            }
+        }
+
+        /* public function createNewPage()
         {
 
             $id = $this->session->userdata('user_ID');

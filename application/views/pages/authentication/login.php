@@ -17,13 +17,13 @@
                         <!-- Username -->
                         <div class="mb-5">
                             <label for="exampleInputusername1" class="form-label">Username</label>
-                            <input type="text" name="userName" id="exampleusername1" class="form-control mb-1" value="<?php echo set_value('userName'); ?>" aria-describedby="emailHelp" />
+                            <input type="text" name="userName" id="exampleusername1" class="form-control mb-1" aria-describedby="emailHelp" />
                             <span class="text-danger"><?php echo form_error('userName'); ?></span>
                         
                         <!-- Password -->
                         <div class="mb-5">
                             <label for="exampleInewPassword1" class="form-label"> Password</label>
-                            <input type="password" name="password" class="form-control mb-1" id="exampleInputPassword1" value="<?php echo set_value('password'); ?>" />
+                            <input type="password" name="password" class="form-control mb-1" id="exampleInputPassword1" />
                             <span class="text-danger"><?php echo form_error('password'); ?></span>
                         
                         <!-- Forgot Password -->

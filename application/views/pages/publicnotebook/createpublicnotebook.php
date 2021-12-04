@@ -7,8 +7,9 @@
             <div class="row">
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
+                <form method="post" id ="updateform" action="<?=base_url('publicnotebook/createnewpage')?>"> 
                 <div class="row">
-
+                
                   <!-- Light Theme Button -->
                   <div class="col">
                     <button class="p-2 btn">Light</button>
@@ -48,15 +49,16 @@
               <!--Input Area-->
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
-                <textarea class="form-control" id="" rows="13"></textarea>
+                <textarea class="form-control" name="input" id="" rows="13"></textarea>
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
                 <hr class="bg-light">
                 <!-- Submit Button-->
-                <button class="btn float-end mt-1 ms-4" type="button">Submit</button>
+                <input class="btn float-end mt-1 ms-4" type="submit" value= "Submit" name="action" >
                 <!-- Back Button-->
                 <a href="<?= base_url('publicnotebook') ?>">
                   <button class="btn float-end mt-1" type="button">Back</button>
                 </a>
+                  </form>
                 <!-- <button class="btn float-end mt-1" type="button" disabled>Submit</button> -->
               </div>
             </div>

@@ -1,52 +1,15 @@
+<form method="post" id ="updateform" action="<?=base_url('publicnotebook/createdPublicPage')?>"> 
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
       <div class="card-front">
         <div class="d-flex p-5">
           <div class="section ">
-           <?php 
-                        if ($theme == "Dark") 
-                        {
-                          $themecolor = '#495057';
-                          $themecardcolor = '#f8f9fa';
-                          $themecardbgcolor = '#212529';
-                          $fontcolor = '#f8f9fa';
-                        } 
-                        else if ($theme == "Light") 
-                        {
-                          $themecolor = '#e9ecef';
-                          $themecardcolor = '#212529';
-                          $themecardbgcolor = '#adb5bd';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Apple") 
-                        {
-                          $themeurl = "assets/images/themes/Theme1_Apple.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Applecard.jpg';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Orange") 
-                        {
-                          $themeurl = "assets/images/themes/Theme2_Orange.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Kiwi") 
-                        {
-                          $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
-                          $fontcolor = '#212529';
-                        } ?>
+           
             <div class="row">
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
-                <form method="post" id ="updateform" action="<?=base_url('publicnotebook/createnewpage')?>"> 
+                
                 <div class="row">
                 
                   <!-- Light Theme Button -->
@@ -81,22 +44,17 @@
               <div class="col ml-auto h5">           
                 <div class="row">   
                   <!-- Theme cheat hidden -->
-                    <input type="text" name="theme" id="submittext" class="btn float-end mt-1" hidden value="">
-                                                             
+                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" value=""> </input>                                   
                 </div>
               </div>
               <hr class="bg-light">
               <!--Input Area-->
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
-                
-                    <textarea name="input" class="form-control" id="" rows="13"></textarea>
-           
-                
-                
+                    <textarea name="input" class="form-control" id="" rows="13"></textarea> 
                 <hr id="inputbox" class="bg-light">
                 <!-- Button-->
-                <input type="submit" value= "Submit" name="action" onclick="updateTheme()" class="p-2 btn float-end mt-1">
+                <input type="submit" value= "Submit" name="action"  class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
             
@@ -115,9 +73,9 @@
   body {
     font-weight: 300;
     font-size: 15px;
-    color: <?php echo $fontcolor ?>;
-    background-color: <?php echo $themecolor ?>;
-    background-image: url(<?= base_url($themeurl) ?>);
+    color: #212529;
+    background-color: #e9ecef;
+    background-image: NULL;
     overflow-x: hidden;
   }
 
@@ -158,9 +116,9 @@
   .card-front {
     width: 100%;
     height: 100%;
-    color: <?php echo $themecardcolor ?>;
-    background-color: <?php echo $themecardbgcolor ?>;
-    background-image: url(<?= base_url($themecardbgurl) ?>);
+    color: #212529;
+    background-color: #adb5bd;
+    background-image: NULL;
     position: absolute;
     border-radius: 10px;
   }
@@ -186,7 +144,7 @@
     document.body.style.background = color;
     document.getElementById("card").style.background = cardcolor;
     document.getElementById("card").style.color = textcolor;
-    document.getElementById("submittext").value = theme;
+    document.getElementById("submittheme").value = theme;
     
   }
 
@@ -194,7 +152,7 @@
     document.body.style.backgroundImage = color;
     document.getElementById("card").style.backgroundImage = cardcolor;
     document.getElementById("card").style.color = textcolor;
-    document.getElementById("submittext").value = theme;
+    document.getElementById("submittheme").value = theme;
   }
 
 </script>

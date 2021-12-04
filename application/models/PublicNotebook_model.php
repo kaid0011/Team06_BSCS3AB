@@ -17,6 +17,13 @@
         
                 }
 
+                public function createPublicPage($data)
+                {
+                    $this->db->insert('publicnb_pages', $data);
+                    return true;
+
+                }
+
               /* public function Submit($id,$userdata)
                 {
 

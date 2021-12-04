@@ -1,4 +1,4 @@
-<form method="post" id ="updateform" action="<?=base_url('publicnotebook/updatedpublicpage')?>">
+<form method="post" id ="updateform" action="<?=base_url('publicnotebook/updatepublicpage')?>">
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -6,7 +6,7 @@
         <div class="d-flex p-5">
           <div class="section ">
             <?php
-                  foreach($viewPageNotebook->result() as $row)
+                  foreach($viewPublicPage->result() as $row)
                   { 
                     $theme = $row->pageTheme;
                         if ($theme == "Dark") 
@@ -91,7 +91,8 @@
                     <input type="text" name="theme" id="submittext" class="btn float-end mt-1" hidden value="<?php echo $row->pageTheme ?>">
                      </div>
                   <div class="col mt-3"> 
-                <input type="submit" value="Delete" name="action" class="p-2 btn float-end mt-3 me-4">
+                    <!-- Delete -->
+                  <input type="submit" value="Delete" name="action" class="p-2 btn float-end mt-3 me-4">
                   </div>
                 </div>
               </div>
@@ -101,7 +102,7 @@
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                 <?php
-                  foreach($viewPageNotebook->result() as $row)
+                  foreach($viewPublicPage->result() as $row)
                   { 
                     ?>
                     <textarea name="input" class="form-control" id="" rows="13"><?php echo $row->pageInput; ?></textarea>
@@ -109,6 +110,8 @@
                   }
                 ?>     
                 <hr id="inputbox" class="bg-light">
+                <!-- Page ID hidden -->
+                <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
                 <!-- Button-->
                 <input type="submit" value= "Update" name="action" onclick="updatePage()" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->

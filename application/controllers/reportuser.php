@@ -14,6 +14,12 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/reportuser/reportuser', $data); 
         }
+
+        public function reportuserwall() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/reportuser/reportuserwall', $data); 
+        }
         
     }
 

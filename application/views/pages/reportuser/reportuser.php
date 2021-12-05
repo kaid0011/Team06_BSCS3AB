@@ -44,7 +44,9 @@
                             </label>
                   <!-- Report Button -->
                   <div class="col-md d-flex justify-content-end align-items-center">
-                        <input type="submit" name="Report" value="Report" style="background-color: #f0b63a; width: 75px;" class="p-2 btn-sm border border-3 border-dark btn-end"></input>
+                      <a href="<?= base_url('reportuser/reportuserwall') ?>">
+                            <input type="submit" name="Report" value="Report" style="background-color: #f0b63a; width: 75px;" class="p-2 btn-sm border border-3 border-dark btn-end"></input>
+                        </a>
                     </div>
                     </form>
                 </p>

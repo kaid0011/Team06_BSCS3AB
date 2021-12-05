@@ -3,7 +3,7 @@
     <h1 class="h1 mb-4 pt-1 text-dark text-center">Update Profile</h1>
     <!--div class="p-5 text-center bg-image" style="background-image: url('imgs/white.png'); height: 300px; width: auto;"-->
     <div>
-
+        
       <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
 
         <div class="d-flex">
@@ -14,23 +14,26 @@
 
       <div class="col-md p-5 d-flex justify-content-center align-items-center">
         <p class="lead align-center">
-        <form method="post" action="<?= base_url('updateprofile/updatepassword') ?>" autocomplete="off">
+        <form method="post" action="<?= base_url('updateprofile/updatedprofile') ?>" autocomplete="off">
           <!-- Username -->
+          
+
           <div class="mb-3 text-start text-secondary" style="width: 600px;">
             <label for="exampleInputlastname1" class="form-label ps-2">Username</label>
-            <input type="text" class="form-control mb-1" id="examplelastname1" aria-describedby="emailHelp" name="userName" value="<?php echo set_value('userName'); ?>" />
+            <input type="text" class="form-control mb-1" id="examplelastname1" aria-describedby="emailHelp" name="userName" value="<?php echo $this->session->userdata('userName')?>"></input>
             <span class="text-danger"><?php echo form_error('userName'); ?></span> <!-- print error message if there is any -->
+          
 
             <!-- Display Name -->
             <div class="mb-3">
               <label for="examplefirstname1" class="form-label ps-2">Display Name</label>
-              <input type="text" class="form-control mb-1" id="exampleInputlastname1" aria-describedby="emailHelp" name="displayName" value="<?php echo set_value('displayName'); ?>" />
+              <input type="text" class="form-control mb-1" id="exampleInputlastname1" aria-describedby="emailHelp" name="displayName" value="<?php echo $this->session->userdata('displayName'); ?>" />
               <span class="text-danger"><?php echo form_error('displayName'); ?></span>
-
+  
               <!-- E-mail Address -->
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label ps-2">E-mail Address</label>
-                <input type="email" class="form-control mb-1" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<?php echo set_value('email'); ?>" autocomplete="off" />
+                <input type="email" class="form-control mb-1" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<?php echo $this->session->userdata('email');?>" autocomplete="off" />
                 <span class="text-danger"><?php echo form_error('email'); ?></span>
 
                 <!-- Password 
@@ -51,6 +54,9 @@
           <!-- Change Password Button -->
   <input type="submit" name="action" value="Change Password" class="btn btn-sm text-secondary mt-1" style="text-decoration: underline; margin-top: -15px;"></input>
   </div>
+  <!-- Deactivate Account Button -->
+  <input type="submit" name="action" value="Deactivate Account" class="btn btn-sm text-secondary mt-1" style="text-decoration: underline; margin-top: -15px;"></input>
+
   <div class="col-md pt-3 d-flex justify-content-end align-items-center">
    <!-- Update Button -->
   <input type="submit" name="action" value="Update" style="background-color: #f0b63a;" class="btn btn-sm border border-3 border-dark btn-end p-2"></input>

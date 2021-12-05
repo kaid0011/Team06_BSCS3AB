@@ -10,7 +10,9 @@
 
         public function get_PublicNotebookInput($publicNB_ID)
         {
+            
             $this->db->where('publicNB_ID', $publicNB_ID);
+            
             $this->db->select('publicNBPage_ID, pageInput, pageTheme');
             $this->db->order_by('publicNB_ID', 'desc');
             $query = $this->db->get('publicnb_pages');

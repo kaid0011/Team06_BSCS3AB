@@ -65,6 +65,11 @@
             }
         }*/
 
+
+
+        
+
+
         public function updatePublicNotebook()
         {
             $id = $this->session->userdata('user_ID');

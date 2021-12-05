@@ -45,9 +45,10 @@
                 <div class="mb-2"><br></div>
                   <div class="col float-end me-5">
                     <form>
-                      <button href="#" class="delete_data" action="<?= base_url(); ?>delete/delete_data/"><i class="bi bi-trash-fill h4 "></i></button>
+                    <!-- Delete Function here-->
+                      <button onclick="<?php echo base_url()?>PublicNotebook/deletepublicpage" class="delete_data"><i class="bi bi-trash-fill h4 "></i></button>
                     </form>
-                  </div>             
+                  </div>  
               </div>
               <hr class="bg-light">
               <!--Input Area-->

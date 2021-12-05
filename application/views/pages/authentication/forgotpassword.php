@@ -7,6 +7,12 @@
             <div class="col-lg p-5">
                 <h1 class="h1 mb-5 pt-4 text-dark">Forgot Password</h1>
                 <p class="lead"> 
+                    <!-- PHP Error Message -->
+                    <?php
+                    if ($this->session->flashdata('message')) {
+                        echo '<div class="alert alert-danger">' . $this->session->flashdata("message") . '</div>';
+                    }
+                    ?>
                     <form method="post" action="<?php echo base_url('forgotpassword/validation'); ?>">
                         <div class="mb-5">
                             <!-- Enter your E-mail Address-->

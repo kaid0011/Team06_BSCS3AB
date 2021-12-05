@@ -42,6 +42,7 @@
             if($action == 'Submit')
             {
                 $this->PublicNotebook_model->createPublicPage($data);
+                $this->PublicNotebook_model->pageCount($id);
                 $this->index();
             }
             else if($action == 'Back')

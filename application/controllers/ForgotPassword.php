@@ -43,8 +43,8 @@
                     }
                     else
                     {
-                        echo 'This Email is not registered.'; 
-                        #will change laturrrrr
+                        $this->session->set_flashdata('message', 'This email is not registered.');
+                        $this->index();
                     }
                 }
                 else
@@ -75,7 +75,7 @@
             $config = array(
                 'protocol'  => 'smtp',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
+                'smtp_port' =>  465,
                 'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
                 'smtp_pass' => 'team6@3ab',
                 'mailtype'  => 'html', 

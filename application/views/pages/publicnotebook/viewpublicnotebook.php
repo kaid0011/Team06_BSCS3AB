@@ -1,50 +1,49 @@
-<section id="learn" class="p-5" style="min-height: 75vh;">
 <?php
-
-  foreach ($viewPublicNotebook->result() as $row) 
-  {
-    $theme = $row->pageTheme;
-    if ($theme == "Dark") 
+    if ($viewPublicNotebook->num_rows() > 0) 
     {
-      $themecolor = '#495057';
-      $themecardcolor = '#f8f9fa';
-      $themecardbgcolor = '#212529';
-      $fontcolor = '#f8f9fa';
-    } 
-    else if ($theme == "Light") 
-    {
-      $themecolor = '#e9ecef';
-      $themecardcolor = '#212529';
-      $themecardbgcolor = '#adb5bd';
-      $fontcolor = '#212529';
-    } 
-    else if ($theme == "Apple") 
-    {
-      $themeurl = "assets/images/themes/Theme1_Apple.jpg";
-      $themecolor = "transparent";
-      $themecardcolor = '#212529';
-      $themecardbgurl = 'assets/images/themes/Applecard.jpg';
-      $fontcolor = '#212529';
-    } 
-    else if ($theme == "Orange") 
-    {
-      $themeurl = "assets/images/themes/Theme2_Orange.jpg";
-      $themecolor = "transparent";
-      $themecardcolor = '#212529';
-      $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
-      $fontcolor = '#212529';
-    } 
-    else if ($theme == "Kiwi") 
-    {
-      $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
-      $themecolor = "transparent";
-      $themecardcolor = '#212529';
-      $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
-      $fontcolor = '#212529';
-    }
-  }
-
+      foreach ($viewPublicNotebook->result() as $row) 
+      {
+        $theme = $row->pageTheme;
+        if ($theme == "Dark") 
+        {
+          $themecolor = '#495057';
+          $themecardcolor = '#f8f9fa';
+          $themecardbgcolor = '#212529';
+          $fontcolor = '#f8f9fa';
+        } 
+        else if ($theme == "Light") 
+        {
+          $themecolor = '#e9ecef';
+          $themecardcolor = '#212529';
+          $themecardbgcolor = '#adb5bd';
+          $fontcolor = '#212529';
+        } 
+        else if ($theme == "Apple") 
+        {
+          $themeurl = "assets/images/themes/Theme1_Apple.jpg";
+          $themecolor = "transparent";
+          $themecardcolor = '#212529';
+          $themecardbgurl = 'assets/images/themes/Applecard.jpg';
+          $fontcolor = '#212529';
+        } 
+        else if ($theme == "Orange") 
+        {
+          $themeurl = "assets/images/themes/Theme2_Orange.jpg";
+          $themecolor = "transparent";
+          $themecardcolor = '#212529';
+          $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
+          $fontcolor = '#212529';
+        } 
+        else if ($theme == "Kiwi") 
+        {
+          $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
+          $themecolor = "transparent";
+          $themecardcolor = '#212529';
+          $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
+          $fontcolor = '#212529';
+        }
   ?>
+  <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
       <div class="card-front">
@@ -53,42 +52,35 @@
             <div class="row">
               <div class="col ml-auto h5">
                 <div class="row">
-                <?php
-                if ($viewPublicNotebook->num_rows() > 0) 
-                {
-                  foreach($viewPublicNotebook->result() as $row) 
-                  {
-                
-                ?>
-
-                   <div class="col mr-auto  h5">
-                    <!-- New Page Button -->
-                    <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
-                      <button class="p-2 btn float-end" style="width:110px;">New Page</button>
-                    </a>
-                    <!-- Update Button -->
-                    <a href="<?= base_url('publicnotebook/updatepublicnotebook') ?>">
-                      <button class="p-2 btn float-end me-4">Update</button>
-                    </a>
-                  </div>
+                    <?php
+                      $page_ID = $row->publicNBPage_ID;
+                      echo $page_ID;
+                    ?>
+                    <div class="col mr-auto  h5">
+                      <!-- New Page Button -->
+                      <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
+                        <button class="p-2 btn float-end" style="width:110px;">New Page</button>
+                      </a>
+                      <!-- Update Button -->
+                      <a href="<?= base_url(); ?>publicnotebook/updatepublicnotebook/<?php echo $page_ID;?>">
+                        <button class="p-2 btn float-end me-4">Update</button>
+                      </a>
+                    </div>
                 </div>
               </div>
 
               <hr class="bg-light">
               <!--Input Area-->
               <div class="mb-3">
-                
-                        <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
-                    <?php
-                  }
-                }
-                ?>
-                <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
+                <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                  
+                  <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
 
-                <hr id ="inputbox" class="bg-light">
-              <!-- Submit Button-->
-              <div class="col ">
-                <i class="bi bi-star " disabled></i> # of reacts
+                  <hr id ="inputbox" class="bg-light">
+                  <!-- Submit Button-->
+                  <div class="col ">
+                    <i class="bi bi-star " disabled></i> # of reacts
+                  </div>
               </div>
             </div>
           </div>
@@ -97,6 +89,10 @@
     </div>
   </div>
 </section>
+<?php
+    }
+  }
+?>
 
 <style>
   body {

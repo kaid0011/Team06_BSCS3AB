@@ -1,51 +1,47 @@
-<form method="post" id ="updateform" action="<?=base_url('publicnotebook/createdPublicPage')?>"> 
+<form method="post" id ="updateform" action="<?=base_url('publicnotebook/createPublicPage')?>"> 
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
       <div class="card-front" id="card">
         <div class="d-flex p-5">
           <div class="section ">
-           
             <div class="row">
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
-                
                 <div class="row">
                 
-                  <!-- Light Theme Button -->
-                  <div class="col">
-                    <input type="button" onclick="changeColor('#e9ecef', '#adb5bd', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
-                    <!-- <button class="p-2 btn" disabled>Light</button> -->
+                    <!-- Light Theme Button -->
+                    <div class="col">
+                      <input type="button" onclick="changeColor('#e9ecef', '#adb5bd', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
+                      <!-- <button class="p-2 btn" disabled>Light</button> -->
+                      </div>
+                    <!-- Dark Theme Button -->
+                    <div class="col">
+                    <input type="button" onclick="changeColor('#495057', '#212529', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
+                      <!-- <button class="p-2 btn" disabled>Dark</button> -->
+                    </div>                   
+                    <!-- Apple Theme Button -->
+                    <div class="col">
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/Applecard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
+                      <!-- <button class="p-2 btn" disabled>Apple</button> -->
+                      </div>
+                    <!-- Orange Theme Button -->
+                    <div class="col">
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/Orangecard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
+                      <!-- <button class="p-2 btn" disabled>Orange</button> -->
+                      </div>
+                    <!-- Kiwi Theme Button -->
+                    <div class="col">
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
+                      <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
                     </div>
-                  <!-- Dark Theme Button -->
-                  <div class="col">
-                  <input type="button" onclick="changeColor('#495057', '#212529', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
-                    <!-- <button class="p-2 btn" disabled>Dark</button> -->
-                  </div>                   
-                  <!-- Apple Theme Button -->
-                  <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/Applecard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
-                    <!-- <button class="p-2 btn" disabled>Apple</button> -->
-                    </div>
-                  <!-- Orange Theme Button -->
-                  <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/Orangecard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
-                    <!-- <button class="p-2 btn" disabled>Orange</button> -->
-                    </div>
-                  <!-- Kiwi Theme Button -->
-                  <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
-                    <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
-                  </div>
                 </div>
               </div>
-
 
               <div class="col ml-auto h5">           
                 <div class="row">   
                   <!-- Theme cheat hidden -->
-                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1"> </input>   
-                                                   
+                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" hidden> </input>                                
                 </div>
               </div>
               <hr class="bg-light">
@@ -60,8 +56,7 @@
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
             
                   </a>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -69,6 +64,7 @@
     </div>
   </div>
 </section>
+</form>
 
 <style>
   body {

@@ -64,6 +64,7 @@
                     'displayName' => $this->input->post('displayName'),
                     'email' => $this->input->post('email'),
                     'password' => $encrypted_password,
+                    'status'    => 'Pending',
                     'verification_Key' => $verification_key
                 );
                 
@@ -72,12 +73,54 @@
                 $response = $this->Registration_model->addNewUser($userdata);
                 if($response == true)
                 {
-                    $this->session->set_userdata($userdata);
-                    $this->sendEmail();
+                    $userName = $this->input->post('userName');
+                    $query = $this->Registration_model->getID($userName);
+                    foreach($query->result() as $row)
+                    {
+                        $getID = $row->user_ID;
+                    }
+
+                    $publicNBData = array(
+                        'user_ID'   =>  $getID,
+                        'publicPages_Count' =>  1
+                    );
+
+                    $publicPageData = array(
+
+                        'publicNB_ID'   =>  $getID,
+                        'pageInput' =>  'This is my first public page.',
+                        'pageTheme' =>  'Light',
+                        'pageReact_Count'   =>  0
+                    );
+
+                    $privateNBData = array(
+                        'user_ID'   =>  $getID
+                    );
+
+                    $privatePageData = array(
+                        'privateNB_ID'  =>  $getID,
+                        'pageInput' =>  'This is my first private page.',
+                        'pageTheme' =>  'Light',
+                        'pageTimer' =>  "00:00:00"
+                    );
+
+                    $dbConnected = $this->Registration_model->dbConnections($publicNBData, $privateNBData);
+                    
+                    if($dbConnected)
+                    {
+                        $dbConnectedPages = $this->Registration_model->dbConnectionsPages($publicPageData, $privatePageData);
+                        if($dbConnectedPages)
+                        {
+                            $this->session->set_userdata($userdata);
+                            $this->session->set_userdata('status', 'Active');
+                            $this->sendEmail();
+                        }
+                    }
                 }
                 else
                 {
                     echo "Error";
+                    #will change laturrr
                 }
             }
             $data['navbar'] = 'registration';
@@ -100,7 +143,7 @@
             $config = array(
                 'protocol'  => 'smtp',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
+                'smtp_port' =>  465,
                 'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
                 'smtp_pass' => 'team6@3ab',
                 'mailtype'  => 'html', 

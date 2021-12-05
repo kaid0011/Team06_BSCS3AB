@@ -22,6 +22,18 @@
             }
         }
 
+        public function updateStatus($is_verification_correct, $username)
+        {
+            $status = 'Active';
+
+            $this->db->where('userName', $username);
+            $this->db->set('status', $status);
+            $this->db->set('is_verification_correct', $is_verification_correct);
+            $this->db->update('user');
+
+            return true;
+        }
+
         public function resendCode($verification_key, $userName)
         {
             $this->db->where('userName', $userName);

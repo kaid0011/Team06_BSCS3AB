@@ -38,15 +38,30 @@ class Login extends CI_Controller
                 $password = md5($this->input->post('password'));
 
                 $result = $this->Login_model->can_login($username, $password);
-                if ($result) {
-                    $userdata = array(
-                        'user_ID' => $result->user_ID,
-                        'userName' => $result->userName,
-                        'displayName' => $result->displayName,
-                        'status' => TRUE
-                    );
-                    $this->session->set_userdata($userdata);
-                    redirect('mainpage'); 
+                if($result) 
+                {
+                    $status = 'Active';
+                    $response = $this->Login_model->checkStatus($username, $status);
+
+                    if($response)
+                    {
+                        $userdata = array(
+                            'user_ID' => $response->user_ID,
+                            'userName' => $response->userName,
+                            'displayName' => $response->displayName,
+                            'password' => $response->password,
+                            'email' => $response->email
+                        );
+                        $this->session->set_userdata($userdata);
+                        redirect('mainpage'); 
+                    }
+                    else
+                    {
+                        //echo 'Verify your email.';
+                        $this->session->set_userdata('userName', $username);
+                        $data['navbar'] = 'registration';
+                        $this->sitelayout->loadTemplate('pages/registration/verification', $data);
+                    }
                 } 
                 else {
                     $this->session->set_flashdata('message', 'Invalid Username or Password');

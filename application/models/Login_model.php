@@ -16,6 +16,25 @@ class Login_model extends CI_model
         
         if($query->num_rows() == 1)
         {
+            return true;
+            //return $query->row();
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function checkStatus($username, $status)
+    {
+        $this->db->where('userName', $username);
+        $this->db->where('status', $status);
+
+        $this->db->limit(1);
+        $query = $this->db->get('user');
+        
+        if($query->num_rows() == 1)
+        {
             return $query->row();
         }
         else

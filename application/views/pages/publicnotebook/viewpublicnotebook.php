@@ -1,4 +1,49 @@
-<section id="learn" class="p-5" style="min-height: 75vh;">
+<?php
+    if ($viewPublicNotebook->num_rows() > 0) 
+    {
+      foreach ($viewPublicNotebook->result() as $row) 
+      {
+        $theme = $row->pageTheme;
+        if ($theme == "Dark") 
+        {
+          $themecolor = '#495057';
+          $themecardcolor = '#f8f9fa';
+          $themecardbgcolor = '#212529';
+          $fontcolor = '#f8f9fa';
+        } 
+        else if ($theme == "Light") 
+        {
+          $themecolor = '#e9ecef';
+          $themecardcolor = '#212529';
+          $themecardbgcolor = '#adb5bd';
+          $fontcolor = '#212529';
+        } 
+        else if ($theme == "Apple") 
+        {
+          $themeurl = "assets/images/themes/Theme1_Apple.jpg";
+          $themecolor = "transparent";
+          $themecardcolor = '#212529';
+          $themecardbgurl = 'assets/images/themes/Applecard.jpg';
+          $fontcolor = '#212529';
+        } 
+        else if ($theme == "Orange") 
+        {
+          $themeurl = "assets/images/themes/Theme2_Orange.jpg";
+          $themecolor = "transparent";
+          $themecardcolor = '#212529';
+          $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
+          $fontcolor = '#212529';
+        } 
+        else if ($theme == "Kiwi") 
+        {
+          $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
+          $themecolor = "transparent";
+          $themecardcolor = '#212529';
+          $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
+          $fontcolor = '#212529';
+        }
+  ?>
+  <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
       <div class="card-front">
@@ -7,30 +52,35 @@
             <div class="row">
               <div class="col ml-auto h5">
                 <div class="row">
-                  <div class="col ">
-                    <!-- New Page Button -->
-                    <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
-                      <button class="p-2 btn float-end" style="width:110px;">New Page</button>
-                    </a>
-                    <!-- Update Button -->
-                    <a href="<?= base_url('publicnotebook/updatepublicnotebook') ?>">
-                      <button class="p-2 btn float-end me-4">Update</button>
-                    </a>
-                  </div>
+                    <?php
+                      $page_ID = $row->publicNBPage_ID;
+                      echo $page_ID;
+                    ?>
+                    <div class="col mr-auto  h5">
+                      <!-- New Page Button -->
+                      <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
+                        <button class="p-2 btn float-end" style="width:110px;">New Page</button>
+                      </a>
+                      <!-- Update Button -->
+                      <a href="<?= base_url(); ?>publicnotebook/updatepublicnotebook/<?php echo $page_ID;?>">
+                        <button class="p-2 btn float-end me-4">Update</button>
+                      </a>
+                    </div>
                 </div>
               </div>
 
               <hr class="bg-light">
               <!--Input Area-->
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"></label>
-                <textarea class="form-control" id="" rows="14"></textarea>
-                <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
-              </div>
-              <hr class="bg-light">
-              <!-- Submit Button-->
-              <div class="col ">
-                <i class="bi bi-star " disabled></i> # of reacts
+                <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                  
+                  <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
+
+                  <hr id ="inputbox" class="bg-light">
+                  <!-- Submit Button-->
+                  <div class="col ">
+                    <i class="bi bi-star " disabled></i> # of reacts
+                  </div>
               </div>
             </div>
           </div>
@@ -39,22 +89,18 @@
     </div>
   </div>
 </section>
+<?php
+    }
+  }
+?>
 
 <style>
   body {
     font-weight: 300;
     font-size: 15px;
-    background-image: url(<?= base_url('assets/images/themes/Theme1_Apple.jpg') ?>);
-    /*if theme is dark,
-        background-color: #495057;
-    if theme is light,
-        background-color: #e9ecef;
-    if theme is Apple,
-        background-image:url(assets/images/themes/Theme1_Apple.jpg);
-     if theme is Orange,
-        background-image:url(assets/images/themes/Theme2_Orange.jpg);
-     if theme is Kiwi,
-        background-image:url(assets/images/themes/Theme3_Kiwi.jpg);*/
+    color: <?php echo $fontcolor ?>;
+    background-color: <?php echo $themecolor ?>;
+    background-image: url(<?= base_url($themeurl) ?>);
     overflow-x: hidden;
   }
 
@@ -93,23 +139,9 @@
   .card-front {
     width: 100%;
     height: 100%;
-    color: #212529;
-    background-image: url(<?= base_url('assets/images/themes/Applecard.jpg') ?>);
-    /*if theme is dark,
-        color: #f8f9fa;
-        background-color: #212529;
-    if theme is light,
-        color: #212529;
-        background-color: #adb5bd;
-    if theme is Apple,
-        color: #212529;
-        background-image:url(assets/images/themes/Applecard.jpg);
-     if theme is Orange,
-        color: #212529;
-        background-image:url(assets/images/themes/Orangecard.jpg);
-     if theme is Kiwi,
-        color: #212529;
-        background-image:url(assets/images/themes/Kiwicard.jpg);*/
+    color: <?php echo $$themecardcolor ?>;
+    background-color: <?php echo $themecardbgcolor ?>;
+    background-image: url(<?= base_url($themecardbgurl) ?>);
     position: absolute;
     border-radius: 10px;
   }

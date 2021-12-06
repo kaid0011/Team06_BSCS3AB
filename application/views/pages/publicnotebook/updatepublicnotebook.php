@@ -84,15 +84,6 @@
               </div>          
 
               <div class="col ml-auto h5">
-<<<<<<< HEAD
-                <div class="mb-2"><br></div>
-                  <div class="col float-end me-5">
-                    <form>
-                    <!-- Delete Function here-->
-                      <button onclick="<?php echo base_url()?>PublicNotebook/deletepublicpage" class="delete_data"><i class="bi bi-trash-fill h4 "></i></button>
-                    </form>
-                  </div>  
-=======
                 
               <div class="row">
                   <div class="col mt-2">
@@ -104,7 +95,6 @@
                   <input type="submit" value="Delete" name="action" class="p-2 btn float-end mt-3 me-4">
                   </div>
                 </div>
->>>>>>> e2f5d0a836c5183fab679978817d41ed99e17bc3
               </div>
               
               <hr class="bg-light">

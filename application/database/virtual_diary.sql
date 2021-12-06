@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2021 at 09:38 AM
+-- Generation Time: Dec 06, 2021 at 11:27 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -131,6 +131,7 @@ CREATE TABLE `report` (
   `reportCategory` enum('Text Abuse','Inappropriate Text') DEFAULT NULL,
   `reportDetails` text DEFAULT NULL,
   `reportDate` date DEFAULT NULL,
+  `staff_Comment` text DEFAULT NULL,
   `reportStatus` enum('For Review','Reviewed') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -172,10 +173,11 @@ CREATE TABLE `user` (
   `displayName` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `status` enum('Active','Pending','Warned','Banned','Deactivated') NOT NULL,
+  `status` enum('Active','Warned','Banned','Deactivated') NOT NULL,
   `dateCreated` datetime NOT NULL DEFAULT current_timestamp(),
   `verification_Key` varchar(255) NOT NULL,
-  `is_verification_correct` tinyint(1) NOT NULL
+  `is_verification_correct` tinyint(1) NOT NULL,
+  `user_displayImage` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -358,25 +360,25 @@ ALTER TABLE `penalty`
 -- Constraints for table `privatenb_pages`
 --
 ALTER TABLE `privatenb_pages`
-  ADD CONSTRAINT `privatenb_pages_ibfk_1` FOREIGN KEY (`privateNB_ID`) REFERENCES `private_notebook` (`privateNB_ID`);
+  ADD CONSTRAINT `privatenb_pages_ibfk_1` FOREIGN KEY (`privateNB_ID`) REFERENCES `private_notebook` (`privateNB_ID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `private_notebook`
 --
 ALTER TABLE `private_notebook`
-  ADD CONSTRAINT `private_notebook_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`);
+  ADD CONSTRAINT `private_notebook_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `publicnb_pages`
 --
 ALTER TABLE `publicnb_pages`
-  ADD CONSTRAINT `publicnb_pages_ibfk_1` FOREIGN KEY (`publicNB_ID`) REFERENCES `public_notebook` (`publicNB_ID`);
+  ADD CONSTRAINT `publicnb_pages_ibfk_1` FOREIGN KEY (`publicNB_ID`) REFERENCES `public_notebook` (`publicNB_ID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `public_notebook`
 --
 ALTER TABLE `public_notebook`
-  ADD CONSTRAINT `public_notebook_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`);
+  ADD CONSTRAINT `public_notebook_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `reaction`
@@ -397,7 +399,7 @@ ALTER TABLE `report`
 -- Constraints for table `sticky_notes`
 --
 ALTER TABLE `sticky_notes`
-  ADD CONSTRAINT `sticky_notes_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`);
+  ADD CONSTRAINT `sticky_notes_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

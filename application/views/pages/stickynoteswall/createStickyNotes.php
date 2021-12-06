@@ -1,6 +1,6 @@
 <section>
   <div class="container">
-    <div class="display-1  text-center my-4">Submit a post</div>
+    <div class="display-1 text-center my-4  ">Submit a post</div>
     <div class="row align-items-center my-5 g-4"> 
 		  <div class="section ">
         <div class="d-flex justify-content-center">
@@ -8,13 +8,13 @@
 
             <!-- Light Theme Button -->   
             <div class="col">
-              <button class="p-2 btn light">Light</button>
+              <button class="p-2 btn">Light</button>
               <!-- <button class="p-2 btn" disabled>Light</button> -->
             </div>
             
             <!-- Dark Theme Button -->
             <div class="col">
-              <button class="p-2 btn dark"> Dark</button>
+              <button class="p-2 btn "> Dark</button>
               <!-- <button class="p-2 btn" disabled>Dark</button> -->
             </div>
             
@@ -62,10 +62,8 @@
             <button class="py-3 px-5 btn " type="submit" >Submit</button>
           </div>
         </div>
-
       </div>
     </div>
-
   </div>
 </section>
 

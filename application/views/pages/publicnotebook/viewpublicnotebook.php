@@ -1,48 +1,48 @@
 <?php
-    if ($viewPublicNotebook->num_rows() > 0) 
+  if ($viewPublicNotebook->num_rows() > 0) 
+  {
+    foreach ($viewPublicNotebook->result() as $row) 
     {
-      foreach ($viewPublicNotebook->result() as $row) 
+      $theme = $row->pageTheme;
+      if ($theme == "Dark") 
       {
-        $theme = $row->pageTheme;
-        if ($theme == "Dark") 
-        {
-          $themecolor = '#495057';
-          $themecardcolor = '#f8f9fa';
-          $themecardbgcolor = '#212529';
-          $fontcolor = '#f8f9fa';
-        } 
-        else if ($theme == "Light") 
-        {
-          $themecolor = '#e9ecef';
-          $themecardcolor = '#212529';
-          $themecardbgcolor = '#adb5bd';
-          $fontcolor = '#212529';
-        } 
-        else if ($theme == "Apple") 
-        {
-          $themeurl = "assets/images/themes/Theme1_Apple.jpg";
-          $themecolor = "transparent";
-          $themecardcolor = '#212529';
-          $themecardbgurl = 'assets/images/themes/Applecard.jpg';
-          $fontcolor = '#212529';
-        } 
-        else if ($theme == "Orange") 
-        {
-          $themeurl = "assets/images/themes/Theme2_Orange.jpg";
-          $themecolor = "transparent";
-          $themecardcolor = '#212529';
-          $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
-          $fontcolor = '#212529';
-        } 
-        else if ($theme == "Kiwi") 
-        {
-          $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
-          $themecolor = "transparent";
-          $themecardcolor = '#212529';
-          $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
-          $fontcolor = '#212529';
-        }
-  ?>
+        $themecolor = '#495057';
+        $themecardcolor = '#f8f9fa';
+        $themecardbgcolor = '#212529';
+        $fontcolor = '#f8f9fa';
+      } 
+      else if ($theme == "Light") 
+      {
+        $themecolor = '#e9ecef';
+        $themecardcolor = '#212529';
+        $themecardbgcolor = '#adb5bd';
+        $fontcolor = '#212529';
+      } 
+      else if ($theme == "Apple") 
+      {
+        $themeurl = "assets/images/themes/Theme1_Apple.jpg";
+        $themecolor = "transparent";
+        $themecardcolor = '#212529';
+        $themecardbgurl = 'assets/images/themes/Applecard.jpg';
+        $fontcolor = '#212529';
+      } 
+      else if ($theme == "Orange") 
+      {
+        $themeurl = "assets/images/themes/Theme2_Orange.jpg";
+        $themecolor = "transparent";
+        $themecardcolor = '#212529';
+        $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
+        $fontcolor = '#212529';
+      } 
+      else if ($theme == "Kiwi") 
+      {
+        $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
+        $themecolor = "transparent";
+        $themecardcolor = '#212529';
+        $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
+        $fontcolor = '#212529';
+      }
+?>
   <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -73,14 +73,12 @@
               <!--Input Area-->
               <div class="mb-3">
                 <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
-                  
-                  <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
-
-                  <hr id ="inputbox" class="bg-light">
-                  <!-- Submit Button-->
-                  <div class="col ">
-                    <i class="bi bi-star " disabled></i> # of reacts
-                  </div>
+                <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
+                <hr id ="inputbox" class="bg-light">
+                <!-- Submit Button-->
+                <div class="col ">
+                  <i class="bi bi-star " disabled></i> # of reacts
+                </div>
               </div>
             </div>
           </div>

@@ -2,21 +2,16 @@
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-md p-0 mt-0 ">
-              <img src="https://picsum.photos/500/500" class="img-fluid d-none d-sm-block">
+            <img src="<?= base_url('assets/images/login/pic1.png') ?>" class="img-fluid" alt="">
             </div>
             <div class="col-md p-5">
-                <h1 class="display-1 mb-4 pt-1 text-dark">Report User</h1>
+                <h1 class="h1 mb-4 pt-1 text-dark">Report User</h1>
                 <p class="lead">
                     <form method="post" action="" autocomplete="off">
-                    <!-- Username -->
-                        <div class="mb-3">
-                            <label for="" class="form-label"> Report Username</label>
-                            <input type="text" class="form-control mb-1" id="" aria-describedby="emailHelp" name="userName" value="" />
-                            <span class="text-danger"><?php echo form_error('userName'); ?></span> <!-- print error message if there is any -->
-                        </div>
+                       
                     <!-- reason -->
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Example select</label>
+                            <label for="exampleFormControlSelect1">Category</label>
                             <select class="form-control" id="exampleFormControlSelect1">
                               <option>Violence</option>
                               <option>Harassment</option>
@@ -29,14 +24,10 @@
                         </div>
                     <!-- Details -->
                         <div class="mb-3">
-                            <label for="examplefirstname1" class="form-label">Details</label>
+                            <label for="examplefirstname1" class="form-label pt-2">Details</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                         </div>
-                    <!-- Email Address -->
-                        <div class="mb-3">
-                            <label for="" class="form-label"> Email Address (optional)</label>
-                            <input type="text" class="form-control mb-1" id="" aria-describedby="emailAdd" name="" value="" />
-                        </div>
+                    
                     <!-- By report -->
                         <div class="mb-3">
                             <label class="form-check-label" for="exampleCheck1">

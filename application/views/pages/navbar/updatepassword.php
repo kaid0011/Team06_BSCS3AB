@@ -1,12 +1,20 @@
 <section style="background-color: #e9ecef; min-height: 75vh; padding-top: 80px">
   <div class="container">
     <h1 class="h1 mb-4 pt-1 text-dark text-center">Update Password</h1>
+    
     <div>
 
       <div class="col-md p-5 d-flex justify-content-center align-items-center">
         <p class="lead align-center">
+       
         <form method="post" action="<?= base_url('updateprofile/updatepassword') ?>" autocomplete="off">
           <!-- Old Password -->
+          <?php
+              if ($this->session->flashdata('message')) 
+              {
+                  echo '<div class="alert alert-danger">' . $this->session->flashdata("message") . '</div>';
+              }
+          ?>
           <div class="mb-3 text-start text-secondary" style="width: 600px;">
             <label for="exampleloldpassword" class="form-label ps-2">Old Password</label>
             <input type="password" class="form-control mb-1" id="exampleoldpassword" aria-describedby="emailHelp" name="oldPassword" value="" />

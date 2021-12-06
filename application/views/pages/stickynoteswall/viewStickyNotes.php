@@ -1,27 +1,31 @@
 <!-- title and create button(direct to createstickynotes) -->
 <div class="px-5 my-4" style="display: flex; flex-direction: row;">
-    <div class="display-1 text-primary text-center mx-auto mb-3">Sticky Notes wall</div>
-    <a href="<?= base_url('stickynoteswall/createStickyNotes') ?>">
-        <button class="btn btn-primary text-white fw-normal btn-outline-secondary ml-auto px-4" type="button">Create</button>
-    </a>
+
 </div>
+<div class="display-1 d-flex justify-content-center align-items-center text-center p-4 fw-normal" style="color: #212529;">Sticky Notes Wall</div>
 <!-- end of section  -->
 <!-- finduser section  -->
 <div class="my-4">&nbsp;</div>
 <div class = "col-lg-12 col-sm-12 col-md-12 col-xs-12 ">
     <div class="input-group input-group-lg inv-amount-block">
         <div class="w-50 mx-auto" style="display: flex; flex-direction: row;">
-            <input type="text" class="form-control" placeholder="Enter Name..." aria-describedby="basic-addon1">
-            <button class="btn btn-outline-secondary btn-primary text-white fw-normal" type="button">Search</button>
+        <input type="text" name="userName" class="form-control me-2 border-dark border-2">
+        <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
         </div>
     </div>
 </div>
-<div class="my-4">&nbsp;</div>
 <!-- end of section  -->
 <!-- stickynotes card section -->
-<section class="p-5" style="background-color: #e9ecef;">
-    <div class="display-1 text-center p-4 fw-normal" style="color: #329bba;">Recent Sticky Notes</div>
-    <div class="container">
+
+<section class="p-5" >
+<hr class="dashed mb-5"> 
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-lg border border-3 border-dark mb-5" type="button"style="background-color: #f0b63a;">Create New Sticky Notes</button>
+  <a href="<?= base_url('stickynoteswall/createStickyNotes') ?>">
+</div>
+</a>
+
+    <div class="container" >
         <div class="row text-center g-4">
             <div class="col-md">
                 <div class="card bg-dark text-light">
@@ -34,8 +38,9 @@
                         <p class="card-text py-5">
                             Kim lang malakas gumamit ng aqua
                         </p>
+                        <i class="bi bi-star h4 float-start" disabled></i> 
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
-                            <button class="d-flex flex-row">Report</button>
+                            <button class="d-flex ">Report</button>
                         </a>
                     </div>
                 </div>
@@ -51,8 +56,9 @@
                         <p class="card-text py-5">
                             ampogi ni jihad crush na crush ko siya, hahahahahahha hahahahaha hahahaha heehhe ahahha
                         </p>
+                        <i class="bi bi-star h4 float-start" disabled></i> 
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
-                            <button class="d-flex flex-row">Report</button>
+                            <button class="d-flex ">Report</button>
                         </a>
                     </div>
                 </div>
@@ -68,8 +74,9 @@
                         <p class="card-text py-5">
                             napakasolid talaga ng team6, sobrang 6xy kasi ng mga tao
                         </p>
+                        <i class="bi bi-star h4 float-start" disabled></i> 
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
-                            <button class="d-flex flex-row">Report</button>
+                            <button class="d-flex ">Report</button>
                         </a>
                     </div>
                 </div>
@@ -88,8 +95,9 @@
                         <p class="card-text py-5">
                             paglumubog ang barko saan ka kakapit?
                         </p>
+                        <i class="bi bi-star h4 float-start" disabled></i> 
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
-                            <button class="d-flex flex-row">Report</button>
+                            <button class="d-flex ">Report</button>
                         </a>
                     </div>
                 </div>
@@ -105,8 +113,9 @@
                         <p class="card-text py-5">
                             Baril ka ba, _____ naman
                         </p>
+                        <i class="bi bi-star h4 float-start" disabled></i> 
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
-                            <button class="d-flex flex-row">Report</button>
+                            <button class="d-flex ">Report</button>
                         </a>
                     </div>
                 </div>
@@ -123,8 +132,9 @@
                             Pagpasensiyahan n'yo na kung kami'y nanggugulo
                             Ganyan lang talaga t'wing kami'y namamasko
                         </p>
+                        <i class="bi bi-star h4 float-start" disabled></i> 
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
-                            <button class="d-flex flex-row">Report</button>
+                            <button class="d-flex ">Report</button>
                         </a>
                     </div>
                 </div>
@@ -134,11 +144,26 @@
 </section>
 
 <style>
+    body{
+        background-color: #e9ecef;
+    }
+    hr.dashed {
+  border-top: 5px dashed #e9ecef;
+}
+button{
+    float:right;
+}
 /* center placeholder section*/
    input {
   text-align: center;
 }
 
+.card{
+   
+    overflow: scroll;
+    overflow-x: hidden;
+    
+}
 ::-webkit-input-placeholder {
   text-align: center;
 }

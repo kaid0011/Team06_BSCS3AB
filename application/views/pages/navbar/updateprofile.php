@@ -78,31 +78,13 @@
 
 
   </div>
+
 </section>
-
 <style>
-  .scrollspy-example {
-    height: 300px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+  @media(min-width:375px){
+    .pic{
+    width: 250px;
+    height: 250px;
   }
-
-  .scrollspy-example::-webkit-scrollbar {
-    width: 10px;
   }
-
-  .scrollspy-example::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-border-radius: 0px;
-    border-radius: 3px;
-  }
-
-  .scrollspy-example::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-    -webkit-border-radius: 0px;
-    background: rgb(149, 153, 165);
-    border-radius: 3px;
-    height: 5px;
-  }
-
 </style>

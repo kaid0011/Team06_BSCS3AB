@@ -1,40 +1,43 @@
+<form method="post" id ="updateform" action="<?=base_url('stickynoteswall/createnotes')?>"> 
 <section>
   <div class="container">
-    <div class="display-1  text-center my-4">Submit a post</div>
+    <div class="display-1  text-center my-4" id="white">Submit a Post </div>
     <div class="row align-items-center my-5 g-4"> 
 		  <div class="section ">
         <div class="d-flex justify-content-center">
+          
           <div class="row g-4">
 
             <!-- Light Theme Button -->   
             <div class="col">
-              <button class="p-2 btn light">Light</button>
+            <input type="button" onclick="changeColor('#e9ecef','Light');" value ="Light" class="p-2 btn"></input>
               <!-- <button class="p-2 btn" disabled>Light</button> -->
             </div>
             
             <!-- Dark Theme Button -->
             <div class="col">
-              <button class="p-2 btn dark"> Dark</button>
+            <input type="button" onclick="changeColor2('#495057', 'Dark');" value ="Dark" class="p-2 btn"></input>
               <!-- <button class="p-2 btn" disabled>Dark</button> -->
             </div>
-            
+          
             <!-- Apple Theme Button -->
             <div class="col">
-              <button class="p-2 btn">Apple</button>
+            <input type="button" onclick="changeImgFruits( 'url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)','Apple');"  value ="Apple" class="p-2 btn"></input>
               <!-- <button class="p-2 btn" disabled>Apple</button> -->
             </div>
             
             <!-- Orange Theme Button -->
             <div class="col orange">
-              <button class="p-2 btn  ">Orange</button>
+            <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)','Orange');" value ="Orange" class="p-2 btn"></input>
               <!-- <button class="p-2 btn" disabled>Orange</button> -->
             </div>
             
             <!-- Kiwi Theme Button -->
             <div class="col">
-              <button class="p-2 btn">Kiwi</button>
+            <input type="button" onclick="changeImgFruits( 'url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)','Kiwi');" value ="Kiwi" class="p-2 btn"></input>
               <!-- <button class="p-2 btn" disabled>Kiwi</button> -->
             </div>
+            <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" hidden >
 
           </div>
         </div>
@@ -42,24 +45,27 @@
         <div class="mt-3 row justify-content-center">
           <div class="row position-absolute my-3">
             <div class="col-4 col-xl-5 text-end"></div>
-
-            <div class="col-4 col-xl-2 justify-content-center inputbox">   
+            <div class="col-4 col-xl-2 justify-content-center inputbox" >   
+              
               <div class="input-group boxbox mt-2">
-                To :<input type="text" class="form-control" placeholder="Enter Name..." /> 
+                To :<input type="text" class="form-control" id="noteReceiver" name="receiver" placeholder="Enter Name..." />
+                    
               </div>
             </div>
 
             <div class="col-lg-4 col-xl-4"></div>
           </div>
+          <div class="my-2" ></div>
           
-          <div class="my-2"></div>
-            <textarea class="form-control border border-3 border-secondary py-5 px-4 toinput inputSize" id="" rows="10"></textarea>
+            <textarea class="form-control border border-3 border-secondary py-5 px-4 toinput inputSize" type="text"  id="noteInput" name="input"rows="10"></textarea>
+
           </div>
         </div>
 
         <div class="row justify-content-center">
           <div class="mb-3 col-8 text-center">
-            <button class="py-3 px-5 btn " type="submit" >Submit</button>
+            <input class="py-3 px-5 btn " type="submit" value="Submit" name= "action">  
+            
           </div>
         </div>
 
@@ -68,6 +74,7 @@
 
   </div>
 </section>
+</form>
 
 <style>
   body {
@@ -175,3 +182,27 @@
     }
   }
 </style>
+
+<script>
+  const name = document.querySelector(".name");
+
+  function changeColor(color, theme) {
+    document.body.style.background = color;
+    document.getElementById("submittheme").value = theme;
+    document.getElementById("white").style.color ="black"
+  }
+
+  function changeColor2(color, theme) {
+    document.body.style.background = color;
+    document.getElementById("submittheme").value = theme;
+    document.getElementById("white").style.color ="white"
+  }
+
+  function changeImgFruits(color, theme) {
+    document.body.style.backgroundImage = color;
+    document.getElementById("submittheme").value = theme;
+    document.getElementById("white").style.color ="black"
+    
+  }
+
+</script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2021 at 11:30 AM
+-- Generation Time: Dec 07, 2021 at 11:59 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -287,25 +287,25 @@ ALTER TABLE `penalty`
 -- AUTO_INCREMENT for table `privatenb_pages`
 --
 ALTER TABLE `privatenb_pages`
-  MODIFY `privateNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `privateNBPage_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `private_notebook`
 --
 ALTER TABLE `private_notebook`
-  MODIFY `privateNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `privateNB_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `publicnb_pages`
 --
 ALTER TABLE `publicnb_pages`
-  MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `public_notebook`
 --
 ALTER TABLE `public_notebook`
-  MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reaction`
@@ -335,7 +335,7 @@ ALTER TABLE `support_team`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

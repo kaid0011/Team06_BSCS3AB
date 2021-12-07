@@ -287,25 +287,25 @@ ALTER TABLE `penalty`
 -- AUTO_INCREMENT for table `privatenb_pages`
 --
 ALTER TABLE `privatenb_pages`
-  MODIFY `privateNBPage_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `privateNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `private_notebook`
 --
 ALTER TABLE `private_notebook`
-  MODIFY `privateNB_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `privateNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `publicnb_pages`
 --
 ALTER TABLE `publicnb_pages`
-  MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `public_notebook`
 --
 ALTER TABLE `public_notebook`
-  MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `reaction`
@@ -335,7 +335,7 @@ ALTER TABLE `support_team`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

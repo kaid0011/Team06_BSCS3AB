@@ -50,10 +50,6 @@
                 $this->index();
             }
 
-            if($notetheme = 'Dark')
-            {
-                
-            }
         }
 
     }

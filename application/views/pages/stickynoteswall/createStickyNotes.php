@@ -1,7 +1,7 @@
 <form method="post" id ="updateform" action="<?=base_url('stickynoteswall/createnotes')?>"> 
 <section>
   <div class="container">
-    <div class="display-1  text-center my-4" id="white">Submit a Post </div>
+    <div class="display-1  text-center my-4" id="white">Submit a Post</div>
     <div class="row align-items-center my-5 g-4"> 
 		  <div class="section ">
         <div class="d-flex justify-content-center">

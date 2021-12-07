@@ -1,11 +1,14 @@
-<section>
+<section style="min-height: 75vh;">
   <div class="container">
-    <div class="display-1 text-center my-4  ">Submit a post</div>
+    <div class="display-1 text-center my-4  ">What's your Message?</div>
     <div class="row align-items-center my-5 g-4"> 
-		  <div class="section ">
-        <div class="d-flex justify-content-center">
+    <div class="card-3d-wrap mx-auto">
+      <div class="card-front" id="card">
+      <div class="section ">
+	
+        <div class="d-flex p-5 justify-content-center">
+          
           <div class="row g-4">
-
             <!-- Light Theme Button -->   
             <div class="col">
               <button class="p-2 btn">Light</button>
@@ -41,11 +44,11 @@
 
         <div class="mt-3 row justify-content-center">
           <div class="row position-absolute my-3">
-            <div class="col-4 col-xl-5 text-end"></div>
+            <div class="col-4 col-xl-3.5 text-end"></div>
 
-            <div class="col-4 col-xl-2 justify-content-center inputbox">   
-              <div class="input-group boxbox mt-2">
-                To :<input type="text" class="form-control" placeholder="Enter Name..." /> 
+            <div class="col-8 col-xl-2 justify-content-center inputbox ">   
+              <div class="input-group justify-content-center boxbox mt-2">
+                To :<input type="text" class="form-control " placeholder="Enter Name..." /> 
               </div>
             </div>
 
@@ -59,10 +62,13 @@
 
         <div class="row justify-content-center">
           <div class="mb-3 col-8 text-center">
-            <button class="py-3 px-5 btn " type="submit" >Submit</button>
+            <button class="me-2 py-3 px-5 btn btn-sm " type="submit" >Back</button>
+            <button class="py-3 px-5 btn btn-sm " type="submit" >Submit</button>
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </div>
 </section>
@@ -73,6 +79,7 @@
     font-weight: 300;
     font-size: 15px;
     color: #212529;
+    background-color: #dee2e6;
     background-image:url(assets/images/themes/Theme1_Apple.jpg);
     /*if theme is dark,
       color: #f8f9fa;
@@ -106,12 +113,30 @@
     if theme is Kiwi,
       background-color: #adb5bd; */
   }
+  .inputbox
+  {
+    width: 300px;
+  }
 
   .btn:hover {  
     background-color: #6c757d;
     color: #dee2e6;
     box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
   }
+  .card-3d-wrap {
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    height: 600px;
+  }
+  .card-front {
+    width: 100%;
+    height: 100%;
+    color: #212529;
+    background-color: #212529;
+    border-radius: 10px;
+  }
+
 
   @media (max-width: 450px) {
     .toinput {

@@ -9,7 +9,9 @@
 <div class = "col-lg-12 col-sm-12 col-md-12 col-xs-12 ">
     <div class="input-group input-group-lg inv-amount-block">
         <div class="w-50 mx-auto" style="display: flex; flex-direction: row;">
+
         <input type="text" name="userName"placeholder="Enter receiver's name" class="form-control me-2 border-dark border-2">
+
         <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
         </div>
     </div>
@@ -61,7 +63,9 @@
                         </p>
                         <i class="bi bi-star h4 float-start" disabled></i> 
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
+
                             <button class="d-flex" >Report</button>
+
                         </a>
                     </div>
                 </div>
@@ -187,13 +191,11 @@ float:right;
     border-radius: 3px;
     height: 5px;
   }
+
 /* center placeholder section*/
    input {
   text-align: center;
 }
-
-
-
 
 ::-webkit-input-placeholder {
   text-align: center;

@@ -12,27 +12,27 @@
                 
                     <!-- Light Theme Button -->
                     <div class="col">
-                      <input type="button" onclick="changeColor('#e9ecef', '#adb5bd', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
+                      <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Light.jpg')?>)', 'url(<?=base_url('assets/images/themes/LightCard.jpg')?>)', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
                       <!-- <button class="p-2 btn" disabled>Light</button> -->
                       </div>
                     <!-- Dark Theme Button -->
                     <div class="col">
-                    <input type="button" onclick="changeColor('#495057', '#212529', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Dark.jpg')?>)', 'url(<?=base_url('assets/images/themes/DarkCard.jpg')?>)', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
                       <!-- <button class="p-2 btn" disabled>Dark</button> -->
                     </div>                   
                     <!-- Apple Theme Button -->
                     <div class="col">
-                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/Applecard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/AppleCard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
                       <!-- <button class="p-2 btn" disabled>Apple</button> -->
                       </div>
                     <!-- Orange Theme Button -->
                     <div class="col">
-                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/Orangecard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme4_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/OrangeCard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
                       <!-- <button class="p-2 btn" disabled>Orange</button> -->
                       </div>
                     <!-- Kiwi Theme Button -->
                     <div class="col">
-                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme5_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/KiwiCard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
                       <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
                     </div>
                 </div>
@@ -136,14 +136,6 @@
 
 <script>
   const name = document.querySelector(".name");
-
-  function changeColor(color, cardcolor, textcolor, theme) {
-    document.getElementById("submittheme").value = theme;
-    document.body.style.background = color;
-    document.getElementById("card").style.background = cardcolor;
-    document.getElementById("card").style.color = textcolor;
-    
-  }
 
   function changeImgFruits(color, cardcolor, textcolor, theme) {
     document.getElementById("submittheme").value = theme;

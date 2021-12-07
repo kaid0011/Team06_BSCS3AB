@@ -1,49 +1,44 @@
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <?php
-
-  foreach ($viewPrivateNotebook->result() as $row) 
-  {
-    $theme = $row->pageTheme;
-    if ($theme == "Dark") 
+    foreach ($viewPrivateNotebook->result() as $row) 
     {
-      $themecolor = '#495057';
-      $themecardcolor = '#f8f9fa';
-      $themecardbgcolor = '#212529';
-      $fontcolor = '#f8f9fa';
-    } 
-    else if ($theme == "Light") 
-    {
-      $themecolor = '#e9ecef';
-      $themecardcolor = '#212529';
-      $themecardbgcolor = '#adb5bd';
-      $fontcolor = '#212529';
-    } 
-    else if ($theme == "Apple") 
-    {
-      $themeurl = "assets/images/themes/Theme1_Apple.jpg";
-      $themecolor = "transparent";
-      $themecardcolor = '#212529';
-      $themecardbgurl = 'assets/images/themes/Applecard.jpg';
-      $fontcolor = '#212529';
-    } 
-    else if ($theme == "Orange") 
-    {
-      $themeurl = "assets/images/themes/Theme2_Orange.jpg";
-      $themecolor = "transparent";
-      $themecardcolor = '#212529';
-      $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
-      $fontcolor = '#212529';
-    } 
-    else if ($theme == "Kiwi") 
-    {
-      $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
-      $themecolor = "transparent";
-      $themecardcolor = '#212529';
-      $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
-      $fontcolor = '#212529';
+      $theme = $row->pageTheme;
+      if ($theme == "Dark") 
+      {
+        $themeurl = "assets/images/themes/Theme2_Dark.jpg";
+        $themecardcolor = '#f8f9fa';
+        $themecardbgurl = 'assets/images/themes/Darkcard.jpg';
+        $fontcolor = '#f8f9fa';
+      } 
+      else if ($theme == "Light") 
+      {
+        $themeurl = "assets/images/themes/Theme1_Light.jpg";
+        $themecardcolor = '#212529';
+        $themecardbgurl = 'assets/images/themes/LightCard.jpg';
+        $fontcolor = '#212529';
+      } 
+      else if ($theme == "Apple") 
+      {
+        $themeurl = "assets/images/themes/Theme3_Apple.jpg";
+        $themecardcolor = '#212529';
+        $themecardbgurl = 'assets/images/themes/AppleCard.jpg';
+        $fontcolor = '#212529';
+      } 
+      else if ($theme == "Orange") 
+      {
+        $themeurl = "assets/images/themes/Theme4_Orange.jpg";
+        $themecardcolor = '#212529';
+        $themecardbgurl = 'assets/images/themes/OrangeCard.jpg';
+        $fontcolor = '#212529';
+      } 
+      else if ($theme == "Kiwi") 
+      {
+        $themeurl = "assets/images/themes/Theme5_Kiwi.jpg";
+        $themecardcolor = '#212529';
+        $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
+        $fontcolor = '#212529';
+      }
     }
-  }
-
   ?>
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -52,38 +47,37 @@
           <div class="section ">
             <div class="row">
               <?php
-                if ($viewPrivateNotebook->num_rows() > 0) 
-                {
+              if ($viewPrivateNotebook->num_rows() > 0) {
 
-                  foreach ($viewPrivateNotebook->result() as $row) 
-                  {
-                    ?>
-                    <div class="col mr-auto  h5">
+                foreach ($viewPrivateNotebook->result() as $row) {
+              ?>
+                  <div class="col mr-auto  h5">
 
-    
+
                     <!-- Timer -->
                     <div class="col ml-auto h5">
-                    <!-- Update Button-->
-                    <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
-                    <button class="p-2 btn float-end">Update</button>
-                    </a>
-                    <div class="mb-2 me-5 float-end" >Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer)); echo $time; ?></span> </div>             
+                      <!-- Update Button-->
+                      <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
+                        <button class="p-2 btn float-end">Update</button>
+                      </a>
+                      <div class="mb-2 me-5 float-end">Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer));
+                                                                            echo $time; ?></span> </div>
                     </div>
-                    </div>
-                    <hr class="bg-light">
-                    <!--Input Area-->
-                    <div class="mb-3">
-                
-                        <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
-                    <?php
-                  }
+                  </div>
+                  <hr class="bg-light">
+                  <!--Input Area-->
+                  <div class="mb-3">
+
+                    <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                <?php
                 }
+              }
                 ?>
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
 
-                <hr id ="inputbox" class="bg-light">
+                <hr id="inputbox" class="bg-light">
 
-              </div>
+                  </div>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@
 <div class = "col-lg-12 col-sm-12 col-md-12 col-xs-12 ">
     <div class="input-group input-group-lg inv-amount-block">
         <div class="w-50 mx-auto" style="display: flex; flex-direction: row;">
-        <input type="text" name="userName" class="form-control me-2 border-dark border-2">
+        <input type="text" name="userName"placeholder="Enter receiver's name" class="form-control me-2 border-dark border-2">
         <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
         </div>
     </div>
@@ -29,6 +29,7 @@
         <div class="row text-center g-4">
             <div class="col-md">
                 <div class="card bg-dark text-light">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
                         </div>
@@ -44,9 +45,11 @@
                         </a>
                     </div>
                 </div>
+                </div>
             </div>
             <div class="col-md ">
                 <div class="card bg-dark text-light">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
                         </div>
@@ -58,13 +61,15 @@
                         </p>
                         <i class="bi bi-star h4 float-start" disabled></i> 
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
-                            <button class="d-flex ">Report</button>
+                            <button class="d-flex" >Report</button>
                         </a>
                     </div>
+                </div>
                 </div>
             </div>
             <div class="col-md ">
                 <div class="card bg-dark text-light">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
                         </div>
@@ -80,12 +85,14 @@
                         </a>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
         <div class="mb-4"></div>
         <div class="row text-center g-4">
             <div class="col-md">
                 <div class="card bg-dark text-light">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
                         </div>
@@ -99,11 +106,13 @@
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
                             <button class="d-flex ">Report</button>
                         </a>
+                     </div>
                     </div>
                 </div>
             </div>
             <div class="col-md ">
                 <div class="card bg-dark text-light">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
                         </div>
@@ -117,11 +126,13 @@
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
                             <button class="d-flex ">Report</button>
                         </a>
-                    </div>
+                      </div>
+                     </div>
                 </div>
             </div>
             <div class="col-md ">
                 <div class="card bg-dark text-light">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
                         </div>
@@ -136,7 +147,8 @@
                         <a href="<?= base_url('reportuser') ?>" style="text-decoration: none;">
                             <button class="d-flex ">Report</button>
                         </a>
-                    </div>
+                        </div>
+                   </div>
                 </div>
             </div>
         </div>
@@ -144,26 +156,45 @@
 </section>
 
 <style>
-    body{
-        background-color: #e9ecef;
+    
+body{
+background-color: #e9ecef;
     }
-    hr.dashed {
-  border-top: 5px dashed #e9ecef;
+hr.dashed {
+border-top: 5px dashed #e9ecef;
 }
 button{
-    float:right;
+   
+float:right;
 }
+.scrollspy-example {
+   
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .scrollspy-example::-webkit-scrollbar {
+    width: 10px;
+  }
+  .scrollspy-example::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(252, 252, 228, 0.92);
+    -webkit-border-radius: 0px;
+    border-radius: 3px;
+  }
+  .scrollspy-example::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 0px;
+    background: rgb(149, 153, 165);
+    border-radius: 3px;
+    height: 5px;
+  }
 /* center placeholder section*/
    input {
   text-align: center;
 }
 
-.card{
-   
-    overflow: scroll;
-    overflow-x: hidden;
-    
-}
+
+
+
 ::-webkit-input-placeholder {
   text-align: center;
 }

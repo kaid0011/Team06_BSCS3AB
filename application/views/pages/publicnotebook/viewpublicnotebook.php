@@ -6,47 +6,44 @@
       $theme = $row->pageTheme;
       if ($theme == "Dark") 
       {
-        $themecolor = '#495057';
+        $themeurl = "assets/images/themes/Theme2_Dark.jpg";
         $themecardcolor = '#f8f9fa';
-        $themecardbgcolor = '#212529';
+        $themecardbgurl = 'assets/images/themes/Darkcard.jpg';
         $fontcolor = '#f8f9fa';
       } 
       else if ($theme == "Light") 
       {
-        $themecolor = '#e9ecef';
+        $themeurl = "assets/images/themes/Theme1_Light.jpg";
         $themecardcolor = '#212529';
-        $themecardbgcolor = '#adb5bd';
+        $themecardbgurl = 'assets/images/themes/LightCard.jpg';
         $fontcolor = '#212529';
       } 
       else if ($theme == "Apple") 
       {
-        $themeurl = "assets/images/themes/Theme1_Apple.jpg";
-        $themecolor = "transparent";
+        $themeurl = "assets/images/themes/Theme3_Apple.jpg";
         $themecardcolor = '#212529';
-        $themecardbgurl = 'assets/images/themes/Applecard.jpg';
+        $themecardbgurl = 'assets/images/themes/AppleCard.jpg';
         $fontcolor = '#212529';
       } 
       else if ($theme == "Orange") 
       {
-        $themeurl = "assets/images/themes/Theme2_Orange.jpg";
-        $themecolor = "transparent";
+        $themeurl = "assets/images/themes/Theme4_Orange.jpg";
         $themecardcolor = '#212529';
-        $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
+        $themecardbgurl = 'assets/images/themes/OrangeCard.jpg';
         $fontcolor = '#212529';
       } 
       else if ($theme == "Kiwi") 
       {
-        $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
-        $themecolor = "transparent";
+        $themeurl = "assets/images/themes/Theme5_Kiwi.jpg";
         $themecardcolor = '#212529';
-        $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
+        $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
         $fontcolor = '#212529';
       }
 ?>
-  <section id="learn" class="p-5" style="min-height: 75vh;">
+  <section id="learn" class="p-5" style="min-height: 75vh; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
-      <div class="card-front">
+      <div class="card-front" style="background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
         <div class="d-flex p-5">
           <div class="section ">
             <div class="row">
@@ -87,18 +84,16 @@
     </div>
   </div>
 </section>
+
 <?php
     }
   }
 ?>
 
 <style>
-  body {
+ body {
     font-weight: 300;
     font-size: 15px;
-    color: <?php echo $fontcolor ?>;
-    background-color: <?php echo $themecolor ?>;
-    background-image: url(<?= base_url($themeurl) ?>);
     overflow-x: hidden;
   }
 
@@ -137,9 +132,6 @@
   .card-front {
     width: 100%;
     height: 100%;
-    color: <?php echo $$themecardcolor ?>;
-    background-color: <?php echo $themecardbgcolor ?>;
-    background-image: url(<?= base_url($themecardbgurl) ?>);
     position: absolute;
     border-radius: 10px;
   }

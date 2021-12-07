@@ -29,7 +29,7 @@
             $this->sitelayout->loadTemplate('pages/privatenotebook/updateprivatenotebook', $data); 
         }
 
-        public function updatePrivatePage()
+        public function updateprivatepage()
         {
 
             $id = $this->session->userdata('user_ID');

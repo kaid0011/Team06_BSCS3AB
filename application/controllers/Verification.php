@@ -8,7 +8,6 @@
             parent::__construct();
             
             $this->load->library('form_validation');    #preload form_validation library
-            #$this->load->library('encrypt');
             $this->load->model('Verification_model');
         }
 
@@ -89,11 +88,6 @@
                 $this->session->set_userdata('verification_Key', $verification_key);
                 $this->resendEmail();
             }
-            else
-            {
-                echo 'waaa';
-                #will change laturrr
-            }
         }
 
         public function resendEmail()
@@ -136,11 +130,6 @@
             {
                 $data['navbar'] = 'registration';
                 $this->sitelayout->loadTemplate('pages/registration/verification', $data);
-            }
-            else
-            {
-                echo "Error";
-                #will change laturrr
             }
         }
     }

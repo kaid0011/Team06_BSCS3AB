@@ -100,11 +100,6 @@
                 $data['navbar'] = 'login';
                 $this->sitelayout->loadTemplate('pages/authentication/confirmation', $data);
             }
-            else
-            {
-                echo "Error";
-                #will change laturrr
-            }
         }
     }
 ?>

@@ -1,55 +1,59 @@
-<form method="post" id ="updateform" action="<?=base_url('stickynoteswall/createnotes')?>"> 
-<section>
+<form method="post" id ="updateform" action="<?=base_url('stickynoteswall/createnotes')?>">
+<section style="min-height: 75vh;">
   <div class="container">
-    <div class="display-1  text-center my-4" id="white">Submit a Post</div>
+    <div class="display-1 text-center my-4  " id="white">What's your Message?</div>
     <div class="row align-items-center my-5 g-4"> 
-		  <div class="section ">
-        <div class="d-flex justify-content-center">
+    <div class="card-3d-wrap mx-auto">
+      <div class="card-front" id="card">
+      <div class="section ">
+	
+        <div class="d-flex p-5 justify-content-center">
+
           
           <div class="row g-4">
-
             <!-- Light Theme Button -->   
             <div class="col">
-            <input type="button" onclick="changeColor('#e9ecef','Light');" value ="Light" class="p-2 btn"></input>
+            <input type="button" onclick="changeColor('#e9ecef','#adb5bd', 'Light');" value ="Light" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Light</button> -->
             </div>
             
             <!-- Dark Theme Button -->
             <div class="col">
-            <input type="button" onclick="changeColor2('#495057', 'Dark');" value ="Dark" class="p-2 btn"></input>
+            <input type="button" onclick="changeColor2('#495057', '#212529', 'Dark');" value ="Dark" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Dark</button> -->
             </div>
           
             <!-- Apple Theme Button -->
             <div class="col">
-            <input type="button" onclick="changeImgFruits( 'url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)','Apple');"  value ="Apple" class="p-2 btn"></input>
+            <input type="button" onclick="changeImgFruits( 'url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)','url(<?=base_url('assets/images/themes/Applecard.jpg')?>)','Apple');"  value ="Apple" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Apple</button> -->
             </div>
             
             <!-- Orange Theme Button -->
             <div class="col orange">
-            <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)','Orange');" value ="Orange" class="p-2 btn"></input>
+            <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)','url(<?=base_url('assets/images/themes/Orangecard.jpg')?>)','Orange');" value ="Orange" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Orange</button> -->
             </div>
             
             <!-- Kiwi Theme Button -->
             <div class="col">
-            <input type="button" onclick="changeImgFruits( 'url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)','Kiwi');" value ="Kiwi" class="p-2 btn"></input>
+            <input type="button" onclick="changeImgFruits( 'url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)','url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)','Kiwi');" value ="Kiwi" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Kiwi</button> -->
             </div>
-            <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" hidden >
+            <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" hidden>
 
           </div>
         </div>
 
         <div class="mt-3 row justify-content-center">
           <div class="row position-absolute my-3">
-            <div class="col-4 col-xl-5 text-end"></div>
-            <div class="col-4 col-xl-2 justify-content-center inputbox" >   
-              
-              <div class="input-group boxbox mt-2">
-                To :<input type="text" class="form-control" id="noteReceiver" name="receiver" placeholder="Enter Name..." />
-                    
+
+            <div class="col-4 col-xl-3.5 text-end"></div>
+
+            <div class="col-8 col-xl-2 justify-content-center inputbox ">   
+              <div class="input-group justify-content-center boxbox mt-2">
+                To :<input type="text" class="form-control " id="noteReceiver" name="receiver" placeholder="Enter Name..." /> 
+
               </div>
             </div>
 
@@ -64,12 +68,15 @@
 
         <div class="row justify-content-center">
           <div class="mb-3 col-8 text-center">
-            <input class="py-3 px-5 btn " type="submit" value="Submit" name= "action">  
-            
+            <input class="me-2 py-3 px-5 btn btn-sm " type="submit" value="Back" name="action" ></input>
+            <input class="py-3 px-5 btn btn-sm " type="submit" value="Submit" name="action" ></input>
+
           </div>
         </div>
 
       </div>
+    </div>
+    </div>
     </div>
 
   </div>
@@ -82,7 +89,8 @@
     font-weight: 300;
     font-size: 15px;
     color: #212529;
-    background-image:url(assets/images/themes/Theme1_Apple.jpg);
+  
+    
     /*if theme is dark,
       color: #f8f9fa;
       background-color: #495057;
@@ -98,12 +106,12 @@
     if theme is Kiwi,
       color: #212529;
       background-image:url(assets/images/themes/Theme3_Kiwi.jpg);*/
-    overflow-x: hidden;
+    
   }
 
   .btn {
     color: #212529;
-    background-color: #adb5bd;
+    background-color: #dee2e6;
     /*if theme is dark,
       background-color: #adb5bd;
     if theme is light,
@@ -115,12 +123,31 @@
     if theme is Kiwi,
       background-color: #adb5bd; */
   }
+  .inputbox
+  {
+    width: 300px;
+  }
 
   .btn:hover {  
     background-color: #6c757d;
     color: #dee2e6;
     box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
   }
+  .card-3d-wrap {
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    height: 600px;
+  }
+  .card-front {
+    width: 100%;
+    height: 100%;
+    color:<?php echo $themecardcolor ?> ;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 10px;
+  }
+  
+
 
   @media (max-width: 450px) {
     .toinput {
@@ -186,20 +213,23 @@
 <script>
   const name = document.querySelector(".name");
 
-  function changeColor(color, theme) {
+  function changeColor(color, noteColor, theme) {
     document.body.style.background = color;
+    document.getElementById("noteInput").style.background = noteColor;
     document.getElementById("submittheme").value = theme;
     document.getElementById("white").style.color ="black"
   }
 
-  function changeColor2(color, theme) {
+  function changeColor2(color, noteColor, theme) {
     document.body.style.background = color;
+    document.getElementById("noteInput").style.background = noteColor;
     document.getElementById("submittheme").value = theme;
     document.getElementById("white").style.color ="white"
   }
 
-  function changeImgFruits(color, theme) {
+  function changeImgFruits(color, noteColor, theme) {
     document.body.style.backgroundImage = color;
+    document.getElementById("noteInput").style.backgroundImage = noteColor;
     document.getElementById("submittheme").value = theme;
     document.getElementById("white").style.color ="black"
     

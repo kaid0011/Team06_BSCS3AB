@@ -11,16 +11,21 @@
         }
 
         public function index() {
+
+            $stickyNotes_ID = $this->session->userdata('user_ID');
+            $data['viewStickyNotes']=$this->StickyNotesWall_model->get_StickyNotesWallInput($stickyNotes_ID);
+
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/stickynoteswall/viewstickynotes', $data); 
+            
         }
 
         public function createStickyNotes() {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/stickynoteswall/createStickyNotes', $data); 
+            $this->sitelayout->loadTemplate('pages/stickynoteswall/createstickynotes', $data); 
         }
 
-        public function createNotes() {
+    public function createNotes() {
             $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
             $noteReceiver = $this->input->post('receiver');
@@ -47,6 +52,7 @@
             }
             else if($action == 'Back')
             {
+
                 $this->index();
             }
 

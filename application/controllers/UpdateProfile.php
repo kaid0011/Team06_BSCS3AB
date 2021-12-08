@@ -30,25 +30,22 @@
             $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
             
-            
             if($action == 'Update')
             {
-
+                $originPass = $this->session->userdata('password');
                 $this->form_validation->set_rules('oldPassword', 'Old Password', 'required|trim');
                 $this->form_validation->set_rules('newPassword', 'New Password', 'required|trim');
                 $this->form_validation->set_rules('confirmPassword', 'Confirm Password', 'required|matches[newPassword]');    #checks if confirm_password matches password
 
-               
-                if($this->form_validation->run())   #If no error,
+                $oldPass = md5($this->input->post('oldPassword'));
+
+                if($originPass == $oldPass)
                 {
-                    
-                    $originPass = $this->session->userdata('password');
-                    $oldPass = md5($this->input->post('oldPassword'));
-                    $newPass = md5($this->input->post('newPassword'));
-                    
-                        if($originPass == $oldPass)
-                        {   
-                            $this->UpdateProfile_model->updatePassword($newPass, $id);
+                    if($this->form_validation->run())
+                    {
+                        $newPass = md5($this->input->post('newPassword'));
+
+                        $this->UpdateProfile_model->updatePassword($newPass, $id);
                             echo("Password changed successfully");
 
                             $userdata = array(
@@ -62,109 +59,306 @@
 
                             $data['navbar'] = 'main';
                             $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data); 
-                        }
-                        else
-                        {
-                            echo("Wrong Old Password");
-                            $data['navbar'] = 'main';
-                            $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data); 
-                        }
+                    }
+                    else 
+                    {
+                        $data['navbar'] = 'main';
+                        $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data);
+                    }
                 }
                 else
                 {
-                    echo("Incorrect Password");
-                    $data['navbar'] = 'main';
-                    $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data); 
+                        $this->session->set_flashdata('message', 'Invalid Password');
+
+                        $data['navbar'] = 'main';
+                        $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data);
                 }
-                
-            }
+             }
             else
             {
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
             }
 
-
         }
 
         public function deleteaccount()
         {
-            $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
-            $link = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-            $sql = "DELETE FROM user WHERE user_ID=$id";
+            if($action == "YES")
+            {
+                $id = $this->session->userdata('user_ID');
+                $link = mysqli_connect("localhost", "root", "team6", "virtual_diary");
+                $sql = "DELETE FROM user WHERE user_ID=$id";
 
-            if (mysqli_query($link, $sql)) 
-            {
-                echo "Record deleted successfully";
-                $this->session->sess_destroy();
-            } 
-            else 
-            {
-                echo "Error deleting record";
+                if (mysqli_query($link, $sql)) 
+                {
+                    $this->session->sess_destroy();
+                    $data['navbar'] = 'home';
+                    $this->sitelayout->loadTemplate('pages/home/home', $data);   
+                } 
+                    
             }
-
-                $data['navbar'] = 'home';
-                $this->sitelayout->loadTemplate('pages/home/home', $data);   
+            else
+            {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+            }
         }
 
         public function updatedprofile()
         {
   
-            $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
-            
-            if($action == 'Update')
-            {
-                $this->form_validation->set_rules('userName', 'Username', 'required|trim|min_length[3]|max_length[12]|is_unique[user.userName]',
-                array(
-                    'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in userName
-                ));
-                $this->form_validation->set_rules('displayName', 'Display Name', 'required|trim');
-                $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]',
-                array(
-                    'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in email
-                ));
-
-            
-                if($this->form_validation->run())   #If no error,
-                {
-                    $data['navbar'] = 'maim';
-                    $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
-
-                    $userName = $this->input->post('userName'); //userName
-                    $displayName = $this->input->post('displayName'); //displayName
-                    $emailAdd = $this->input->post('email'); //emailAddress
-                    $this->UpdateProfile_model->updateProfile($userName, $displayName, $emailAdd, $id);
-    
-                    $userdata = array(
-                        'userName' => $this->input->post('userName'),
-                        'displayName' => $this->input->post('displayName'),
-                        'email' => $this->input->post('email'),
-                        'password' => $this->session->userdata('password')
-                    );
-                    
-                    $this->session->set_userdata($userdata);
-                    
-                    $this->index();
-                }
-                else    #If there is error,
-                {
-                    $data['navbar'] = 'main';
-                    $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data);                         #load registration page again with error messages.
-                }
-               
-            }
-            else if($action == 'Change Password')
+            if($action == 'Change Password')
             {
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data); 
             }
-            else
+            else if($action == 'Deactivate Account')
             {  
-                $this->deleteaccount();
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/deactivateaccount', $data); 
             }
   
+        }
+
+        public function updateusername()
+        {
+            $this->form_validation->set_rules('userName', 'Username', 'trim|required|min_length[3]|max_length[12]|is_unique[user.userName]',
+                array(
+                    'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in userName
+                ));
+            if($this->form_validation->run())
+            {
+                $id = $this->session->userdata('user_ID');
+                $userName = $this->input->post('userName');
+                $this->UpdateProfile_model->updateUsername($userName, $id);
+
+                $userdata = array(
+                    'userName' => $this->input->post('userName'),
+                    'displayName' => $this->session->userdata('displayName'),
+                    'email' => $this->session->userdata('email'),
+                    'password' => $this->session->userdata('password')
+                );
+
+                $this->session->set_userdata($userdata); 
+                $this->index();
+
+            }
+            else
+            {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data);   
+            }
+        }
+
+        public function updatedisplayname()
+        {
+            $this->form_validation->set_rules('displayName', 'Display Name', 'trim|required|min_length[3]');
+
+            if($this->form_validation->run())
+            {
+                $id = $this->session->userdata('user_ID');
+                $displayName = $this->input->post('displayName');
+                $this->UpdateProfile_model->updateDisplayname($displayName, $id);
+
+                $userdata = array(
+                    'userName' => $this->session->userdata('userName'),
+                    'displayName' => $this->input->post('displayName') ,
+                    'email' => $this->session->userdata('email'),
+                    'password' => $this->session->userdata('password')
+                );
+
+                $this->session->set_userdata($userdata); 
+                $this->index();
+            }
+            else
+            {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data);   
+            }
+        }
+
+        public function updateemail()
+        {
+            $this->form_validation->set_rules('email', 'Email', 'trim|min_length[8]|valid_email|is_unique[user.email]',
+                array(
+                    'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in email
+                ));
+            if($this->form_validation->run())
+            {
+                $id = $this->session->userdata('user_ID');
+                $verification_key = random_string('numeric', 6); 
+                $this->UpdateProfile_model->updateVerificationKey($verification_key, $id);
+
+                $userdata = array(
+                    'userName' => $this->session->userdata('userName'),
+                    'displayName' => $this->session->userdata('displayName') ,
+                    'email' => $this->input->post('email'),
+                    'password' => $this->session->userdata('password')
+                );
+
+                $this->session->set_userdata($userdata); 
+
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
+            }
+            else
+            {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data);                         
+            }
+        }
+
+        public function updateverification()
+        {
+            $action = $this->input->post('action');
+
+            if($action == 'Resend') {
+                $this->resendCode();
+            }
+            else if($action == "Verify") {
+                $this->form_validation->set_rules('ver_code', 'Verification Code', 'required');
+
+                if($this->form_validation->run())
+                {
+                    $this->verifyEmail();
+                }
+                else
+                {
+                    $data['navbar'] = 'main';
+                    $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
+                }
+            }
+            else {
+
+                $id = $this->session->userdata('user_ID');
+                $query = $this->UpdateProfile_model->get_Email($id);
+                foreach($query->result() as $row)
+                {
+                    $query = $row->email;
+                }
+
+                $userdata = array(
+                    'userName' => $this->session->userdata('userName'),
+                    'displayName' => $this->session->userdata('displayName') ,
+                    'email' => $query,
+                    'password' => $this->session->userdata('password')
+                );
+
+                $this->session->set_userdata($userdata); 
+
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+            }
+        }
+
+        public function verifyEmail()
+        {
+            $verification_Key = $this->input->post('ver_code');
+            $username = $this->session->userdata('userName');
+
+            $response = $this->UpdateProfile_model->verify($verification_Key, $username);
+           
+            if($response)
+            {
+                $id = $this->session->userdata('user_ID');
+                $email = $this->session->userdata('email');
+                $this->UpdateProfile_model->updateEmail($email, $id);
+        
+                $userdata = array(
+                    'userName' => $response->userName,
+                    'displayName' => $response->displayName,
+                    'email' => $this->session->userdata('email'),
+                    'password' => $response->password
+                );
+                        
+                $this->session->set_userdata($userdata); 
+                $this->index();
+            }
+            else
+            {
+                $this->session->set_flashdata('message', 'Invalid Code');
+
+                $userdata = array(
+                    'userName' => $response->userName,
+                    'displayName' => $response->displayName,
+                    'email' => $response->email,
+                    'password' => $response->password
+                );
+
+                $this->session->set_userdata($userdata); 
+
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
+            }
+        }
+
+
+        public function resendCode()
+        {
+            $verification_key = random_string('numeric', 6);
+            $userName = $this->session->userdata('userName');
+            $response = $this->UpdateProfile_model->resendCode($verification_key, $userName);
+            if($response)
+            {
+                $this->session->set_userdata('verification_Key', $verification_key);
+                $this->resendEmail();
+            }
+            else
+            {
+                echo 'waaa';
+                #will change laturrr
+            }
+        }
+
+        public function resendEmail()
+        {
+            $key = $this->session->userdata('verification_Key');
+            $name = $this->session->userdata('userName');
+
+            $subject = "Verify your email";
+            $message = "
+            <h3>Hello, ".$name."!</h3>
+            <p>Here is your verification code.</p><br>
+            <h4>$key</h4>
+            ";
+            $to = $this->session->userdata('email');
+
+            $config = array(
+                'protocol'  => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_port' => 465,
+                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
+                'smtp_pass' => 'team6@3ab',
+                'mailtype'  => 'html', 
+                'charset'   => 'iso-8859-1'
+            );
+            
+            $this->load->library('email');
+            $this->email->initialize($config);
+
+            $this->email->set_newline("\r\n");
+            
+            $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
+            $this->email->to($to);
+
+            $this->email->subject($subject);
+            $this->email->message($message);
+
+            $send = $this->email->send();
+
+            if($send)
+            {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
+            }
+            else
+            {
+                echo "Error";
+                #will change laturrr
+            }
         }
     }
 

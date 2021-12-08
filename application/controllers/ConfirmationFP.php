@@ -104,11 +104,6 @@
                 $data['navbar'] = 'login';
                 $this->sitelayout->loadTemplate('pages/authentication/changepassword', $data);
             }
-            else
-            {
-                echo "Error sending email";
-                #will change laturrr
-            }
         }
     }
 ?>

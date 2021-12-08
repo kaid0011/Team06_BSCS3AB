@@ -21,11 +21,11 @@
 
 <section class="p-5" >
 <hr class="dashed mb-5"> 
-<div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-lg border border-3 border-dark mb-5" type="button"style="background-color: #f0b63a;">Create New Sticky Notes</button>
-  <a href="<?= base_url('stickynoteswall/createStickyNotes') ?>">
-</div>
+<div class="d-flex justify-content-center ">
+<a href="<?= base_url('stickynoteswall/createstickynotes') ?>">
+  <button class="btn btn-lg border border-3 border-dark mb-5" type="button"style="background-color: #f0b63a; width: 50vw;" >Create New Sticky Notes</button>
 </a>
+</div>
 
     <div class="container" >
         <div class="row text-center g-4">

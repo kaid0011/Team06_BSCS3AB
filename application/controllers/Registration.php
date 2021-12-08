@@ -117,11 +117,6 @@
                         }
                     }
                 }
-                else
-                {
-                    echo "Error";
-                    #will change laturrr
-                }
             }
             $data['navbar'] = 'registration';
             $this->sitelayout->loadTemplate('pages/registration/registration', $data);

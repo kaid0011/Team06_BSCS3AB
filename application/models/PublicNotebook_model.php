@@ -17,9 +17,13 @@
             return $query;
         }
 
-        public function createPublicPage($data)
+        public function createPublicPage($id, $input, $pageTheme, $pageReact_Count)
         {
-            $this->db->insert('publicnb_pages', $data);
+            $this->db->set('publicNB_ID', $id);
+            $this->db->set('pageInput', $input);
+            $this->db->set('pageTheme', $pageTheme);
+            $this->db->set('pageReact_Count', $pageReact_Count);
+            $this->db->insert('publicnb_pages');
             return true;
         }
 

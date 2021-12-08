@@ -12,7 +12,7 @@
         public function index() {
             $publicNB_ID = $this->session->userdata('user_ID');
             $data['viewPublicNotebook']=$this->PublicNotebook_model->get_PublicNotebookInput($publicNB_ID);
-
+            
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/publicnotebook/viewpublicnotebook', $data); 
         }
@@ -26,22 +26,24 @@
             $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
             $input = $this->input->post('input');
-            $theme = $this->input->post('theme');
-            if($theme == NULL)
+            $pageTheme = $this->input->post('theme');
+            $pageReact_Count = 0;
+            if($pageTheme == NULL)
             {
-                $theme = 'Light';
+                $pageTheme = 'Light';
             }
 
-            $data = array(
+            /*$data = array(
                 'publicNB_ID' => $id,
                 'pageInput' => $input,
-                'pageTheme' => $theme,
+                'pageTheme' => $pageTheme,
                 'pageReact_Count' => 0
-            );
+            );*/
+
 
             if($action == 'Submit')
             {
-                $this->PublicNotebook_model->createPublicPage($data);
+                $this->PublicNotebook_model->createPublicPage($id, $input, $pageTheme, $pageReact_Count);
                 $this->PublicNotebook_model->pageCount($id);
                 $this->index();
             }
@@ -50,11 +52,6 @@
                 $this->index();
             }
         }
-
-
-
-        
-
 
         public function updatePublicNotebook()
         {

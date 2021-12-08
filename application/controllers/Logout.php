@@ -12,8 +12,7 @@ class Logout extends CI_Controller
     public function index()
     {
         $this->session->sess_destroy();
-        $data['navbar'] = 'home';
-        $this->sitelayout->loadTemplate('pages/home/home', $data); 
+        redirect(base_url());
     }
 }
 ?>

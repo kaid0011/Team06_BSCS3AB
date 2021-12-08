@@ -51,6 +51,11 @@
             }
         }
 
+
+
+        
+
+
         public function updatePublicNotebook()
         {
             $page_ID = $this->uri->segment(3);

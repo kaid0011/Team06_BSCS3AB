@@ -17,7 +17,7 @@
 
         <form method="post" action="<?= base_url('updateprofile/updateusername') ?>" autocomplete="off">   
           <!-- Username -->
-          <div class="mb-3 text-start text-secondary" style="width: 600px;">
+          <div class="mb-3 text-start text-secondary inputbox">
             <label for="exampleInputlastname1" class="form-label ps-2 mt-2">Username</label>
                 <div class="input-group input-group-lg">
                     <input type="text" class="form-control mb-1" style="font-size: 15px;" id="examplelastname1" name="userName" aria-describedby="emailHelp" value="<?php echo $this->session->userdata('userName');?>"/>
@@ -70,6 +70,15 @@
   </form>
   </p>
   </div>
+  <div class="py-5">&nbsp;</div>
+  <style>
+     @media (min-width: 768px) {
+    .inputbox {
+      width: 600px;
+    }
+  }
+
+  </style>
 
 
 

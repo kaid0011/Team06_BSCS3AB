@@ -33,7 +33,7 @@
             <div class="d-flex justify-content-center">
               <!-- if discussion is included:  
                       <div class="col-md-6 col-lg-7 mt-5">-->
-              <div class="card bg-light " style="min-height: 400px;">
+              <div class="card bg-light" style="min-height: 400px; z-index:0;">
                 <nav class="navbar navbar-light justify-content-center sticky-top" style="background-color: #495057;">
                   <p class=" justify-content-center align-items-center mt-2" style=" color: #eee;"> Public Notebook</p>
                 </nav>

@@ -42,7 +42,6 @@
             if($action == 'Submit')
             {
                 $this->PublicNotebook_model->createPublicPage($data);
-                $this->PublicNotebook_model->pageCount($id);
                 $this->index();
             }
             else if($action == 'Back')
@@ -96,19 +95,5 @@
                 $this->index();
             }
         }
-
-        ///////////////////////////// Public Notebook Delete Controller
-    
-        public function deletepublicpage()
-        {
-            $this->load->model("publicNotebook_model");
-            $id = 1; //$this->session->userdata('user_ID');
-            $publicid = 1; //$this->session->userdata('user_ID'); 
-            /// This needs to be a seperate declaration
-            $this->publicNotebook_model->publicNotebook_delete($id);
-            $this->publicNotebook_model->publicNotebook_delete($publicid);
-            
-        }
-
     }
 ?>

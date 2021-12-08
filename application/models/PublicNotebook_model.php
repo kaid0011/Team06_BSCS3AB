@@ -9,10 +9,12 @@
         }
 
         public function get_PublicNotebookInput($publicNB_ID)
-        {   
+        {
+            
             $this->db->where('publicNB_ID', $publicNB_ID);
+            
             $this->db->select('publicNBPage_ID, pageInput, pageTheme');
-            $this->db->order_by('publicNBPage_ID', 'desc');
+            $this->db->order_by('publicNB_ID', 'desc');
             $query = $this->db->get('publicnb_pages');
             return $query;
         }
@@ -21,16 +23,6 @@
         {
             $this->db->insert('publicnb_pages', $data);
             return true;
-        }
-
-        public function pageCount($id)
-        {
-            $this->db->where('publicNB_ID', $id);
-            $count = $this->db->count_all_results('publicnb_pages');
-            
-            $this->db->where('publicNB_ID', $id);
-            $this->db->set('publicPages_Count', $count);
-            $this->db->update('public_notebook');
         }
 
         public function get_PublicPage($page_ID)

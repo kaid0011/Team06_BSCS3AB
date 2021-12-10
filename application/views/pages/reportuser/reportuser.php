@@ -1,3 +1,4 @@
+<form method = "post" id = "updateform" action = "<?=base_url('reportuser/submitReport')?>">
 <section class="p-5" style="background-color: #e9ecef; min-height: 75vh;">
     <div class="container">
         <div class="row align-items-center justify-content-between">
@@ -7,12 +8,12 @@
             <div class="col-md p-5">
                 <h1 class="h1 mb-4 pt-1 text-dark">Report User</h1>
                 <p class="lead">
-                    <form method="post" action="" autocomplete="off">
+                 <!-- form method="post" action="action" autocomplete="off">--->
                        
                     <!-- reason -->
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Category</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select class="form-control" id="exampleFormControlSelect1" name="category">
                               <option>Violence</option>
                               <option>Harassment</option>
                               <option>Suicide or Self Injury</option>
@@ -25,7 +26,7 @@
                     <!-- Details -->
                         <div class="mb-3">
                             <label for="examplefirstname1" class="form-label pt-2">Details</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="details" rows="4"></textarea>
                         </div>
                     
                     <!-- By report -->
@@ -35,13 +36,12 @@
                             </label>
                   <!-- Report Button -->
                   <div class="col-md d-flex justify-content-end align-items-center">
-                      <a href="<?= base_url('reportuser/reportuserwall') ?>">
-                            <input type="submit" name="Report" value="Report" style="background-color: #f0b63a; width: 75px;" class="p-2 btn-sm border border-3 border-dark btn-end"></input>
-                        </a>
+                      <button type="submit" value="Submit" name="action" style="background-color: #f0b63a; width: 75px;" class="p-2 btn-sm border border-3 border-dark btn-end">Report</button>
                     </div>
-                    </form>
+                    <!-- </form>--->
                 </p>
             </div>
         </div>
     </div>
 </section>
+</form>

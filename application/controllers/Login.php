@@ -39,7 +39,8 @@
 
                     if($username == "admin" && $raw_password == "team6")
                     {
-                        echo 'admin view';
+                        //redirect('mainpage/AdminMainpage');
+                        echo 'admin';
                     }
                     else
                     {

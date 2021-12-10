@@ -16,13 +16,11 @@
             ?>
 
               <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal"><?php echo $row->displayName; ?><br>
-                <a class="text-secondary  " style="text-decoration: none;">@<?php echo $row->userName; ?></a>
+                <a class="text-secondary" style="text-decoration: none;">@<?php echo $row->userName; ?></a>
               </h1>
-            
-            <?php
-              }
-            ?>
-
+              <?php
+                }  
+              ?>
           </div>
         </div>
 
@@ -38,46 +36,106 @@
                   <p class=" justify-content-center align-items-center mt-2" style=" color: #eee;"> Public Notebook</p>
                 </nav>
                 <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                  <div class="card-body text-center" style="height: auto;">
-                    
+                <?php
+                  foreach ($findUserPublicNB->result() as $row) 
+                  {
+                    $theme = $row->pageTheme;
+                    if ($theme == "Dark") 
+                    {
+                      $themeurl = "assets/images/themes/Theme2_Dark.jpg";
+                      $themecardcolor = '#f8f9fa';
+                      $themecardbgurl = 'assets/images/themes/Darkcard.jpg';
+                      $fontcolor = '#f8f9fa';
+                    } 
+                    else if ($theme == "Light") 
+                    {
+                      $themeurl = "assets/images/themes/Theme1_Light.jpg";
+                      $themecardcolor = '#212529';
+                      $themecardbgurl = 'assets/images/themes/LightCard.jpg';
+                      $fontcolor = '#212529';
+                    } 
+                    else if ($theme == "Apple") 
+                    {
+                      $themeurl = "assets/images/themes/Theme3_Apple.jpg";
+                      $themecardcolor = '#212529';
+                      $themecardbgurl = 'assets/images/themes/AppleCard.jpg';
+                      $fontcolor = '#212529';
+                    } 
+                    else if ($theme == "Orange") 
+                    {
+                      $themeurl = "assets/images/themes/Theme4_Orange.jpg";
+                      $themecardcolor = '#212529';
+                      $themecardbgurl = 'assets/images/themes/OrangeCard.jpg';
+                      $fontcolor = '#212529';
+                    } 
+                    else if ($theme == "Kiwi") 
+                    {
+                      $themeurl = "assets/images/themes/Theme5_Kiwi.jpg";
+                      $themecardcolor = '#212529';
+                      $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
+                      $fontcolor = '#212529';
+                    }
+                ?> 
+                
+                
+                <div class="card-body text-center" style="height: auto; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
+                  
                     <div>
-                      <div class="card border-dark mb-3 " style="max-width: 50rem;">
-                        
+                    <form action="<?=base_url('mainpage/addreact')?>" method="post">
+                      <div class="card border-dark mb-3 " style="max-width: 50rem; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
+                      
+                      <!-- Hidden Page ID -->
+                      <input type="text" name="page_ID" id="page_ID" class="btn float-end mt-1"  value="<?php echo $row->publicNBPage_ID ?>" hidden>
                         <nav class="navbar navbar-light">
                           <ul class="nav nav-pills ms-2">
                             <li class="nav-item  ">
-                              <p class="nav-link " href="#" style="color:black;">Date</p>
+                              <p class="nav-link " href="#" style="color:<?php echo $fontcolor ?>;">Date: <?php echo $row->pageDate; ?></p>
                             </li>
                           </ul>
                         </nav>
                         
-                        <div class="card-body text-dark">
-                          <p class="card-text1">Some quick example text to build on the card title and make up the bulk of the card's content .Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="card-body">
+                          <p class="card-text1"><?php echo $row->pageInput; ?></p>
                         </div>
                         
                         <div class="card-footer bg-transparent border-dark">
                           <div>
-                            <button class="btn btn-none btn-sm float-start"> <i class="bi bi-star h4"></i></button>
+                            <!-- React Button -->
+                            <!-- <button class="btn btn-none btn-sm float-start"><i class="bi bi-star h4"></i></button> -->
+                            
+                            <input type="submit" name="action" value="React" class="btn btn-none btn-sm float-start"><?php echo $row->pageReact_Count; ?>
+                            
+
+                            <!-- Report Button -->
                             <a href="<?=base_url('reportuser')?>">
                               <button class="btn btn-secondary btn-sm float-end mt-1" type="button">Report</button>
                             </a>
+                            
                           </div>
+                          </form>
                         </div>
-
+                        
                       </div>
+                      
                     </div>
-
+                    
                   </div>
+                  <?php
+                    }  
+                  ?>
                 </div>
+               
               </div>
-
+              
             </div>
 
           </div>
         </div>
-
+        
         <?php
-          } else {
+           
+          } 
+          else {
         ?>
 
           <h1 class="lead text-center text-dark mt-4 ms-5 mb-5 fw-normal" style="padding-top: 25vh;">User doesn't exists.<br>

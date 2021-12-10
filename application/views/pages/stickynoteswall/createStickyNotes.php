@@ -65,11 +65,11 @@
 
           </div>
         </div>
-
+      <form method="post" action ="<?= base_url('stickynoteswall/createstickynotes') ?>
         <div class="row justify-content-center">
           <div class="mb-3 col-8 text-center">
             <input class="me-2 py-3 px-5 btn btn-sm " type="submit" value="Back" name="action" ></input>
-            <input class="py-3 px-5 btn btn-sm " type="submit" value="Submit" name="action" ></input>
+            <input class="py-3 px-5 btn btn-sm "  type="submit" value="Submit" name="action" ></input>
 
           </div>
         </div>

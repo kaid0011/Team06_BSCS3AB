@@ -31,7 +31,33 @@
             return $page;
         }
 
-        
+        public function get_receiver($user){
 
+            $this->db->where('noteReceiver', $user);
+            //$this->db->select('noteReceiver','noteInput');
+            $query = $this->db->get("sticky_notes");
+
+            foreach( $query->result() as $row){
+                
+                echo $row->noteInput;
+                echo $row->noteReceiver;
+                echo $row->noteTheme;
+            }
+
+            //return $query;
+        }
+
+        public function get_input ($user)
+        {
+            $this->db->where('noteReceiver', $user);
+            $query = $this->db->get("sticky_notes");
+
+            foreach( $query->result() as $row)
+            {
+
+                echo $row->noteInput;
+                echo $row->noteReceiver;
+            }
+        }
     }
 ?>

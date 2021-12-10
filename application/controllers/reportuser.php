@@ -20,6 +20,22 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/reportuser/reportuserwall', $data); 
         }
+        public function viewindividualreport() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/reportuser/viewindividualreport', $data); 
+        }
+        public function updateindivreport() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/reportuser/updateindivreport', $data); 
+        }
+        
+        public function detailedreport() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/reportuser/detailedreport', $data); 
+        }
         
     }
 

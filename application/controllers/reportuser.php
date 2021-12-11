@@ -36,6 +36,11 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/reportuser/detailedreport', $data); 
         }
+        public function support() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/reportuser/support', $data); 
+        }
         
     }
 

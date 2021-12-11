@@ -1,4 +1,4 @@
-<body>
+
 <section class="text-light p-5 text-center text-sm-start"style="background-color:#A9A9A9;">
     <div class="container">
             <div class="my-2 mt-4  pe-2">
@@ -18,7 +18,7 @@
 <p>You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
       
     </div>
-   </body>
+  
 </html>
 <style>
   body {

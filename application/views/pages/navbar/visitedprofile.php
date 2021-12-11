@@ -18,9 +18,11 @@
               <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal"><?php echo $row->displayName; ?><br>
                 <a class="text-secondary" style="text-decoration: none;">@<?php echo $row->userName; ?></a>
               </h1>
-              <?php
-                }  
-              ?>
+
+            <?php
+              }
+            ?>
+
           </div>
         </div>
 

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2021 at 11:59 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.30
+-- Generation Time: Dec 11, 2021 at 07:10 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,6 +62,7 @@ CREATE TABLE `privatenb_pages` (
   `privateNBPage_ID` int(11) NOT NULL,
   `privateNB_ID` int(11) NOT NULL,
   `pageInput` text NOT NULL,
+  `page_InputImage` blob DEFAULT NULL,
   `pageTheme` enum('Dark','Light','Apple','Orange','Kiwi') NOT NULL DEFAULT 'Dark',
   `pageTimer` time DEFAULT '00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -87,6 +88,7 @@ CREATE TABLE `publicnb_pages` (
   `publicNBPage_ID` int(11) NOT NULL,
   `publicNB_ID` int(11) NOT NULL,
   `pageInput` text DEFAULT NULL,
+  `page_InputImage` blob DEFAULT NULL,
   `pageTheme` enum('Dark','Light','Apple','Orange','Kiwi') DEFAULT 'Dark',
   `pageDate` datetime DEFAULT current_timestamp(),
   `pageReact_Count` int(11) NOT NULL
@@ -128,7 +130,9 @@ CREATE TABLE `report` (
   `report_ID` int(11) NOT NULL,
   `user_ID` int(11) NOT NULL,
   `reportedUser_ID` int(11) NOT NULL,
-  `reportCategory` enum('Text Abuse','Inappropriate Text') DEFAULT NULL,
+  `reported_ID` int(11) NOT NULL,
+  `type` enum('Sticky Notes','Public Notebook') NOT NULL,
+  `reportCategory` enum('Violence','Harassment','Suicide or Self Injury','False Information','Hate Speech','Terrorism','Something else') DEFAULT NULL,
   `reportDetails` text DEFAULT NULL,
   `reportDate` date DEFAULT NULL,
   `staff_Comment` text DEFAULT NULL,
@@ -177,7 +181,7 @@ CREATE TABLE `user` (
   `dateCreated` datetime NOT NULL DEFAULT current_timestamp(),
   `verification_Key` varchar(255) NOT NULL,
   `is_verification_correct` tinyint(1) NOT NULL,
-  `user_displayImage` blob NOT NULL
+  `user_displayImage` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -287,25 +291,25 @@ ALTER TABLE `penalty`
 -- AUTO_INCREMENT for table `privatenb_pages`
 --
 ALTER TABLE `privatenb_pages`
-  MODIFY `privateNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `privateNBPage_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `private_notebook`
 --
 ALTER TABLE `private_notebook`
-  MODIFY `privateNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `privateNB_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `publicnb_pages`
 --
 ALTER TABLE `publicnb_pages`
-  MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `public_notebook`
 --
 ALTER TABLE `public_notebook`
-  MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reaction`
@@ -335,7 +339,7 @@ ALTER TABLE `support_team`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

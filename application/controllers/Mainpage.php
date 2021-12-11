@@ -25,10 +25,26 @@
         public function findUser()
         { 
             $user = $this->input->post('userName');
-            $data['findUser'] = $this->Mainpage_model->get_Data($user);
+            $data['findUser'] = $this->Mainpage_model->findUser($user);
+            foreach($data['findUser']->result() as $row)
+            {
+                $findUser_ID = $row->user_ID;
+            }
+            $data['findUserPublicNB'] = $this->Mainpage_model->findUser_PublicNB($findUser_ID);
             
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/navbar/visitedprofile', $data); 
+        }
+
+        public function addReact()
+        {
+            $action = $this->input->post('action');
+            $page_ID = $this->input->post('page_ID');
+
+            if($action == 'React')
+            {
+                $this->Mainpage_model->addReact();
+            }
         }
     }
 

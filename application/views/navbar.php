@@ -121,14 +121,26 @@ switch ($navbar) {
                             <!-- added echo to display user info -->
                             <a href="#" class="nav-link text-light" style="font-size: 15px; font-weight: 300;"> <?php echo $this->session->userdata('displayName'); ?> <br><span class="text-secondary"> <?php echo $this->session->userdata('userName'); ?> </span> </a>
                             <!-- added echo to display user info -->
+                            <?php
+                                        $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
+                                        $user_ID = $this->session->userdata('user_ID');
+                                        $query = "SELECT * FROM user WHERE user_ID = $user_ID";
+                                        $result = mysqli_query($connect, $query);
+                                        while ($row = mysqli_fetch_array($result))
+                                        {
+                                        echo '<img style="width: 50px; height: 50px;" src="data:image/jpeg;base64, '.base64_encode($row['user_displayImage'] ). '"';
+                                        }
+                            ?>
                         </li>
+                        
                         <li class="navbar-item dropdown">
+                            
                             <a href="#" 
                                 class="nav-link dropdown-toggle text-white" 
                                 id="navbarDropdown" 
                                 role="button" 
                                 data-bs-toggle="dropdown">
-                                <i class="bi bi-person-circle h1" style="color: white;"></i>
+                 
                             </a>
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                                 <li><a href="<?=base_url('updateprofile')?>" class="dropdown-item ">Edit Profile</a></li>

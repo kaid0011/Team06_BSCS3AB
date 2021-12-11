@@ -13,13 +13,13 @@
           <div class="row g-4">
             <!-- Light Theme Button -->   
             <div class="col">
-            <input type="button" onclick="changeColor('#e9ecef','#adb5bd', 'Light');" value ="Light" class="p-2 btn">
+            <input type="button" onclick="changeColor('#e9ecef', '#adb5bd','Light');" value ="Light" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Light</button> -->
             </div>
             
             <!-- Dark Theme Button -->
             <div class="col">
-            <input type="button" onclick="changeColor2('#495057', '#212529', 'Dark');" value ="Dark" class="p-2 btn">
+            <input type="button" onclick="changeColor2('#495057', '#212529','Dark');" value ="Dark" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Dark</button> -->
             </div>
           
@@ -211,27 +211,33 @@
 </style>
 
 <script>
+
   const name = document.querySelector(".name");
 
-  function changeColor(color, noteColor, theme) {
+  function changeColor(color, cardcolor, theme) {
     document.body.style.background = color;
-    document.getElementById("noteInput").style.background = noteColor;
-    document.getElementById("submittheme").value = theme;
     document.getElementById("white").style.color ="black"
+    document.getElementById("card").style.background = cardcolor;
+    
+    document.getElementById("submittext").value = theme;
+    
   }
 
-  function changeColor2(color, noteColor, theme) {
+  function changeColor2(color, cardcolor, textcolor, theme) {
     document.body.style.background = color;
-    document.getElementById("noteInput").style.background = noteColor;
-    document.getElementById("submittheme").value = theme;
-    document.getElementById("white").style.color ="white"
+  
+    document.getElementById("card").style.background = cardcolor;
+    document.getElementById("white").style.color = "white"
+    document.getElementById("submittext").value = theme;
+    
   }
 
-  function changeImgFruits(color, noteColor, theme) {
+  function changeImgFruits(color, cardcolor, theme) {
     document.body.style.backgroundImage = color;
-    document.getElementById("noteInput").style.backgroundImage = noteColor;
-    document.getElementById("submittheme").value = theme;
+    document.getElementById("card").style.backgroundImage = cardcolor;
     document.getElementById("white").style.color ="black"
+    
+    document.getElementById("submittext").value = theme;
     
   }
 

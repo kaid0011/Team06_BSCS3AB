@@ -42,6 +42,12 @@
             $this->sitelayout->loadTemplate('pages/reportuser/support', $data); 
         }
         
+        public function termsandcondition() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/reportuser/termsandcondition', $data); 
+        }
+        
     }
 
 ?>

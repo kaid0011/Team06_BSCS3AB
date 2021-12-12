@@ -1,17 +1,3 @@
-<?php
-  $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-  if(isset($_POST["insert"]))
-  {
-    $id = $this->session->userdata('user_ID');
-    $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-    $query = "UPDATE privatenb_pages SET page_InputImage = '$file' WHERE privateNB_ID = $id";
-    if(mysqli_query($connect, $query))
-    {
-      echo '<script>alert("Image Inserted into Database")</script>';
-    }
-  }
-?>
-
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -63,7 +49,7 @@
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
 
-                <form method="post" id ="updateform" action="<?=base_url('privatenotebook/updateprivatepage')?>">
+                <form method="post" id ="updateform" enctype='multipart/form-data' action="<?=base_url('privatenotebook/updateprivatepage')?>">
                 <div class="row">           
                   <!-- Light Theme Button -->
                   <div class="col">
@@ -124,19 +110,15 @@
                   }
                 ?>     
                 <hr id="inputbox" class="bg-light">
+                <input type="file" name="image" id="image"/>
                 <!-- Button-->
                 <input type="submit" value= "Update" name="action" onclick="updatePage()" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
             
                   </a>
-                  </form>
-                  <form method="post" enctype="multipart/form-data">
-                    <div class="d-flex">
-                      <input type="file" name="image" id="image" name="insert"/>
-                      <input type="submit" name="insert" id="insert" value="Insert" class="btn"/>
-                    </div>
-                  </form>
+                </form>
+                    
                 </div>
               
               

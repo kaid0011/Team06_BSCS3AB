@@ -1,4 +1,4 @@
-<form method="post" id ="updateform" action="<?=base_url('publicnotebook/createPublicPage')?>"> 
+<form method="post" id ="updateform" enctype='multipart/form-data' action="<?=base_url('publicnotebook/createPublicPage') ?>"> 
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -50,13 +50,13 @@
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                     <textarea name="input" class="form-control" id="" rows="13"></textarea> 
                 <hr id="inputbox" class="bg-light">
+                <input type="file" name="image" id="image" value="image"/>
                 <!-- Button-->
                 <input type="submit" value= "Submit" name="action"  class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
-                <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
-            
-                  </a>
+                <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">      
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
     </div>
   </div>
 </section>
-</form>
+
 
 <style>
   body {

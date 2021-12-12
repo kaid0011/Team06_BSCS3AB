@@ -50,7 +50,7 @@
               if ($viewPrivateNotebook->num_rows() > 0) {
 
                 foreach ($viewPrivateNotebook->result() as $row) {
-              ?>
+                ?>
                   <div class="col mr-auto  h5">
 
 
@@ -68,14 +68,30 @@
                   <!--Input Area-->
                   <div class=" row">
                     <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
-                            <a href=""> add image here</a>   
+                      <a> 
+                      <?php
+                        $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
+                        $user_ID = $this->session->userdata('user_ID');
+                        $query = "SELECT * FROM privatenb_pages WHERE privateNB_ID = $user_ID";
+                        $result = mysqli_query($connect, $query);
+                        while ($image = mysqli_fetch_array($result))
+                        {
+                          if($image['page_InputImage'] != NULL)
+                          {
+                            echo '<img style="width: 200px; height: 200px;" src="data:image/jpeg;base64, '.base64_encode($image['page_InputImage'] ). '"';
+                          }
+                        }
+                      ?>
+                      </a>   
                         </div>
                     <div class="col-md-9">
                     <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
                 <?php
                 }
               }
+              
                 ?>
+                       
                 <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
                     </div>
                 <hr id="inputbox" class="bg-light">

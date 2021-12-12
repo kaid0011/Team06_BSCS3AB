@@ -1,3 +1,17 @@
+<?php
+  $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
+  if(isset($_POST["insert"]))
+  {
+    $id = $this->session->userdata('user_ID');
+    $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+    $query = "UPDATE privatenb_pages SET page_InputImage = '$file' WHERE privateNB_ID = $id";
+    if(mysqli_query($connect, $query))
+    {
+      echo '<script>alert("Image Inserted into Database")</script>';
+    }
+  }
+?>
+
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -86,7 +100,7 @@
                   <div class="col mt-2">
                     <input type="time" id="appt" name="appt" value="<?php echo $row->pageTimer; ?>">
                     <!-- Theme cheat hidden -->
-                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1"  value="<?php echo $row->pageTheme ?>">
+                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1"  hidden value="<?php echo $row->pageTheme ?>">
                     <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled> -->
                   </div>
                   <div class="col ">                  
@@ -116,8 +130,16 @@
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
             
                   </a>
+                  </form>
+                  <form method="post" enctype="multipart/form-data">
+                    <div class="d-flex">
+                      <input type="file" name="image" id="image" name="insert"/>
+                      <input type="submit" name="insert" id="insert" value="Insert" class="btn"/>
+                    </div>
+                  </form>
                 </div>
-              </form>
+              
+              
             </div>
           </div>
         </div>
@@ -188,4 +210,5 @@
     document.getElementById("submittheme").value = theme;
   }
 
+  
 </script>

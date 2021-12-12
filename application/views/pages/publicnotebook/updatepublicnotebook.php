@@ -1,4 +1,4 @@
-<form method="post" id ="updateform" action="<?=base_url('publicnotebook/updatepublicpage')?>">
+<form method="post" id ="updateform" enctype='multipart/form-data' action="<?=base_url('publicnotebook/updatepublicpage')?>">
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -6,78 +6,77 @@
         <div class="d-flex p-5">
           <div class="section ">
             <?php
-                  foreach($viewPublicPage->result() as $row)
-                  { 
-                    $theme = $row->pageTheme;
-                        if ($theme == "Dark") 
-                        {
-                          $themecolor = '#495057';
-                          $themecardcolor = '#f8f9fa';
-                          $themecardbgcolor = '#212529';
-                          $fontcolor = '#f8f9fa';
-                        } 
-                        else if ($theme == "Light") 
-                        {
-                          $themecolor = '#e9ecef';
-                          $themecardcolor = '#212529';
-                          $themecardbgcolor = '#adb5bd';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Apple") 
-                        {
-                          $themeurl = "assets/images/themes/Theme1_Apple.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Applecard.jpg';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Orange") 
-                        {
-                          $themeurl = "assets/images/themes/Theme2_Orange.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Kiwi") 
-                        {
-                          $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
-                          $fontcolor = '#212529';
-                        }
+                  if ($viewPublicPage->num_rows() > 0) 
+                  {
+                    foreach ($viewPublicPage->result() as $row) 
+                    {
+                      $theme = $row->pageTheme;
+                      if ($theme == "Dark") 
+                      {
+                        $themeurl = "assets/images/themes/Theme2_Dark.jpg";
+                        $themecardcolor = '#f8f9fa';
+                        $themecardbgurl = 'assets/images/themes/Darkcard.jpg';
+                        $fontcolor = '#f8f9fa';
+                      } 
+                      else if ($theme == "Light") 
+                      {
+                        $themeurl = "assets/images/themes/Theme1_Light.jpg";
+                        $themecardcolor = '#212529';
+                        $themecardbgurl = 'assets/images/themes/LightCard.jpg';
+                        $fontcolor = '#212529';
+                      } 
+                      else if ($theme == "Apple") 
+                      {
+                        $themeurl = "assets/images/themes/Theme3_Apple.jpg";
+                        $themecardcolor = '#212529';
+                        $themecardbgurl = 'assets/images/themes/AppleCard.jpg';
+                        $fontcolor = '#212529';
+                      } 
+                      else if ($theme == "Orange") 
+                      {
+                        $themeurl = "assets/images/themes/Theme4_Orange.jpg";
+                        $themecardcolor = '#212529';
+                        $themecardbgurl = 'assets/images/themes/OrangeCard.jpg';
+                        $fontcolor = '#212529';
+                      } 
+                      else if ($theme == "Kiwi") 
+                      {
+                        $themeurl = "assets/images/themes/Theme5_Kiwi.jpg";
+                        $themecardcolor = '#212529';
+                        $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
+                        $fontcolor = '#212529';
+                      }
+                    }
                   }
             ?>
             <div class="row">
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
 
-                
                 <div class="row">           
                   <!-- Light Theme Button -->
                   <div class="col">
-                    <input type="button" onclick="changeColor('#e9ecef', '#adb5bd', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
-                    <!-- <button class="p-2 btn" disabled>Light</button> -->
-                    </div>
-                  <!-- Dark Theme Button -->
-                  <div class="col">
-                  <input type="button" onclick="changeColor('#495057', '#212529', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
-                    <!-- <button class="p-2 btn" disabled>Dark</button> -->
-                  </div>                   
-                  <!-- Apple Theme Button -->
-                  <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/Applecard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
-                    <!-- <button class="p-2 btn" disabled>Apple</button> -->
-                    </div>
-                  <!-- Orange Theme Button -->
-                  <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/Orangecard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
-                    <!-- <button class="p-2 btn" disabled>Orange</button> -->
-                    </div>
-                  <!-- Kiwi Theme Button -->
-                  <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
+                      <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Light.jpg')?>)', 'url(<?=base_url('assets/images/themes/LightCard.jpg')?>)', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
+                      <!-- <button class="p-2 btn" disabled>Light</button> -->
+                      </div>
+                    <!-- Dark Theme Button -->
+                    <div class="col">
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Dark.jpg')?>)', 'url(<?=base_url('assets/images/themes/DarkCard.jpg')?>)', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
+                      <!-- <button class="p-2 btn" disabled>Dark</button> -->
+                    </div>                   
+                    <!-- Apple Theme Button -->
+                    <div class="col">
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/AppleCard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
+                      <!-- <button class="p-2 btn" disabled>Apple</button> -->
+                      </div>
+                    <!-- Orange Theme Button -->
+                    <div class="col">
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme4_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/OrangeCard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
+                      <!-- <button class="p-2 btn" disabled>Orange</button> -->
+                      </div>
+                    <!-- Kiwi Theme Button -->
+                    <div class="col">
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme5_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/KiwiCard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
                     <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
                   </div>
                 </div>
@@ -110,16 +109,19 @@
                   }
                 ?>     
                 <hr id="inputbox" class="bg-light">
+                <input type="file" name="image" id="image" value="image"/>
                 <!-- Page ID hidden -->
                 <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
                 <!-- Button-->
                 <input type="submit" value= "Update" name="action" onclick="updatePage()" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
-            
-                  </a>
+    
+                    </div>
+                  </form>
                 </div>
-              </form>
+             
+             
             </div>
           </div>
         </div>

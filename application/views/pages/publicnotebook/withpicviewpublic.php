@@ -70,7 +70,11 @@
               <!--Input Area-->
               <div class="row">
                     <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
-                        <a href=""> add image here</a>
+                        <a>
+                          <?php
+                            $this->PublicNotebook_model->getImage($page_ID);
+                          ?>
+                        </a>
                     </div>
                     <div class="col-md-9">
                         <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
@@ -122,16 +126,6 @@
     width: 80px;
     color: #212529;
     background-color: #e9ecef;
-    /*if theme is dark,
-         background-color: #adb5bd;
-    if theme is light,
-         background-color: #adb5bd;
-    if theme is Apple,
-         background-color: #adb5bd;
-     if theme is Orange,
-        background-color: #adb5bd;
-     if theme is Kiwi,
-       background-color: #adb5bd; */
   }
 
   .card-front {

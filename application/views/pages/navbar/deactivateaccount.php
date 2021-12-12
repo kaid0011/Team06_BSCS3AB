@@ -8,10 +8,10 @@
         <form method="post" action="<?= base_url('updateprofile/deleteaccount') ?>" autocomplete="off">
             <div class="row text-center py-5">
                 <div class="col">
-                    <input type="submit" value="YES" class="input-group-text btn-lg p-5 bg-success text-white fw-normal button" id="basic-addon2">
+                    <input type="submit" name="action" value="YES" class="input-group-text btn-lg p-5 bg-success text-white fw-normal button" id="basic-addon2">
                 </div>
                 <div class="col">
-                    <input type="submit" value="NO" class="input-group-text btn-lg p-5 bg-danger text-white fw-normal button" id="basic-addon2">
+                    <input type="submit" name ="action" value="NO" class="input-group-text btn-lg p-5 bg-danger text-white fw-normal button" id="basic-addon2">
                 </div>
             </div>
         <div class="pb-3">&nbsp;</div>

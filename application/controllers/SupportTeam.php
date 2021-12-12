@@ -13,7 +13,7 @@
         public function index()
         {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/mainpage/AdminMainpage', $data);
+            $this->sitelayout->loadTemplate('pages/supportteam/support', $data);
         }
     }
 ?>

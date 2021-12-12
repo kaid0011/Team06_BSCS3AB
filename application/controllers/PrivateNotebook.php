@@ -47,7 +47,7 @@
                 }
                 $pageTheme = $this->input->post('theme'); //Theme
                 $pageInput = $this->input->post('input'); //Input
-                $this->PrivateNotebook_model->updatePage($pageTimer,$pageTheme, $pageInput, $id);
+                $this->PrivateNotebook_model->updatePage($pageTimer,$pageTheme, $pageInput, "", $id);
                 $this->index();
             }
             else if($action == 'Back')

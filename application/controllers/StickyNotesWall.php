@@ -17,15 +17,14 @@
 
         public function index() {
 
-            $stickyNotes_ID = $this->session->userdata('user_ID');
-            $data['viewStickyNotes']=$this->StickyNotesWall_model->get_StickyNotesWallInput($stickyNotes_ID);
+            
+            $data['viewStickyNotes']=$this->StickyNotesWall_model->get_StickyNotesWallInput();
 
 >>>>>>> 9d4a8fdbddb80cf766b9982f36ec6e49c4e0f387
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/stickynoteswall/viewstickynotes', $data); 
             
         }
-
         public function createStickyNotes() {
             $data['navbar'] = 'main';
 <<<<<<< HEAD
@@ -87,6 +86,7 @@
             if($action == 'Submit')
             {
                 $this->StickyNotesWall_model->createStickyNotes($data);
+                $this->StickyNotesWall_model->note($id);
                 $this->index();
             }
             else if($action == 'Back')
@@ -104,7 +104,10 @@
             if($action == 'Search')
             {
                 $user = $this->input->post('userName');
-                $data['viewstickynotes'] = $this->StickyNotesWall_model->get_receiver($user);
+                $data['viewreceiver'] = $this->StickyNotesWall_model->get_receiver($user);
+
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/stickynoteswall/viewusingreceiver', $data); 
             }
            
             /*foreach( $data['viewstickynotes']-> result() as $row){
@@ -113,8 +116,7 @@
             }*/
 
 
-            $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/stickynoteswall/viewstickynotes', $data); 
+           
         }
         
         public function input()

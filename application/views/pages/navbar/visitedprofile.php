@@ -86,8 +86,10 @@
                     <form action="<?=base_url('mainpage/addreact')?>" method="post">
                       <div class="card border-dark mb-3 " style="max-width: 50rem; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
                       
-                      <!-- Hidden Page ID -->
+                      <!-- Hidden Page and User ID -->
                       <input type="text" name="page_ID" id="page_ID" class="btn float-end mt-1"  value="<?php echo $row->publicNBPage_ID ?>" hidden>
+                      <input type="text" name="visitedUser_ID" id="visitedUser_ID" class="btn float-end mt-1"  value="<?php echo $row->publicNB_ID ?>" hidden>
+                        
                         <nav class="navbar navbar-light">
                           <ul class="nav nav-pills ms-2">
                             <li class="nav-item  ">

@@ -40,10 +40,15 @@
         {
             $action = $this->input->post('action');
             $page_ID = $this->input->post('page_ID');
+            $visited_ID = $this->input->post('visitedUser_ID');
 
             if($action == 'React')
             {
-                $this->Mainpage_model->addReact();
+                $response = $this->Mainpage_model->addReact($page_ID, $visited_ID);
+                if($response)
+                {
+                    $this->findUser(); 
+                }
             }
         }
     }

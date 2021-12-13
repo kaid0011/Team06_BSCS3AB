@@ -9,10 +9,8 @@
             
         }
 
-        public function get_StickyNotesWallInput($user_ID)
+        public function get_StickyNotesWallInput()
         {
-            $this->db->where('user_ID', $user_ID);
-            $this->db->select('stickyNotes_ID, noteInput, noteTheme');
             
             $query = $this->db->get('sticky_notes');
             return $query;
@@ -34,30 +32,52 @@
         public function get_receiver($user){
 
             $this->db->where('noteReceiver', $user);
-            //$this->db->select('noteReceiver','noteInput');
-            $query = $this->db->get("sticky_notes");
+            $viewReceiver = $this->db->get("sticky_notes");
 
-            foreach( $query->result() as $row){
+           //foreach( $viewReceiever->result() as $row){
                 
-                echo $row->noteInput;
-                echo $row->noteReceiver;
-                echo $row->noteTheme;
-            }
-
-            //return $query;
+                //echo $row->noteInput;
+                //echo $row->noteReceiver;
+               // echo $row->noteTheme;
+           // }
+            
+            return $viewReceiver;
+            
         }
 
         public function get_input ($user)
         {
             $this->db->where('noteReceiver', $user);
-            $query = $this->db->get("sticky_notes");
+            $viewStickyNotes = $this->db->get("sticky_notes");
 
-            foreach( $query->result() as $row)
+            foreach( $viewStickyNotes->result() as $row)
             {
 
                 echo $row->noteInput;
                 echo $row->noteReceiver;
             }
+        }
+
+        public function note($id)
+        {
+            $this->db->where('stickyNotes_ID', $id);
+            
+        }
+
+        public function get_stickyinput($stickyNotes_ID)
+        {   
+            $this->db->where('stickyNotes_ID', $stickyNotes_ID);
+            $this->db->select('noteReceiver, noteInput, noteTheme');
+            $this->db->order_by('stickyNotes_ID', 'desc');
+            $query = $this->db->get('sticky_notes');
+            return $query;
+        }
+
+        public function get_Note($note_ID)
+        {
+            $this->db->where('stickyNotes_ID', $note_ID);
+            $page = $this->db->get('sticky_notes');
+            return $page;
         }
     }
 ?>

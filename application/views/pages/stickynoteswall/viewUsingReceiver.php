@@ -13,7 +13,7 @@
     <div class="input-group input-group-lg inv-amount-block">
         <div class="w-50 mx-auto" style="display: flex; flex-direction: row;">
 
-        <input type="text" name="userName" placeholder="Enter receiver's name" class="form-control me-2 border-dark border-2">
+        <input type="text" name="noteReceiver" placeholder="Enter receiver's name" class="form-control me-2 border-dark border-2">
 
         <input type="submit"  name="action" value="Search" style="background-color: #f0b63a;" class="btn border border-2 border-dark">
         </div>
@@ -29,26 +29,19 @@
 <a href="<?= base_url('stickynoteswall/createstickynotes') ?>">
   <button class="btn btn-lg border border-3 border-dark mb-5" type="button"style="background-color: #f0b63a; width: 50vw;" >Create New Sticky Notes</button>
 </a>
+
 </div>
 
-
-    <div class="container" style="width: 1500px; " >
-        <div class="row text-center g-4">
-                            
-          <?php 
+<?php 
                               
-                              if ($viewStickyNotes->num_rows() > 0) {
+                              if ($viewreceiver->num_rows() > 0) {
                               
-                            foreach( $viewStickyNotes->result() as $row){
+                            foreach( $viewreceiver->result() as $row){
                 
                                 
                                 ?>
-        
-        
-            <div class="col-md">
-              
-            <div class="col-md ">
-              
+
+
                 <div class="card bg-dark text-light " style="@media (min-width: 989px) {width: 25vw; height: 390px;}  @media (max-width: 990px) {
     width: 70vw; height: 390px;}">
                   
@@ -63,7 +56,7 @@
                             To: <?php echo $row->noteReceiver; ?><br>
                         </h3>
                         <p class="card-text py-5" >
-                                 <?php echo $row->noteInput; ?><br>
+                                <?php echo $row->noteInput; ?><br>
                         </p>
                         
                         <!-- End-->
@@ -81,10 +74,12 @@
     }
   }
 ?>
-            
+        
         </div>
     </div>
 </section>
+
+
 
 <style>
     

@@ -19,9 +19,13 @@
             return $query;
         }
 
-        public function createPublicPage($data)
+        public function createPublicPage($id, $input, $pageTheme, $pageReact_Count)
         {
-            $this->db->insert('publicnb_pages', $data);
+            $this->db->set('publicNB_ID', $id);
+            $this->db->set('pageInput', $input);
+            $this->db->set('pageTheme', $pageTheme);
+            $this->db->set('pageReact_Count', $pageReact_Count);
+            $this->db->insert('publicnb_pages');
             return true;
         }
 
@@ -58,6 +62,20 @@
             $this->db->where('publicNBPage_ID', $page_ID);
             $result = $this->db->delete('publicnb_pages');
             return true;
+        }
+
+        public function getImage($page_ID)
+        {
+            $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
+            $query = "SELECT * FROM publicnb_pages WHERE publicNBPage_ID = $page_ID";
+            $result = mysqli_query($connect, $query);
+            while ($image = mysqli_fetch_array($result))
+                {
+                    if($image['page_InputImage'] != NULL)
+                        {
+                            echo '<img style="width: 200px; height: 200px;" src="data:image/jpeg;base64, '.base64_encode($image['page_InputImage'] ). '"';
+                        }
+                }
         }
     }
 ?>

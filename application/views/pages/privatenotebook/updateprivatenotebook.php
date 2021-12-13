@@ -49,7 +49,7 @@
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
 
-                <form method="post" id ="updateform" action="<?=base_url('privatenotebook/updateprivatepage')?>">
+                <form method="post" id ="updateform" enctype='multipart/form-data' action="<?=base_url('privatenotebook/updateprivatepage')?>">
                 <div class="row">           
                   <!-- Light Theme Button -->
                   <div class="col">
@@ -86,7 +86,7 @@
                   <div class="col mt-2">
                     <input type="time" id="appt" name="appt" value="<?php echo $row->pageTimer; ?>">
                     <!-- Theme cheat hidden -->
-                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1"  value="<?php echo $row->pageTheme ?>">
+                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1"  hidden value="<?php echo $row->pageTheme ?>">
                     <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled> -->
                   </div>
                   <div class="col ">                  
@@ -110,14 +110,18 @@
                   }
                 ?>     
                 <hr id="inputbox" class="bg-light">
+                <input type="file" name="image" id="image"/>
                 <!-- Button-->
                 <input type="submit" value= "Update" name="action" onclick="updatePage()" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
             
                   </a>
+                </form>
+                    
                 </div>
-              </form>
+              
+              
             </div>
           </div>
         </div>
@@ -188,4 +192,5 @@
     document.getElementById("submittheme").value = theme;
   }
 
+  
 </script>

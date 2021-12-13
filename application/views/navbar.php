@@ -7,7 +7,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image-->
-                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
+                <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -73,7 +73,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image -->
-                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
+                <a href="<?= base_url() ?>" class="navbar-brand"></a>
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -103,24 +103,29 @@ switch ($navbar) {
 
                 <ul class="navbar-nav align-items-center navbar-right w-100">
                     <!-- Logo Image -->
-                    <li>
-                        <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px"></a>
+                    <div class="roww">
+                    <li class="block1">
+                        <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
+                            <picture>
+                                <source media="(max-width: 990px)" srcset="<?= base_url('assets/images/vd_Logo.png') ?>">
+                                <img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" />
+                            </picture>
+                    </a>
                     </li>
 
                     <!-- Toggler Menu -->
-                    <div class="pt-3 pb-3">
                         <!-- Search Bar -->
-                        <button class="navbar-toggler" style="color: white;" data-bs-toggle="collapse" data-bs-target="#searcharea" class="navbar-toggler" aria-controls="searcharea" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler block2 mx-auto" style="color: white;" data-bs-toggle="collapse" data-bs-target="#searcharea" class="navbar-toggler" aria-controls="searcharea" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="bi bi-search"></span>
                         </button>
 
                         <!-- Hamburger Menu -->
-                        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler block3" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
 
-                    <div class="collapse navbar-collapse" id="searcharea" style="margin-left: 170px; margin-right: 100px;">
+                    <div class="collapse navbar-collapse ml-auto" id="searcharea" style="margin-left: 170px; margin-right: 100px;">
                         <!-- Search (Find User) -->
                         <li class="w-100">
                             <form action="<?= base_url('mainpage/finduser') ?>" method="post" class="form d-flex">
@@ -132,7 +137,7 @@ switch ($navbar) {
                     </div>
 
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                        <li class="navbar-item text-light me-2" style="text-align: right;">
+                        <li class="navbar-item text-light me-2">
                             <!-- added echo to display user info -->
                             <a href="#" class="nav-link text-light" style="font-size: 15px; font-weight: 300;"> <?php echo $this->session->userdata('displayName'); ?> <br><span class="text-secondary"> <?php echo $this->session->userdata('userName'); ?> </span>
                                 <!-- added echo to display user info -->
@@ -149,20 +154,14 @@ switch ($navbar) {
                             }
                             ?>
                         </li>
-                         <li class="ms-2 navbar-item dropdown mb-2" style="text-align: right;">
-
+                         <li class="ms-2 navbar-item dropdown mb-2">
                             <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-
                             </a>
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                                 <li><a href="<?= base_url('updateprofile') ?>" class="dropdown-item ">Edit Profile</a></li>
                                 <li><a href="<?= base_url('logout') ?>" class="dropdown-item ">Logout</a></li>
                             </ul>
                         </li>
-                        
-
-                       
-                        
                     </div>
                 </ul>
 
@@ -175,3 +174,81 @@ switch ($navbar) {
         break;
 }
 ?>
+<style>
+@media (max-width:991px){
+    .roww{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .block1 {
+        width: 100px;
+        display:inline-block;
+        margin-right:auto;
+    }
+    .block2 {
+        width: 100px;
+        display:inline-block;
+        margin: 0 auto;
+    }
+    .block3 {
+        width: 100px;
+        display:inline-block;
+        margin-left:auto;
+    }
+}
+@media (max-width:333px){
+    .block1{
+        display:none;
+    }
+}
+@media (max-width:375px) and (min-width:355px){
+    .block1{
+        margin-right:20px;
+    }
+}
+@media (max-width:405px) and (min-width:375px){
+    .block1{
+        margin-right:40px;
+    }
+}
+@media (max-width:434px) and (min-width:406px){
+    .block1{
+        margin-right:70px;
+    }
+}
+@media (max-width:485px) and (min-width:435px){
+    .block1{
+        margin-right:100px;
+    }
+}
+@media (max-width:545px) and (min-width:485px){
+    .block1{
+        margin-right:150px;
+    }
+}
+@media (max-width:645px) and (min-width:545px){
+    .block1{
+        margin-right:180px;
+    }
+}
+@media (max-width:768px) and (min-width:645px){
+    .block1{
+        margin-right:200px;
+    }
+}
+@media (max-width:895px) and (min-width:769px){
+    .block1{
+        margin-right:280px;
+    }
+}
+@media (max-width:940px) and (min-width:896px){
+    .block1{
+        margin-right:310px;
+    }
+}
+@media (max-width:991px) and (min-width:941px){
+    .block1{
+        margin-right:335px;
+    }
+}
+</style>

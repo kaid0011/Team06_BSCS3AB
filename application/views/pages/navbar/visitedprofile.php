@@ -83,9 +83,9 @@
                 <div class="card-body text-center" style="height: auto; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
                   
                     <div>
-                    <form action="<?=base_url('mainpage/addreact')?>" method="post">
+                    <form action="<?=base_url('reportuser/getpublicnbdata')?>" method="post">
                       <div class="card border-dark mb-3 " style="max-width: 50rem; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
-                      
+                       
                       <!-- Hidden Page and User ID -->
                       <input type="text" name="page_ID" id="page_ID" class="btn float-end mt-1"  value="<?php echo $row->publicNBPage_ID ?>" hidden>
                       <input type="text" name="visitedUser_ID" id="visitedUser_ID" class="btn float-end mt-1"  value="<?php echo $row->publicNB_ID ?>" hidden>
@@ -111,9 +111,7 @@
                             
 
                             <!-- Report Button -->
-                            <a href="<?=base_url('reportuser')?>">
-                              <button class="btn btn-secondary btn-sm float-end mt-1" type="button">Report</button>
-                            </a>
+                              <input type="submit" name="action" value="Report" class="btn btn-secondary btn-sm float-end mt-1">
                             
                           </div>
                           </form>

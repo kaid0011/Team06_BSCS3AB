@@ -110,7 +110,7 @@
                   }
                 ?>     
                 <hr id="inputbox" class="bg-light">
-                <input type="file" name="image" id="image"/>
+                <input type="file" name="image" id="image" value=<img style="width: 200px; height: 200px;" src="data:image/jpeg;base64, '.base64_encode($image['page_InputImage'] ). '"/>
                 <!-- Button-->
                 <input type="submit" value= "Update" name="action" onclick="updatePage()" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->

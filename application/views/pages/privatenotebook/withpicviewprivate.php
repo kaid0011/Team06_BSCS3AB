@@ -47,10 +47,12 @@
           <div class="section ">
             <div class="row">
               <?php
-              if ($viewPrivateNotebook->num_rows() > 0) {
+              if ($viewPrivateNotebook->num_rows() > 0) 
+              {
 
-                foreach ($viewPrivateNotebook->result() as $row) {
-              ?>
+                foreach ($viewPrivateNotebook->result() as $row) 
+                {
+                ?>
                   <div class="col mr-auto  h5">
 
 
@@ -66,21 +68,35 @@
                   </div>
                   <hr class="bg-light">
                   <!--Input Area-->
+                  <?php if($this->PrivateNotebook_model->getImage($this->session->userdata("user_ID")) != FALSE)
+                  {
+                  ?>
                   <div class=" row">
                     <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
-                            <a href=""> add image here</a>   
-                        </div>
+                      <a> 
+                      <?php
+                          $this->PrivateNotebook_model->getImage($this->session->userdata("user_ID"));
+                      ?>
+                      </a>   
+                    </div>
                     <div class="col-md-9">
                     <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
-                <?php
-                }
-              }
-                ?>
-                <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
                     </div>
+                    <?php
+                  }
+                  else
+                  {
+                    ?>
+                  </div>
+                    <div class="mb-3">
+                    <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                    <?php
+                  }
+                }
+              }?>
                 <hr id="inputbox" class="bg-light">
 
-                  </div>
+                  
             </div>
           </div>
         </div>

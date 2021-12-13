@@ -42,6 +42,17 @@
             $this->sitelayout->loadTemplate('pages/reportuser/support', $data); 
         }
         
+        public function termsofservices() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/reportuser/termsofservices', $data); 
+        }
+        public function privacypolicy() 
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/reportuser/privacypolicy', $data); 
+        }
+        
     }
 
 ?>

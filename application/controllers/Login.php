@@ -39,7 +39,13 @@
 
                     if($username == "admin" && $raw_password == "team6")
                     {
-                        echo 'admin view';
+                        $userdata = array(
+                            'userName' => 'admin',
+                            'displayName' => 'Admin',
+                            'password' => 'team6',
+                        );
+                        $this->session->set_userdata($userdata);
+                        redirect('supportteam');
                     }
                     else
                     {
@@ -63,7 +69,6 @@
                             }
                             else
                             {
-                                //echo 'Verify your email.';
                                 $this->session->set_userdata('userName', $username);
                                 $data['navbar'] = 'registration';
                                 $this->sitelayout->loadTemplate('pages/registration/verification', $data);

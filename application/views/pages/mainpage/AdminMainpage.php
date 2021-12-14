@@ -1,23 +1,23 @@
 <!-- background -->
-<div style="background-color: #ced4da;">
+<div style="background-color: #ced4da; min-height: 75vh;">
 <section class="projects">
     <h1 class="display-3 text-dark fw-normal">Support Team</h1>
     <p class="lead p-3">Support team members' duties generally include performing administrative tasks, familiarizing and adhering to the company's policies and procedures, providing recommendations for improving customer's experience, developing strategies to increase the company's revenue and profitability, and maintaining a positive work</p>
     <div class="row">
         <div class="project-col">
-            <img src="./baby.jpg" alt="project1">
+            <img src="<?=base_url('assets/images/login/pic1.png')?>" alt="project1">
             <div class="layer">
                 <h3>USER REPORT</h3>
             </div>
         </div>
         <div class="project-col">
-            <img src="./baby.jpg" alt="project2">
+            <img src="<?=base_url('assets/images/login/pic1.png')?>" alt="project2">
             <div class="layer">
                 <h3>RECOMMENDATION</h3>
             </div>
         </div>
         <div class="project-col">
-            <img src="./baby.jpg" alt="project3">
+            <img src="<?=base_url('assets/images/login/pic1.png')?>" alt="project3">
             <div class="layer">
                 <h3>BUG REPORT</h3>
             </div>

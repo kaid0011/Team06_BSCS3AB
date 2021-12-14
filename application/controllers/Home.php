@@ -9,6 +9,10 @@
             {
                 redirect('mainpage');
             }
+            else if($this->session->userdata('userName') == 'admin')
+            {
+                redirect('supportteam');
+            }
         }
 
         public function index() {

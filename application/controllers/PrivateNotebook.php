@@ -49,13 +49,16 @@
                 $pageTheme = $this->input->post('theme'); //Theme
                 $pageInput = $this->input->post('input'); //Input
                 $this->PrivateNotebook_model->updatePage($pageTimer,$pageTheme, $pageInput, "", $id);
-                $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-                $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                $query = "UPDATE privatenb_pages SET page_InputImage = '$file' WHERE privateNB_ID = $id";
-                if(mysqli_query($connect, $query))
-                    {
-                        echo '<script>alert("Image Inserted into Database")</script>';
-                    }
+                if($_FILES["image"]["tmp_name"] != NULL)
+                {
+                    $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+                    $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
+                    $query = "UPDATE privatenb_pages SET page_InputImage = '$file' WHERE privateNB_ID = $id";
+                    if(mysqli_query($connect, $query))
+                        {
+                            echo '<script>alert("Image Inserted into Database")</script>';
+                        }
+                }
 
                 $this->index();
             }

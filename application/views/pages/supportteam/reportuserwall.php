@@ -2,46 +2,54 @@
     <div class="h1 text-center p-4 mb-5 inputbox" style="color: black;">
         Report Users
     </div>
-        <div class="w-50 mx-auto mt-4 my-2" style="display: flex; flex-direction: row;">
+        <div class="w-50 mx-auto mt-4 my-2 mb-5" style="display: flex; flex-direction: row;">
             <input type="text" class="form-control inputbox" placeholder="Enter Reported Username..." aria-describedby="basic-addon1">
                 <button class="btn btn-outline-secondary btn-primary text-white fw-normal" type="button">Search</button>
         </div>        
-    <div class="container">
+        <div class="container">
         <table class="table">
             <thead class="table-dark">
                 <tr>
+                    <th scope="col">Report Id</th>
+                    <th scope="col">Complainant Id </th>
+                    <th scope="col">Complainee Id</th>
+                    <th scope="col">Categories</th>
+                    <th scope="col">Status</th>
                     <th scope="col"></th>
-                    <th scope="col">Reported Username </th>
-                    <th scope="col">Reason for reporting this user</th>
-                    <th scope="col">View</th>
                 </tr>
             </thead>
+            
             <tbody>
+            <?php
+                if($viewAllReports->num_rows() > 0)
+                {
+                    foreach($viewAllReports->result() as $row)
+                    {
+            ?>
+            <form action="<?= base_url('supportteam/updateindivreport') ?>" method="post">
                 <tr>
-                    <th scope="row">1</th>
-                    <td>ArielMajor@2021</td>
-                    <td>Harrasment</td>
+                    <th scope="row"><?php echo $row->report_ID; ?>
+                        <!-- Hidden Report ID -->
+                        <input type="text" name="report_ID" class="btn float-end mt-1"  value="<?php echo $row->report_ID; ?>" hidden>
+                    </th>
+                    <td><?php echo $row->user_ID; ?></td>
+                    <td><?php echo $row->reportedUser_ID; ?>
+                        <!-- Hidden Complainee ID -->
+                        <input type="text" name="reportedUser_ID" class="btn float-end mt-1"  value="<?php echo $row->reportedUser_ID; ?>" hidden>
+                    </td>
+                    <td><?php echo $row->reportCategory; ?></td>     
+                    <td><?php echo $row->reportStatus; ?></td>       
                     <td> 
-                        <button class="btn btn-secondary btn-sm" type="button">View Report</button>
+                        <input type="submit" name="action" value="View Report" class="btn btn-secondary btn-sm" type="button">
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>ElanieIndustry045</td>
-                    <td>Terrorism</td>
-                    <td>
-                        <button class="btn btn-secondary btn-sm" type="button">View Report</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>RelmonPro</td>
-                    <td>Suicide or Self Injury</td>
-                    <td>
-                        <button class="btn btn-secondary btn-sm" type="button">View Report</button>
-                    </td>
-                </tr>
+            </form>
+            <?php
+                    }
+                }
+            ?>
             </tbody>
+            
         </table>
     </div>
 </section>

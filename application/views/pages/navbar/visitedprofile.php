@@ -33,7 +33,7 @@
             <div class="d-flex justify-content-center">
               <!-- if discussion is included:  
                       <div class="col-md-6 col-lg-7 mt-5">-->
-              <div class="card bg-light" style="min-height: 400px; z-index:0;">
+              <div class="card bg-light" style="min-height: 400px;width: 1000px;">
                 <nav class="navbar navbar-light justify-content-center sticky-top" style="background-color: #495057;">
                   <p class=" justify-content-center align-items-center mt-2" style=" color: #eee;"> Public Notebook</p>
                 </nav>
@@ -84,7 +84,7 @@
                   
                     <div>
                     <form action="<?=base_url('mainpage/addreact')?>" method="post">
-                      <div class="card border-dark mb-3 " style="max-width: 50rem; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
+                      <div class="card border-dark mb-3 " style="max-width: 75rem;height:250px; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
                       
                       <!-- Hidden Page and User ID -->
                       <input type="text" name="page_ID" id="page_ID" class="btn float-end mt-1"  value="<?php echo $row->publicNBPage_ID ?>" hidden>
@@ -98,7 +98,7 @@
                           </ul>
                         </nav>
                         
-                        <div class="card-body">
+                        <div class="card-body" >
                           <p class="card-text1"><?php echo $row->pageInput; ?></p>
                         </div>
                         
@@ -154,7 +154,7 @@
 
 <style>
   .scrollspy-example {
-    height: 300px;
+    height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -176,15 +176,7 @@
 /*  .card-text {
     min-height: 200px;
   }
-  .tag {
-    width: 100px;
-    height: 100px;
-    background: rgb(131, 126, 122);
-    position: relative;
-    top: 500px;
-    left: 800px;
-    border-radius: 50%;
-  }
+  
   .title {
     color: #fff;
     margin: 5px;
@@ -195,18 +187,7 @@
     margin: 10px;
     padding: 5px;
   }
-  .active h4 {
-    font-size: 20px;
-    margin-left: 10px;
-    color: #fff;
-  }
-  .received-chats-img {
-    width: 30px;
-    float: left;
-  }
-  .outgoing-chats-img {
-    width: 30px;
-    float: right;
-  }
+ 
+  
 */
 </style>

@@ -11,10 +11,10 @@
           Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit  Lorem ipsum dolor sit 
           Lorem ipsum dolor sit Lorem ipsum dolor sit  Lorem ipsum dolor sit  Lorem ipsum dolor sit 
           </div>
-            <!-- button -->
-            <a href="<?= base_url('supportteam/reportuserwall') ?>" >
-            <input type="submit" name="action" value="Reports" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark">
-            </a>  
+            <!-- View Reports Button -->
+              <a href="<?= base_url('supportteam/reportuserwall') ?>" >
+                <input type="submit" name="action" value="Reports" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark">
+              </a>
           </div>
       
         </p>

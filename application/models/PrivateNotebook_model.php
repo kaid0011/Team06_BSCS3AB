@@ -11,7 +11,7 @@
                 public function get_PrivateNotebookInput($privateNB_ID){
 
                         $this->db->where('privateNB_ID', $privateNB_ID);
-                        $this->db->select('pageInput, pageTheme, pageTimer');
+                        $this->db->select('pageInput, pageTheme, pageTimer, page_InputImage');
                         $query = $this->db->get("privatenb_pages");
                         return $query;
         

@@ -83,6 +83,7 @@
                 <div class="card-body text-center" style="height: auto; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
                   
                     <div>
+                      
                     <form action="<?=base_url('mainpage/addreact')?>" method="post">
                       <div class="card border-dark mb-3 " style="max-width: 75rem;height:250px; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
                       
@@ -111,9 +112,7 @@
                             
 
                             <!-- Report Button -->
-                            <a href="<?=base_url('reportuser')?>">
-                              <button class="btn btn-secondary btn-sm float-end mt-1" type="button">Report</button>
-                            </a>
+                              <input type="submit" name="action" value="Report" class="btn btn-secondary btn-sm float-end mt-1">
                             
                           </div>
                           </form>

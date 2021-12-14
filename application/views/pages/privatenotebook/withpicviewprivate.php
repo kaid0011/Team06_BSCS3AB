@@ -52,10 +52,8 @@
 
                 foreach ($viewPrivateNotebook->result() as $row) 
                 {
-                ?>
+                  ?>
                   <div class="col mr-auto  h5">
-
-
                     <!-- Timer -->
                     <div class="col ml-auto h5">
                       <!-- Update Button-->
@@ -63,37 +61,43 @@
                         <button class="p-2 btn float-end">Update</button>
                       </a>
                       <div class="mb-2 me-5 float-end">Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer));
-                                                                            echo $time; ?></span> </div>
+                          echo $time; ?></span> 
+                      </div>
                     </div>
                   </div>
                   <hr class="bg-light">
                   <!--Input Area-->
-                  <?php if($this->PrivateNotebook_model->getImage($this->session->userdata("user_ID")) != FALSE)
+                  <?php 
+                  if($row->page_InputImage != NULL)
                   {
-                  ?>
-                  <div class=" row">
-                    <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
-                      <a> 
-                      <?php
-                          $this->PrivateNotebook_model->getImage($this->session->userdata("user_ID"));
-                      ?>
-                      </a>   
-                    </div>
-                    <div class="col-md-9">
-                    <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                    ?>
+                    <div class=" row">
+                      <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
+                        <a> 
+                        <?php
+                            $this->PrivateNotebook_model->getImage($this->session->userdata("user_ID"));
+                        ?>
+                        </a>   
+                      </div>
+                      <div class="col-md-9">
+                      <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                      </div>
                     </div>
                     <?php
                   }
                   else
                   {
                     ?>
-                  </div>
-                    <div class="mb-3">
-                    <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
-                    <?php
+                    <div class=" row">
+                      <div class="col mb-3">
+                      <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                      </div>
+                    </div>
+                  <?php
                   }
                 }
               }?>
+
                 <hr id="inputbox" class="bg-light">
 
                   

@@ -22,6 +22,11 @@
             $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
         }
 
+        public function admin() {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/mainpage/adminmainpage', $data); 
+        }
+
         public function findUser()
         { 
             $user = $this->input->post('userName');

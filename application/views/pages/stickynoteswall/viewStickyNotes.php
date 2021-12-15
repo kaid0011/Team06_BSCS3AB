@@ -36,9 +36,10 @@
       if ($viewStickyNotes->num_rows() > 0) {
         foreach ($viewStickyNotes->result() as $row) {
       ?>
-          <div class="col-md">
-            <div class="col-md ">
-              <div class="card bg-dark text-light " style="@media (min-width: 989px) {width: 25vw; height: 390px;}  @media (max-width: 990px) {width: 70vw; height: 390px;}">
+          <div class="col">
+            <div class="col">
+              <div class="card bg-dark text-light responsive stickyNote">
+              <!-- style="@media (min-width: 989px) {width: 25vw; height: 390px;}  @media (max-width: 990px) {width: 70vw; height: 390px;}" -->
                 <form action="<?= base_url('reportuser/getnotedata') ?>" method="post">
                   <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0">
                     <div class="card-body text-center">
@@ -46,18 +47,19 @@
                       </div>
                       <input type="text" name="post_ID" id="post_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->stickyNotes_ID ?>" hidden>
                       <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->user_ID ?>" hidden>
-                      <!--ito ung sa part ko-->
-
                       <h3 class="card-title text-light">
                         To: <?php echo $row->noteReceiver; ?><br>
                       </h3>
-                      <p class="card-text py-5">
+                      <p class="card-text py-5 stickyNotesHeight">
                         <?php echo $row->noteInput; ?><br>
                       </p>               
                      <!-- End-->
-
-                      <i class="bi bi-star h4 float-start" disabled></i>
-                      <input type="submit" name="action" value="Report" class="d-flex" style="text-decoration: none;">
+                      <div class="reactButton">
+                        <div>
+                          <i class="bi bi-star h4" disabled></i>
+                          </div>
+                        <input type="submit" name="action" value="Report" class="d-flex ms-4 me-2" style="text-decoration: none;">
+                      </div>
                     </form>
                     </div>
                   </div>
@@ -123,6 +125,44 @@
   :-moz-placeholder {
     text-align: center;
   }
-
-  /* end of center placeholder section */
+  @media (min-width:989px){
+    .responsive{
+      width:25vw;
+      height:390px;
+    }
+  }
+  @media (max-width:989px){
+    .responsive{
+      width:80vw;
+      height:390px;
+    }
+  }
+  @media (max-width:576px){
+    section{
+        width:100%;
+        margin:0;
+        padding:0;
+        overflow-x:hidden;
+      }
+    .responsive{
+      width:70vw;
+      height:400px;
+      margin-right:1000px;
+    }
+    .stickyNotesHeight{
+      margin-top:30px;
+    }
+  }
+  .reactButton{
+    justify-content: flex-end;
+    display: flex;
+  }
+  .stickyNote {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+  }
+  .stickyNotesHeight{
+    height:250px;
+  }
 </style>

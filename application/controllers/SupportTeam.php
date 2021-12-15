@@ -13,7 +13,7 @@
         public function index()
         {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/supportteam/support', $data);
+            $this->sitelayout->loadTemplate('pages/supportteam/AdminMainpage', $data);
         }
 
         public function reportUserWall()

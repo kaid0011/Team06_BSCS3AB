@@ -13,7 +13,7 @@
         public function index()
         {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/supportteam/AdminMainpage', $data);
+            $this->sitelayout->loadTemplate('pages/supportteam/adminmainpage', $data);
         }
 
         public function reportUserWall()
@@ -33,8 +33,8 @@
             if($action == 'View Report')
             {
                 $data['viewIndivReport'] = $this->SupportTeam_model->viewIndivReport($report_ID);
-                $data['getReportedUserData'] = $this->SupportTeam_model->getReportedUserData($reportedUser_ID);
                 $data['viewAllReports'] = $this->SupportTeam_model->viewAllReports();
+                $data['getReportedUserData'] = $this->SupportTeam_model->getReportedUserData($reportedUser_ID);         
 
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/supportteam/updateindivreport', $data);

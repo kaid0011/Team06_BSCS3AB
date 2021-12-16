@@ -8,6 +8,7 @@
         {
             parent::__construct(); 
             $this->load->model('StickyNotesWall_model');
+            $this->load->model('UpdateProfile_model');
         }
 
         public function index() {

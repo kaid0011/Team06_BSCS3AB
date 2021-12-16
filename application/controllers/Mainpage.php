@@ -9,6 +9,7 @@
             parent::__construct();
     
             $this->load->model('Mainpage_model');
+            $this->load->model('UpdateProfile_model');
 
             #redirect to login if userID is NULL
             if(!$this->session->userdata('user_ID'))

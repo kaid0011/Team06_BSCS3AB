@@ -7,6 +7,7 @@
         {
             parent::__construct(); 
             $this->load->model('PublicNotebook_model');
+            $this->load->model('UpdateProfile_model');
         }
 
         public function index() {

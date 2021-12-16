@@ -144,16 +144,10 @@ switch ($navbar) {
                             </a>
                         </li>
                         <li class="mb-1">
-                            <?php
-                            $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                            $user_ID = $this->session->userdata('user_ID');
-                            $query = "SELECT * FROM user WHERE user_ID = $user_ID";
-                            $result = mysqli_query($connect, $query);
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo '<img style="width: 50px; height: 50px; border-radius: 100px;" src="data:image/jpeg;base64, ' . base64_encode($row['user_displayImage']) . '"';
-                            }
-                            ?>
+                        <?php $source = $this->UpdateProfile_model->getImage();?>
+                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px" ; src="<?= base_url($source) ?>"></a>
                         </li>
+                        
                          <li class="ms-2 navbar-item dropdown mb-2">
                             <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                             </a>

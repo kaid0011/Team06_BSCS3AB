@@ -10,13 +10,13 @@
             $this->load->library('session');
             $this->load->model('Login_model');
 
-            if($this->session->userdata('user_ID'))
-            {
-                redirect('mainpage');
-            }
-            else if($this->session->userdata('userName') == 'admin')
+            if($this->session->userdata('userName') == 'admin')
             {
                 redirect('supportteam');
+            }
+            else if($this->session->userdata('user_ID'))
+            {
+                redirect('mainpage');
             }
         }
 

@@ -170,7 +170,7 @@
                         }
                         else
                         {
-                            return "assets/images/visitedprofile/profile.png";
+                            return "assets/images/upload/profile.png";
                         }
                 }
 

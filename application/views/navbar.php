@@ -105,7 +105,20 @@ switch ($navbar) {
                     <!-- Logo Image -->
                     <div class="roww">
                     <li class="block1">
-                        <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
+                        <?php
+                            if($this->session->userdata('userName') == 'admin')
+                            {
+                        ?>
+                            <a href="<?= base_url('supportteam') ?>" class="navbar-brand h1 text-light mr-auto">
+                        <?php
+                            }
+                            else
+                            {
+                        ?>
+                            <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
+                        <?php
+                            }
+                        ?>
                             <picture>
                                 <source media="(max-width: 990px)" srcset="<?= base_url('assets/images/vd_Logo.png') ?>">
                                 <img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" />

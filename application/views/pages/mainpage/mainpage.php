@@ -1,5 +1,5 @@
 <!-- background -->
-<div style="background-color: #ced4da; min-height: 75vh;">
+<div style="min-height: 80vh; background-color: #ced4da;">
   <section class="projects pb-5">
     <!-- <h1 class="display-3 text-dark fw-normal">Virtual Diary</h1>
     <p class="lead">Pindutin para malaman ang hinaharap</p> -->
@@ -41,6 +41,7 @@
 
 <style>
   @media (max-width: 990px) {
+  
     .row {
       flex-direction: column;
     }
@@ -59,7 +60,6 @@
     margin: auto;
     text-align: center;
     padding-top: 50px;
-    height: 100vh;
   }
   
   .project-col {

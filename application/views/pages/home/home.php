@@ -155,6 +155,17 @@
             The developers consist of aspiring third year students of the Technological University of the Philippines - Manila under the course of BS in Computer Science (2021-2022)
         </p>
         <div class="row g-4 justify-content-center">
+            <!-- Bagasona -->
+            <div class="col-md-4 col-lg-3">
+                <div class="card bg-dark" style="border: none;">
+                    <div class="card-body text-center">
+                        <img src="assets/images/home/bagasona.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
+                        outline: 5px solid #5bc0de ;" alt="bagasona">
+                        <h4 class="card-title mb-3 text-light">Kim Dianne <br> Bagasona <br> <span style="color: #f0b63a;" class="h6 mb-3">Full Stack Developer</span></h4>
+                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
+                    </div>
+                </div>
+            </div>
             <!-- Guevarra -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark" style="border: none;">
@@ -166,13 +177,13 @@
                     </div>
                 </div>
             </div>
-            <!-- Bagasona -->
+            <!-- Yusoph -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
-                        <img src="assets/images/home/bagasona.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
-                        outline: 5px solid #5bc0de ;" alt="bagasona">
-                        <h4 class="card-title mb-3 text-light">Kim Dianne <br> Bagasona <br> <span style="color: #f0b63a;" class="h6 mb-3">Full Stack Developer</span></h4>
+                        <img src="assets/images/home/yusoph.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
+                        outline: 5px solid #5bc0de ;" alt="jihad">
+                        <h4 class="card-title mb-3 text-light">Jihad <br> Yusoph <br> <span style="color: #f0b63a;" class="h6 mb-3">Front-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -188,13 +199,13 @@
                     </div>
                 </div>
             </div>
-            <!-- Yusoph -->
+            <!-- Estrella -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
-                        <img src="assets/images/home/yusoph.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
-                        outline: 5px solid #5bc0de ;" alt="jihad">
-                        <h4 class="card-title mb-3 text-light">Jihad <br> Yusoph <br> <span style="color: #f0b63a;" class="h6 mb-3">Front-end Developer</span></h4>
+                        <img src="assets/images/home/estrella.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
+                        outline: 5px solid #5bc0de ;" alt="estrella">
+                        <h4 class="card-title mb-3 text-light">Joana Marie <br> Estrella <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>
@@ -216,18 +227,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/home/pinpin.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="pinpin">
-                        <h4 class="card-title mb-3 text-light">Marshal Amieron <br> Pinpin <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Estrella -->
-            <div class="col-md-4 col-lg-3">
-                <div class="card bg-dark" style="border: none;">
-                    <div class="card-body text-center">
-                        <img src="assets/images/home/estrella.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
-                        outline: 5px solid #5bc0de ;" alt="estrella">
-                        <h4 class="card-title mb-3 text-light">Joana Marie <br> Estrella <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
+                        <h4 class="card-title mb-3 text-light">Marshal Amieron<br> Pinpin <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
                         <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
                     </div>
                 </div>

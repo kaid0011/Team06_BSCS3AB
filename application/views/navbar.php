@@ -18,15 +18,15 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url('registration') ?>" class="nav-link text-light">Register</a>
+                            <a href="<?php echo base_url('registration') ?>" class="nav-link text-light pt-3"><h6>Register</h6></a>
                         </li>
                         <!-- Log In -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url('login') ?>" class="nav-link text-light ms-2">Log In</a>
+                            <a href="<?php echo base_url('login') ?>" class="nav-link text-light ms-4 pt-3"><h6>Log In</h6></a>
                         </li>
                         <!-- About Us -->
                         <li class="nav-item">
-                            <a href="#aboutUs" class="nav-link text-light ms-2 pe-0">About Us</a>
+                            <a href="#aboutUs" class="nav-link text-light ms-4 pe-0 pt-3"><h6>About Us</h6></a>
                         </li>
                     </ul>
                 </div>
@@ -53,9 +53,9 @@ switch ($navbar) {
 
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
-                        <!-- Log In -->
+                        <!-- Register -->
                         <li class="nav-item">
-                            <p class="text-light pt-2 mb-0">Already have an account? <a href="<?php echo base_url('login'); ?>" class="text-reset">Log In</a></p>
+                            <h6 class="text-light pt-1 mb-0">Already have an account? <a href="<?php echo base_url('login'); ?>" class="text-reset">Log In</a></h6>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +73,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image -->
-                <a href="<?= base_url() ?>" class="navbar-brand"></a>
+                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -84,13 +84,14 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <p class="text-light pt-2 mb-0">No account yet? <a href="<?php echo base_url('registration'); ?>" class="text-reset">Register</a> now.</p>
+                            <h6 class="text-light pt-1 mb-0">No account yet? <a href="<?php echo base_url('registration'); ?>" class="text-reset">Register</a></h6>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </nav>
-        <!-- (end) Navbar Log In Section) -->
+        <!-- (end) Navbar Log In Section -->
 
     <?php
         break;
@@ -98,14 +99,27 @@ switch ($navbar) {
     default:
     ?>
         <!-- Navbar Main Section -->
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
             <div class="container">
 
                 <ul class="navbar-nav align-items-center navbar-right w-100">
                     <!-- Logo Image -->
                     <div class="roww">
                     <li class="block1">
-                        <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
+                        <?php
+                            if($this->session->userdata('userName') == 'admin')
+                            {
+                        ?>
+                            <a href="<?= base_url('supportteam') ?>" class="navbar-brand h1 text-light mr-auto">
+                        <?php
+                            }
+                            else
+                            {
+                        ?>
+                            <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
+                        <?php
+                            }
+                        ?>
                             <picture>
                                 <source media="(max-width: 990px)" srcset="<?= base_url('assets/images/vd_Logo.png') ?>">
                                 <img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" />
@@ -128,9 +142,7 @@ switch ($navbar) {
                     <div class="collapse navbar-collapse ml-auto" id="searcharea" style="margin-left: 170px; margin-right: 100px;">
                         <!-- Search (Find User) -->
                         <li class="w-100">
-
                             <form action="<?= base_url(); ?>mainpage/searchuser/" method="get" class="form d-flex" >
-
                                 <!--changes-->
                                 <input type="text" name="userName" id="name" class="form-control me-2">
                                 <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
@@ -146,16 +158,10 @@ switch ($navbar) {
                             </a>
                         </li>
                         <li class="mb-1">
-                            <?php
-                            $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                            $user_ID = $this->session->userdata('user_ID');
-                            $query = "SELECT * FROM user WHERE user_ID = $user_ID";
-                            $result = mysqli_query($connect, $query);
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo '<img style="width: 50px; height: 50px; border-radius: 100px;" src="data:image/jpeg;base64, ' . base64_encode($row['user_displayImage']) . '"';
-                            }
-                            ?>
+                        <?php $source = $this->UpdateProfile_model->getImage();?>
+                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px" ; src="<?= base_url($source) ?>"></a>
                         </li>
+                        
                          <li class="ms-2 navbar-item dropdown mb-2">
                             <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                             </a>

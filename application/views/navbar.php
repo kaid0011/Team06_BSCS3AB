@@ -105,20 +105,7 @@ switch ($navbar) {
                     <!-- Logo Image -->
                     <div class="roww">
                     <li class="block1">
-                        <?php
-                            if($this->session->userdata('userName') == 'admin')
-                            {
-                        ?>
-                            <a href="<?= base_url('supportteam') ?>" class="navbar-brand h1 text-light mr-auto">
-                        <?php
-                            }
-                            else
-                            {
-                        ?>
-                            <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
-                        <?php
-                            }
-                        ?>
+                        <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
                             <picture>
                                 <source media="(max-width: 990px)" srcset="<?= base_url('assets/images/vd_Logo.png') ?>">
                                 <img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" />
@@ -141,7 +128,7 @@ switch ($navbar) {
                     <div class="collapse navbar-collapse ml-auto" id="searcharea" style="margin-left: 170px; margin-right: 100px;">
                         <!-- Search (Find User) -->
                         <li class="w-100">
-                            <form action="<?= base_url(); ?>mainpage/finduser/" method="post" class="form d-flex">
+                            <form action="<?= base_url('mainpage/finduser') ?>" method="post" class="form d-flex">
                                 <!--changes-->
                                 <input type="text" name="userName" class="form-control me-2">
                                 <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
@@ -157,10 +144,16 @@ switch ($navbar) {
                             </a>
                         </li>
                         <li class="mb-1">
-                        <?php $source = $this->UpdateProfile_model->getImage();?>
-                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px" ; src="<?= base_url($source) ?>"></a>
+                            <?php
+                            $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
+                            $user_ID = $this->session->userdata('user_ID');
+                            $query = "SELECT * FROM user WHERE user_ID = $user_ID";
+                            $result = mysqli_query($connect, $query);
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo '<img style="width: 50px; height: 50px; border-radius: 100px;" src="data:image/jpeg;base64, ' . base64_encode($row['user_displayImage']) . '"';
+                            }
+                            ?>
                         </li>
-                        
                          <li class="ms-2 navbar-item dropdown mb-2">
                             <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                             </a>

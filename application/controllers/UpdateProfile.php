@@ -419,18 +419,21 @@
 
                             move_uploaded_file($temp_name, $path_filename_ext);
                         }
+                        header("Refresh:0; url =../updateprofile");
                     }
                     else
                     {
                         echo("Error uploading image.");
                         $this->index();
                     }
+                    header("Refresh:0; url =../updateprofile");
                 }
             }
             else
             {
                 $this->removeImage();
             }
+            header("Refresh:0; url =../updateprofile");
         }
 
         public function removeImage()

@@ -1,5 +1,4 @@
 <?php
-        $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/upload/";
         class Mainpage_model extends CI_Model
         {
                 public function __construct()
@@ -44,10 +43,10 @@
 
                 public function getImage($id)
                 {
-                    
+                    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/upload/";
                     $filename = $id."_profileImage";
                     $extension = ".jpg";
-                    $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+                    $path_filename_ext = $target_directory.$filename.$extension;
                     if(file_exists($path_filename_ext))
                     {
                         $extension = ".jpg";
@@ -55,7 +54,7 @@
                     else
                     {
                         $extension = ".jpeg";
-                        $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+                        $path_filename_ext = $target_directory.$filename.$extension;
                         if(file_exists($path_filename_ext))
                         {
                             
@@ -66,7 +65,7 @@
                             $extension = ".png";
                         }
                     }
-                    $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+                    $path_filename_ext = $target_directory.$filename.$extension;
                     $file = $id."_profileImage".$extension;
                     if(file_exists($path_filename_ext))
                         {

@@ -18,7 +18,7 @@
                             <!-- Enter your E-mail Address-->
                             <label for="basic-url" class="form-label">Enter your E-mail Address</label>
                             <div class="input-group input-group-lg">
-                                <input type="text" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Enter email" aria-label="Enter Confirmation" aria-describedby="inputGroup-sizing-lg">
+                                <input type="text" name="email" value="<?php echo set_value('email'); ?>" class="form-control" placeholder="Enter e-mail address" aria-label="Enter Confirmation" aria-describedby="inputGroup-sizing-lg">
                                 <!-- Form Validation Error Message -->
                                 <span class="text-danger"><?php echo form_error('email'); ?></span>
                             </div>   

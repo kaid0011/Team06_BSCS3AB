@@ -68,16 +68,14 @@
                   <hr class="bg-light">
                   <!--Input Area-->
                   <?php 
-                  if($row->page_InputImage != NULL)
+                  if($this->PrivateNotebook_model->getImage() != 'No image')
                   {
                     ?>
                     <div class=" row">
                       <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
-                        <a> 
-                        <?php
-                            $this->PrivateNotebook_model->getImage($this->session->userdata("user_ID"));
-                        ?>
-                        </a>   
+                            <?php $source = $this->PrivateNotebook_model->getImage();?>
+                            <a><img src="<?= base_url($source) ?>"></a>
+    
                       </div>
                       <div class="col-md-9">
                       <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>

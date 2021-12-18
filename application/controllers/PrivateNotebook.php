@@ -50,29 +50,120 @@
                 $pageTheme = $this->input->post('theme'); //Theme
                 $pageInput = $this->input->post('input'); //Input
                 $this->PrivateNotebook_model->updatePage($pageTimer,$pageTheme, $pageInput, "", $id);
-                if($_FILES["image"]["tmp_name"] != NULL)
+                if($_FILES['file']['name'] != "")
                 {
-                    $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-                    $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                    $query = "UPDATE privatenb_pages SET page_InputImage = '$file' WHERE privateNB_ID = $id";
-                    if(mysqli_query($connect, $query))
-                        {
-                            echo '<script>alert("Image Inserted into Database")</script>';
-                        }
-                }
+                    $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/privatenotebook/";
+                    $file = $_FILES['file']['name'];
+                    $path = pathinfo($file);
+                    $filename = $id."_privateNotebookImage";
+                    $ext = $path['extension'];
+                    if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
+                    {
+                        $temp_name = $_FILES['file']['tmp_name'];
+                        $path_filename_ext = $target_directory.$filename.".".$ext;
 
-                $this->index();
+                        if(file_exists($path_filename_ext))
+                        {
+                            unlink($path_filename_ext);
+                            $file = $_FILES['file']['name'];
+                            $path = pathinfo($file);
+                            $filename = $id."_privateNotebookImage";
+                            $ext = $path['extension'];
+                            $temp_name = $_FILES['file']['tmp_name'];
+                            $path_filename_ext = $target_directory.$filename.".".$ext;
+                            move_uploaded_file($temp_name, $path_filename_ext);
+                        }
+                        else
+                        {
+                            $ext = "jpg";
+                            $path_filename_ext = $target_directory.$filename.".".$ext;
+                            if(file_exists($path_filename_ext))
+                            {
+                                unlink($path_filename_ext);
+                            }
+                            else
+                            {
+                                $ext = "jpeg";
+                                $path_filename_ext = $target_directory.$filename.".".$ext;
+                                if(file_exists($path_filename_ext))
+                                {
+                                    unlink($path_filename_ext);
+                                }
+                                else
+                                {
+                                    $ext = "png";
+                                    $path_filename_ext = $target_directory.$filename.".".$ext;
+                                    if(file_exists($path_filename_ext))
+                                    {
+                                        unlink($path_filename_ext);
+                                    }
+                                }
+                            }
+                            move_uploaded_file($temp_name, $path_filename_ext);
+                        }
+                        
+    
+                    }
+                    else
+                    {
+                        echo("Error uploading image.");
+                        $this->index();
+                    }
+                }
+                $remove = $this->input->post('remove');
+                if($remove == 'Remove')
+                {
+                    $this->removeImage();
+                }
+                header("Refresh:0; url = ../privatenotebook");
             }
             else if($action == 'Back')
             {
                 $this->index();
+                header("Refresh:0; url = ../privatenotebook");
             }
-            else
+            else if($action == 'Delete')
             {  
                 $this->PrivateNotebook_model->updatePage("00:00:00", "Light", NULL, NULL, $id);
                 $this->index();
             }
   
+        }
+
+        public function removeImage()
+        {
+            $id = $this->session->userdata('user_ID');
+            $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/privatenotebook/";
+            $filename = $id."_privateNotebookImage";
+            $extension = ".jpg";
+            $path_filename_ext = $target_directory.$filename.$extension;
+            if(file_exists($path_filename_ext))
+            {
+                $extension = ".jpg";
+                unlink($path_filename_ext);
+            }
+            else
+            {
+                $extension = ".jpeg";
+                $path_filename_ext = $target_directory.$filename.$extension;
+                if(file_exists($path_filename_ext))
+                {
+                            
+                    $extension = ".jpeg";
+                    unlink($path_filename_ext);
+                }
+                else
+                {
+                    $extension = ".png";
+                    $path_filename_ext = $target_directory.$filename.$extension;
+                    if(file_exists($path_filename_ext))
+                    {
+                        $extension = ".png";
+                        unlink($path_filename_ext);
+                        
+                    }
+                }
+            }
         }
     }
 ?>

@@ -200,7 +200,7 @@
             if($response)
             {
                 $this->removeImage($page_ID);
-                $this->index();
+                redirect('publicnotebook');
             }
         }
 

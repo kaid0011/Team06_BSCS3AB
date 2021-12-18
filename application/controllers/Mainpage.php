@@ -28,19 +28,10 @@
             $this->sitelayout->loadTemplate('pages/mainpage/adminmainpage', $data); 
         }
 
+
         public function searchuser()
-        {
-            
-           
-            
-
-            
-            
-        }
-
-        public function findUser()
         { 
-            $user = $this->input->post('userName');
+            $user = $this->input->get('userName');
             $data['findUser'] = $this->Mainpage_model->findUser($user);
             $findUser_ID = NULL;
             foreach($data['findUser']->result() as $row)
@@ -69,7 +60,7 @@
                 $response = $this->Mainpage_model->addReact($page_ID, $visited_ID);
                 if($response)
                 {
-                    $this->findUser(); 
+                    $this->searchuser(); 
                 }
             }
         }

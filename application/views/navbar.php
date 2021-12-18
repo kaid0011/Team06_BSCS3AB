@@ -141,9 +141,9 @@ switch ($navbar) {
                     <div class="collapse navbar-collapse ml-auto" id="searcharea" style="margin-left: 170px; margin-right: 100px;">
                         <!-- Search (Find User) -->
                         <li class="w-100">
-                            <form action="<?= base_url(); ?>mainpage/finduser/" method="post" class="form d-flex">
+                            <form action="<?= base_url(); ?>mainpage/searchuser/" method="get" class="form d-flex" >
                                 <!--changes-->
-                                <input type="text" name="userName" class="form-control me-2">
+                                <input type="text" name="userName" id="name" class="form-control me-2">
                                 <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
                             </form>
                         </li>
@@ -259,3 +259,11 @@ switch ($navbar) {
     }
 }
 </style>
+
+<script>
+
+    function urlName() {
+        <?php $name ?> = document.getElementById("userName").value;
+    }
+
+</script>

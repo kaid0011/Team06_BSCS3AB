@@ -35,6 +35,43 @@
       <?php
       if ($viewStickyNotes->num_rows() > 0) {
         foreach ($viewStickyNotes->result() as $row) {
+          $theme = $row->noteTheme;
+          if ($theme == "Dark") 
+          {
+            $themeurl = "assets/images/themes/DarkNote.jpg";
+            $themecardcolor = '#f8f9fa';
+            $themecardbgurl = 'assets/images/themes/Darkcard.jpg';
+            $fontcolor = 'white';
+          } 
+          else if ($theme == "Light") 
+          {
+            $themeurl = "assets/images/themes/LightNote.jpg";
+            //$themecardcolor = '#212529';
+            //$themecardbgurl = 'assets/images/themes/LightCard.jpg';
+            $fontcolor = 'black';
+          } 
+          else if ($theme == "Apple") 
+          {
+            $themeurl = "assets/images/themes/AppleNote.jpg";
+            //$themecardcolor = '#212529';
+            //$themecardbgurl = 'assets/images/themes/AppleCard.jpg';
+            $fontcolor = 'black';
+          } 
+          else if ($theme == "Orange") 
+          {
+            $themeurl = "assets/images/themes/OrangeNote.jpg";
+            //$themecardcolor = '#212529';
+            //$themecardbgurl = 'assets/images/themes/OrangeCard.jpg';
+            $fontcolor = 'black';
+          } 
+          else if ($theme == "Kiwi") 
+          {
+            $themeurl = "assets/images/themes/KiwiNote.jpg";
+            //$themecardcolor = '#212529';
+            //$themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
+            $fontcolor = 'black';
+          }
+
       ?>
           <div class="col">
             <div class="col">
@@ -151,6 +188,7 @@
     }
     .stickyNotesHeight{
       margin-top:30px;
+      
     }
   }
   .reactButton{
@@ -164,5 +202,7 @@
   }
   .stickyNotesHeight{
     height:250px;
+    background-color: <?php echo $themeurl ?>;
+    background-image: url(<?= base_url($themeurl) ?>);
   }
 </style>

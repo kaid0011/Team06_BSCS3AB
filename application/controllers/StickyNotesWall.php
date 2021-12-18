@@ -47,8 +47,9 @@
             if($action == 'Submit')
             {
                 $this->StickyNotesWall_model->createStickyNotes($data);
-                $this->StickyNotesWall_model->note($id);
-                $this->index();
+                //$this->StickyNotesWall_model->note($id);
+                //$this->index();
+                redirect('stickynoteswall');
             }
             else if($action == 'Back')
             {

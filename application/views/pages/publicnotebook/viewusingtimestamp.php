@@ -3,7 +3,7 @@
       <!-- Timestamp -->
       <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
         <!--changes-->
-          <input type="date" name="date" class="form-control me-2">
+          <input type="date" name="date" class="form-control me-2" placeholder="Enter date (mm/dd/yy)">
           <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
       </form>
     </div>
@@ -93,7 +93,7 @@
                     <div class=" row">
                       <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
                             <?php $source = $this->PublicNotebook_model->getImage($page_ID);?>
-                            <a><img src="<?= base_url($source) ?>" style="height: 250px; width: 250px; margin-left: -13px; padding: 0px;"></a>
+                            <a><img src="<?= base_url($source) ?>"></a>
     
                       </div>
                       <div class="col-md-9">

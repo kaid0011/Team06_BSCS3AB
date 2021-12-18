@@ -38,8 +38,9 @@
             if($pageTheme == NULL)
             {
                 $pageTheme = 'Light';
-            }          
 
+            }          
+          
             if($action == 'Submit')
             {
                 $this->PublicNotebook_model->createPublicPage($id, $input, $pageTheme, $pageReact_Count);
@@ -72,6 +73,12 @@
                                 $this->createPublicNotebook();
                             }
                         }
+                        $remove = $this->input->post('remove');
+                        if($remove == 'Remove')
+                            {
+                                $this->removeImage($page_ID);
+                                header("Refresh:0; url = ../publicnotebook");
+                            }
                     }
                 }
                 header("Refresh:0; url = ../publicnotebook");
@@ -80,6 +87,8 @@
             {
                 $this->index();
             }
+
+     
         }
 
         public function updatePublicNotebook()

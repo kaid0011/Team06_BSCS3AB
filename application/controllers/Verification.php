@@ -64,9 +64,7 @@
                         );
 
                         $this->session->set_userdata($userdata);
-
-                        $data['navbar'] = 'main';
-                        $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
+                        redirect('mainpage');
                     }
                 }
                 else

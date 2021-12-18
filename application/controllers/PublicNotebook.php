@@ -9,7 +9,8 @@
             $this->load->model('PublicNotebook_model');
         }
 
-        public function index() {
+        public function index() 
+        {
             $publicNB_ID = $this->session->userdata('user_ID');
             $data['viewPublicNotebook']=$this->PublicNotebook_model->get_PublicNotebookInput($publicNB_ID);
             
@@ -17,34 +18,25 @@
             $this->sitelayout->loadTemplate('pages/publicnotebook/withpicviewpublic', $data); 
         }
 
-        public function createPublicNotebook() {
+        public function createPublicNotebook() 
+        {
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data);         
         }
         
-        public function createPublicPage() {
+        public function createPublicPage() 
+        {
             $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
             $input = $this->input->post('input');
             $pageTheme = $this->input->post('theme');
             $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
            
-                
-           
             $pageReact_Count = 0;
             if($pageTheme == NULL)
             {
                 $pageTheme = 'Light';
-            }
-
-            /*$data = array(
-                'publicNB_ID' => $id,
-                'pageInput' => $input,
-                'pageTheme' => $pageTheme,
-                'pageReact_Count' => 0
-            );*/
-            
-            
+            }          
 
             if($action == 'Submit')
             {
@@ -65,8 +57,7 @@
                         }
                     }
                 }
-
-                $this->index();
+                redirect('publicnotebook');
             }
             else if($action == 'Back')
             {
@@ -77,7 +68,6 @@
         public function updatePublicNotebook()
         {
             $page_ID = $this->uri->segment(3);
-            //$id = $this->session->userdata('user_ID');
             $data['viewPublicPage']=$this->PublicNotebook_model->get_PublicPage($page_ID);
 
             $data['navbar'] = 'main';
@@ -91,7 +81,6 @@
             $action = $this->input->post('action');
             $pageTheme = $this->input->post('theme');
             
-            
             if($action == 'Update')
             {
                 $pageInput = $this->input->post('input');
@@ -104,12 +93,11 @@
                     {
                         echo '<script>alert("Image Inserted into Database")</script>';
                     }
-        
-                $this->index();
+                redirect('publicnotebook');
             }
             else if($action == 'Back')
             {
-                $this->index();
+                redirect('publicnotebook');
             }
             else
             {  

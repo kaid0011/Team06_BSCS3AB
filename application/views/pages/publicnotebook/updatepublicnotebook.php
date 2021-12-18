@@ -200,14 +200,6 @@
 <script>
   const name = document.querySelector(".name");
 
-  function changeColor(color, cardcolor, textcolor, theme) {
-    document.body.style.background = color;
-    document.getElementById("card").style.background = cardcolor;
-    document.getElementById("card").style.color = textcolor;
-    document.getElementById("submittext").value = theme;
-    
-  }
-
   function changeImgFruits(color, cardcolor, textcolor, theme) {
     document.body.style.backgroundImage = color;
     document.getElementById("card").style.backgroundImage = cardcolor;

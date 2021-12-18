@@ -3,7 +3,7 @@
       <!-- Timestamp -->
       <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
         <!--changes-->
-          <input type="date" name="date" class="form-control me-2">
+          <input type="date" name="date" class="form-control me-2" placeholder="Enter date (mm/dd/yy)">
           <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
       </form>
     </div>

@@ -238,5 +238,15 @@
                 }
             }
         }
+
+        public function searchpage()
+        {
+            $date = $this->input->post('date');
+            $publicNB_ID = $this->session->userdata('user_ID');
+            $data['viewPublicNotebook']=$this->PublicNotebook_model->getPageUsingDate($publicNB_ID, $date);
+            
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/publicnotebook/viewusingtimestamp', $data); 
+        }
     }
 ?>

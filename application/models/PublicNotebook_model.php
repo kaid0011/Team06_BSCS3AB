@@ -1,4 +1,5 @@
 <?php
+    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
     class PublicNotebook_model extends CI_Model
     {
         public function __construct()
@@ -75,10 +76,9 @@
         public function getImage($data)
                 {
                     $id = $this->session->userdata('user_ID');
-                    $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
                     $filename = $id."_".$data."_publicNotebookImage";
                     $extension = ".jpg";
-                    $path_filename_ext = $target_directory.$filename.$extension;
+                    $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
                     if(file_exists($path_filename_ext))
                     {
                         $extension = ".jpg";
@@ -86,7 +86,7 @@
                     else
                     {
                         $extension = ".jpeg";
-                        $path_filename_ext = $target_directory.$filename.$extension;
+                        $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
                         if(file_exists($path_filename_ext))
                         {
                             
@@ -97,7 +97,7 @@
                             $extension = ".png";
                         }
                     }
-                    $path_filename_ext = $target_directory.$filename.$extension;
+                    $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
                     $file = $id."_".$data."_publicNotebookImage".$extension;
                     if(file_exists($path_filename_ext))
                         {

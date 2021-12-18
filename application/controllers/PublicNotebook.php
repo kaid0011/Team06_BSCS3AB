@@ -1,5 +1,6 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
+    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
 
     class PublicNotebook extends CI_Controller
     {
@@ -60,7 +61,6 @@
                         $page_ID = $row->publicNBPage_ID;
                         if($_FILES['file']['name'] != "")
                         {
-                            $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
                             $file = $_FILES['file']['name'];
                             $path = pathinfo($file);
                             $filename = $id."_".$page_ID."_publicNotebookImage";
@@ -68,7 +68,7 @@
                             $temp_name = $_FILES['file']['tmp_name'];
                             if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
                             {
-                                $path_filename_ext = $target_directory.$filename.".".$ext;
+                                $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
                                 move_uploaded_file($temp_name, $path_filename_ext);
                                 $this->index();
             
@@ -116,7 +116,6 @@
         
                 if($_FILES['file']['name'] != "")
                 {
-                    $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
                     $file = $_FILES['file']['name'];
                     $path = pathinfo($file);
                     $filename = $id."_".$page_ID."_publicNotebookImage";
@@ -124,7 +123,7 @@
                     if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
                     {
                         $temp_name = $_FILES['file']['tmp_name'];
-                        $path_filename_ext = $target_directory.$filename.".".$ext;
+                        $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
 
                         if(file_exists($path_filename_ext))
                         {
@@ -134,13 +133,13 @@
                             $filename = $id."_".$page_ID."_publicNotebookImage";
                             $ext = $path['extension'];
                             $temp_name = $_FILES['file']['tmp_name'];
-                            $path_filename_ext = $target_directory.$filename.".".$ext;
+                            $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
                             move_uploaded_file($temp_name, $path_filename_ext);
                         }
                         else
                         {
                             $ext = "jpg";
-                            $path_filename_ext = $target_directory.$filename.".".$ext;
+                            $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
                             if(file_exists($path_filename_ext))
                             {
                                 unlink($path_filename_ext);
@@ -148,7 +147,7 @@
                             else
                             {
                                 $ext = "jpeg";
-                                $path_filename_ext = $target_directory.$filename.".".$ext;
+                                $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
                                 if(file_exists($path_filename_ext))
                                 {
                                     unlink($path_filename_ext);
@@ -156,7 +155,7 @@
                                 else
                                 {
                                     $ext = "png";
-                                    $path_filename_ext = $target_directory.$filename.".".$ext;
+                                    $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
                                     if(file_exists($path_filename_ext))
                                     {
                                         unlink($path_filename_ext);
@@ -210,10 +209,9 @@
         public function removeImage($page_ID)
         {
             $id = $this->session->userdata('user_ID');
-            $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
             $filename = $id."_".$page_ID."_publicNotebookImage";
             $extension = ".jpg";
-            $path_filename_ext = $target_directory.$filename.$extension;
+            $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
             if(file_exists($path_filename_ext))
             {
                 $extension = ".jpg";
@@ -222,7 +220,7 @@
             else
             {
                 $extension = ".jpeg";
-                $path_filename_ext = $target_directory.$filename.$extension;
+                $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
                 if(file_exists($path_filename_ext))
                 {
                             
@@ -232,7 +230,7 @@
                 else
                 {
                     $extension = ".png";
-                    $path_filename_ext = $target_directory.$filename.$extension;
+                    $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
                     if(file_exists($path_filename_ext))
                     {
                         $extension = ".png";

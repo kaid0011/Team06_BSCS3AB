@@ -8,7 +8,7 @@
 
       <div class="justify-content-center align-items-center text-center ps-5">
         <?php $source = $this->UpdateProfile_model->getImage();?>
-        <a href="#"><img src="<?= base_url($source) ?>"></a>
+        <a href="#"><img src="<?= base_url($source)?>" style="height: 200px; width 200px; border-radius: 100px;"></a>
       </div>
       
       <form method="post" enctype="multipart/form-data" action="<?= base_url('updateprofile/image') ?>">

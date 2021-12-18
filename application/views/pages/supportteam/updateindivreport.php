@@ -112,62 +112,48 @@
         <!-- Report List -->
         <div class="container mt-5">
             <table class="table">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">Report ID</th>
-                        <th scope="col">Complainee ID </th>
-                        <th scope="col">Complainee Username</th>
-                        <th scope="col">Categories</th>
-                        <th scope="col">Status</th>
-                        <th scope="col"></th>    
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-                    if($viewAllReports->num_rows() > 0)
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Report Id</th>
+                    <th scope="col">Complainant Id </th>
+                    <th scope="col">Complainee Id</th>
+                    <th scope="col">Categories</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            <?php
+                if($viewAllReports->num_rows() > 0)
+                {
+                    foreach($viewAllReports->result() as $row)
                     {
-                        foreach($viewAllReports->result() as $row)
-                        {
-                ?>
-                <form action="<?= base_url('supportteam/updateindivreport') ?>" method="post">
-                    <tr>
-                        <th scope="row"><?php echo $row->report_ID; ?>
-                            <!-- Hidden Report ID -->
-                            <input type="text" name="report_ID" class="btn float-end mt-1"  value="<?php echo $row->report_ID; ?>" hidden>
-                        </th>
-                        <td><?php echo $row->reportedUser_ID; ?></td>
-                            <!-- Hidden Complainee ID -->
-                            <input type="text" name="reportedUser_ID" class="btn float-end mt-1"  value="<?php echo $row->reportedUser_ID; ?>" hidden>
-                        <?php
-                                }
-                            }
-                        ?>
-                        <?php
-                            foreach($getReportedUserData->result() as $row)
-                            {
-                        ?> 
-                        <td><?php echo $row->userName; ?></td>
-                        <?php
-                            }
-                        ?>
-                        <?php
-                            if($viewAllReports->num_rows() > 0)
-                            {
-                                foreach($viewAllReports->result() as $row)
-                                {
-                        ?>
-                        <td><?php echo $row->reportCategory; ?></td>     
-                        <td><?php echo $row->reportStatus; ?></td>    
-                        <td> 
-                            <input type="submit" name="action" value="View Report" class="btn btn-secondary btn-sm" type="button">
-                        </td>     
-                    </tr>
-                </form>
-                <?php
-                        }
+            ?>
+            <form action="<?= base_url('supportteam/updateindivreport') ?>" method="post">
+                <tr>
+                    <th scope="row"><?php echo $row->report_ID; ?>
+                        <!-- Hidden Report ID -->
+                        <input type="text" name="report_ID" class="btn float-end mt-1"  value="<?php echo $row->report_ID; ?>" hidden>
+                    </th>
+                    <td><?php echo $row->user_ID; ?></td>
+                    <td><?php echo $row->reportedUser_ID; ?>
+                        <!-- Hidden Complainee ID -->
+                        <input type="text" name="reportedUser_ID" class="btn float-end mt-1"  value="<?php echo $row->reportedUser_ID; ?>" hidden>
+                    </td>
+                    <td><?php echo $row->reportCategory; ?></td>     
+                    <td><?php echo $row->reportStatus; ?></td>       
+                    <td> 
+                        
+                        <input type="submit" name="action" value="View Report" class="btn btn-secondary btn-sm" type="button">
+                    </td>
+                </tr>
+            </form>
+            <?php
                     }
-                ?>
-                </tbody>
+                }
+            ?>
+            </tbody>
             </table>
         </div>
     </div>

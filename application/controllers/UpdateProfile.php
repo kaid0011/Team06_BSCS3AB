@@ -389,7 +389,6 @@
                             $temp_name = $_FILES['file']['tmp_name'];
                             $path_filename_ext = $target_directory.$filename.".".$ext;
                             move_uploaded_file($temp_name, $path_filename_ext);
-                            header("Refresh:0; url =../updateprofile");
                         }
                         else
                         {
@@ -419,8 +418,6 @@
                             }
 
                             move_uploaded_file($temp_name, $path_filename_ext);
-                            header("Refresh:0; url =../updateprofile");
-                            
                         }
                     }
                     else
@@ -429,6 +426,7 @@
                         $this->index();
                     }
                 }
+                header("Refresh:0; url =../updateprofile");
             }
             else
             {
@@ -471,7 +469,6 @@
                 }
             }
             header("Refresh:0; url =../updateprofile");
-           
         }
     }
 

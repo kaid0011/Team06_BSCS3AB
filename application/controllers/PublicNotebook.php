@@ -10,7 +10,8 @@
             $this->load->model('UpdateProfile_model');
         }
 
-        public function index() {
+        public function index() 
+        {
             $publicNB_ID = $this->session->userdata('user_ID');
             $data['viewPublicNotebook']=$this->PublicNotebook_model->get_PublicNotebookInput($publicNB_ID);
             
@@ -18,34 +19,25 @@
             $this->sitelayout->loadTemplate('pages/publicnotebook/withpicviewpublic', $data); 
         }
 
-        public function createPublicNotebook() {
+        public function createPublicNotebook() 
+        {
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data);         
         }
         
-        public function createPublicPage() {
+        public function createPublicPage() 
+        {
             $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
             $input = $this->input->post('input');
             $pageTheme = $this->input->post('theme');
 
            
-                
-           
             $pageReact_Count = 0;
             if($pageTheme == NULL)
             {
                 $pageTheme = 'Light';
-            }
-
-            /*$data = array(
-                'publicNB_ID' => $id,
-                'pageInput' => $input,
-                'pageTheme' => $pageTheme,
-                'pageReact_Count' => 0
-            );*/
-            
-            
+            }          
 
             if($action == 'Submit')
             {
@@ -83,7 +75,6 @@
                     }
                 }
                 header("Refresh:0; url = ../publicnotebook");
-                
             }
             else if($action == 'Back')
             {
@@ -94,7 +85,6 @@
         public function updatePublicNotebook()
         {
             $page_ID = $this->uri->segment(3);
-            //$id = $this->session->userdata('user_ID');
             $data['viewPublicPage']=$this->PublicNotebook_model->get_PublicPage($page_ID);
 
             $data['navbar'] = 'main';
@@ -107,7 +97,6 @@
             $page_ID = $this->input->post('page_ID');
             $action = $this->input->post('action');
             $pageTheme = $this->input->post('theme');
-            
             
             if($action == 'Update')
             {
@@ -185,7 +174,7 @@
             }
             else if($action == 'Back')
             {
-                $this->index();
+                redirect('publicnotebook');
             }
             else
             {  

@@ -9,6 +9,7 @@
             parent::__construct();
     
             $this->load->model('Mainpage_model');
+            $this->load->model('UpdateProfile_model');
 
             #redirect to login if userID is NULL
             if(!$this->session->userdata('user_ID'))
@@ -27,18 +28,34 @@
             $this->sitelayout->loadTemplate('pages/mainpage/adminmainpage', $data); 
         }
 
+        public function searchuser()
+        {
+            
+           
+            
+
+            
+            
+        }
+
         public function findUser()
         { 
             $user = $this->input->post('userName');
             $data['findUser'] = $this->Mainpage_model->findUser($user);
+            $findUser_ID = NULL;
             foreach($data['findUser']->result() as $row)
             {
                 $findUser_ID = $row->user_ID;
             }
-            $data['findUserPublicNB'] = $this->Mainpage_model->findUser_PublicNB($findUser_ID);
             
+            if($findUser_ID != NULL)
+            {
+                $data['findUserPublicNB'] = $this->Mainpage_model->findUser_PublicNB($findUser_ID);
+            }
+           
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/navbar/visitedprofile', $data); 
+
         }
 
         public function addReact()
@@ -56,6 +73,8 @@
                 }
             }
         }
+
+        
     }
 
 ?>

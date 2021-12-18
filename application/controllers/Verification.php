@@ -9,6 +9,7 @@
             
             $this->load->library('form_validation');    #preload form_validation library
             $this->load->model('Verification_model');
+            $this->load->model('UpdateProfile_model');
         }
 
         public function index() {

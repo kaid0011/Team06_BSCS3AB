@@ -68,18 +68,33 @@
 
               <hr class="bg-light">
               <!--Input Area-->
-              <div class="row">
-                    <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
-                        <a>
-                          <?php
-                            $this->PublicNotebook_model->getImage($page_ID);
-                          ?>
-                        </a>
+              <?php 
+                  if($this->PublicNotebook_model->getImage($page_ID) != 'No image')
+                  {
+                    ?>
+                    <div class=" row">
+                      <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
+                            <?php $source = $this->PublicNotebook_model->getImage($page_ID);?>
+                            <a><img src="<?= base_url($source) ?>"></a>
+    
+                      </div>
+                      <div class="col-md-9">
+                      <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                      </div>
                     </div>
-                    <div class="col-md-9">
-                        <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                    <?php
+                  }
+                  else
+                  {
+                    ?>
+                    <div class=" row">
+                      <div class="col mb-3">
+                      <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                      </div>
                     </div>
-                </div>
+                  <?php
+                  }
+              ?>
                 <hr id ="inputbox" class="bg-light">
                 <!-- Submit Button-->
                 <div class="col ">

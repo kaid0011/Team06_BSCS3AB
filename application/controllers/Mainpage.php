@@ -28,6 +28,16 @@
             $this->sitelayout->loadTemplate('pages/mainpage/adminmainpage', $data); 
         }
 
+        public function searchuser()
+        {
+            
+           
+            
+
+            
+            
+        }
+
         public function findUser()
         { 
             $user = $this->input->post('userName');
@@ -45,6 +55,7 @@
            
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/navbar/visitedprofile', $data); 
+
         }
 
         public function addReact()

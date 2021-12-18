@@ -28,7 +28,7 @@
             $action = $this->input->post('action');
             $input = $this->input->post('input');
             $pageTheme = $this->input->post('theme');
-            $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+
            
                 
            
@@ -55,19 +55,35 @@
                 $data = $this->PublicNotebook_model->get_PublicNotebookInput($id);
                 foreach($data->result() as $row)
                 {
-                    if($input == $row->pageInput)
+                    if($input == $row->pageInput && $pageTheme == $row->pageTheme)
                     {
                         $page_ID = $row->publicNBPage_ID;
-                        $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                        $query = "UPDATE publicnb_pages SET page_InputImage = '$file' WHERE publicNBPage_ID = $page_ID";
-                        if(mysqli_query($connect, $query))
+                        if($_FILES['file']['name'] != "")
                         {
-                            echo '<script>alert("Image Inserted into Database")</script>';
+                            $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
+                            $file = $_FILES['file']['name'];
+                            $path = pathinfo($file);
+                            $filename = $id."_".$page_ID."_publicNotebookImage";
+                            $ext = $path['extension'];
+                            $temp_name = $_FILES['file']['tmp_name'];
+                            if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
+                            {
+                                $path_filename_ext = $target_directory.$filename.".".$ext;
+                                move_uploaded_file($temp_name, $path_filename_ext);
+                                $this->index();
+            
+                            }
+                            else
+                            {
+                                echo("Error uploading image.");
+                                $this->PublicNotebook_model->deletePublicPage($id, $page_ID);
+                                $this->createPublicNotebook();
+                            }
                         }
                     }
                 }
-
-                $this->index();
+                header("Refresh:0; url = ../publicnotebook");
+                
             }
             else if($action == 'Back')
             {
@@ -97,16 +113,75 @@
             {
                 $pageInput = $this->input->post('input');
                 $this->PublicNotebook_model->updatePage($id, $page_ID, $pageTheme, $pageInput);
-                
-                $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-                $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                $query = "UPDATE publicnb_pages SET page_InputImage = '$file' WHERE publicNBPage_ID = $page_ID";
-                if(mysqli_query($connect, $query))
-                    {
-                        echo '<script>alert("Image Inserted into Database")</script>';
-                    }
         
-                $this->index();
+                if($_FILES['file']['name'] != "")
+                {
+                    $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
+                    $file = $_FILES['file']['name'];
+                    $path = pathinfo($file);
+                    $filename = $id."_".$page_ID."_publicNotebookImage";
+                    $ext = $path['extension'];
+                    if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
+                    {
+                        $temp_name = $_FILES['file']['tmp_name'];
+                        $path_filename_ext = $target_directory.$filename.".".$ext;
+
+                        if(file_exists($path_filename_ext))
+                        {
+                            unlink($path_filename_ext);
+                            $file = $_FILES['file']['name'];
+                            $path = pathinfo($file);
+                            $filename = $id."_".$page_ID."_publicNotebookImage";
+                            $ext = $path['extension'];
+                            $temp_name = $_FILES['file']['tmp_name'];
+                            $path_filename_ext = $target_directory.$filename.".".$ext;
+                            move_uploaded_file($temp_name, $path_filename_ext);
+                        }
+                        else
+                        {
+                            $ext = "jpg";
+                            $path_filename_ext = $target_directory.$filename.".".$ext;
+                            if(file_exists($path_filename_ext))
+                            {
+                                unlink($path_filename_ext);
+                            }
+                            else
+                            {
+                                $ext = "jpeg";
+                                $path_filename_ext = $target_directory.$filename.".".$ext;
+                                if(file_exists($path_filename_ext))
+                                {
+                                    unlink($path_filename_ext);
+                                }
+                                else
+                                {
+                                    $ext = "png";
+                                    $path_filename_ext = $target_directory.$filename.".".$ext;
+                                    if(file_exists($path_filename_ext))
+                                    {
+                                        unlink($path_filename_ext);
+                                    }
+                                }
+                            }
+                            move_uploaded_file($temp_name, $path_filename_ext);
+                            header("Refresh:0; url = ../publicnotebook");
+                        }
+                        
+                        header("Refresh:0; url = ../publicnotebook");
+                    }
+                    else
+                    {
+                        echo("Error uploading image.");
+                        $this->index();
+                    } 
+                }
+                $remove = $this->input->post('remove');
+                    if($remove == 'Remove')
+                    {
+                        $this->removeImage($page_ID);
+                        header("Refresh:0; url = ../publicnotebook");
+                    }
+                header("Refresh:0; url = ../publicnotebook");
             }
             else if($action == 'Back')
             {
@@ -127,7 +202,44 @@
             $response = $this->PublicNotebook_model->deletePublicPage($id, $page_ID);
             if($response)
             {
+                $this->removeImage($page_ID);
                 $this->index();
+            }
+        }
+
+        public function removeImage($page_ID)
+        {
+            $id = $this->session->userdata('user_ID');
+            $target_directory = "F:/XAMPP/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
+            $filename = $id."_".$page_ID."_publicNotebookImage";
+            $extension = ".jpg";
+            $path_filename_ext = $target_directory.$filename.$extension;
+            if(file_exists($path_filename_ext))
+            {
+                $extension = ".jpg";
+                unlink($path_filename_ext);
+            }
+            else
+            {
+                $extension = ".jpeg";
+                $path_filename_ext = $target_directory.$filename.$extension;
+                if(file_exists($path_filename_ext))
+                {
+                            
+                    $extension = ".jpeg";
+                    unlink($path_filename_ext);
+                }
+                else
+                {
+                    $extension = ".png";
+                    $path_filename_ext = $target_directory.$filename.$extension;
+                    if(file_exists($path_filename_ext))
+                    {
+                        $extension = ".png";
+                        unlink($path_filename_ext);
+                        
+                    }
+                }
             }
         }
     }

@@ -109,11 +109,13 @@
                   }
                 ?>     
                 <hr id="inputbox" class="bg-light">
-                <input type="file" name="image" id="image" value="image"/>
+                <input type="file" name="file" id="file"/>
+                <input type="button" value="Remove" name="action" id="remove" class="p-2 btn mt-1" onclick="removeImage()"/>
+                <input type="text" name="remove" id="removeimage" class="btn float-end mt-1"  hidden value="">
                 <!-- Page ID hidden -->
                 <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
                 <!-- Button-->
-                <input type="submit" value= "Update" name="action" onclick="updatePage()" class="p-2 btn float-end mt-1">
+                <input type="submit" value= "Update" name="action" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
     
@@ -211,6 +213,11 @@
     document.getElementById("card").style.backgroundImage = cardcolor;
     document.getElementById("card").style.color = textcolor;
     document.getElementById("submittext").value = theme;
+  }
+
+  function removeImage() {
+    document.getElementById("removeimage").value = "Remove";
+    document.getElementById("remove").style.backgroundColor = "gray";
   }
 
 </script>

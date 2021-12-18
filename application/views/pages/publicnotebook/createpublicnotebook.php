@@ -50,7 +50,7 @@
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                     <textarea name="input" class="form-control" id="" rows="13"></textarea> 
                 <hr id="inputbox" class="bg-light">
-                <input type="file" name="image" id="image" value="image"/>
+                <input type="file" name="file" id="file" accept="image/png, image/jpg, image/jpeg"/>
                 <!-- Button-->
                 <input type="submit" value= "Submit" name="action"  class="p-2 btn float-end mt-1">
                 <!-- Back Button -->

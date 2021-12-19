@@ -1,15 +1,3 @@
-<?php
-$connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-if (isset($_POST["insert"])) {
-  $id = $this->session->userdata('user_ID');
-  $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-  $query = "UPDATE user SET user_displayImage = '$file' WHERE user_ID = $id";
-  if (mysqli_query($connect, $query)) {
-    echo '<script>alert("Image Inserted into Database")</script>';
-  }
-}
-?>
-
 <section style="background-color: #e9ecef; min-height: 75vh; padding-top: 80px">
   
     <h1 class="h1 mb-4 pt-1 text-dark text-center ps-5">Update Profile</h1>
@@ -19,24 +7,18 @@ if (isset($_POST["insert"])) {
     <div class="align-items-center justify-content-center">
 
       <div class="justify-content-center align-items-center text-center ps-5">
-        <?php
-        $user_ID = $this->session->userdata('user_ID');
-        $query = "SELECT * FROM user WHERE user_ID = $user_ID";
-        $result = mysqli_query($connect, $query);
-        while ($row = mysqli_fetch_array($result)) {
-          echo '<img style="width: 200px; height: 200px; border-radius: 100px; justify-items:center;" src="data:image/jpeg;base64, ' . base64_encode($row['user_displayImage']) . '"';
-        }
-        ?>
+        <?php $source = $this->UpdateProfile_model->getImage();?>
+        <a href="#"><img src="<?= base_url($source)?>" style="height: 200px; width 200px; border-radius: 100px;"></a>
       </div>
       
-      <form method="post" enctype="multipart/form-data">
+      <form method="post" enctype="multipart/form-data" action="<?= base_url('updateprofile/image') ?>">
         <div class="align-items-center text-center justify-content-center pt-3 ps-5">
-          <input type="file" name="image" id="image" />
+          <input type="file" name="file" id="file" />
         </div>
         <!-- <a href="#"><img src="<?= base_url('assets/images/visitedprofile/profile.png') ?>" class="rounded-circle border border-3 border-secondary mb-2" alt="..."></a>  -->
         <div class="d-flex justify-content-center pt-3">
-          <input type="submit" name="insert" id="insert" value="Remove Image" class="input-group-text me-3" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />
-          <input type="submit" name="insert" id="insert" value="Update Image" class="input-group-text" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />
+          <input type="submit" name="action" id="remove" value="Remove Image" class="input-group-text me-3" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />
+          <input type="submit" name="action" id="insert" value="Update Image" class="input-group-text" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />
         </div>
       </form>
 
@@ -131,22 +113,3 @@ if (isset($_POST["insert"])) {
     }
   }
 </style>
-
-<script>
-  $(document).ready(function() {
-    $('#insert').click(function() {
-      var image_name = $('#image').val();
-      if (image_name == '') {
-        alert("Please select image.");
-        return false;
-      } else {
-        var extension = $('#image').val().split('.').pop().toLowerCase();
-        if (jQuery.inArray(extension, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
-          alert('Invalid Image File');
-          $('#image').val('');
-          return false;
-        }
-      }
-    })
-  })
-</script>

@@ -8,12 +8,13 @@
             parent::__construct();
             
             $this->load->model('SupportTeam_model');
+            $this->load->model('UpdateProfile_model');
         }
 
         public function index()
         {
             $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/supportteam/AdminMainpage', $data);
+            $this->sitelayout->loadTemplate('pages/supportteam/adminmainpage', $data);
         }
 
         public function reportUserWall()
@@ -22,6 +23,27 @@
 
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/supportteam/reportuserwall', $data);
+        }
+
+        public function findReport()
+        {
+            $action = $this->input->post('action');
+            $reportedUser_ID = $this->input->post('findReport');
+
+            if($action == 'Search')
+            {
+                $response = $this->SupportTeam_model->findReport($reportedUser_ID);
+                foreach($response->result() as $row)
+                {
+                    $report_ID = $row->report_ID;
+                }
+                $data['viewIndivReport'] = $this->SupportTeam_model->viewIndivReport($report_ID);
+                $data['viewAllReports'] = $this->SupportTeam_model->viewAllReports();
+                $data['getReportedUserData'] = $this->SupportTeam_model->getReportedUserData($reportedUser_ID); 
+
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/supportteam/updateindivreport', $data);
+            }
         }
 
         public function updateIndivReport()
@@ -33,8 +55,8 @@
             if($action == 'View Report')
             {
                 $data['viewIndivReport'] = $this->SupportTeam_model->viewIndivReport($report_ID);
-                $data['getReportedUserData'] = $this->SupportTeam_model->getReportedUserData($reportedUser_ID);
                 $data['viewAllReports'] = $this->SupportTeam_model->viewAllReports();
+                $data['getReportedUserData'] = $this->SupportTeam_model->getReportedUserData($reportedUser_ID);         
 
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/supportteam/updateindivreport', $data);

@@ -3,8 +3,10 @@
         Report Users
     </div>
         <div class="w-50 mx-auto mt-4 my-2 mb-5" style="display: flex; flex-direction: row;">
-            <input type="text" class="form-control inputbox" placeholder="Enter Reported Username..." aria-describedby="basic-addon1">
-                <button class="btn btn-outline-secondary btn-primary text-white fw-normal" type="button">Search</button>
+        <form action="<?= base_url('supportteam/findReport') ?>" method="post">
+            <input type="text" name="findReport" class="form-control inputbox" placeholder="Enter Reported User ID..." aria-describedby="basic-addon1">
+            <input type="submit" name="action" value="Search" class="btn btn-outline-secondary btn-primary text-white fw-normal">
+        </form>
         </div>        
         <div class="container">
         <table class="table">

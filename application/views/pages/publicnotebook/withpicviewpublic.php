@@ -1,3 +1,20 @@
+  <div class="">
+    <div class="d-flex justify-content-end pe-5 pt-3">
+      <!-- Timestamp -->
+      <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
+        <!--changes-->
+          <input type="date" name="date" class="form-control me-2">
+          <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
+      </form>
+    </div>
+    <div class="d-flex justify-content-center">
+      <!-- New Page Button -->
+      <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
+        <button class="py-2 px-3 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
+      </a>
+    </div>
+  </div>
+
 <?php
   if ($viewPublicNotebook->num_rows() > 0) 
   {
@@ -40,6 +57,7 @@
         $fontcolor = '#212529';
       }
 ?>
+ 
   <section id="learn" class="p-5" style="min-height: 75vh; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -68,18 +86,33 @@
 
               <hr class="bg-light">
               <!--Input Area-->
-              <div class="row">
-                    <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
-                        <a>
-                          <?php
-                            $this->PublicNotebook_model->getImage($page_ID);
-                          ?>
-                        </a>
+              <?php 
+                  if($this->PublicNotebook_model->getImage($page_ID) != 'No image')
+                  {
+                    ?>
+                    <div class=" row">
+                      <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
+                            <?php $source = $this->PublicNotebook_model->getImage($page_ID);?>
+                            <a><img src="<?= base_url($source) ?>" style="height: 250px; width: 250px; margin-left: -13px; padding: 0px;"></a>
+    
+                      </div>
+                      <div class="col-md-9">
+                      <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                      </div>
                     </div>
-                    <div class="col-md-9">
-                        <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                    <?php
+                  }
+                  else
+                  {
+                    ?>
+                    <div class=" row">
+                      <div class="col mb-3">
+                      <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                      </div>
                     </div>
-                </div>
+                  <?php
+                  }
+              ?>
                 <hr id ="inputbox" class="bg-light">
                 <!-- Submit Button-->
                 <div class="col ">

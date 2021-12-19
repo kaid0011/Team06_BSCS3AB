@@ -21,4 +21,4 @@
     <title>Virtual Diary</title>
     <link rel="shortcut icon" href="<?=base_url('assets/images/vd_logo.ico')?>" type="image/x-icon">
 </head>
-<body>
+<body style="min-height: 75vh;">

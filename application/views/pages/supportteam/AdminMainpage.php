@@ -5,7 +5,7 @@
     <p class="lead p-3">Support team members' duties generally include performing administrative tasks, familiarizing and adhering to the company's policies and procedures, providing recommendations for improving customer's experience, developing strategies to increase the company's revenue and profitability, and maintaining a positive work</p>
     <div class="row">
         <div class="project-col">
-        <a href="<?=base_url('reportuser')?>">
+        <a href="<?= base_url('supportteam/reportuserwall') ?>">
             <img src="<?=base_url('assets/images/registration/customer.png')?>" alt="project1">
             <div class="layer">
                 <h3>USER REPORT</h3>

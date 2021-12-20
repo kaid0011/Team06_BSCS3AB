@@ -26,6 +26,13 @@
             return $report;
         }
 
+        public function viewAllUserReports($reportedUser_ID)
+        {
+            $this->db->where('reportedUser_ID', $reportedUser_ID);
+            $reports = $this->db->get('report');
+            return $reports;
+        }
+
         public function getReportedUserData($reportedUser_ID)
         {
             $this->db->where('user_ID', $reportedUser_ID);

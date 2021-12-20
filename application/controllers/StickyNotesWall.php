@@ -31,6 +31,8 @@
             $noteReceiver = $this->input->post('receiver');
             $noteInput = $this->input->post('input');
             $notetheme = $this->input->post('theme');
+            
+            
             if($notetheme == NULL)
             {
                 $notetheme = 'Light';
@@ -50,6 +52,7 @@
                 $this->StickyNotesWall_model->createStickyNotes($data);
                 //$this->StickyNotesWall_model->note($id);
                 //$this->index();
+                
                 redirect('stickynoteswall');
             }
             else if($action == 'Back')
@@ -89,7 +92,7 @@
 
             if($action == 'Submit')
             {
-                $user = $this->input->post('noteReceiver, noteInput');
+                $user = $this->input->post('noteReceiver, noteInput, noteTheme');
                 $data['viewstickynotes'] = $this->StickyNotesWall_model->get_input($user);
             }
 

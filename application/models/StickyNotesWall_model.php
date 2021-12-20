@@ -13,6 +13,7 @@
         {
             
             $query = $this->db->get('sticky_notes');
+            
             return $query;
         }
 
@@ -55,6 +56,7 @@
 
                 echo $row->noteInput;
                 echo $row->noteReceiver;
+                echo $row->noteTheme;
             }
         }
 

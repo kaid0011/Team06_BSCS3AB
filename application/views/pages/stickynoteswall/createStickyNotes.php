@@ -40,7 +40,7 @@
             <input type="button" onclick="changeImgFruits( 'url(<?=base_url('assets/images/themes/Theme5_Kiwi.jpg')?>)','url(<?=base_url('assets/images/themes/KiwiNote.jpg')?>)','url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)','Kiwi');" value ="Kiwi" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Kiwi</button> -->
             </div>
-            <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" hidden>
+            <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" hidden >
 
           </div>
         </div>
@@ -65,7 +65,7 @@
 
           </div>
         </div>
-      <form method="post" action ="<?= base_url('stickynoteswall/createstickynotes')?>">
+        
         <div class = "row justify-content-center">
           <div class="mb-3 col-8 text-center">
             <input class="me-2 py-3 px-5 btn btn-sm " type="submit" value="Back" name="action" ></input>
@@ -221,29 +221,29 @@
     document.getElementById("to").style.color = "black"
     document.getElementById("white").style.color ="black"
     document.getElementById("card").style.background = cardcolor;
-    document.getElementById("submittext").value = theme;
+    document.getElementById("submittheme").value = theme;
     
   }
 
-  function changeColor2(color, cardcolor, inputcolor, textcolor, theme) {
+  function changeColor2(color, cardcolor, inputcolor, theme) {
     document.body.style.background = color;
     document.getElementById("card").style.background = cardcolor;
     document.getElementById("noteInput").style.backgroundImage = inputcolor;
     document.getElementById("noteInput").style.color = "White"
     document.getElementById("to").style.color = "white"
     document.getElementById("white").style.color = "white"
-    document.getElementById("submittext").value = theme;
+    document.getElementById("submittheme").value = theme;
     
   }
 
   function changeImgFruits(color, cardcolor, inputcolor, theme) {
     document.body.style.backgroundImage = color;
     document.getElementById("card").style.backgroundImage = cardcolor;
-    document.getElementById("noteInput").style.backgroundImage = inputcolor
+    
     document.getElementById("noteInput").style.color = "black"
     document.getElementById("to").style.color = "black"
     document.getElementById("white").style.color ="black"
-    document.getElementById("submittext").value = theme;
+    document.getElementById("submittheme").value = theme;
   }
 
   

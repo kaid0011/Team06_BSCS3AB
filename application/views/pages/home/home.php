@@ -5,7 +5,7 @@
             <div class="lead my-4 pe-2">
                 <h1 class="mb-3">Keep track your Daily Life</h1>
                 <p class="mb-4">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ullam rerum reprehenderit tenetur, omnis recusandae nisi fuga nobis accusantium itaque impedit eligendi molestias. Impedit cupiditate repellat voluptatibus a optio magni!
+                Welcome to Virtual Diary! Save all your thoughts and show them to various people with sticky notes and notebooks! Read as you discover the various thoughts of people around the world. "Understanding the thoughts of others is a key to learning more."
                 </p>
             </div>
             <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/home/hp.png" alt="" />
@@ -162,10 +162,10 @@
                         <img src="assets/images/home/bagasona.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="bagasona">
                         <h4 class="card-title mb-3 text-light">Kim Dianne <br> Bagasona <br> <span style="color: #f0b63a;" class="h6 mb-3">Full Stack Developer</span></h4>
-                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
+                        <p class="card-text text-light">"A fearful yet risk-taker unknown creature who covers songs at midnight"</p>
                     </div>
                 </div>
-            </div>
+            </div>  
             <!-- Guevarra -->
             <div class="col-md-4 col-lg-3">
                 <div class="card bg-dark" style="border: none;">
@@ -173,7 +173,7 @@
                         <img src="assets/images/home/guevarra.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style="border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="guevarra">
                         <h4 class="card-title mb-3 text-light">Ezekiel <br> Guevarra <br> <span style="color: #f0b63a;" class="h6 mb-3">Front-end Developer</span></h4>
-                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
+                        <p class="card-text text-light">"Responsible for implementing visual and interactive elements that users engage"</p>
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@
                         <img src="assets/images/home/yusoph.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="jihad">
                         <h4 class="card-title mb-3 text-light">Jihad <br> Yusoph <br> <span style="color: #f0b63a;" class="h6 mb-3">Front-end Developer</span></h4>
-                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
+                        <p class="card-text text-light">"I am enough of an artist to draw freely upon my imagination."</p>
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
                         <img src="assets/images/home/romero.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="romero">
                         <h4 class="card-title mb-3 text-light">Allana <br> Romero <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
+                        <p class="card-text text-light">"I'm just a girl trying to find a place in this world."</p>
                     </div>
                 </div>
             </div>
@@ -206,7 +206,7 @@
                         <img src="assets/images/home/estrella.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="estrella">
                         <h4 class="card-title mb-3 text-light">Joana Marie <br> Estrella <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
+                        <p class="card-text text-light">"Gamer by night. Programmer by midnight."</p>
                     </div>
                 </div>
             </div>
@@ -217,7 +217,7 @@
                         <img src="assets/images/home/camanag.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="camanag">
                         <h4 class="card-title mb-3 text-light">Christopher <br> Camañag <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
+                        <p class="card-text text-light"> "My friends see me as someone  who can hack NASA someday. But all i do is copy paste from that indian guy from youtube"</p>
                     </div>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                         <img src="assets/images/home/pinpin.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="pinpin">
                         <h4 class="card-title mb-3 text-light">Marshal Amieron<br> Pinpin <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">Graduated in Lolo Karding Bilyaran ahahahahah ahhahaha</p>
+                        <p class="card-text text-light">"Former game modder. Prefers coding that actual designing. Coffee = Quality Life"</p>
                     </div>
                 </div>
             </div>

@@ -30,14 +30,11 @@
       <button class="btn btn-lg border border-3 border-dark mb-5" type="button" style="background-color: #f0b63a; width: 50vw;">Create New Sticky Notes</button>
     </a>
   </div>
-<<<<<<< HEAD
-=======
   <div class="container" style="width: 1500px; ">
     <div class="row text-center g-4">
       <?php
       if ($viewStickyNotes->num_rows() > 0) {
         foreach ($viewStickyNotes->result() as $row) {
->>>>>>> f28bcf6f08cc6585ed5faf18663703561385777f
 
           $theme = $row->noteTheme;
           if ($theme == "Dark") 
@@ -76,63 +73,6 @@
             $fontcolor = '#212529';
           }
 
-<<<<<<< HEAD
-  <div class="container" style="width: 1500px; ">
-    <div class="row text-center g-4">
-
-      <?php
-
-      if ($viewStickyNotes->num_rows() > 0) {
-
-        foreach ($viewStickyNotes->result() as $row) {
-
-
-      ?>
-
-
-          <div class="col-md">
-
-            <div class="col-md ">
-
-              <div class="card bg-dark text-light " style="@media (min-width: 989px) {width: 25vw; height: 390px;}  @media (max-width: 990px) {
-    width: 70vw; height: 390px;}">
-                <form action="<?php base_url("reportuser/IDsubmitReport") ?>" method="post">
-                  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0">
-                    <div class="card-body text-center">
-                      <div class="h1 mb-3">
-                      </div>
-                      <input type="text" name="post_ID" id="post_ID" class="btn float-end mt-1" value="<?php echo $row->stickyNotes_ID ?>" hidden>
-                      <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->user_ID ?>" hidden>
-                      <!--ito ung sa part ko-->
-
-                      <h3 class="card-title text-light">
-                        To: <?php echo $row->noteReceiver; ?><br>
-                      </h3>
-                      <p class="card-text py-5">
-                        <?php echo $row->noteInput; ?><br>
-                      </p>
-                
-
-                      <!-- End-->
-
-                      <i class="bi bi-star h4 float-start" disabled></i>
-                      <a href="" style="text-decoration: none;">
-                        <input type="submit" name="action" value="Report" class="d-flex">
-                      </a>
-                    </form>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-      <?php
-        }
-      }
-      ?>
-
-    </div>
-  </div>
-=======
       ?>
           <div class="col">
             <div class="col">
@@ -171,7 +111,6 @@
 
 </div>
 </div>
->>>>>>> f28bcf6f08cc6585ed5faf18663703561385777f
 </section>
 
 <style>
@@ -220,14 +159,6 @@
   ::-webkit-input-placeholder {
     text-align: center;
   }
-<<<<<<< HEAD
-
-  :-moz-placeholder {
-    text-align: center;
-  }
-
-  /* end of center placeholder section */
-=======
 
   :-moz-placeholder {
     text-align: center;
@@ -284,5 +215,4 @@
     height: 250px;
 
   }
->>>>>>> f28bcf6f08cc6585ed5faf18663703561385777f
 </style>

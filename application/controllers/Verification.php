@@ -9,6 +9,7 @@
             
             $this->load->library('form_validation');    #preload form_validation library
             $this->load->model('Verification_model');
+            $this->load->model('UpdateProfile_model');
         }
 
         public function index() {
@@ -64,9 +65,7 @@
                         );
 
                         $this->session->set_userdata($userdata);
-
-                        $data['navbar'] = 'main';
-                        $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
+                        redirect('mainpage');
                     }
                 }
                 else

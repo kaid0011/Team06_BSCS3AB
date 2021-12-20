@@ -10,7 +10,11 @@
             $this->load->library('session');
             $this->load->model('Login_model');
 
-            if($this->session->userdata('user_ID'))
+            if($this->session->userdata('userName') == 'admin')
+            {
+                redirect('supportteam');
+            }
+            else if($this->session->userdata('user_ID'))
             {
                 redirect('mainpage');
             }
@@ -37,25 +41,27 @@
                     $raw_password = $this->input->post('password');
                     $password = md5($this->input->post('password'));
 
-                    if($username == "admin" && $raw_password == "team6")
+                    $result = $this->Login_model->can_login($username, $password);
+                    if($result) 
                     {
-                        $userdata = array(
-                            'userName' => 'admin',
-                            'displayName' => 'Admin',
-                            'password' => 'team6',
-                        );
-                        $this->session->set_userdata($userdata);
-                        redirect('supportteam');
-                    }
-                    else
-                    {
-                        $result = $this->Login_model->can_login($username, $password);
-                        if($result) 
-                        {
-                            $status = 'Active';
-                            $response = $this->Login_model->checkStatus($username, $status);
+                        $status = 'Active';
+                        $response = $this->Login_model->checkStatus($username, $status);
 
-                            if($response)
+                        if($response)
+                        {
+                            if($username == "admin" && $raw_password == "team6")
+                            {
+                                $userdata = array(
+                                    'user_ID' => $response->user_ID,
+                                    'userName' => $response->userName,
+                                    'displayName' => $response->displayName,
+                                    'password' => $response->password,
+                                    'email' => $response->email
+                                );
+                                $this->session->set_userdata($userdata);
+                                redirect('supportteam');
+                            }
+                            else
                             {
                                 $userdata = array(
                                     'user_ID' => $response->user_ID,
@@ -67,21 +73,21 @@
                                 $this->session->set_userdata($userdata);
                                 redirect('mainpage'); 
                             }
-                            else
-                            {
-                                $this->session->set_userdata('userName', $username);
-                                $data['navbar'] = 'registration';
-                                $this->sitelayout->loadTemplate('pages/registration/verification', $data);
-                            }
                         }
-                        else 
+                        else
                         {
-                            $this->session->set_flashdata('message', 'Invalid Username or Password');
-                            
-                            $data['navbar'] = 'login';
-                            $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
+                            $this->session->set_userdata('userName', $username);
+                            $data['navbar'] = 'registration';
+                            $this->sitelayout->loadTemplate('pages/registration/verification', $data);
                         }
-                    }  
+                    }
+                    else 
+                    {
+                        $this->session->set_flashdata('message', 'Invalid Username or Password');
+                            
+                        $data['navbar'] = 'login';
+                        $this->sitelayout->loadTemplate('pages/authentication/login', $data); 
+                    } 
                 } 
                 else 
                 {

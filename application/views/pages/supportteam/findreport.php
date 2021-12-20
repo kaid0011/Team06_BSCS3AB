@@ -23,9 +23,9 @@
             
             <tbody>
             <?php
-                if($viewAllReports->num_rows() > 0)
+                if($viewAllUserReports->num_rows() > 0)
                 {
-                    foreach($viewAllReports->result() as $row)
+                    foreach($viewAllUserReports->result() as $row)
                     {
             ?>
             <form action="<?= base_url('supportteam/updateindivreport') ?>" method="post">

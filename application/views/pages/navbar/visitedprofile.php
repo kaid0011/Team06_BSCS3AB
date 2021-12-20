@@ -5,16 +5,18 @@
       <?php
         if ($findUser->num_rows() > 0) {
       ?>
+      <?php
+              foreach ($findUser->result() as $row) {
+                ?>
+              
         <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
           <div class="text-white">
             <div class="d-flex">
-              <a href="#"><img src="<?= base_url('assets/images/visitedprofile/profile.png') ?>" class="rounded-circle ms-5 border border-3 border-secondary mb-2" alt="..."></a>
+            <?php $source = $this->Mainpage_model->getImage($row->user_ID);?>
+             <a href="#"><img src="<?= base_url($source) ?>" class="rounded-circle ms-5 border border-3 border-secondary mb-2" alt="..."></a>
             </div>
             
-            <?php
-              foreach ($findUser->result() as $row) {
-            ?>
-
+          
               <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal"><?php echo $row->displayName; ?><br>
                 <a class="text-secondary" style="text-decoration: none;">@<?php echo $row->userName; ?></a>
               </h1>
@@ -28,12 +30,12 @@
 
         <div name="userFound" class="container">
           <div class="row g-4 ">
-            
+          
             <!--Public Notebook-->
             <div class="d-flex justify-content-center">
               <!-- if discussion is included:  
                       <div class="col-md-6 col-lg-7 mt-5">-->
-              <div class="card bg-light" style="min-height: 400px; z-index:0;">
+              <div class="card bg-light" style="min-height: 400px;width: 1000px;">
                 <nav class="navbar navbar-light justify-content-center sticky-top" style="background-color: #495057;">
                   <p class=" justify-content-center align-items-center mt-2" style=" color: #eee;"> Public Notebook</p>
                 </nav>
@@ -83,8 +85,9 @@
                 <div class="card-body text-center" style="height: auto; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
                   
                     <div>
+                      
                     <form action="<?=base_url('mainpage/addreact')?>" method="post">
-                      <div class="card border-dark mb-3 " style="max-width: 50rem; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
+                      <div class="card border-dark mb-3 " style="max-width: 75rem;height:250px; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
                       
                       <!-- Hidden Page and User ID -->
                       <input type="text" name="page_ID" id="page_ID" class="btn float-end mt-1"  value="<?php echo $row->publicNBPage_ID ?>" hidden>
@@ -98,7 +101,7 @@
                           </ul>
                         </nav>
                         
-                        <div class="card-body">
+                        <div class="card-body" >
                           <p class="card-text1"><?php echo $row->pageInput; ?></p>
                         </div>
                         
@@ -111,9 +114,7 @@
                             
 
                             <!-- Report Button -->
-                            <a href="<?=base_url('reportuser')?>">
-                              <button class="btn btn-secondary btn-sm float-end mt-1" type="button">Report</button>
-                            </a>
+                              <input type="submit" name="action" value="Report" class="btn btn-secondary btn-sm float-end mt-1">
                             
                           </div>
                           </form>
@@ -154,7 +155,7 @@
 
 <style>
   .scrollspy-example {
-    height: 300px;
+    height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -176,15 +177,7 @@
 /*  .card-text {
     min-height: 200px;
   }
-  .tag {
-    width: 100px;
-    height: 100px;
-    background: rgb(131, 126, 122);
-    position: relative;
-    top: 500px;
-    left: 800px;
-    border-radius: 50%;
-  }
+  
   .title {
     color: #fff;
     margin: 5px;
@@ -195,18 +188,7 @@
     margin: 10px;
     padding: 5px;
   }
-  .active h4 {
-    font-size: 20px;
-    margin-left: 10px;
-    color: #fff;
-  }
-  .received-chats-img {
-    width: 30px;
-    float: left;
-  }
-  .outgoing-chats-img {
-    width: 30px;
-    float: right;
-  }
+ 
+  
 */
 </style>

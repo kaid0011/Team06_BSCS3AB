@@ -1,5 +1,5 @@
 <?php
-
+        
         class PrivateNotebook_model extends CI_Model
         {
                 public function __construct(){
@@ -11,7 +11,7 @@
                 public function get_PrivateNotebookInput($privateNB_ID){
 
                         $this->db->where('privateNB_ID', $privateNB_ID);
-                        $this->db->select('pageInput, pageTheme, pageTimer');
+                        $this->db->select('pageInput, pageTheme, pageTimer, page_InputImage');
                         $query = $this->db->get("privatenb_pages");
                         return $query;
         
@@ -45,23 +45,44 @@
 
                 }
 
-                public function getImage($page_ID)
+                public function getImage()
                 {
-                    $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                    $query = "SELECT * FROM privatenb_pages WHERE privateNB_ID = $page_ID";
-                    $result = mysqli_query($connect, $query);
-                    while ($image = mysqli_fetch_array($result))
+                    $id = $this->session->userdata('user_ID');
+                    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/privatenotebook/";
+                    $filename = $id."_privateNotebookImage";
+                    $extension = ".jpg";
+                    $path_filename_ext = $target_directory.$filename.$extension;
+                    if(file_exists($path_filename_ext))
+                    {
+                        $extension = ".jpg";
+                    }
+                    else
+                    {
+                        $extension = ".jpeg";
+                        $path_filename_ext = $target_directory.$filename.$extension;
+                        if(file_exists($path_filename_ext))
                         {
-                            if($image['page_InputImage'] != NULL)
-                                {
-                                    echo '<img style="width: 200px; height: 200px;" src="data:image/jpeg;base64, '.base64_encode($image['page_InputImage'] ). '"';
-                                }
-                            else
-                            {
-                                return FALSE;
-                            }
+                            
+                            $extension = ".jpeg";
+                        }
+                        else
+                        {
+                            $extension = ".png";
+                        }
+                    }
+                    $path_filename_ext = $target_directory.$filename.$extension;
+                    $file = $id."_privateNotebookImage".$extension;
+                    if(file_exists($path_filename_ext))
+                        {
+                            return "assets/images/privatenotebook/$file";
+                        }
+                        else
+                        {
+                            return "No image";
                         }
                 }
+
+
        }
 
 ?>

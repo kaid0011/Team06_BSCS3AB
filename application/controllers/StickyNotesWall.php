@@ -8,6 +8,7 @@
         {
             parent::__construct(); 
             $this->load->model('StickyNotesWall_model');
+            $this->load->model('UpdateProfile_model');
         }
 
         public function index() {
@@ -29,6 +30,8 @@
             $noteReceiver = $this->input->post('receiver');
             $noteInput = $this->input->post('input');
             $notetheme = $this->input->post('theme');
+            
+            
             if($notetheme == NULL)
             {
                 $notetheme = 'Light';
@@ -46,8 +49,10 @@
             if($action == 'Submit')
             {
                 $this->StickyNotesWall_model->createStickyNotes($data);
-                $this->StickyNotesWall_model->note($id);
-                $this->index();
+                //$this->StickyNotesWall_model->note($id);
+                //$this->index();
+                
+                redirect('stickynoteswall');
             }
             else if($action == 'Back')
             {
@@ -86,7 +91,7 @@
 
             if($action == 'Submit')
             {
-                $user = $this->input->post('noteReceiver, noteInput');
+                $user = $this->input->post('noteReceiver, noteInput, noteTheme');
                 $data['viewstickynotes'] = $this->StickyNotesWall_model->get_input($user);
             }
 

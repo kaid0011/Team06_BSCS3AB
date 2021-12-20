@@ -28,7 +28,7 @@
                     'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in userName
                 ));
             $this->form_validation->set_rules('displayName', 'Display Name', 'required|trim');
-            $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]',
+            $this->form_validation->set_rules('email', 'E-mail Address', 'required|trim|valid_email|is_unique[user.email]',
                 array(
                     'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in email
                 ));

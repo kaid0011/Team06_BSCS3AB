@@ -1,6 +1,24 @@
-<section id="learn" class="p-5" style="min-height: 75vh;">
-  <?php
-    foreach ($viewPrivateNotebook->result() as $row) 
+  <div class="">
+    <div class="d-flex justify-content-end pe-5 pt-3">
+      <!-- Timestamp -->
+      <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
+        <!--changes-->
+          <input type="date" name="date" class="form-control me-2" placeholder="Enter date (mm/dd/yy)">
+          <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
+      </form>
+    </div>
+    <div class="d-flex justify-content-center">
+      <!-- New Page Button -->
+      <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
+        <button class="py-2 px-3 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
+      </a>
+    </div>
+  </div>
+
+<?php
+  if ($viewPublicNotebook->num_rows() > 0) 
+  {
+    foreach ($viewPublicNotebook->result() as $row) 
     {
       $theme = $row->pageTheme;
       if ($theme == "Dark") 
@@ -38,42 +56,43 @@
         $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
         $fontcolor = '#212529';
       }
-    }
-  ?>
+?>
+ 
+  <section id="learn" class="p-5" style="min-height: 75vh; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
-      <div class="card-front">
+      <div class="card-front" style="background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
         <div class="d-flex p-5">
           <div class="section ">
             <div class="row">
-              <?php
-              if ($viewPrivateNotebook->num_rows() > 0) 
-              {
-
-                foreach ($viewPrivateNotebook->result() as $row) 
-                {
-                  ?>
-                  <div class="col mr-auto  h5">
-                    <!-- Timer -->
-                    <div class="col ml-auto h5">
-                      <!-- Update Button-->
-                      <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
-                        <button class="p-2 btn float-end">Update</button>
+              <div class="col ml-auto h5">
+                <div class="row">
+                    <?php
+                      $page_ID = $row->publicNBPage_ID;
+                      echo $page_ID;
+                    ?>
+                    <div class="col mr-auto  h5">
+                      <!-- New Page Button -->
+                      <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
+                        <button class="p-2 btn float-end" style="width:110px;">New Page</button>
                       </a>
-                      <div class="mb-2 me-5 float-end">Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer));
-                          echo $time; ?></span> 
-                      </div>
+                      <!-- Update Button -->
+                      <a href="<?= base_url(); ?>publicnotebook/updatepublicnotebook/<?php echo $page_ID;?>">
+                        <button class="p-2 btn float-end me-4">Update</button>
+                      </a>
                     </div>
-                  </div>
-                  <hr class="bg-light">
-                  <!--Input Area-->
-                  <?php 
-                  if($this->PrivateNotebook_model->getImage() != 'No image')
+                </div>
+              </div>
+
+              <hr class="bg-light">
+              <!--Input Area-->
+              <?php 
+                  if($this->PublicNotebook_model->getImage($page_ID) != 'No image')
                   {
                     ?>
                     <div class=" row">
                       <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
-                            <?php $source = $this->PrivateNotebook_model->getImage();?>
+                            <?php $source = $this->PublicNotebook_model->getImage($page_ID);?>
                             <a><img src="<?= base_url($source) ?>"></a>
     
                       </div>
@@ -93,12 +112,13 @@
                     </div>
                   <?php
                   }
-                }
-              }?>
-
-                <hr id="inputbox" class="bg-light">
-
-                  
+              ?>
+                <hr id ="inputbox" class="bg-light">
+                <!-- Submit Button-->
+                <div class="col ">
+                  <i class="bi bi-star " disabled></i> # of reacts
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -106,22 +126,27 @@
     </div>
   </div>
 </section>
+
+<?php
+    }
+  }
+?>
+
 <style>
-  body {
+ body {
     font-weight: 300;
     font-size: 15px;
-    color: <?php echo $fontcolor ?>;
-    background-color: <?php echo $themecolor ?>;
-    background-image: url(<?= base_url($themeurl) ?>);
     overflow-x: hidden;
   }
-
 
   .section {
     position: relative;
     width: 100%;
   }
 
+  .full-height {
+    min-height: 100vh;
+  }
 
   .card-3d-wrap {
     position: relative;
@@ -139,9 +164,6 @@
   .card-front {
     width: 100%;
     height: 100%;
-    color: <?php echo $themecardcolor ?>;
-    background-color: <?php echo $themecardbgcolor ?>;
-    background-image: url(<?= base_url($themecardbgurl) ?>);
     position: absolute;
     border-radius: 10px;
   }

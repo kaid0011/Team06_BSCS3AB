@@ -1,6 +1,6 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
-
+    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/upload/";
     class UpdateProfile extends CI_Controller
     {
 
@@ -359,6 +359,117 @@
                 echo "Error";
                 #will change laturrr
             }
+        }
+
+        public function image()
+        {
+            $action = $this->input->post('action');
+            if($action == 'Update Image')
+            {
+                $id = $this->session->userdata('user_ID');
+                if(($_FILES['file']['name'] != ""))
+                {
+            
+                    $file = $_FILES['file']['name'];
+                    $path = pathinfo($file);
+                    $filename = $id."_profileImage";
+                    $ext = $path['extension'];
+                    if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
+                    {
+                        $temp_name = $_FILES['file']['tmp_name'];
+                        $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+
+                        if(file_exists($path_filename_ext))
+                        {
+                            unlink($path_filename_ext);
+                            $file = $_FILES['file']['name'];
+                            $path = pathinfo($file);
+                            $filename = $id."_profileImage";
+                            $ext = $path['extension'];
+                            $temp_name = $_FILES['file']['tmp_name'];
+                            $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+                            move_uploaded_file($temp_name, $path_filename_ext);
+                        }
+                        else
+                        {
+                            $ext = "jpg";
+                            $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+                            if(file_exists($path_filename_ext))
+                            {
+                                unlink($path_filename_ext);
+                            }
+                            else
+                            {
+                                $ext = "jpeg";
+                                $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+                                if(file_exists($path_filename_ext))
+                                {
+                                    unlink($path_filename_ext);
+                                }
+                                else
+                                {
+                                    $ext = "png";
+                                    $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+                                    if(file_exists($path_filename_ext))
+                                    {
+                                        unlink($path_filename_ext);
+                                    }
+                                }
+                            }
+
+                            move_uploaded_file($temp_name, $path_filename_ext);
+                        }
+                        header("Refresh:0; url =../updateprofile");
+                    }
+                    else
+                    {
+                        echo("Error uploading image.");
+                        $this->index();
+                    }
+                    header("Refresh:0; url =../updateprofile");
+                }
+            }
+            else
+            {
+                $this->removeImage();
+            }
+            header("Refresh:0; url =../updateprofile");
+        }
+
+        public function removeImage()
+        {
+            $id = $this->session->userdata('user_ID');
+            $filename = $id."_profileImage";
+            $extension = ".jpg";
+            $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+            if(file_exists($path_filename_ext))
+            {
+                $extension = ".jpg";
+                unlink($path_filename_ext);
+            }
+            else
+            {
+                $extension = ".jpeg";
+                $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+                if(file_exists($path_filename_ext))
+                {
+                            
+                    $extension = ".jpeg";
+                    unlink($path_filename_ext);
+                }
+                else
+                {
+                    $extension = ".png";
+                    $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+                    if(file_exists($path_filename_ext))
+                    {
+                        $extension = ".png";
+                        unlink($path_filename_ext);
+                        
+                    }
+                }
+            }
+            header("Refresh:0; url =../updateprofile");
         }
     }
 

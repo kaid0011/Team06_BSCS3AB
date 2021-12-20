@@ -64,18 +64,51 @@
             return true;
         }
 
-        public function getImage($page_ID)
+        public function getImage($data)
         {
-            $connect = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-            $query = "SELECT * FROM publicnb_pages WHERE publicNBPage_ID = $page_ID";
-            $result = mysqli_query($connect, $query);
-            while ($image = mysqli_fetch_array($result))
+            $id = $this->session->userdata('user_ID');
+            $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
+            $filename = $id."_".$data."_publicNotebookImage";
+            $extension = ".jpg";
+            $path_filename_ext = $target_directory.$filename.$extension;
+            if(file_exists($path_filename_ext))
+            {
+                $extension = ".jpg";
+            }
+            else
+            {
+                $extension = ".jpeg";
+                $path_filename_ext = $target_directory.$filename.$extension;
+                if(file_exists($path_filename_ext))
                 {
-                    if($image['page_InputImage'] != NULL)
-                        {
-                            echo '<img style="width: 200px; height: 200px;" src="data:image/jpeg;base64, '.base64_encode($image['page_InputImage'] ). '"';
-                        }
+                            
+                    $extension = ".jpeg";
                 }
+                else
+                {
+                    $extension = ".png";
+                }
+            }
+                $path_filename_ext = $target_directory.$filename.$extension;
+                $file = $id."_".$data."_publicNotebookImage".$extension;
+                if(file_exists($path_filename_ext))
+                {
+                    return "assets/images/publicnotebook/$file";
+                }
+                else
+                {
+                    return "No image";
+                }
+        }
+
+        public function getPageUsingDate($user, $date)
+        {
+            $this->db->where('publicNB_ID' , $user);
+            $this->db->where('pageDate', $date);
+            $this->db->select('publicNBPage_ID, pageInput, pageTheme');
+            $this->db->order_by('publicNBPage_ID', 'desc');
+            $query = $this->db->get('publicnb_pages');
+            return $query;
         }
     }
 ?>

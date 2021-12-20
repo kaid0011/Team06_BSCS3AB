@@ -23,7 +23,7 @@
 
             if($action == 'Confirm')
             {
-                $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+                $this->form_validation->set_rules('email', 'E-mail Address', 'required|trim|valid_email');
 
                 if($this->form_validation->run())
                 {

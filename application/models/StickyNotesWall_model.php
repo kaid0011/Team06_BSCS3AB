@@ -11,8 +11,7 @@
 
         public function get_StickyNotesWallInput()
         {
-            $this->db->where('user_ID', $user_ID);
-            $this->db->select('stickyNotes_ID, noteInput, noteTheme');
+            
             $query = $this->db->get('sticky_notes');
             return $query;
         }

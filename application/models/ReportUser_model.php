@@ -9,12 +9,16 @@
             $this->load->database();
         }
 
+        public function IDsubmitReport($reportedpostid)
+        {
+            $this->db->where('stickyNotes_ID',$reportedpostid);
+            $query = $this->db->get('sticky_notes');
+            return $query;
+        }
         public function submitReportModel($data)
         {
             $this->db->insert('report',$data);
             return true;
         }
-
-
     }
 ?>

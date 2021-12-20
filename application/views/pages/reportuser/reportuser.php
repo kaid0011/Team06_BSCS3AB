@@ -7,13 +7,23 @@
             </div>
             <div class="col-md p-5">
                 <h1 class="h1 mb-4 pt-1 text-dark">Report User</h1>
-                <p class="lead">
-                 <!-- form method="post" action="action" autocomplete="off">--->
-                       
-                    <!-- reason -->
+                <p class="lead"> 
+                 <form action="<?php base_url("reportuser/submitReport") ?>" method="post" autocomplete="off">
+                 <?php
+                 if ($notesdata->num_rows() > 0) {
+                 foreach ($notesdata->result() as $row) {
+                 ?>
+                <input type="text" name="post_ID" id="post_ID" class="btn float-end mt-1" value="<?php echo $row->stickyNotes_ID ?>" hidden>
+                <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->user_ID ?>" hidden> 
+                <?php
+                }
+                }
+                ?>
+
+                <!-- reason -->
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Category</label>
-                            <select class="form-control" id="exampleFormControlSelect1" name="category">
+                         <select class="form-control" id="exampleFormControlSelect1" name="category">
                               <option>Violence</option>
                               <option>Harassment</option>
                               <option>Suicide or Self Injury</option>
@@ -36,9 +46,9 @@
                             </label>
                   <!-- Report Button -->
                   <div class="col-md d-flex justify-content-end align-items-center">
-                      <button type="submit" value="Submit" name="action" style="background-color: #f0b63a; width: 75px;" class="p-2 btn-sm border border-3 border-dark btn-end">Report</button>
+                      <input type="submit" value="Submit" name="action" style="background-color: #f0b63a; width: 75px;" class="p-2 btn-sm border border-3 border-dark btn-end">
                     </div>
-                    <!-- </form>--->
+                </form>
                 </p>
             </div>
         </div>

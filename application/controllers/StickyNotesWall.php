@@ -9,57 +9,17 @@
             parent::__construct(); 
             $this->load->model('StickyNotesWall_model');
         }
-<<<<<<< HEAD
-        
-        public function index() 
-        {
-=======
 
         public function index() {
 
             
             $data['viewStickyNotes']=$this->StickyNotesWall_model->get_StickyNotesWallInput();
-
->>>>>>> 9d4a8fdbddb80cf766b9982f36ec6e49c4e0f387
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/stickynoteswall/viewstickynotes', $data); 
             
         }
         public function createStickyNotes() {
             $data['navbar'] = 'main';
-<<<<<<< HEAD
-            $this->sitelayout->loadTemplate('pages/stickynoteswall/createStickyNotes', $data); 
-        } 
-
-    /////////////////////////////////////////////////////////
-        public function createNotes()
-        {
-            $id = $this->session->userdata('user_ID');
-            $action = $this->input->post('action');
-            $notetheme = $this->input->post('theme');
-            $noteInput = $this->input->post('input');
-            $noteReceiver = $this->input->post('receiver');
-            if ($notetheme == NULL) 
-            {$notetheme = "light";} 
-            
-            $data = array(
-                'user_ID' => $id,
-                'noteInput' => $noteInput, 
-                'noteReceiver' => $noteReceiver,
-                'noteTheme' => $notetheme,
-                'noteReact_Count' => 0);
-            if ($action == 'Submit')
-            {
-                $this->StickyNotesWall_model->createStickyNotes($data);
-                $this->index();
-            }
-            else if ($action == 'Back')
-            {
-                $this->index();
-            }
-    }
-    } 
-=======
             $this->sitelayout->loadTemplate('pages/stickynoteswall/createstickynotes', $data); 
         }
 
@@ -136,5 +96,4 @@
     }
 
     
->>>>>>> 9d4a8fdbddb80cf766b9982f36ec6e49c4e0f387
 ?>

@@ -51,6 +51,8 @@
                     <textarea name="input" class="form-control" id="" rows="13"></textarea> 
                 <hr id="inputbox" class="bg-light">
                 <input type="file" name="file" id="file" accept="image/png, image/jpg, image/jpeg"/>
+                <input type="button" value="Remove" name="action" id="remove" class="p-2 btn mt-1" onclick="removeImage()"/>
+                <input type="text" name="remove" id="removeimage" class="btn float-end mt-1"  hidden value="">
                 <!-- Button-->
                 <input type="submit" value= "Submit" name="action"  class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
@@ -142,6 +144,11 @@
     document.body.style.backgroundImage = color;
     document.getElementById("card").style.backgroundImage = cardcolor;
     document.getElementById("card").style.color = textcolor;
+  }
+
+  function removeImage() {
+    document.getElementById("removeimage").value = "Remove";
+    document.getElementById("remove").style.backgroundColor = "gray";
   }
 
 </script>

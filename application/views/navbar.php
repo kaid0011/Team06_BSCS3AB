@@ -18,15 +18,15 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url('registration') ?>" class="nav-link text-light">Register</a>
+                            <a href="<?php echo base_url('registration') ?>" class="nav-link text-light pt-3"><h6>Register</h6></a>
                         </li>
                         <!-- Log In -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url('login') ?>" class="nav-link text-light ms-2">Log In</a>
+                            <a href="<?php echo base_url('login') ?>" class="nav-link text-light ms-4 pt-3"><h6>Log In</h6></a>
                         </li>
                         <!-- About Us -->
                         <li class="nav-item">
-                            <a href="#aboutUs" class="nav-link text-light ms-2 pe-0">About Us</a>
+                            <a href="#aboutUs" class="nav-link text-light ms-4 pe-0 pt-3"><h6>About Us</h6></a>
                         </li>
                     </ul>
                 </div>
@@ -53,9 +53,9 @@ switch ($navbar) {
 
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
-                        <!-- Log In -->
+                        <!-- Register -->
                         <li class="nav-item">
-                            <p class="text-light pt-2 mb-0">Already have an account? <a href="<?php echo base_url('login'); ?>" class="text-reset">Log In</a></p>
+                            <h6 class="text-light pt-1 mb-0">Already have an account? <a href="<?php echo base_url('login'); ?>" class="text-reset">Log In</a></h6>
                         </li>
                     </ul>
                 </div>
@@ -73,7 +73,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image -->
-                <a href="<?= base_url() ?>" class="navbar-brand"></a>
+                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -84,13 +84,14 @@ switch ($navbar) {
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <p class="text-light pt-2 mb-0">No account yet? <a href="<?php echo base_url('registration'); ?>" class="text-reset">Register</a> now.</p>
+                            <h6 class="text-light pt-1 mb-0">No account yet? <a href="<?php echo base_url('registration'); ?>" class="text-reset">Register</a></h6>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </nav>
-        <!-- (end) Navbar Log In Section) -->
+        <!-- (end) Navbar Log In Section -->
 
     <?php
         break;
@@ -98,7 +99,7 @@ switch ($navbar) {
     default:
     ?>
         <!-- Navbar Main Section -->
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
             <div class="container">
 
                 <ul class="navbar-nav align-items-center navbar-right w-100">
@@ -141,9 +142,9 @@ switch ($navbar) {
                     <div class="collapse navbar-collapse ml-auto" id="searcharea" style="margin-left: 170px; margin-right: 100px;">
                         <!-- Search (Find User) -->
                         <li class="w-100">
-                            <form action="<?= base_url(); ?>mainpage/finduser/" method="post" class="form d-flex">
+                            <form action="<?= base_url(); ?>mainpage/searchuser/" method="get" class="form d-flex" >
                                 <!--changes-->
-                                <input type="text" name="userName" class="form-control me-2">
+                                <input type="text" name="userName" id="name" class="form-control me-2">
                                 <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
                             </form>
                         </li>
@@ -259,3 +260,11 @@ switch ($navbar) {
     }
 }
 </style>
+
+<script>
+
+    function urlName() {
+        <?php $name ?> = document.getElementById("userName").value;
+    }
+
+</script>

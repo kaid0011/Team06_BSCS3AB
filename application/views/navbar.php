@@ -159,7 +159,7 @@ switch ($navbar) {
                         </li>
                         <li class="mb-1">
                         <?php $source = $this->UpdateProfile_model->getImage();?>
-                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px" ; src="<?= base_url($source) ?>"></a>
+                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px; object-fit: cover;" ; src="<?= base_url($source) ?>"></a>
                         </li>
                         
                          <li class="ms-2 navbar-item dropdown mb-2">

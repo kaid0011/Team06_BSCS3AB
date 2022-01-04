@@ -9,6 +9,7 @@
             
             $this->load->library('form_validation');    #preload form_validation library
             $this->load->model('Registration_model');       #preload Registration_model for registration
+            $this->load->model('UpdateProfile_model');    
         }
 
         public function index() {
@@ -174,5 +175,14 @@
                 echo "Error";
             }
         }
+        public function termsofservice() {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/registration/termsofservice', $data); 
+        }
+        public function privacypolicy() {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/registration/privacypolicy', $data); 
+        }
     }
+
 ?>

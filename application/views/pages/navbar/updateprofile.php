@@ -8,14 +8,13 @@
 
       <div class="justify-content-center align-items-center text-center ps-5">
         <?php $source = $this->UpdateProfile_model->getImage();?>
-        <a href="#"><img src="<?= base_url($source)?>" style="height: 200px; width 200px; border-radius: 100px;"></a>
+        <a href="#"><img src="<?= base_url($source)?>" style="height: 200px; width: 200px; border-radius: 100px; object-fit: cover;"></a>
       </div>
       
       <form method="post" enctype="multipart/form-data" action="<?= base_url('updateprofile/image') ?>">
         <div class="align-items-center text-center justify-content-center pt-3 ps-5">
           <input type="file" name="file" id="file" />
         </div>
-        <!-- <a href="#"><img src="<?= base_url('assets/images/visitedprofile/profile.png') ?>" class="rounded-circle border border-3 border-secondary mb-2" alt="..."></a>  -->
         <div class="d-flex justify-content-center pt-3">
           <input type="submit" name="action" id="remove" value="Remove Image" class="input-group-text me-3" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />
           <input type="submit" name="action" id="insert" value="Update Image" class="input-group-text" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />

@@ -1,49 +1,137 @@
-
-<section class="text-light p-5 text-center text-sm-start"style="background-color:#A9A9A9;">
+  <section class="text-light p-5 text-center text-sm-start" style="background-color:#A9A9A9;">
     <div class="container">
-            <div class="my-2 mt-4  pe-2">
-                <h1 class="mb-1 text-center">Terms of Services</h1>
-            </div>
-        </div>
+      <div class="my-2 mt-4  pe-2">
+        <h1 class="mb-1 text-center">Terms of Services</h1>
+      </div>
     </div>
-</section>
-    <div class="space"></div>
-    <div class="main">
-   
-<p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
-<p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service. This Terms of Service was created with .</p>
-<p><strong>Accounts</strong></p>
-<p>When you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.</p>
-<p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service.</p>
-<p>You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
-      
     </div>
+  </section>
+
+  <div class="space"></div>
+  <div class="main">
+
+    <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
+    <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service. This Terms of Service was created with .</p>
+    <p><strong>Accounts</strong></p>
+    <p>When you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.</p>
+    <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password, whether your password is with our Service or a third-party service.</p>
+    <p>You agree not to disclose your password to any third party. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.</p>
+
+    <p><strong>General Terms</p></strong>
+    By accessing and placing an order with, you confirm that you are in agreement with and bound by the terms of service contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and
+    Under no circumstances shall team be liable for any direct, indirect, special, incidental or consequential damages, including, but not Limited to, loss of data or profit, arising out of the use, or the inability to use, the materials on this site, even if team or an authorized representative has been advised of the possibility of such damages. If your use of materials from this site results in the need for servicing, repair or correction of equipment or data, you assume any costs thereof.
+    will not be responsible for any outcome that may occur during the course of usage of our resources. We reserve the rights to change prices and revise the resources usage policy in any moment.
+    
+    <p><strong>License</p></strong>
+    virtual diary grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use our service strictly in accordance with the terms of this Agreement.
+    These Terms & Conditions are a contract between you and virtual diary (referred to in these Terms & Conditions as "virtual diary" "us", "we" or "our"), the provider of the virtual diary website and the services accessible from the virtual diary website (which are collectively referred to in these Terms & Conditions as the "virtual diary Service").
+    You are agreeing to be bound by these Terms & Conditions. If you do not agree to these Terms & Conditions, please do not use the Service. In these Terms & Conditions, "you" refers both to you as an individual and to the entity you represent. If you violate any of these Terms & Conditions, we reserve the right to cancel your account or block access to your account without notice.
+    
+    <p><strong>Definitions and key terms</p></strong>
+    For this Terms & Conditions:
+    • Cookie: small amount of data generated by a website and saved by your web browser. It is used to identify your browser, provide analytics, remember information about you such as your language preference or login information.
+    • Company: when this policy mentions "Company," "we," "us," or "our," it refers to Virtual Diary, Philippines that is responsible for your information under this Privacy Policy.
+    • Country: where virtual diary or the owners/founders of virtual diary are based in this case is Philippines.
+    • Customer refers to the company, organization or person that signs up to use the virtual diary Service to manage the relationships with your consumers or service users.
+    • Device: any internet connected device such as a phone, tablet, computer or any other device that can be used to visit virtual diary and use the services. IP address: Every device connected to the Internet is assigned a number known as an Internet protocol (IP) address. These numbers are usually assigned in geographic blocks. An IP address can often be used to identify the location from which a device is connecting to the Internet.
+    • Personnel: refers to those individuals who are employed by virtual diary or are under contract to perform a service on behalf of one of the parties.
+    • Personal Data: any information that directly, indirectly, or in connection with other information — including a personal number — allows for the identification or identifiability of a natural person. • Service: refers to the service provided by virtual diary as described in the relative terms (if available) and on this platform.
+    • Third-party service: refers to advertisers, contest sponsors, promotional and marketing partners, and others who provide our
+    content or whose products or services we think may interest you. • Website: virtual diary's site, which can be accessed via this URL: www.virtual-diary.com • You: a person or entity that is registered with virtual diary to use the Services.
+    
+    <p><strong>Restrictions</p></strong>
+    You agree not to, and you will not permit others to:
+    • License, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the service or
+    make the platform available to any third party • Modify, make derivative works of disassemble, decrypt, reverse compile or reverse engineer any part of the service. • Remove, alter or obscure any proprietary notice (including any notice of copyright or trademark) of or its affiliates, partners,
+    suppliers or the licensors of the service.
+    
+    <p><strong>Return and Refund Policy</p></strong>
+    Thanks for shopping with us. We appreciate the fact that you like to buy the stuff we build. We also want to make sure you have a rewarding experience while you're exploring, evaluating, and purchasing our products. As with any shopping experience, there are terms and conditions that apply to transactions at our company. We'll be as brief as our attorneys will allow. The main thing to remember is that by placing an order or making a purchase from us, you agree to the terms along with our Privacy Policy. If, for any reason, You are not completely satisfied with any good or service that we provide, don't hesitate to contact us and we will discuss any of the issues you are going through with our product.
+    
+    <p><strong>Your Suggestions</p></strong>
+    Any feedback, comments, ideas, improvements or suggestions (collectively, "Suggestions") provided by you to us with respect to the service shall remain the sole and exclusive property of us. We shall be free to use, copy, modify, publish, or redistribute the Suggestions for any purpose and in any way without any credit or any compensation to you.
+    
+    <p><strong>Your Consent</p></strong>
+    We've updated our Terms & Conditions to provide you with complete transparency into what is being set when you visit our site and how it's being used. By using our service, registering an account, or making a purchase, you hereby consent to our Terms & Conditions.
+    
+    <p><strong>Links to Other Websites</p></strong>
+    Our service may contain links to other websites that are not operated by Us. If you click on a third party link, You will be directed to that third party's site. We strongly advise you to review the Terms & Conditions of every site you visit. We have no control over and assume no responsibility for the content, Terms & Conditions or practices of any third party sites or services
+    
+    <p><strong>Cookies</p></strong>
+    We use "Cookies" to identify the areas of our website that you have visited. A Cookie is a small piece of data stored on your computer or mobile device by your web browser. We use cookies to enhance the performance and functionality of our service but are non-essential to their use. However, without these cookies, certain functionality like videos may become unavailable or you would be required to enter your login details every time you visit our platform as we would not be able to remember that you had Logged in previously. Most web browsers can be set to disable the use of cookies. However, if you disable Cookies, you may not be able to access functionality on our website correctly or at all. We never place Personally Identifiable Information in Cookies.
+    
+    <p><strong>Changes To Our Terms & Conditions</p></strong>
+    You acknowledge and agree that we may stop (permanently or temporarily) providing the Service (or any features within the Service) to you or to users generally at our sole discretion, without prior notice to you. You may stop using the Service at any time. You do not need to specifically inform us when you stop using the Service. You acknowledge and agree that if we disable access to your account, you may be prevented from accessing the Service, your account details or any files or other materials which is contained in your account. If we decide to change our Terms & Conditions, we will post
+    those changes on this page, and/or update the Terms & Conditions modification date below.
+    
+    <p><strong>Modifications to Our service</p></strong>
+    We reserve the right to modify, suspend or discontinue, temporarily or permanently, the service or any service to which it connects, with or without notice and without liability to you.
+    
+    <p><strong>Updates to Our service</p></strong>
+    We may from time to time provide enhancements or improvements to the features/functionality of the service, which may include patches, bug fixes, updates, upgrades and other modifications ("Updates"). Updates may modify or delete certain features and/or functionalities of the service. You agree that we have no obligation to () provide any Updates, or (ii) continue to provide or enable any particular features and/or functionalities of the service to you. You further agree that all Updates will be (i) deemed to constitute an integral part of the service, and (ii) subject to the terms and conditions of this Agreement.
+    
+    <p><strong>Waiver</p></strong>
+    Except as provided herein, the failure to exercise a right or to require performance of an obligation under this Agreement shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall be the waiver of a breach constitute waiver of any subsequent breach.
+    No failure to exercise, and no delay in exercising, on the part of either party, any right or any power under this Agreement shall operate as a waiver of that right or power. Nor shall any single or partial exercise of any right or power under this Agreement preclude further exercise of that or any other right granted herein. In the event of a conflict between this Agreement and any applicable purchase or other terms, the terms of this Agreement shall govern.
+    
+    <p><strong>Amendments to this Agreement</p></strong>
+    We reserve the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use our service.
+    
+    <p><strong>Entire Agreement</p></strong>
+    The Agreement constitutes the entire agreement between you and us regarding your use of the service and supersedes all prior and contemporaneous written or oral agreements between you and us. You may be subject to additional terms and conditions that apply when you use or purchase other services from us, which we will provide to you at the time of such use or purchase.
+    
+    <p><strong>Updates to Our Terms</p></strong>
+    We may change our Service and policies, and we may need to make changes to these Terms so that they accurately reflect our Service and policies. Unless otherwise required by law, we will notify you (for example, through our Service) before we make changes to these Terms and give you an opportunity to review them before they go into effect. Then, if you continue to use the Service, you will be bound by the updated Terms. If you do not want to agree to these or any updated Terms, you can delete your account
+    
+    <p><strong>Intellectual Property</p></strong>
+    Our platform and its entire contents, features and functionality (including but not limited to all information, software, text, displays, images, video and audio, and the design, selection and arrangement thereof), are owned by us, its licensors or other providers of such material and are protected by and international copyright, trademark, patent, trade secret and other intellectual property or proprietary rights laws. The material may not be copied, modified, reproduced, downloaded or distributed in any way, in whole or in part, without the express prior written permission of us, unless and except as is expressly provided in these Terms & Conditions. Any unauthorized use of the material is prohibited.
+    
+    <p><strong>Agreement to Arbitrate</p></strong>
+    This section applies to any dispute EXCEPT IT DOESN'T INCLUDE A DISPUTE RELATING TO CLAIMS FOR INJUNCTIVE OR EQUITABLE RELIEF REGARDING THE ENFORCEMENT OR VALIDITY OF YOUR OR'S INTELLECTUAL PROPERTY RIGHTS. The term "dispute" means any dispute, action, or other controversy between you and us concerning the Services or this agreement, whether in contract, warranty, tort, statute, regulation, ordinance, or any other legal or equitable basis. “Dispute" will be given the broadest possible meaning allowable under law.
+    
+    <p><strong>Notice of Dispute</p></strong>
+    In the event of a dispute, you or us must give the other a Notice of Dispute, which is a written statement that sets forth the name, address, and contact information of the party giving it, the facts giving rise to the dispute, and the relief requested. You must send any Notice of Dispute via email to: We will send any Notice of Dispute to you by mail to your address if we have it, or otherwise to your email address. You and us will attempt to resolve any dispute through informal negotiation within sixty (60) days from the date the Notice of Dispute is sent. After sixty (60) days, you or us may commence arbitration.
+    
+    <p><strong>Binding Arbitration</p></strong>
+    If you and us don't resolve any dispute by informal negotiation, any other effort to resolve the dispute will be conducted exclusively by binding arbitration as described in this section. You are giving up the right to litigate (or participate in as a party or class member) all disputes in court before a judge or jury. The dispute shall be settled by binding arbitration in accordance with the commercial arbitration rules of the American Arbitration Association. Either party may seek any interim or preliminary injunctive relief from any court of competent jurisdiction, as necessary to protect the party's rights or property pending the completion of arbitration. Any and all legal, accounting, and other costs, fees, and expenses incurred by the prevailing party shall be borne by the non-prevailing party.
+    
+    <p><strong>Submissions and Privacy</p></strong>
+    In the event that you submit or post any ideas, creative suggestions, designs, photographs, information, advertisements, data or proposals, including ideas for new or improved products, services, features, technologies or promotions, you expressly agree that such submissions will automatically be treated as non-confidential and non-proprietary and will become the sole property of us without any compensation or credit to you whatsoever. We and our affiliates shall have no obligations with respect to such submissions or posts and may use the ideas contained in such submissions or posts for any purposes in any medium in perpetuity, including, but not limited to, developing, manufacturing, and marketing products and services using such ideas.
+    
+    <p><strong>Disclaimer</p></strong>
+    We are not responsible for any content, code or any other imprecision. We do not provide warranties or guarantees. In no event shall we be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. We reserve the right to make additions, deletions, or modifications to the contents on the Service at any time without prior notice.
+    Our Service and its contents are provided "as is" and "as available" without any warranty or representations of any kind, whether express or implied. We are a distributor and not a publisher of the content supplied by third parties, as such, our exercises no editorial control over such content and makes no warranty or representation as to the accuracy, reliability or currency of any information, content, service or merchandise provided through or accessible via our Service. Without limiting the foregoing, We specifically disclaim all warranties and representations in any content transmitted on or in connection with our Service or on sites that may appear as links on our Service, or in the products provided as a part of, or otherwise in connection with, our Service, including without limitation any warranties of merchantability, fitness for a particular purpose or non-infringement of third party rights. No oral advice or written information given by us or any of its affiliates, employees, officers, directors, agents, or the like will create a warranty. Price and availability information is subject to change without notice. Without limiting the foregoing, we do not warrant that our Service will be uninterrupted, uncorrupted, timely, or error-free.
+    
+    <p><strong>Contact Us</p></strong>
+    Don't hesitate to contact us if you have any questions.
+    • Via Email: virtual.diary@gmail.com • Via Phone Number: 096969696969 • Via this Address: Ermita, Manila
   
+  </div>
 </html>
 <style>
   body {
-  background-color: #eee;
-}
+    background-color: #eee;
+  }
 
-.content {
-  width: 600px;
-  margin: 50px auto;
-  background-color: white;
-  
-}
+  .content {
+    width: 600px;
+    margin: 50px auto;
+    background-color: white;
 
-.main {
-  text-align: center;
-  color: #000;
-  background-color: #eee;
-  width: 50%;
-  margin: 0 auto;
-  font-family: Monospace, Verdana, sans-serif;
-}
-.space {
-  width: 600px;
-  margin: 50px auto;
-  padding: 0px;
-}
+  }
 
+  .main {
+    text-align: center;
+    color: #000;
+    background-color: #eee;
+    width: 50%;
+    margin: 0 auto;
+    font-family: Monospace, Verdana, sans-serif;
+  }
+
+  .space {
+    width: 600px;
+    margin: 50px auto;
+    padding: 0px;
+  }
 </style>

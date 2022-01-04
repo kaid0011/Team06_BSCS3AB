@@ -306,11 +306,6 @@
                 $this->session->set_userdata('verification_Key', $verification_key);
                 $this->resendEmail();
             }
-            else
-            {
-                echo 'waaa';
-                #will change laturrr
-            }
         }
 
         public function resendEmail()
@@ -320,9 +315,11 @@
 
             $subject = "Verify your email";
             $message = "
-            <h3>Hello, ".$name."!</h3>
-            <p>Here is your verification code.</p><br>
-            <h4>$key</h4>
+            Heads up! You recently tried to update your account settings! Use the code below in order to verify it's you to accept the changes.
+
+            ".$key."
+
+            If this attempt wasn't made by you, please log-in immedietly and change your password to secure your account.
             ";
             $to = $this->session->userdata('email');
 

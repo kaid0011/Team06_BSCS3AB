@@ -7,6 +7,7 @@
         {
             parent::__construct(); 
             $this->load->model('ReportUser_model');
+            $this->load->model('UpdateProfile_model');
         }
 
         public function index() 
@@ -37,12 +38,7 @@
             $reportDetails = $this->input->post('details');
             $reportStatus = "For Review";
             $action = $this->input->post('action'); 
-
-            // * Code to differentiate if this came from a sticky note or Public Notebook button of report *//
-            // This basically requires a different view for each (so 2 views) with the same identical UI
-            // on difference is the internal Value of the button so the if else will trigger.
-            // As of now, this only works for the sticky note report button (since there's no seperate report view for PublicNB)
-            
+       
             if ($action == 'Submit')
             {
                 $type = "Sticky Notes";

@@ -11,7 +11,6 @@
             $this->load->model('Mainpage_model');
             $this->load->model('UpdateProfile_model');
 
-            #redirect to login if userID is NULL
             if(!$this->session->userdata('user_ID'))
             {
                 redirect('login');
@@ -21,11 +20,6 @@
         public function index() {
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/mainpage/mainpage', $data); 
-        }
-
-        public function admin() {
-            $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/mainpage/adminmainpage', $data); 
         }
 
 
@@ -48,23 +42,6 @@
             $this->sitelayout->loadTemplate('pages/navbar/visitedprofile', $data); 
 
         }
-
-        public function addReact()
-        {
-            $action = $this->input->post('action');
-            $page_ID = $this->input->post('page_ID');
-            $visited_ID = $this->input->post('visitedUser_ID');
-
-            if($action == 'React')
-            {
-                $response = $this->Mainpage_model->addReact($page_ID, $visited_ID);
-                if($response)
-                {
-                    $this->searchuser(); 
-                }
-            }
-        }
-
         
     }
 

@@ -25,9 +25,9 @@
                         </div>
 
                         <!-- Confirm Button -->
-                        <input type="submit" name="action" value="Confirm" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark me-2"><a style="text-decoration: none; color: #212529;">
+                        <input type="submit" name="action" value="Confirm" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark me-2"><a style="text-decoration: none; color: #212529;">
                         <!-- Back Button -->
-                        <input type="submit" name="action" value="Back" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark"><a style="text-decoration: none; color: #212529;">
+                        <input type="submit" name="action" value="Back" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark"><a style="text-decoration: none; color: #212529;">
                    
                     </form>
                 </p>

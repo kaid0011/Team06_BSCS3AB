@@ -28,9 +28,9 @@
                         </div>
 
                         <!-- Verify Button -->
-                        <input type="submit" value="Verify" name ="action" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark me-2">
+                        <input type="submit" value="Verify" name ="action" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark me-2">
                         <!-- Back Button -->
-                        <input type="submit" value="Back" name ="action" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark">                 
+                        <input type="submit" value="Back" name ="action" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark">                 
                     
                     </form>              
                 </p>

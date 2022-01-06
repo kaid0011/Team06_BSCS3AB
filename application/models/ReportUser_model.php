@@ -15,6 +15,7 @@
             $query = $this->db->get('sticky_notes');
             return $query;
         }
+
         public function submitNoteReport($data)
         {
             $this->db->insert('report',$data);
@@ -27,6 +28,7 @@
             $query = $this->db->get('publicnb_pages');
             return $query;
         }
+        
         public function submitPublicNBReport($data)
         {
             $this->db->insert('report',$data);

@@ -8,8 +8,8 @@
                         $this->load->database();
                 }
 
-                public function get_Email($id){
-
+                public function get_Email($id)
+                {
                         $this->db->where('user_ID', $id);
                         $this->db->select('email');
                         $query = $this->db->get("user");

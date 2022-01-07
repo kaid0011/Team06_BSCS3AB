@@ -8,7 +8,7 @@
       <!-- Private Notebook -->
       <div class="project-col p-5">
         <a href="<?=base_url('privatenotebook')?>">
-          <img src="<?=base_url('assets/images/mainpage/privatenotebook.png')?>" alt="project1">
+          <img src="<?=base_url('assets/images/mainpage/privatenotebook.png')?>" alt="project1" class="responsive">
           <div class="layer">
             <!-- <h3>Private<br>Notebook</h3> -->
           </div>
@@ -18,7 +18,7 @@
       <!-- Public Notebook -->
       <div class="project-col p-5">
         <a href="<?=base_url('publicnotebook')?>">
-          <img src="<?=base_url('assets/images/mainpage/publicnotebook.png')?>" alt="project2">
+          <img src="<?=base_url('assets/images/mainpage/publicnotebook.png')?>" alt="project2" class="responsive">
           <div class="layer">
             <!--<h3>Public<br>Notebook</h3>-->
           </div>
@@ -28,7 +28,7 @@
       <!-- Sticky Notes Wall -->
       <div class="project-col p-5">
         <a href="<?=base_url('stickynoteswall')?>">
-          <img src="<?=base_url('assets/images/mainpage/stickynoteswall.png')?>" alt="project3">
+          <img src="<?=base_url('assets/images/mainpage/stickynoteswall.png')?>" alt="project3" class="responsive">
           <div class="layer">
             <!--<h3>Sticky<br>Notes<br>Wall</h3>-->
           </div>
@@ -46,7 +46,16 @@
       flex-direction: column;
     }
   }
-
+@media (max-width:768px) and (min-width:600px){
+    .responsive{
+      padding:50px;
+    }
+}
+@media (max-width:990px) and (min-width:768px){
+    .responsive{
+      padding:100px;
+    }
+}
   .custom-toggler.navbar-toggler {
     border-color: white;
   }

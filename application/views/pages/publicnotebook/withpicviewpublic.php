@@ -1,17 +1,17 @@
-  <div class="">
-    <div class="d-flex justify-content-end pe-5 pt-3">
+  <div class="row ms-5">
+    <div class="col ms-5 d-flex justify-content-center">
+      <!-- New Page Button -->
+      <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
+        <button class="ms-5 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
+      </a>
+    </div>
+    <div class="col-2 justify-content-end pe-5 pt-3">
       <!-- Timestamp -->
       <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
         <!--changes-->
           <input type="date" name="date" class="form-control me-2">
           <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
       </form>
-    </div>
-    <div class="d-flex justify-content-center">
-      <!-- New Page Button -->
-      <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
-        <button class="py-2 px-3 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
-      </a>
     </div>
   </div>
 

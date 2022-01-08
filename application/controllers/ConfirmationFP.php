@@ -76,7 +76,7 @@
 
             If this request is done by you, take the code above in order to progress.
             If you did not request this, ignore this message.
-            ";      #will change laturrr
+            ";
 
             $config = array(
                 'protocol'  => 'smtp',

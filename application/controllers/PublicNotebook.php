@@ -186,7 +186,6 @@
             }
             else
             {  
-                //$this->PublicNotebook_model->updatePage($id, $page_ID, "Light", NULL);
                 $this->deletePublicPage();
             }
         }

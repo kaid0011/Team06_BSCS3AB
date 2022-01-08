@@ -17,12 +17,6 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
         }
-
-        public function deactivateaccount() 
-        {
-            $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
-        }
         
         public function updatepassword() 
         {
@@ -350,11 +344,6 @@
             {
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
-            }
-            else
-            {
-                echo "Error";
-                #will change laturrr
             }
         }
 

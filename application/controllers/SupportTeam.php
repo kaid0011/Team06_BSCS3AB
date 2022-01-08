@@ -32,11 +32,6 @@
 
             if($action == 'Search')
             {
-                $response = $this->SupportTeam_model->findReport($reportedUser_ID);
-                /*foreach($response->result() as $row)
-                {
-                    $report_ID = $row->report_ID;
-                }*/
 
                 $data['viewAllUserReports'] = $this->SupportTeam_model->viewAllUserReports($reportedUser_ID);
 
@@ -88,6 +83,5 @@
                 }
             }
         }
-
     }
 ?>

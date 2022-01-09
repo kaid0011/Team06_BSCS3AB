@@ -33,7 +33,7 @@
                         </div>
                         
                         <!-- Log In Button -->
-                        <input type="submit" name="action" value="Log In" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark">
+                        <input type="submit" name="action" value="Log In" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark">
                         
                     </form>
                 </p>

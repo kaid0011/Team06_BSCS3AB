@@ -52,7 +52,7 @@
             </div>
 
             <!-- Register Button -->
-            <input type="submit" name="signupbtn" value="Register" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark"></input>
+            <input type="submit" name="signupbtn" value="Register" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark"></input>
 
           </form>
         </p>

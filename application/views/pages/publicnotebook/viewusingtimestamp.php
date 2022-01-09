@@ -1,20 +1,20 @@
-  <div class="">
-    <div class="d-flex justify-content-end pe-5 pt-3">
+<div class="" style="background-color:#006B38FF;">
+    <div class="d-flex justify-content-between pe-5 pt-4" style="padding: 2rem;">
+      <div class="mx-auto">
+    <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
+        <button class="py-2 px-3 m-3 btn border border-secondary border-3" style="border-radius: 100px; background-color: #f0b63a;"><h2>+</h2></button>
+      </a>
+      </div>
       <!-- Timestamp -->
       <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
         <!--changes-->
-          <input type="date" name="date" class="form-control me-2" placeholder="Enter date (mm/dd/yy)">
-          <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
-      </form>
-    </div>
-    <div class="d-flex justify-content-center">
-      <!-- New Page Button -->
-      <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
-        <button class="py-2 px-3 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
-      </a>
+        <div class=" resp justify-content-end">
+          <input type="date" name="date" class="form-control me-2 buttonresp">
+          <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark searchresp">Search</button>
+          </div>
+        </form>
     </div>
   </div>
-
 <?php
   if ($viewPublicNotebook->num_rows() > 0) 
   {

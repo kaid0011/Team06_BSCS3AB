@@ -159,7 +159,7 @@
         </p>
         <div class="row g-4 justify-content-center">
             <!-- Bagasona -->
-            <div class="col-md-6 col-lg-3 col-sm-9">
+            <div class="col-md-5 col-lg-3 col-sm-9 justify-content-between mx-auto">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/bagasona.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
@@ -170,7 +170,7 @@
                 </div>
             </div>
             <!-- Guevarra -->
-            <div class="col-md-6 col-lg-3 col-sm-6">
+            <div class="col-md-5 col-lg-3 col-sm-6 justify-content-between mx-auto">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/guevarra.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style="border: 5px solid #333333; 
@@ -214,7 +214,7 @@
                 </div>
             </div>
             <!-- Camañag -->
-            <div class="col-md-6 col-lg-3 col-sm-6">
+            <div class="col-md-5 col-lg-3 col-sm-6">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/camanag.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
@@ -225,7 +225,7 @@
                 </div>
             </div>
             <!-- Pinpin -->
-            <div class="col-md-6 col-lg-3 mb-4 col-sm-6">
+            <div class="col-md-5 col-lg-3 mb-4 col-sm-6">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/pinpin.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 

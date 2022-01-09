@@ -50,7 +50,7 @@
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                     <textarea name="input" class="form-control" id="" rows="13"></textarea> 
                 <hr id="inputbox" class="bg-light">
-                <input type="file" name="file" id="file" accept="image/png, image/jpg, image/jpeg"/>
+                <input type="file" name="file" id="file" class="custom-file-input me-3" accept="image/png, image/jpg, image/jpeg"/>
                 <input type="button" value="Remove" name="action" id="remove" class="p-2 btn mt-1" onclick="removeImage()"/>
                 <input type="text" name="remove" id="removeimage" class="btn float-end mt-1"  hidden value="">
                 <!-- Button-->
@@ -134,6 +134,30 @@
     color: #dee2e6;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
   }
+  .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Choose Image';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 11px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 600;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
 </style>
 
 <script>

@@ -76,8 +76,8 @@
           }
 
       ?>
-          <div class="col">
-            <div class="col">
+          <div class="col justify-content-center">
+            <div class="col justify-content-center">
               <div class="card responsive stickyNote">
                 <!-- style="@media (min-width: 989px) {width: 25vw; height: 390px;}  @media (max-width: 990px) {width: 70vw; height: 390px;}" -->
                 <form action="<?= base_url('reportuser/getnotedata') ?>" method="post" >
@@ -208,6 +208,7 @@
   .stickyNote {
     justify-content: space-between;
     flex-direction: column;
+    margin:auto;
     display: flex;
    
 

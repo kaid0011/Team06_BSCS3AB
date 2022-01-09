@@ -10,8 +10,10 @@ switch ($navbar) {
                 <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon" style="outline:none; box-shadow:none;"></span>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navmenu">
@@ -47,8 +49,10 @@ switch ($navbar) {
                 <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navmenu">
@@ -76,8 +80,10 @@ switch ($navbar) {
                 <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navmenu">
@@ -99,7 +105,7 @@ switch ($navbar) {
     default:
     ?>
         <!-- Navbar Main Section -->
-         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark ">
+         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark py-3">
             <div class="container">
 
                 <ul class="navbar-nav align-items-center navbar-right w-100">
@@ -129,17 +135,19 @@ switch ($navbar) {
 
                     <!-- Toggler Menu -->
                         <!-- Search Bar -->
-                        <button class="navbar-toggler block2 mx-auto" style="color: white;" data-bs-toggle="collapse" data-bs-target="#searcharea" class="navbar-toggler" aria-controls="searcharea" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler block2 mx-auto resp align-items-center" style="color: white; width:100px;" data-bs-toggle="collapse" data-bs-target="#searcharea" class="navbar-toggler" aria-controls="searcharea" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="bi bi-search"></span>
                         </button>
 
                         <!-- Hamburger Menu -->
-                        <button class="navbar-toggler block3" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler collapsed block3" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon top-bar"></span>
+                            <span class="toggler-icon middle-bar"></span>
+                            <span class="toggler-icon bottom-bar"></span>
                         </button>
                     </div>
 
-                    <div class="collapse navbar-collapse ml-auto" id="searcharea" style="margin-left: 170px; margin-right: 100px;">
+                    <div class="collapse navbar-collapse ml-auto " id="searcharea" style="margin-left: 170px; margin-right: 100px;">
                         <!-- Search (Find User) -->
                         <li class="w-100">
                             <form action="<?= base_url(); ?>mainpage/searchuser/" method="get" class="form d-flex" >
@@ -183,18 +191,59 @@ switch ($navbar) {
 }
 ?>
 <style>
+.navbar-toggler {
+    border: 0 !important;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+}
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: #f0b63a;
+    display: block;
+    transition: all 0.2s;
+}
+.middle-bar{
+    margin: 5px auto;
+}
+.navbar-toggler .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+}
+.navbar-toggler.collapsed .top-bar {
+    transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    transform: rotate(0);
+}
+.navbar-toggler.collapsed .toggler-icon {
+    background-color: #ffffff;
+}
 .navbar .navbar-collapse {
   text-align: center;
 }
-button.menu-toggle, button.menu-toggle:hover {
-  border-color: #fcf!important;
-}
-.navbar-toggler:hover{
-    color: #24282c !important;
-}
-.navbar-toggler:active{
-    color: #24282c !important;
-}
+
 @media (max-width:991px){
     .roww{
         width: 100%;
@@ -211,7 +260,6 @@ button.menu-toggle, button.menu-toggle:hover {
         margin: 0 auto;
     }
     .block3 {
-        width: 100px;
         display:inline-block;
         margin-left:auto;
     }
@@ -270,6 +318,10 @@ button.menu-toggle, button.menu-toggle:hover {
     .block1{
         margin-right:335px;
     }
+}
+.resp{
+    padding-top:-5px;
+    margin-top:-5px;
 }
 </style>
 

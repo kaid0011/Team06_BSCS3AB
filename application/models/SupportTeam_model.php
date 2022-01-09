@@ -12,13 +12,6 @@
             return $query;
         }
 
-        public function findReport($reportedUser_ID)
-        {
-            $this->db->where('reportedUser_ID', $reportedUser_ID);
-            $reportedID = $this->db->get('report');
-            return $reportedID;
-        }
-
         public function viewIndivReport($report_ID)
         {
             $this->db->where('report_ID', $report_ID);

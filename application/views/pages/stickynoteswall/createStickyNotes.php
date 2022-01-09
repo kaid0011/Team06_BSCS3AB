@@ -239,7 +239,7 @@
   function changeImgFruits(color, cardcolor, inputcolor, theme) {
     document.body.style.backgroundImage = color;
     document.getElementById("card").style.backgroundImage = cardcolor;
-    
+    document.getElementById("noteInput").style.backgroundImage = inputcolor;
     document.getElementById("noteInput").style.color = "black"
     document.getElementById("to").style.color = "black"
     document.getElementById("white").style.color ="black"

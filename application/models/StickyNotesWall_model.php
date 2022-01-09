@@ -11,9 +11,7 @@
 
         public function get_StickyNotesWallInput()
         {
-            
             $query = $this->db->get('sticky_notes');
-            
             return $query;
         }
 
@@ -30,20 +28,11 @@
             return $page;
         }
 
-        public function get_receiver($user){
-
+        public function get_receiver($user)
+        {
             $this->db->where('noteReceiver', $user);
             $viewReceiver = $this->db->get("sticky_notes");
-
-           //foreach( $viewReceiever->result() as $row){
-                
-                //echo $row->noteInput;
-                //echo $row->noteReceiver;
-               // echo $row->noteTheme;
-           // }
-            
-            return $viewReceiver;
-            
+            return $viewReceiver; 
         }
 
         public function get_input ($user)
@@ -53,17 +42,10 @@
 
             foreach( $viewStickyNotes->result() as $row)
             {
-
                 echo $row->noteInput;
                 echo $row->noteReceiver;
                 echo $row->noteTheme;
             }
-        }
-
-        public function note($id)
-        {
-            $this->db->where('stickyNotes_ID', $id);
-            
         }
 
         public function get_stickyinput($stickyNotes_ID)

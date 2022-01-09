@@ -7,10 +7,8 @@
         
         public function addNewUser($data)
         {
-            $this->db->insert('user', $data);       #load database then insert $data in 'user' table in database
-            #echo $this->db->last_query();
-            #exit;
-            return true;                            #return true if successful
+            $this->db->insert('user', $data);  
+            return true;                        
         }
 
         public function getID($userName)
@@ -24,18 +22,7 @@
         public function dbConnections($publicNBData, $privateNBData)
         {
             $this->db->insert('public_notebook', $publicNBData);
-
-
-            //$this->db->insert('publicnb_pages', $publicPageData);
-            //echo $this->db->last_query();
-
             $this->db->insert('private_notebook', $privateNBData);
-
-    
-            //$this->db->insert('privatenb_pages', $privatePageData);
-            //echo $this->db->last_query();
-
-
             return true;
         }
 

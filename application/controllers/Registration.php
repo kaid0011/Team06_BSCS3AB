@@ -24,17 +24,17 @@
             # [name] = to be used in error meesage
             # [rules] = set rules like required, is_unique, etc.
 
-            $this->form_validation->set_rules('userName', 'Username', 'required|trim|min_length[3]|max_length[12]|is_unique[user.userName]',
+            $this->form_validation->set_rules('userName', 'Username', 'required|trim|min_length[4]|max_length[15]|alpha_dash|is_unique[user.userName]',
                 array(
                     'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in userName
                 ));
-            $this->form_validation->set_rules('displayName', 'Display Name', 'required|trim');
+            $this->form_validation->set_rules('displayName', 'Display Name', 'required|trim|min_length[1]|max_length[20]');
             $this->form_validation->set_rules('email', 'E-mail Address', 'required|trim|valid_email|is_unique[user.email]',
                 array(
-                    'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in email
+                    'is_unique'     => 'This %s already exists.',    #custom error message for is_unique in email
                 ));
-            $this->form_validation->set_rules('password', 'Password', 'required');
-            $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');    #checks if confirm_password matches password
+            $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|max_length[32]');
+            $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]|min_length[8]|max_length[32]');    #checks if confirm_password matches password
 
             if($this->form_validation->run())   #If no error,
             {

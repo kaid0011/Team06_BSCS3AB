@@ -2,11 +2,11 @@
 <section class="bg-dark text-light p-5 text-center text-sm-start">
     <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between">
-        <img class="img-fluid d-block headerpic" src="assets/images/home/hp.png" alt="" />
+            <img class="img-fluid d-block headerpic" src="assets/images/home/hp.png" alt="" />
             <div class="lead my-4 pe-2">
                 <h1 class="mb-3">Keep track your Daily Life</h1>
                 <p class="mb-4">
-                Welcome to Virtual Diary! Save all your thoughts and show them to various people with sticky notes and notebooks! Read as you discover the various thoughts of people around the world. "Understanding the thoughts of others is a key to learning more."
+                    Welcome to Virtual Diary! Save all your thoughts and show them to various people with sticky notes and notebooks! Read as you discover the various thoughts of people around the world. "Understanding the thoughts of others is a key to learning more."
                 </p>
             </div>
         </div>
@@ -35,7 +35,8 @@
                         </p>
                     </div>
                     <a href=""><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
-                        <h6 class="mb-1"><span> Learn More</span></h6></button>
+                            <h6 class="mb-1"><span>Learn More</span></h6>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -54,7 +55,8 @@
                         </p>
                     </div>
                     <a href=""><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
-                        <h6 class="mb-1"><span> Learn More</span></h6></button>
+                            <h6 class="mb-1"><span>Learn More</span></h6>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -73,7 +75,8 @@
                         </p>
                     </div>
                     <a href=""><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
-                        <h6 class="mb-1"><span> Learn More</span></h6></button>
+                            <h6 class="mb-1"><span>Learn More</span></h6>
+                        </button>
                     </a>
                 </div>
             </div>
@@ -217,7 +220,7 @@
                         <img src="assets/images/home/camanag.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="camanag">
                         <h4 class="card-title mb-3 text-light">Christopher <br> Camañag <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">"My friends see me as someone  who can hack NASA someday. But all I do is copy paste from that indian guy from YouTube."</p>
+                        <p class="card-text text-light">"My friends see me as someone who can hack NASA someday. But all I do is copy paste from that indian guy from YouTube."</p>
                     </div>
                 </div>
             </div>
@@ -228,7 +231,7 @@
                         <img src="assets/images/home/pinpin.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="pinpin">
                         <h4 class="card-title mb-3 text-light">Marshal Amieron<br> Pinpin <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">"Former game modder. Prefers coding that actual designing. Coffee = Quality Life"</p>
+                        <p class="card-text text-light">"Former game modder. Prefers coding than actual designing. Coffee = Quality Life"</p>
                     </div>
                 </div>
             </div>
@@ -277,60 +280,64 @@
     </div>
 </section>
 <!-- (end) Frequently Asked Questions   -->
+
 <style>
     .hover {
-  display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  width: 170px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-}
-
-.hover span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.hover span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.hover:hover span {
-  padding-right: 25px;
-}
-
-.hover:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-@media (max-width: 320px) {
-  
-  .headerpic {
-    width: 300px;
-  }
-}
-@media (min-width: 992px) {
-  
-  .headerpic {
-    width: 50%;
-  }
-}
-@media (max-width:991px) and (min-width:572px){
-    .headerpic{
-      width:60%;
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #f4511e;
+        border: none;
+        color: #292929;
+        text-align: center;
+        font-size: 28px;
+        width: 170px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
     }
-}
+
+    .hover span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .hover span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .hover:hover span {
+        padding-right: 25px;
+    }
+
+    .hover:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    @media (max-width: 320px) {
+
+        .headerpic {
+            width: 300px;
+        }
+    }
+
+    @media (min-width: 992px) {
+
+        .headerpic {
+            width: 50%;
+        }
+    }
+
+    @media (max-width:991px) and (min-width:572px) {
+        .headerpic {
+            width: 60%;
+        }
+    }
 </style>

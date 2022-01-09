@@ -17,7 +17,6 @@ class Login_model extends CI_model
         if($query->num_rows() == 1)
         {
             return true;
-            //return $query->row();
         }
         else
         {
@@ -40,7 +39,6 @@ class Login_model extends CI_model
         else
         {
             return false;
-
         }
     }
 }

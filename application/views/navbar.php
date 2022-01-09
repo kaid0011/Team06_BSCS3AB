@@ -11,14 +11,14 @@ switch ($navbar) {
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon" style="outline:none; box-shadow:none;"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <!-- Register -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url('registration') ?>" class="nav-link text-light pt-3"><h6>Register</h6></a>
+                            <a href="<?php echo base_url('registration') ?>" class="nav-link text-light ms-4 pt-3"><h6>Register</h6></a>
                         </li>
                         <!-- Log In -->
                         <li class="nav-item">
@@ -159,7 +159,7 @@ switch ($navbar) {
                         </li>
                         <li class="mb-1">
                         <?php $source = $this->UpdateProfile_model->getImage();?>
-                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px" ; src="<?= base_url($source) ?>"></a>
+                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px; object-fit: cover;" ; src="<?= base_url($source) ?>"></a>
                         </li>
                         
                          <li class="ms-2 navbar-item dropdown mb-2">
@@ -183,6 +183,18 @@ switch ($navbar) {
 }
 ?>
 <style>
+.navbar .navbar-collapse {
+  text-align: center;
+}
+button.menu-toggle, button.menu-toggle:hover {
+  border-color: #fcf!important;
+}
+.navbar-toggler:hover{
+    color: #24282c !important;
+}
+.navbar-toggler:active{
+    color: #24282c !important;
+}
 @media (max-width:991px){
     .roww{
         width: 100%;

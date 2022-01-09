@@ -67,10 +67,12 @@
 
             $subject = "Forgot Password";
             $message = "
-            <h3>Hello!</h3>
-            <p>Here is your verification code.</p><br>
-            <h4>$code</h4>
-            ";      #will change laturrr
+            This is an automated email for providing you a code to reset your password in Virtual Diary.
+            ".$code."
+
+            If this request is done by you, take the code above in order to progress.
+            If you did not request this, ignore this message.
+            ";
 
             $config = array(
                 'protocol'  => 'smtp',

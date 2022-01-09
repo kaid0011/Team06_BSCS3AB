@@ -96,9 +96,15 @@
 
             $subject = "Verify your email";
             $message = "
-            <h3>Hello, ".$name."!</h3>
-            <p>Here is your verification code.</p><br>
-            <h4>$key</h4>
+            Welcome to Virtual Diary, ".$name."!
+ 
+            Thank you for joining our community! In order to verify your account creation, 
+            use the code below on your page registration!
+
+            ".$key."
+
+            You’re receiving this email because you recently tried to create an account in Virtual Dary. 
+            If this wasn’t you, please ignore this email
             ";
             $to = $this->session->userdata('email');
 

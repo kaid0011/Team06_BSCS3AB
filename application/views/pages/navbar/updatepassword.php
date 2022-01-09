@@ -38,9 +38,9 @@
 
           <div class="col-md pt-3 d-flex justify-content-end align-items-center">
             <!-- Back Button -->
-            <input type="submit" name="action" value="Back" style="background-color: #f0b63a; width: 75px;" class="btn btn-sm border border-3 border-dark btn-end p-2 me-3">
+            <input type="submit" name="action" value="Back" style="background-color: #f0b63a; width:75px;" class="btn border border-2 border-dark me-3">
             <!-- Update Button -->
-            <input type="submit" name="action" value="Update" style="background-color: #f0b63a; width: 75px;" class="btn btn-sm border border-3 border-dark btn-end p-2">
+            <input type="submit" name="action" value="Update" style="background-color: #f0b63a; width:75px;" class="btn border border-2 border-dark">
           </div>
         </form>
         </p>

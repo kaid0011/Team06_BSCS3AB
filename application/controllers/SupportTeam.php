@@ -32,17 +32,11 @@
 
             if($action == 'Search')
             {
-                $response = $this->SupportTeam_model->findReport($reportedUser_ID);
-                foreach($response->result() as $row)
-                {
-                    $report_ID = $row->report_ID;
-                }
-                $data['viewIndivReport'] = $this->SupportTeam_model->viewIndivReport($report_ID);
-                $data['viewAllReports'] = $this->SupportTeam_model->viewAllReports();
-                $data['getReportedUserData'] = $this->SupportTeam_model->getReportedUserData($reportedUser_ID); 
+
+                $data['viewAllUserReports'] = $this->SupportTeam_model->viewAllUserReports($reportedUser_ID);
 
                 $data['navbar'] = 'main';
-                $this->sitelayout->loadTemplate('pages/supportteam/updateindivreport', $data);
+                $this->sitelayout->loadTemplate('pages/supportteam/findreport', $data);
             }
         }
 
@@ -55,7 +49,7 @@
             if($action == 'View Report')
             {
                 $data['viewIndivReport'] = $this->SupportTeam_model->viewIndivReport($report_ID);
-                $data['viewAllReports'] = $this->SupportTeam_model->viewAllReports();
+                $data['viewAllUserReports'] = $this->SupportTeam_model->viewAllUserReports($reportedUser_ID);
                 $data['getReportedUserData'] = $this->SupportTeam_model->getReportedUserData($reportedUser_ID);         
 
                 $data['navbar'] = 'main';
@@ -89,6 +83,5 @@
                 }
             }
         }
-
     }
 ?>

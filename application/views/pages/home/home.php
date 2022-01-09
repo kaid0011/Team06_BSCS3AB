@@ -2,13 +2,13 @@
 <section class="bg-dark text-light p-5 text-center text-sm-start">
     <div class="container">
         <div class="d-sm-flex align-items-center justify-content-between">
+        <img class="img-fluid d-block headerpic" src="assets/images/home/hp.png" alt="" />
             <div class="lead my-4 pe-2">
                 <h1 class="mb-3">Keep track your Daily Life</h1>
                 <p class="mb-4">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ullam rerum reprehenderit tenetur, omnis recusandae nisi fuga nobis accusantium itaque impedit eligendi molestias. Impedit cupiditate repellat voluptatibus a optio magni!
+                Welcome to Virtual Diary! Save all your thoughts and show them to various people with sticky notes and notebooks! Read as you discover the various thoughts of people around the world. "Understanding the thoughts of others is a key to learning more."
                 </p>
             </div>
-            <img class="img-fluid w-50 d-none d-sm-block" src="assets/images/home/hp.png" alt="" />
         </div>
     </div>
 </section>
@@ -34,8 +34,8 @@
                             Everyone can see your post
                         </p>
                     </div>
-                    <a href=""><button class="btn btn-sm mt-2 mb-4 p-2" style="background-color: #f0b63a;">
-                        <h6 class="mb-1">Learn More</h6></button>
+                    <a href=""><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
+                        <h6 class="mb-1"><span> Learn More</span></h6></button>
                     </a>
                 </div>
             </div>
@@ -53,8 +53,8 @@
                             Only you can access this Section
                         </p>
                     </div>
-                    <a href=""><button class="btn btn-sm mt-2 mb-4 p-2" style="background-color: #f0b63a;">
-                        <h6 class="mb-1">Learn More</h6></button>
+                    <a href=""><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
+                        <h6 class="mb-1"><span> Learn More</span></h6></button>
                     </a>
                 </div>
             </div>
@@ -72,8 +72,8 @@
                             Public anonymous posting area
                         </p>
                     </div>
-                    <a href=""><button class="btn btn-sm mt-2 mb-4 p-2" style="background-color: #f0b63a;">
-                        <h6 class="mb-1">Learn More</h6></button>
+                    <a href=""><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
+                        <h6 class="mb-1"><span> Learn More</span></h6></button>
                     </a>
                 </div>
             </div>
@@ -156,79 +156,79 @@
         </p>
         <div class="row g-4 justify-content-center">
             <!-- Bagasona -->
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-6 col-lg-3 col-sm-9">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/bagasona.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="bagasona">
                         <h4 class="card-title mb-3 text-light">Kim Dianne <br> Bagasona <br> <span style="color: #f0b63a;" class="h6 mb-3">Full Stack Developer</span></h4>
-                        <p class="card-text text-light">A fearful yet risk-taker unknown creature who covers songs at midnight.</p>
+                        <p class="card-text text-light">"A fearful yet risk-taker unknown creature who covers songs at midnight"</p>
                     </div>
                 </div>
             </div>
             <!-- Guevarra -->
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-6 col-lg-3 col-sm-6">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/guevarra.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style="border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="guevarra">
                         <h4 class="card-title mb-3 text-light">Ezekiel <br> Guevarra <br> <span style="color: #f0b63a;" class="h6 mb-3">Front-end Developer</span></h4>
-                        <p class="card-text text-light">Responsible for implementing visual and interactive elements that users engage.</p>
+                        <p class="card-text text-light">"If I cannot do great things, I can do small things in a great way"</p>
                     </div>
                 </div>
             </div>
             <!-- Yusoph -->
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-4 col-lg-3 col-sm-6">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/yusoph.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="jihad">
                         <h4 class="card-title mb-3 text-light">Jihad <br> Yusoph <br> <span style="color: #f0b63a;" class="h6 mb-3">Front-end Developer</span></h4>
-                        <p class="card-text text-light">I am enough of an artist to draw freely upon my imagination.</p>
+                        <p class="card-text text-light">"I am enough of an artist to draw freely upon my imagination."</p>
                     </div>
                 </div>
             </div>
             <!-- Romero -->
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-4 col-lg-3 col-sm-6">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/romero.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="romero">
-                        <h4 class="card-title mb-3 text-light">Allana <br> Romero <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">I'm just a girl trying to find a place in this world.</p>
+                        <h4 class="card-title mb-3 text-light">Allana Mae <br> Romero <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
+                        <p class="card-text text-light">"I'm just a girl trying to find a place in this world."</p>
                     </div>
                 </div>
             </div>
             <!-- Estrella -->
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-4 col-lg-3 col-sm-6">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/estrella.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="estrella">
                         <h4 class="card-title mb-3 text-light">Joana Marie <br> Estrella <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">Gamer by night. Programmer by midnight.</p>
+                        <p class="card-text text-light">"Gamer by night. Programmer by midnight."</p>
                     </div>
                 </div>
             </div>
             <!-- Camañag -->
-            <div class="col-md-4 col-lg-3">
+            <div class="col-md-6 col-lg-3 col-sm-6">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/camanag.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="camanag">
                         <h4 class="card-title mb-3 text-light">Christopher <br> Camañag <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">My friends see me as someone  who can hack NASA someday. But all i do is copy paste from that indian guy from youtube.</p>
+                        <p class="card-text text-light">"My friends see me as someone  who can hack NASA someday. But all I do is copy paste from that indian guy from YouTube."</p>
                     </div>
                 </div>
             </div>
             <!-- Pinpin -->
-            <div class="col-md-4 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-3 mb-4 col-sm-6">
                 <div class="card bg-dark" style="border: none;">
                     <div class="card-body text-center">
                         <img src="assets/images/home/pinpin.jpg" class="rounded-circle mb-4 img-fluid h-75 w-75" style=" border: 5px solid #333333; 
                         outline: 5px solid #5bc0de ;" alt="pinpin">
                         <h4 class="card-title mb-3 text-light">Marshal Amieron<br> Pinpin <br> <span style="color: #f0b63a;" class="h6 mb-3">Back-end Developer</span></h4>
-                        <p class="card-text text-light">Ako atapang atao. Ikaw? Atapang ka pa atao?</p>
+                        <p class="card-text text-light">"Former game modder. Prefers coding that actual designing. Coffee = Quality Life"</p>
                     </div>
                 </div>
             </div>
@@ -277,3 +277,60 @@
     </div>
 </section>
 <!-- (end) Frequently Asked Questions   -->
+<style>
+    .hover {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  width: 170px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.hover span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.hover span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.hover:hover span {
+  padding-right: 25px;
+}
+
+.hover:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+@media (max-width: 320px) {
+  
+  .headerpic {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  
+  .headerpic {
+    width: 50%;
+  }
+}
+@media (max-width:991px) and (min-width:572px){
+    .headerpic{
+      width:60%;
+    }
+}
+</style>

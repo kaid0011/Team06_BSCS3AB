@@ -19,17 +19,19 @@
       </div>
     </div>
   </div>
+  <div class="my-3"></div>
 </form>
 <!-- end of section  -->
 <!-- stickynotes card section -->
 
 <section class="p-5">
-  <hr class="dashed mb-5">
+  <hr class="dashed mb-5 mt-2">
   <div class="d-flex justify-content-center ">
     <a href="<?= base_url('stickynoteswall/createstickynotes') ?>">
       <button class="btn btn-lg border border-3 border-dark mb-5" type="button" style="background-color: #f0b63a; width: 50vw;">Create New Sticky Notes</button>
     </a>
   </div>
+  <div class="mb-4"></div>
   <div class="container" style="width: 1500px; ">
     <div class="row text-center g-4">
       <?php
@@ -74,8 +76,8 @@
           }
 
       ?>
-          <div class="col">
-            <div class="col">
+          <div class="col justify-content-center">
+            <div class="col justify-content-center">
               <div class="card responsive stickyNote">
                 <!-- style="@media (min-width: 989px) {width: 25vw; height: 390px;}  @media (max-width: 990px) {width: 70vw; height: 390px;}" -->
                 <form action="<?= base_url('reportuser/getnotedata') ?>" method="post" >
@@ -206,6 +208,7 @@
   .stickyNote {
     justify-content: space-between;
     flex-direction: column;
+    margin:auto;
     display: flex;
    
 

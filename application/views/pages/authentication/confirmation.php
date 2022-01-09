@@ -1,7 +1,7 @@
 <section id="learn" class="p-5" style="background-color: #e9ecef; min-height: 75vh;">
     <div class="container">
         <div class="row align-items-center justify-content-between">
-            <div class="col-md p-5 pt-9">
+            <div class="col-md pt-9">
                 <img src="<?= base_url('assets/images/login/pic5.png') ?>" class="img-fluid" alt="">
             </div>
             <div class="col-lg p-5">
@@ -26,9 +26,9 @@
                         </div>
 
                         <!-- Confirm Button -->
-                        <input type="submit" value="Confirm" name ="action" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark me-2"><a style="text-decoration: none; color: #212529;">
+                        <input type="submit" value="Confirm" name ="action" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark me-2"><a style="text-decoration: none; color: #212529;">
                         <!-- Back Button -->
-                        <input type="submit" value="Back" name ="action" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark"><a style="text-decoration: none; color: #212529;">
+                        <input type="submit" value="Back" name ="action" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark"><a style="text-decoration: none; color: #212529;">
                     
                     </form>
                 </p>

@@ -181,4 +181,17 @@
     color: #dee2e6;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
   }
+  @media (min-width:403px){
+    .resp{
+      display:flex;
+    }
+}
+@media (max-width:403px){
+    .buttonresp{
+      margin-bottom:10px;
+    }
+    .searchresp{
+      margin-left:50px;
+    }
+}
 </style>

@@ -1,7 +1,7 @@
 <section id="learn" class="p-5" style="background-color: #e9ecef; min-height: 75vh;">
     <div class="container">
         <div class="row align-items-center justify-content-between">
-            <div class="col-md p-5 pt-9">
+            <div class="col-md p-0 pt-9">
                 <img src="<?= base_url('assets/images/login/pic1.png') ?>" class="img-fluid" alt="">
             </div>
             <div class="col-md p-5">
@@ -33,7 +33,7 @@
                         </div>
                         
                         <!-- Log In Button -->
-                        <input type="submit" name="action" value="Log In" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark">
+                        <input type="submit" name="action" value="Log In" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark">
                         
                     </form>
                 </p>

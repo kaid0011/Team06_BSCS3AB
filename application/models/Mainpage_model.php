@@ -11,8 +11,6 @@
                 public function findUser($user)
                 {
                         $this->db->where('userName', $user);
-                        //$this->db->from('user');
-                        //$this->db->join('publicnb_pages', 'publicnb_pages.publicNB_ID = user.user_ID');
                         $query = $this->db->get('user');
                         return $query;
                 }
@@ -23,22 +21,6 @@
                         $this->db->order_by('publicNBPage_ID', 'desc');
                         $query = $this->db->get('publicnb_pages');
                         return $query;
-                }
-
-                public function addReact($page_ID, $visited_ID)
-                {
-                        $this->db->where('publicNB_ID', $visited_ID);
-                        $this->db->where('publicNBPage_ID', $page_ID);
-                        $this->db->set('pageReact_Count', 'pageReact_Count+1', FALSE);
-                        $result = $this->db->update('publicnb_pages');
-                        if($result)
-                        {
-                                return true;
-                        }
-                        else
-                        {
-                                return false;
-                        }
                 }
 
                 public function getImage($id)
@@ -57,7 +39,6 @@
                         $path_filename_ext = $target_directory.$filename.$extension;
                         if(file_exists($path_filename_ext))
                         {
-                            
                             $extension = ".jpeg";
                         }
                         else
@@ -68,8 +49,7 @@
                     $path_filename_ext = $target_directory.$filename.$extension;
                     $file = $id."_profileImage".$extension;
                     if(file_exists($path_filename_ext))
-                        {
-                                
+                        {    
                             return "assets/images/upload/$file";
                         }
                         else

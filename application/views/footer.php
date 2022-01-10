@@ -2,9 +2,9 @@
     <div class="container">
         <p class="lead text-center">Copyright &copy; T6-2021. All Rights Reserved</p>
         <p>Ayala Blvd, Ermita, Manila, 1000 Metro Manila</p>
-        <a href="#" class="position-absolute p-5 bottom-0 end-0">
+        <!--<a href="#" class="position-sticky p-5 sticky-bottom bottom-0 end-0">
             <i class="bi bi-arrow-up-circle h1" style="color: #329bba;"></i>
-        </a>
+        </a>-->
     </div>
 </footer>
 

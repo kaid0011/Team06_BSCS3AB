@@ -7,7 +7,6 @@
         public function __construct()
         {
             parent::__construct();
-    
             $this->load->model('Mainpage_model');
             $this->load->model('UpdateProfile_model');
 

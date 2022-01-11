@@ -15,7 +15,6 @@
         {
             $publicNB_ID = $this->session->userdata('user_ID');
             $data['viewPublicNotebook']=$this->PublicNotebook_model->get_PublicNotebookInput($publicNB_ID);
-            
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/publicnotebook/withpicviewpublic', $data); 
         }
@@ -32,9 +31,8 @@
             $action = $this->input->post('action');
             $input = $this->input->post('input');
             $pageTheme = $this->input->post('theme');
-
-           
             $pageReact_Count = 0;
+
             if($pageTheme == NULL)
             {
                 $pageTheme = 'Light';
@@ -45,13 +43,14 @@
             {
                 $this->PublicNotebook_model->createPublicPage($id, $input, $pageTheme, $pageReact_Count);
                 $this->PublicNotebook_model->pageCount($id);
-
                 $data = $this->PublicNotebook_model->get_PublicNotebookInput($id);
+
                 foreach($data->result() as $row)
                 {
                     if($input == $row->pageInput && $pageTheme == $row->pageTheme)
                     {
                         $page_ID = $row->publicNBPage_ID;
+
                         if($_FILES['file']['name'] != "")
                         {
                             $file = $_FILES['file']['name'];
@@ -59,12 +58,12 @@
                             $filename = $id."_".$page_ID."_publicNotebookImage";
                             $ext = $path['extension'];
                             $temp_name = $_FILES['file']['tmp_name'];
+
                             if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
                             {
                                 $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
                                 move_uploaded_file($temp_name, $path_filename_ext);
                                 $this->index();
-            
                             }
                             else
                             {
@@ -95,7 +94,6 @@
         {
             $page_ID = $this->uri->segment(3);
             $data['viewPublicPage']=$this->PublicNotebook_model->get_PublicPage($page_ID);
-
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/publicnotebook/updatepublicnotebook', $data); 
         }
@@ -118,6 +116,7 @@
                     $path = pathinfo($file);
                     $filename = $id."_".$page_ID."_publicNotebookImage";
                     $ext = $path['extension'];
+
                     if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
                     {
                         $temp_name = $_FILES['file']['tmp_name'];
@@ -138,6 +137,7 @@
                         {
                             $ext = "jpg";
                             $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+
                             if(file_exists($path_filename_ext))
                             {
                                 unlink($path_filename_ext);
@@ -146,6 +146,7 @@
                             {
                                 $ext = "jpeg";
                                 $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+
                                 if(file_exists($path_filename_ext))
                                 {
                                     unlink($path_filename_ext);
@@ -154,6 +155,7 @@
                                 {
                                     $ext = "png";
                                     $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+
                                     if(file_exists($path_filename_ext))
                                     {
                                         unlink($path_filename_ext);
@@ -173,7 +175,8 @@
                     } 
                 }
                 $remove = $this->input->post('remove');
-                    if($remove == 'Remove')
+
+                if($remove == 'Remove')
                     {
                         $this->removeImage($page_ID);
                         header("Refresh:0; url = ../publicnotebook");
@@ -194,8 +197,8 @@
         {
             $id = $this->session->userdata('user_ID');
             $page_ID = $this->input->post('page_ID');
-
             $response = $this->PublicNotebook_model->deletePublicPage($id, $page_ID);
+
             if($response)
             {
                 $this->removeImage($page_ID);
@@ -209,6 +212,7 @@
             $filename = $id."_".$page_ID."_publicNotebookImage";
             $extension = ".jpg";
             $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+
             if(file_exists($path_filename_ext))
             {
                 $extension = ".jpg";
@@ -243,7 +247,6 @@
             $date = $this->input->post('date');
             $publicNB_ID = $this->session->userdata('user_ID');
             $data['viewPublicNotebook']=$this->PublicNotebook_model->getPageUsingDate($publicNB_ID, $date);
-            
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/publicnotebook/viewusingtimestamp', $data); 
         }

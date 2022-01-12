@@ -1,4 +1,4 @@
-   <div class="row ms-5">
+  <div class="row ms-5">
     <div class="col ms-5 d-flex justify-content-center">
       <!-- New Page Button -->
       <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">

@@ -7,8 +7,8 @@
           <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
       </form>
     </div>
-    <di-flex justify-content-center">
-      <!-- New Page Buttonv class="d -->
+    <div class="d-flex justify-content-center">
+      <!-- New Page Button -->
       <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
         <button class="py-2 px-3 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
       </a>

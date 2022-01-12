@@ -15,34 +15,28 @@
 
             $privateNB_ID = $this->session->userdata('user_ID');
             $data['viewPrivateNotebook']=$this->PrivateNotebook_model->get_PrivateNotebookInput($privateNB_ID);
-            
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/privatenotebook/withpicviewprivate', $data); 
-
-
         }
 
         public function updatePrivateNotebook()
         {
             $id = $this->session->userdata('user_ID');
             $data['viewPageNotebook']=$this->PrivateNotebook_model->get_PrivateNotebookInput($id);
-
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/privatenotebook/updateprivatenotebook', $data); 
         }
 
         public function updateprivatepage()
         {
-
             $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
             $pageTheme = $this->input->post('theme');
             
-            
-
             if($action == 'Update')
             {
                 $pageTimer = $this->input->post('appt'); //Timer
+
                 if($pageTimer == "00:00:00")
                 {
                     date_default_timezone_set("Asia/Manila");
@@ -51,12 +45,14 @@
                 $pageTheme = $this->input->post('theme'); //Theme
                 $pageInput = $this->input->post('input'); //Input
                 $this->PrivateNotebook_model->updatePage($pageTimer,$pageTheme, $pageInput, "", $id);
+
                 if($_FILES['file']['name'] != "")
                 {
                     $file = $_FILES['file']['name'];
                     $path = pathinfo($file);
                     $filename = $id."_privateNotebookImage";
                     $ext = $path['extension'];
+
                     if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
                     {
                         $temp_name = $_FILES['file']['tmp_name'];
@@ -136,6 +132,7 @@
             $filename = $id."_privateNotebookImage";
             $extension = ".jpg";
             $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+
             if(file_exists($path_filename_ext))
             {
                 $extension = ".jpg";
@@ -155,6 +152,7 @@
                 {
                     $extension = ".png";
                     $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+                    
                     if(file_exists($path_filename_ext))
                     {
                         $extension = ".png";

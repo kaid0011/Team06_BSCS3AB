@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2021 at 04:45 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.30
+-- Generation Time: Jan 12, 2022 at 10:07 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -118,6 +118,18 @@ INSERT INTO `publicnb_pages` (`publicNBPage_ID`, `publicNB_ID`, `pageInput`, `pa
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `publicpage_reacts`
+--
+
+CREATE TABLE `publicpage_reacts` (
+  `reaction_ID` int(11) NOT NULL,
+  `accountVisitor_ID` int(11) NOT NULL,
+  `publicNBPage_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `public_notebook`
 --
 
@@ -137,20 +149,6 @@ INSERT INTO `public_notebook` (`publicNB_ID`, `user_ID`, `publicPages_Count`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reaction`
---
-
-CREATE TABLE `reaction` (
-  `reaction_ID` int(11) NOT NULL,
-  `accountVisitor_ID` int(11) NOT NULL,
-  `reactCategory` enum('Sticky Note','Public Notebook Page') NOT NULL,
-  `stickyNotes_ID` int(11) NOT NULL,
-  `publicNBPage_ID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `report`
 --
 
@@ -160,11 +158,23 @@ CREATE TABLE `report` (
   `reportedUser_ID` int(11) NOT NULL,
   `reported_ID` int(11) NOT NULL,
   `type` enum('Sticky Notes','Public Notebook') NOT NULL,
-  `reportCategory` enum('Violence','Harassment','Suicide or Self Injury','False Information','Hate Speech','Terrorism','Something else') DEFAULT NULL,
+  `reportCategory` enum('Violence','Harassment','Suicide or Self Injury','False Information','Terrorism','Something else') DEFAULT NULL,
   `reportDetails` text DEFAULT NULL,
   `reportDate` date DEFAULT NULL,
   `staff_Comment` text DEFAULT NULL,
   `reportStatus` enum('For Review','Reviewed') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stickynotes_reacts`
+--
+
+CREATE TABLE `stickynotes_reacts` (
+  `reaction_ID` int(11) NOT NULL,
+  `accountVisitor_ID` int(11) NOT NULL,
+  `stickyNotes_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -269,6 +279,14 @@ ALTER TABLE `publicnb_pages`
   ADD KEY `publicNB_ID` (`publicNB_ID`);
 
 --
+-- Indexes for table `publicpage_reacts`
+--
+ALTER TABLE `publicpage_reacts`
+  ADD PRIMARY KEY (`reaction_ID`),
+  ADD KEY `accountVisitor_ID` (`accountVisitor_ID`),
+  ADD KEY `publicNBPage_ID` (`publicNBPage_ID`);
+
+--
 -- Indexes for table `public_notebook`
 --
 ALTER TABLE `public_notebook`
@@ -278,21 +296,20 @@ ALTER TABLE `public_notebook`
   ADD KEY `user_ID` (`user_ID`);
 
 --
--- Indexes for table `reaction`
---
-ALTER TABLE `reaction`
-  ADD PRIMARY KEY (`reaction_ID`),
-  ADD KEY `accountVisitor_ID` (`accountVisitor_ID`),
-  ADD KEY `stickyNotes_ID` (`stickyNotes_ID`),
-  ADD KEY `publicNBPage_ID` (`publicNBPage_ID`);
-
---
 -- Indexes for table `report`
 --
 ALTER TABLE `report`
   ADD PRIMARY KEY (`report_ID`),
   ADD KEY `user_ID` (`user_ID`),
   ADD KEY `reportedUser_ID` (`reportedUser_ID`);
+
+--
+-- Indexes for table `stickynotes_reacts`
+--
+ALTER TABLE `stickynotes_reacts`
+  ADD PRIMARY KEY (`reaction_ID`),
+  ADD KEY `accountVisitor_ID` (`accountVisitor_ID`),
+  ADD KEY `stickyNotes_ID` (`stickyNotes_ID`);
 
 --
 -- Indexes for table `sticky_notes`
@@ -348,22 +365,28 @@ ALTER TABLE `publicnb_pages`
   MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `publicpage_reacts`
+--
+ALTER TABLE `publicpage_reacts`
+  MODIFY `reaction_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `public_notebook`
 --
 ALTER TABLE `public_notebook`
   MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `reaction`
---
-ALTER TABLE `reaction`
-  MODIFY `reaction_ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
   MODIFY `report_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `stickynotes_reacts`
+--
+ALTER TABLE `stickynotes_reacts`
+  MODIFY `reaction_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sticky_notes`
@@ -421,18 +444,17 @@ ALTER TABLE `publicnb_pages`
   ADD CONSTRAINT `publicnb_pages_ibfk_1` FOREIGN KEY (`publicNB_ID`) REFERENCES `public_notebook` (`publicNB_ID`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `publicpage_reacts`
+--
+ALTER TABLE `publicpage_reacts`
+  ADD CONSTRAINT `publicpage_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `public_notebook` (`user_ID`),
+  ADD CONSTRAINT `publicpage_reacts_ibfk_2` FOREIGN KEY (`publicNBPage_ID`) REFERENCES `publicnb_pages` (`publicNBPage_ID`);
+
+--
 -- Constraints for table `public_notebook`
 --
 ALTER TABLE `public_notebook`
   ADD CONSTRAINT `public_notebook_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE;
-
---
--- Constraints for table `reaction`
---
-ALTER TABLE `reaction`
-  ADD CONSTRAINT `reaction_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `user` (`user_ID`),
-  ADD CONSTRAINT `reaction_ibfk_2` FOREIGN KEY (`stickyNotes_ID`) REFERENCES `sticky_notes` (`stickyNotes_ID`),
-  ADD CONSTRAINT `reaction_ibfk_3` FOREIGN KEY (`publicNBPage_ID`) REFERENCES `publicnb_pages` (`publicNBPage_ID`);
 
 --
 -- Constraints for table `report`
@@ -440,6 +462,13 @@ ALTER TABLE `reaction`
 ALTER TABLE `report`
   ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`),
   ADD CONSTRAINT `report_ibfk_2` FOREIGN KEY (`reportedUser_ID`) REFERENCES `user` (`user_ID`);
+
+--
+-- Constraints for table `stickynotes_reacts`
+--
+ALTER TABLE `stickynotes_reacts`
+  ADD CONSTRAINT `stickynotes_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `sticky_notes` (`user_ID`),
+  ADD CONSTRAINT `stickynotes_reacts_ibfk_2` FOREIGN KEY (`stickyNotes_ID`) REFERENCES `sticky_notes` (`stickyNotes_ID`);
 
 --
 -- Constraints for table `sticky_notes`

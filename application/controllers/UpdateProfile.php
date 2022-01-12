@@ -1,5 +1,6 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
+    
     $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/upload/";
     class UpdateProfile extends CI_Controller
     {
@@ -13,14 +14,12 @@
 
         public function index() 
         {
-
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
         }
         
         public function updatepassword() 
         {
-            
             $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
             
@@ -30,7 +29,6 @@
                 $this->form_validation->set_rules('oldPassword', 'Old Password', 'required|trim');
                 $this->form_validation->set_rules('newPassword', 'New Password', 'required|trim');
                 $this->form_validation->set_rules('confirmPassword', 'Confirm Password', 'required|matches[newPassword]');    #checks if confirm_password matches password
-
                 $oldPass = md5($this->input->post('oldPassword'));
 
                 if($originPass == $oldPass)
@@ -38,21 +36,19 @@
                     if($this->form_validation->run())
                     {
                         $newPass = md5($this->input->post('newPassword'));
-
                         $this->UpdateProfile_model->updatePassword($newPass, $id);
-                            echo("Password changed successfully");
+                        echo("Password changed successfully");
 
-                            $userdata = array(
+                        $userdata = array(
                                 'userName' => $this->session->userdata('userName'),
                                 'displayName' => $this->session->userdata('displayName'),
                                 'email' => $this->session->userdata('email'),
                                 'password' => $newPass
                             );
                 
-                            $this->session->set_userdata($userdata);
-
-                            $data['navbar'] = 'main';
-                            $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data); 
+                        $this->session->set_userdata($userdata);
+                        $data['navbar'] = 'main';
+                        $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data); 
                     }
                     else 
                     {
@@ -63,7 +59,6 @@
                 else
                 {
                         $this->session->set_flashdata('message', 'Invalid Password');
-
                         $data['navbar'] = 'main';
                         $this->sitelayout->loadTemplate('pages/navbar/updatepassword', $data);
                 }
@@ -79,6 +74,7 @@
         public function deleteaccount()
         {
             $action = $this->input->post('action');
+
             if($action == "YES")
             {
                 $id = $this->session->userdata('user_ID');
@@ -104,6 +100,7 @@
         {
   
             $action = $this->input->post('action');
+
             if($action == 'Change Password')
             {
                 $data['navbar'] = 'main';
@@ -128,7 +125,6 @@
                 $id = $this->session->userdata('user_ID');
                 $userName = $this->input->post('userName');
                 $this->UpdateProfile_model->updateUsername($userName, $id);
-
                 $userdata = array(
                     'userName' => $this->input->post('userName'),
                     'displayName' => $this->session->userdata('displayName'),
@@ -156,7 +152,6 @@
                 $id = $this->session->userdata('user_ID');
                 $displayName = $this->input->post('displayName');
                 $this->UpdateProfile_model->updateDisplayname($displayName, $id);
-
                 $userdata = array(
                     'userName' => $this->session->userdata('userName'),
                     'displayName' => $this->input->post('displayName') ,
@@ -185,7 +180,6 @@
                 $id = $this->session->userdata('user_ID');
                 $verification_key = random_string('numeric', 6); 
                 $this->UpdateProfile_model->updateVerificationKey($verification_key, $id);
-
                 $userdata = array(
                     'userName' => $this->session->userdata('userName'),
                     'displayName' => $this->session->userdata('displayName') ,
@@ -194,7 +188,6 @@
                 );
 
                 $this->session->set_userdata($userdata); 
-
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
             }
@@ -229,6 +222,7 @@
 
                 $id = $this->session->userdata('user_ID');
                 $query = $this->UpdateProfile_model->get_Email($id);
+
                 foreach($query->result() as $row)
                 {
                     $query = $row->email;
@@ -242,7 +236,6 @@
                 );
 
                 $this->session->set_userdata($userdata); 
-
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
             }
@@ -252,7 +245,6 @@
         {
             $verification_Key = $this->input->post('ver_code');
             $username = $this->session->userdata('userName');
-
             $response = $this->UpdateProfile_model->verify($verification_Key, $username);
            
             if($response)
@@ -274,7 +266,6 @@
             else
             {
                 $this->session->set_flashdata('message', 'Invalid Code');
-
                 $userdata = array(
                     'userName' => $response->userName,
                     'displayName' => $response->displayName,
@@ -283,7 +274,6 @@
                 );
 
                 $this->session->set_userdata($userdata); 
-
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
             }
@@ -306,7 +296,6 @@
         {
             $key = $this->session->userdata('verification_Key');
             $name = $this->session->userdata('userName');
-
             $subject = "Verify your email";
             $message = "
             Heads up! You recently tried to update your account settings! Use the code below in order to verify it's you to accept the changes.
@@ -329,15 +318,11 @@
             
             $this->load->library('email');
             $this->email->initialize($config);
-
             $this->email->set_newline("\r\n");
-            
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($to);
-
             $this->email->subject($subject);
             $this->email->message($message);
-
             $send = $this->email->send();
 
             if($send)
@@ -350,16 +335,18 @@
         public function image()
         {
             $action = $this->input->post('action');
+
             if($action == 'Update Image')
             {
                 $id = $this->session->userdata('user_ID');
+
                 if(($_FILES['file']['name'] != ""))
                 {
-            
                     $file = $_FILES['file']['name'];
                     $path = pathinfo($file);
                     $filename = $id."_profileImage";
                     $ext = $path['extension'];
+
                     if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
                     {
                         $temp_name = $_FILES['file']['tmp_name'];
@@ -428,6 +415,7 @@
             $filename = $id."_profileImage";
             $extension = ".jpg";
             $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+
             if(file_exists($path_filename_ext))
             {
                 $extension = ".jpg";

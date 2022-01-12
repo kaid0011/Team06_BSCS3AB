@@ -73,6 +73,7 @@
                     ?>
                     <div class="col mr-auto  h5">
                       <!-- New Page Button -->
+                      
                       <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
                         <button class="p-2 btn float-end" style="width:110px;">New Page</button>
                       </a>

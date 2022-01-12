@@ -1,11 +1,13 @@
   <div class="row ms-5">
+    
     <div class="col ms-5 d-flex justify-content-center">
       <!-- New Page Button -->
       <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
         <button class="ms-5 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
       </a>
     </div>
-    <div class="col-2 justify-content-end pe-5 pt-3">
+    <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Back</button>
+    <div class="col-2 justify-content-end pe-5 pt-3">    
       <!-- Timestamp -->
       <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
         <!--changes-->
@@ -80,6 +82,7 @@
                       <a href="<?= base_url(); ?>publicnotebook/updatepublicnotebook/<?php echo $page_ID;?>">
                         <button class="p-2 btn float-end me-4">Update</button>
                       </a>
+
                     </div>
                 </div>
               </div>
@@ -117,6 +120,7 @@
                 <!-- Submit Button-->
                 <div class="col ">
                   <i class="bi bi-star " disabled></i> # of reacts
+                  
                 </div>
               </div>
             </div>

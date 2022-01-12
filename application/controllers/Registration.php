@@ -6,7 +6,6 @@
         public function __construct()
         {
             parent::__construct();
-            
             $this->load->library('form_validation');    #preload form_validation library
             $this->load->model('Registration_model');       #preload Registration_model for registration
             $this->load->model('UpdateProfile_model');    
@@ -45,7 +44,7 @@
             else    #If there is error,
             {
                 $data['navbar'] = 'registration';
-                $this->sitelayout->loadTemplate('pages/registration/registration', $data);                        #load registration page again with error messages.
+                $this->sitelayout->loadTemplate('pages/registration/registration', $data);         #load registration page again with error messages.
             }
 
         }
@@ -54,7 +53,6 @@
         {          
             $data['navbar'] = 'registration';
             $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
-
             $var = $this->input->post();
 
             if(isset($var) && $var != null)
@@ -72,10 +70,12 @@
                 #get a response from Registration_model if insert to database is succesful
                 #pass $data array to model
                 $response = $this->Registration_model->addNewUser($userdata);
+
                 if($response == true)
                 {
                     $userName = $this->input->post('userName');
                     $query = $this->Registration_model->getID($userName);
+
                     foreach($query->result() as $row)
                     {
                         $getID = $row->user_ID;
@@ -127,7 +127,6 @@
         {
             $key = $this->session->userdata('verification_Key');
             $name = $this->session->userdata('userName');
-
             $subject = "Verify your email";
             $message = "
             Welcome to Virtual Diary, ".$name."!
@@ -154,15 +153,11 @@
             
             $this->load->library('email');
             $this->email->initialize($config);
-
             $this->email->set_newline("\r\n");
-            
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($to);
-
             $this->email->subject($subject);
             $this->email->message($message);
-
             $send = $this->email->send();
 
             if($send)

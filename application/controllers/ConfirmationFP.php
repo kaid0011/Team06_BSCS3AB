@@ -6,7 +6,6 @@
         public function __construct()
         {
             parent::__construct();
-            
             $this->load->library('form_validation');
         }
 
@@ -59,7 +58,6 @@
             else
             {
                 $this->session->set_flashdata('message', 'Invalid Code');
-
                 $data['navbar'] = 'login';
                 $this->sitelayout->loadTemplate('pages/authentication/confirmation', $data);
             }
@@ -68,7 +66,6 @@
         public function resendEmail($resend_code)
         {
             $email = $this->session->userdata('email');
-
             $subject = "Forgot Password";
             $message = "
             This is an automated email for providing you a code to reset your password in Virtual Diary.
@@ -90,12 +87,9 @@
             
             $this->load->library('email');
             $this->email->initialize($config);
-
             $this->email->set_newline("\r\n");
-            
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($email);
-
             $this->email->subject($subject);
             $this->email->message($message);
 

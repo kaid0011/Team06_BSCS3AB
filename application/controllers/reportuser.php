@@ -97,6 +97,7 @@
                 );
 
                 $response = $this->ReportUser_model->submitPublicNBReport($data);
+                
                 if($response)
                 {
                     redirect('mainpage');

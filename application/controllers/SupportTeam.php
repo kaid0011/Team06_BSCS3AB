@@ -6,7 +6,6 @@
         public function __construct()
         {
             parent::__construct();
-            
             $this->load->model('SupportTeam_model');
             $this->load->model('UpdateProfile_model');
         }
@@ -20,7 +19,6 @@
         public function reportUserWall()
         {
             $data['viewAllReports'] = $this->SupportTeam_model->viewAllReports();
-
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/supportteam/reportuserwall', $data);
         }
@@ -34,7 +32,6 @@
             {
 
                 $data['viewAllUserReports'] = $this->SupportTeam_model->viewAllUserReports($reportedUser_ID);
-
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/supportteam/findreport', $data);
             }
@@ -51,7 +48,6 @@
                 $data['viewIndivReport'] = $this->SupportTeam_model->viewIndivReport($report_ID);
                 $data['viewAllUserReports'] = $this->SupportTeam_model->viewAllUserReports($reportedUser_ID);
                 $data['getReportedUserData'] = $this->SupportTeam_model->getReportedUserData($reportedUser_ID);         
-
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/supportteam/updateindivreport', $data);
             }
@@ -77,6 +73,7 @@
             else if($action == 'Delete')
             {
                 $response = $this->SupportTeam_model->deleteReport($report_ID);
+                
                 if($response)
                 {
                     $this->reportUserWall();

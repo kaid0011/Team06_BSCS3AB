@@ -15,7 +15,7 @@
                   echo '<div class="alert alert-danger">' . $this->session->flashdata("message") . '</div>';
               }
           ?>
-          <div class="mb-3 text-start text-secondary" style="width: 600px;">
+          <div class="mb-3 text-start text-secondary inputbox">
             <label for="exampleloldpassword" class="form-label ps-2">Old Password</label>
             <input type="password" class="form-control mb-1" id="exampleoldpassword" aria-describedby="emailHelp" name="oldPassword" value="" />
             <span class="text-danger"><?php echo form_error('oldPassword'); ?></span> <!-- print error message if there is any -->
@@ -38,9 +38,9 @@
 
           <div class="col-md pt-3 d-flex justify-content-end align-items-center">
             <!-- Back Button -->
-            <input type="submit" name="action" value="Back" style="background-color: #f0b63a; width: 75px;" class="btn btn-sm border border-3 border-dark btn-end p-2 me-3">
+            <input type="submit" name="action" value="Back" style="background-color: #f0b63a; width:75px;" class="btn border border-2 border-dark me-3">
             <!-- Update Button -->
-            <input type="submit" name="action" value="Update" style="background-color: #f0b63a; width: 75px;" class="btn btn-sm border border-3 border-dark btn-end p-2">
+            <input type="submit" name="action" value="Update" style="background-color: #f0b63a; width:75px;" class="btn border border-2 border-dark">
           </div>
         </form>
         </p>
@@ -50,6 +50,11 @@
 </section>
 
 <style>
+  @media (min-width: 768px) {
+    .inputbox {
+      width: 600px;
+    }
+  }
   .scrollspy-example {
     height: 300px;
     overflow-y: scroll;

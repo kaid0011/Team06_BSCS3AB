@@ -8,75 +8,72 @@
                   foreach($viewPageNotebook->result() as $row)
                   { 
                     $theme = $row->pageTheme;
-                        if ($theme == "Dark") 
-                        {
-                          $themecolor = '#495057';
-                          $themecardcolor = '#f8f9fa';
-                          $themecardbgcolor = '#212529';
-                          $fontcolor = '#f8f9fa';
-                        } 
-                        else if ($theme == "Light") 
-                        {
-                          $themecolor = '#e9ecef';
-                          $themecardcolor = '#212529';
-                          $themecardbgcolor = '#adb5bd';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Apple") 
-                        {
-                          $themeurl = "assets/images/themes/Theme1_Apple.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Applecard.jpg';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Orange") 
-                        {
-                          $themeurl = "assets/images/themes/Theme2_Orange.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Orangecard.jpg';
-                          $fontcolor = '#212529';
-                        } 
-                        else if ($theme == "Kiwi") 
-                        {
-                          $themeurl = "assets/images/themes/Theme3_Kiwi.jpg";
-                          $themecolor = "transparent";
-                          $themecardcolor = '#212529';
-                          $themecardbgurl = 'assets/images/themes/Kiwicard.jpg';
-                          $fontcolor = '#212529';
-                        }
+                      if ($theme == "Dark") 
+                      {
+                        $themeurl = "assets/images/themes/Theme2_Dark.jpg";
+                        $themecardcolor = '#f8f9fa';
+                        $themecardbgurl = 'assets/images/themes/Darkcard.jpg';
+                        $fontcolor = '#f8f9fa';
+                      } 
+                      else if ($theme == "Light") 
+                      {
+                        $themeurl = "assets/images/themes/Theme1_Light.jpg";
+                        $themecardcolor = '#212529';
+                        $themecardbgurl = 'assets/images/themes/LightCard.jpg';
+                        $fontcolor = '#212529';
+                      } 
+                      else if ($theme == "Apple") 
+                      {
+                        $themeurl = "assets/images/themes/Theme3_Apple.jpg";
+                        $themecardcolor = '#212529';
+                        $themecardbgurl = 'assets/images/themes/AppleCard.jpg';
+                        $fontcolor = '#212529';
+                      } 
+                      else if ($theme == "Orange") 
+                      {
+                        $themeurl = "assets/images/themes/Theme4_Orange.jpg";
+                        $themecardcolor = '#212529';
+                        $themecardbgurl = 'assets/images/themes/OrangeCard.jpg';
+                        $fontcolor = '#212529';
+                      } 
+                      else if ($theme == "Kiwi") 
+                      {
+                        $themeurl = "assets/images/themes/Theme5_Kiwi.jpg";
+                        $themecardcolor = '#212529';
+                        $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
+                        $fontcolor = '#212529';
+                      }
                   }
             ?>
             <div class="row">
               <div class="col mr-auto  h5">
                 <div class="mb-2">Theme</div>
 
-                <form method="post" id ="updateform" action="<?=base_url('privatenotebook/updateprivatepage')?>">
+                <form method="post" id ="updateform" enctype='multipart/form-data' action="<?=base_url('privatenotebook/updateprivatepage')?>">
                 <div class="row">           
                   <!-- Light Theme Button -->
                   <div class="col">
-                    <input type="button" onclick="changeColor('#e9ecef', '#adb5bd', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Light.jpg')?>)', 'url(<?=base_url('assets/images/themes/LightCard.jpg')?>)', '#212529', 'Light');" value ="Light" class="p-2 btn"></input>
                     <!-- <button class="p-2 btn" disabled>Light</button> -->
                     </div>
                   <!-- Dark Theme Button -->
                   <div class="col">
-                  <input type="button" onclick="changeColor('#495057', '#212529', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
+                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Dark.jpg')?>)', 'url(<?=base_url('assets/images/themes/DarkCard.jpg')?>)', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
                     <!-- <button class="p-2 btn" disabled>Dark</button> -->
                   </div>                   
                   <!-- Apple Theme Button -->
                   <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/Applecard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
+                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/AppleCard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
                     <!-- <button class="p-2 btn" disabled>Apple</button> -->
                     </div>
                   <!-- Orange Theme Button -->
                   <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/Orangecard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
+                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme4_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/OrangeCard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
                     <!-- <button class="p-2 btn" disabled>Orange</button> -->
                     </div>
                   <!-- Kiwi Theme Button -->
                   <div class="col">
-                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
+                  <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme5_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/KiwiCard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
                     <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
                   </div>
                 </div>
@@ -89,7 +86,7 @@
                   <div class="col mt-2">
                     <input type="time" id="appt" name="appt" value="<?php echo $row->pageTimer; ?>">
                     <!-- Theme cheat hidden -->
-                    <input type="text" name="theme" id="submittext" class="btn float-end mt-1" hidden value="<?php echo $row->pageTheme ?>">
+                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1"  hidden value="<?php echo $row->pageTheme ?>">
                     <!-- <input type="time" id="appt" name="appt"  min="09:00" max="18:00" disabled> -->
                   </div>
                   <div class="col ">                  
@@ -113,14 +110,20 @@
                   }
                 ?>     
                 <hr id="inputbox" class="bg-light">
+                <input type="file" name="file" id="file"/>
+                <input type="button" value="Remove" name="action" id="remove" class="p-2 btn mt-1" onclick="removeImage()"/>
+                <input type="text" name="remove" id="removeimage" class="btn float-end mt-1"  hidden value="">
                 <!-- Button-->
-                <input type="submit" value= "Update" name="action" onclick="updatePage()" class="p-2 btn float-end mt-1">
+                <input type="submit" value= "Update" name="action" class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
                 <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
             
                   </a>
+                </form>
+                    
                 </div>
-              </form>
+              
+              
             </div>
           </div>
         </div>
@@ -184,19 +187,17 @@
 <script>
   const name = document.querySelector(".name");
 
-  function changeColor(color, cardcolor, textcolor, theme) {
-    document.body.style.background = color;
-    document.getElementById("card").style.background = cardcolor;
-    document.getElementById("card").style.color = textcolor;
-    document.getElementById("submittext").value = theme;
-    
-  }
-
   function changeImgFruits(color, cardcolor, textcolor, theme) {
     document.body.style.backgroundImage = color;
     document.getElementById("card").style.backgroundImage = cardcolor;
     document.getElementById("card").style.color = textcolor;
-    document.getElementById("submittext").value = theme;
+    document.getElementById("submittheme").value = theme;
   }
 
+  function removeImage() {
+    document.getElementById("removeimage").value = "Remove";
+    document.getElementById("remove").style.backgroundColor = "gray";
+  }
+
+  
 </script>

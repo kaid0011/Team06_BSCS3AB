@@ -6,7 +6,6 @@
         public function __construct()
         {
             parent::__construct();
-            
             $this->load->library('form_validation');
         }
 
@@ -59,7 +58,6 @@
             else
             {
                 $this->session->set_flashdata('message', 'Invalid Code');
-
                 $data['navbar'] = 'login';
                 $this->sitelayout->loadTemplate('pages/authentication/confirmation', $data);
             }
@@ -68,13 +66,14 @@
         public function resendEmail($resend_code)
         {
             $email = $this->session->userdata('email');
-
             $subject = "Forgot Password";
             $message = "
-            <h3>Hello!</h3>
-            <p>Here is your verification code.</p><br>
-            <h4>$resend_code</h4>
-            ";      #will change laturrr
+            This is an automated email for providing you a code to reset your password in Virtual Diary.
+            ".$resend_code."
+
+            If this request is done by you, take the code above in order to progress.
+            If you did not request this, ignore this message.
+            ";
 
             $config = array(
                 'protocol'  => 'smtp',
@@ -88,12 +87,9 @@
             
             $this->load->library('email');
             $this->email->initialize($config);
-
             $this->email->set_newline("\r\n");
-            
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($email);
-
             $this->email->subject($subject);
             $this->email->message($message);
 
@@ -103,11 +99,6 @@
             {
                 $data['navbar'] = 'login';
                 $this->sitelayout->loadTemplate('pages/authentication/changepassword', $data);
-            }
-            else
-            {
-                echo "Error sending email";
-                #will change laturrr
             }
         }
     }

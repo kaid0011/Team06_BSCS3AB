@@ -1,4 +1,4 @@
-<form method="post" id ="updateform" action="<?=base_url('publicnotebook/createPublicPage')?>"> 
+<form method="post" id ="updateform" enctype='multipart/form-data' action="<?=base_url('publicnotebook/createPublicPage') ?>"> 
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -12,27 +12,27 @@
                 
                     <!-- Light Theme Button -->
                     <div class="col">
-                      <input type="button" onclick="changeColor('#e9ecef', '#adb5bd', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
+                      <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Light.jpg')?>)', 'url(<?=base_url('assets/images/themes/LightCard.jpg')?>)', '#212529', 'Light' );" value ="Light" class="p-2 btn"></input>
                       <!-- <button class="p-2 btn" disabled>Light</button> -->
                       </div>
                     <!-- Dark Theme Button -->
                     <div class="col">
-                    <input type="button" onclick="changeColor('#495057', '#212529', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Dark.jpg')?>)', 'url(<?=base_url('assets/images/themes/DarkCard.jpg')?>)', '#f8f9fa', 'Dark');" value ="Dark" class="p-2 btn"></input>
                       <!-- <button class="p-2 btn" disabled>Dark</button> -->
                     </div>                   
                     <!-- Apple Theme Button -->
                     <div class="col">
-                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme1_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/Applecard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Apple.jpg')?>)', 'url(<?=base_url('assets/images/themes/AppleCard.jpg')?>)', '#212529', 'Apple');"  value ="Apple" class="p-2 btn"></input>
                       <!-- <button class="p-2 btn" disabled>Apple</button> -->
                       </div>
                     <!-- Orange Theme Button -->
                     <div class="col">
-                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme2_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/Orangecard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme4_Orange.jpg')?>)', 'url(<?=base_url('assets/images/themes/OrangeCard.jpg')?>)', '#212529', 'Orange');" value ="Orange" class="p-2 btn"></input>
                       <!-- <button class="p-2 btn" disabled>Orange</button> -->
                       </div>
                     <!-- Kiwi Theme Button -->
                     <div class="col">
-                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme3_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/Kiwicard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
+                    <input type="button" onclick="changeImgFruits('url(<?=base_url('assets/images/themes/Theme5_Kiwi.jpg')?>)', 'url(<?=base_url('assets/images/themes/KiwiCard.jpg')?>)', '#212529', 'Kiwi');" value ="Kiwi" class="p-2 btn"></input>
                       <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
                     </div>
                 </div>
@@ -50,13 +50,15 @@
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                     <textarea name="input" class="form-control" id="" rows="13"></textarea> 
                 <hr id="inputbox" class="bg-light">
+                <input type="file" name="file" id="file" class="custom-file-input me-3" accept="image/png, image/jpg, image/jpeg"/>
+                <input type="button" value="Remove" name="action" id="remove" class="p-2 btn mt-1" onclick="removeImage()"/>
+                <input type="text" name="remove" id="removeimage" class="btn float-end mt-1"  hidden value="">
                 <!-- Button-->
                 <input type="submit" value= "Submit" name="action"  class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
-                <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">
-            
-                  </a>
+                <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">      
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -64,7 +66,7 @@
     </div>
   </div>
 </section>
-</form>
+
 
 <style>
   body {
@@ -132,24 +134,45 @@
     color: #dee2e6;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
   }
+  .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Choose Image';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 11px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 600;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
 </style>
 
 <script>
   const name = document.querySelector(".name");
-
-  function changeColor(color, cardcolor, textcolor, theme) {
-    document.getElementById("submittheme").value = theme;
-    document.body.style.background = color;
-    document.getElementById("card").style.background = cardcolor;
-    document.getElementById("card").style.color = textcolor;
-    
-  }
 
   function changeImgFruits(color, cardcolor, textcolor, theme) {
     document.getElementById("submittheme").value = theme;
     document.body.style.backgroundImage = color;
     document.getElementById("card").style.backgroundImage = cardcolor;
     document.getElementById("card").style.color = textcolor;
+  }
+
+  function removeImage() {
+    document.getElementById("removeimage").value = "Remove";
+    document.getElementById("remove").style.backgroundColor = "gray";
   }
 
 </script>

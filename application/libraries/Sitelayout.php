@@ -18,6 +18,7 @@ class Sitelayout
         $layout['header'] = $this->CI->load->view('header', null, true);
         $layout['navbar'] = $this->CI->load->view('navbar', array("navbar" => $data['navbar']), true);
         $layout['footer'] = $this->CI->load->view('footer', null, true);
+        $layout['gototop'] = $this->CI->load->view('gototop', null, true);
 
         $layout['content'] = $this->CI->load->view($content, $data, true);
 

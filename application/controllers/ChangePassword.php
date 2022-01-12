@@ -55,11 +55,6 @@
                 $data['navbar'] = 'login';
                 $this->sitelayout->loadTemplate('pages/authentication/login', $data);
             }
-            else
-            {
-                echo 'Error changing password';
-                #will change laturrr
-            }
         }
     }
 ?>

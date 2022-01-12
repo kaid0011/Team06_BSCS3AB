@@ -17,9 +17,13 @@
             return $query;
         }
 
-        public function createPublicPage($data)
+        public function createPublicPage($id, $input, $pageTheme, $pageReact_Count)
         {
-            $this->db->insert('publicnb_pages', $data);
+            $this->db->set('publicNB_ID', $id);
+            $this->db->set('pageInput', $input);
+            $this->db->set('pageTheme', $pageTheme);
+            $this->db->set('pageReact_Count', $pageReact_Count);
+            $this->db->insert('publicnb_pages');
             return true;
         }
 
@@ -66,6 +70,53 @@
             $this->db->where('publicNBPage_ID', $page_ID);
             $result = $this->db->delete('publicnb_pages');
             return true;
+        }
+
+        public function getImage($data)
+        {
+            $id = $this->session->userdata('user_ID');
+            $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
+            $filename = $id."_".$data."_publicNotebookImage";
+            $extension = ".jpg";
+            $path_filename_ext = $target_directory.$filename.$extension;
+            if(file_exists($path_filename_ext))
+            {
+                $extension = ".jpg";
+            }
+            else
+            {
+                $extension = ".jpeg";
+                $path_filename_ext = $target_directory.$filename.$extension;
+                if(file_exists($path_filename_ext))
+                {
+                            
+                    $extension = ".jpeg";
+                }
+                else
+                {
+                    $extension = ".png";
+                }
+            }
+                $path_filename_ext = $target_directory.$filename.$extension;
+                $file = $id."_".$data."_publicNotebookImage".$extension;
+                if(file_exists($path_filename_ext))
+                {
+                    return "assets/images/publicnotebook/$file";
+                }
+                else
+                {
+                    return "No image";
+                }
+        }
+
+        public function getPageUsingDate($user, $date)
+        {
+            $this->db->where('publicNB_ID' , $user);
+            $this->db->where('pageDate', $date);
+            $this->db->select('publicNBPage_ID, pageInput, pageTheme');
+            $this->db->order_by('publicNBPage_ID', 'desc');
+            $query = $this->db->get('publicnb_pages');
+            return $query;
         }
     }
 ?>

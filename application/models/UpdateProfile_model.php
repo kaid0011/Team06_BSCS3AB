@@ -1,5 +1,5 @@
 <?php
-
+        
         class UpdateProfile_model extends CI_Model
         {
                 public function __construct(){
@@ -8,8 +8,8 @@
                         $this->load->database();
                 }
 
-                public function get_Email($id){
-
+                public function get_Email($id)
+                {
                         $this->db->where('user_ID', $id);
                         $this->db->select('email');
                         $query = $this->db->get("user");
@@ -136,6 +136,44 @@
                         return true;
                     }
                 }
+
+                public function getImage()
+                {
+                    $id = $this->session->userdata('user_ID');
+                    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/upload/";
+                    $filename = $id."_profileImage";
+                    $extension = ".jpg";
+                    $path_filename_ext = $target_directory.$filename.$extension;
+                    if(file_exists($path_filename_ext))
+                    {
+                        $extension = ".jpg";
+                    }
+                    else
+                    {
+                        $extension = ".jpeg";
+                        $path_filename_ext = $target_directory.$filename.$extension;
+                        if(file_exists($path_filename_ext))
+                        {
+                            
+                            $extension = ".jpeg";
+                        }
+                        else
+                        {
+                            $extension = ".png";
+                        }
+                    }
+                    $path_filename_ext = $target_directory.$filename.$extension;
+                    $file = $id."_profileImage".$extension;
+                    if(file_exists($path_filename_ext))
+                        {
+                            return "assets/images/upload/$file";
+                        }
+                        else
+                        {
+                            return "assets/images/upload/profile.png";
+                        }
+                }
+
         }
 
 ?>

@@ -6,9 +6,9 @@
         public function __construct()
         {
             parent::__construct();
-            
             $this->load->library('form_validation');    #preload form_validation library
             $this->load->model('Registration_model');       #preload Registration_model for registration
+            $this->load->model('UpdateProfile_model');    
         }
 
         public function index() {
@@ -23,17 +23,17 @@
             # [name] = to be used in error meesage
             # [rules] = set rules like required, is_unique, etc.
 
-            $this->form_validation->set_rules('userName', 'Username', 'required|trim|min_length[3]|max_length[12]|is_unique[user.userName]',
+            $this->form_validation->set_rules('userName', 'Username', 'required|trim|min_length[4]|max_length[15]|alpha_dash|is_unique[user.userName]',
                 array(
                     'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in userName
                 ));
-            $this->form_validation->set_rules('displayName', 'Display Name', 'required|trim');
-            $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]',
+            $this->form_validation->set_rules('displayName', 'Display Name', 'required|trim|min_length[1]|max_length[20]');
+            $this->form_validation->set_rules('email', 'E-mail Address', 'required|trim|valid_email|is_unique[user.email]',
                 array(
-                    'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in email
+                    'is_unique'     => 'This %s already exists.',    #custom error message for is_unique in email
                 ));
-            $this->form_validation->set_rules('password', 'Password', 'required');
-            $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');    #checks if confirm_password matches password
+            $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]|max_length[32]');
+            $this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]|min_length[8]|max_length[32]');    #checks if confirm_password matches password
 
             if($this->form_validation->run())   #If no error,
             {
@@ -44,7 +44,7 @@
             else    #If there is error,
             {
                 $data['navbar'] = 'registration';
-                $this->sitelayout->loadTemplate('pages/registration/registration', $data);                        #load registration page again with error messages.
+                $this->sitelayout->loadTemplate('pages/registration/registration', $data);         #load registration page again with error messages.
             }
 
         }
@@ -53,7 +53,6 @@
         {          
             $data['navbar'] = 'registration';
             $this->sitelayout->loadTemplate('pages/registration/verification', $data); 
-
             $var = $this->input->post();
 
             if(isset($var) && $var != null)
@@ -71,10 +70,12 @@
                 #get a response from Registration_model if insert to database is succesful
                 #pass $data array to model
                 $response = $this->Registration_model->addNewUser($userdata);
+
                 if($response == true)
                 {
                     $userName = $this->input->post('userName');
                     $query = $this->Registration_model->getID($userName);
+
                     foreach($query->result() as $row)
                     {
                         $getID = $row->user_ID;
@@ -117,11 +118,6 @@
                         }
                     }
                 }
-                else
-                {
-                    echo "Error";
-                    #will change laturrr
-                }
             }
             $data['navbar'] = 'registration';
             $this->sitelayout->loadTemplate('pages/registration/registration', $data);
@@ -131,12 +127,17 @@
         {
             $key = $this->session->userdata('verification_Key');
             $name = $this->session->userdata('userName');
-
             $subject = "Verify your email";
             $message = "
-            <h3>Hello, ".$name."!</h3>
-            <p>Here is your verification code.</p><br>
-            <h4>$key</h4>
+            Welcome to Virtual Diary, ".$name."!
+ 
+            Thank you for joining our community! In order to verify your account creation, 
+            use the code below on your page registration!
+
+            ".$key."
+
+            You’re receiving this email because you recently tried to create an account in Virtual Dary. 
+            If this wasn’t you, please ignore this email.
             ";
             $to = $this->input->post('email');
 
@@ -152,15 +153,11 @@
             
             $this->load->library('email');
             $this->email->initialize($config);
-
             $this->email->set_newline("\r\n");
-            
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($to);
-
             $this->email->subject($subject);
             $this->email->message($message);
-
             $send = $this->email->send();
 
             if($send)
@@ -173,5 +170,16 @@
                 echo "Error";
             }
         }
+
+        public function termsofservice() {
+            $data['navbar'] = 'registration';
+            $this->sitelayout->loadTemplate('pages/registration/termsofservice', $data); 
+        }
+        
+        public function privacypolicy() {
+            $data['navbar'] = 'registration';
+            $this->sitelayout->loadTemplate('pages/registration/privacypolicy', $data); 
+        }
     }
+
 ?>

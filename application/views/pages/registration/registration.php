@@ -42,7 +42,7 @@
             <!-- By signing up -->
             <div class="mb-3">
               <label class="form-check-label" for="exampleCheck1">
-                <p class="text-muted"> By signing up, you agree to the <a href="#" class="text-reset"> Terms of Service </a> and <a href="#" class="text-reset">Privacy Policy</a> </p>
+                <p class="text-muted"> By signing up, you agree to the <a href="<?=base_url('registration/termsofservice')?>" class="text-reset"> Terms of Service </a> and <a href="<?=base_url('registration/privacypolicy')?>" class="text-reset">Privacy Policy</a> </p>
               </label>
             </div>
             </div>
@@ -52,7 +52,7 @@
             </div>
 
             <!-- Register Button -->
-            <input type="submit" name="signupbtn" value="Register" style="background-color: #f0b63a;" class="btn-lg border border-3 border-dark"></input>
+            <input type="submit" name="signupbtn" value="Register" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark"></input>
 
           </form>
         </p>

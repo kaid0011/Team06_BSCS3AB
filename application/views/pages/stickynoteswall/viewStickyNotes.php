@@ -78,10 +78,10 @@
       ?>
           <div class="col justify-content-center">
             <div class="col justify-content-center">
-              <div class="card responsive stickyNote">
+              <div class="card responsive stickyNote" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
                 <!-- style="@media (min-width: 989px) {width: 25vw; height: 390px;}  @media (max-width: 990px) {width: 70vw; height: 390px;}" -->
                 <form action="<?= base_url('reportuser/getnotedata') ?>" method="post" >
-                  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0">
+                  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
                     <div class="card-body text-center" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
                       <div class="h1 mb-3" > 
                       </div>
@@ -93,13 +93,13 @@
                       <p class="card-text py-5 stickyNotesHeight">
                         <?php echo $row->noteInput; ?><br>
                       </p>
-                      <!-- End-->
-                      <div class="reactButton">
+                      <div class="reactButton pb-2 pe-3" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
                         <div>
                           <i class="bi bi-star h4" disabled></i>
                         </div>
                         <input type="submit" name="action" value="Report" class="d-flex ms-4 me-2" style="text-decoration: none;">
                       </div>
+                      <!-- End-->
                 </form>
               </div>
             </div>
@@ -201,8 +201,11 @@
   }
 
   .reactButton {
+    position:absolute;
+    bottom: 0px;
     justify-content: flex-end;
-    display: flex;
+    display: flex;  
+    right: 0px;
   }
 
   .stickyNote {

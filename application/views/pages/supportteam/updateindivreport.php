@@ -84,23 +84,23 @@
                     Categories: <br><span class="text-warning fw-normal"><?php echo $row->reportCategory; ?></span>
                 </p>
                 <p class="lead text-center mb-1 text-white p-2 fw-bold">Details: </p>
-                <p class="lead text-center mb-5 text-dark p-2 fw-normal bg-light border border-3 border-dark">
+                <p class="lead text-center mb-5 text-dark p-2 responsive justify-content-center fw-normal bg-light border border-3 border-dark">
                     <span>
                         <?php echo $row->reportDetails; ?>
                     </span>
                 </p>
                     <div>
                         <label for="exampleInputEmail1" class="lead fw-bold p-2">Comments:</label>
-                        <textarea name="comment" class="form-control" id="" rows="3"></textarea>    
+                        <textarea name="comment" class="form-control p-2 responsive justify-content-center border border-3 border-dark" id="" rows="3" ></textarea>    
                     </div>
             </div>
+            <div class="d-flex justify-content-center mt-5" style="right:0;">
+            <!-- Back -->
+            <input type="submit" name="action" value="Back" style="background-color: #f0b63a;" class="btn border border-3 border-dark me-5">
             <!-- Update -->
-            <div class="text-end mb-4 mt-5">
                 <input type="submit" name="action" value="Update" style="background-color: #f0b63a;" class="btn border border-3 border-dark me-5">
-            </div>
             <!-- Delete -->
-            <div class=""style="float:right;">
-                <input type="submit" name="action" value="Delete" style="background-color: #f0b63a;" class="btn border border-3 border-dark me-5"style="float:right;" >
+                <input type="submit" name="action" value="Delete" style="background-color: #f0b63a;" class="btn border border-3 border-dark me-5">
             </div>
         </div>
     </form>  
@@ -158,5 +158,12 @@
         </div>
     </div>
 </section>
-                
+<style>
+    .responsive{
+        justify-content:center;
+        margin-left:auto;
+        margin-right:auto;
+        width:70vw;
+    }
+</style>
            

@@ -19,7 +19,7 @@
                   Sticky Notes Wall is small-scale social networking tool that allows you to connect with other people by providing them with the notes to communicate with you, and you back to them, anonymously.
                 </p>
             </div>
-            <img src="imgs/haha.png" alt="">
+            <img src="<?=base_url('assets/images/registration/stick.png')?>" alt="">
         </div>
     </section>
 

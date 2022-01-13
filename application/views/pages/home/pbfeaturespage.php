@@ -19,7 +19,7 @@
                   Public Notebook allow you to create, update, and share your thought with the world.
                 </p>
             </div>
-            <img src="imgs/ha.png" alt="">
+            <img src="<?=base_url('assets/images/registration/ha.png')?>" alt="">
         </div>
     </section>
 

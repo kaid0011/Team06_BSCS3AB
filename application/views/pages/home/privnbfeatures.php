@@ -19,7 +19,7 @@
                   Private Notebook allow you to create, update, and share notes using the app and protect them behind a strong password.
                 </p>
             </div>
-            <img src="imgs/haha.png" alt="">
+            <img src="<?=base_url('assets/images/registration/haha.png')?>" alt="">
         </div>
     </section>
 

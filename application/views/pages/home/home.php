@@ -282,6 +282,9 @@
 <!-- (end) Frequently Asked Questions   -->
 
 <style>
+    *{
+        font-family: 'Be Vietnam Pro', sans-serif;
+    }
     .hover {
         display: inline-block;
         border-radius: 4px;

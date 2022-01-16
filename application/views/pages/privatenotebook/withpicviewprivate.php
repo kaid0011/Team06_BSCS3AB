@@ -116,7 +116,8 @@
     background-image: url(<?= base_url($themeurl) ?>);
     overflow-x: hidden;
   }
-
+  textarea { 
+    resize: none; }
 
   .section {
     position: relative;

@@ -144,6 +144,8 @@
     position: relative;
     width: 100%;
   }
+  textarea {
+     resize: none; }
 
   .full-height {
     min-height: 100vh;

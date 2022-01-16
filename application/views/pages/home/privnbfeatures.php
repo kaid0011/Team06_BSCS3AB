@@ -1,4 +1,4 @@
-<section class="features-head text-light bg-dark py-5">
+<section class="features-head text-light bg-dark py-5 pt-5 pb-5">
         <div class="container grid">
             <div>
                 <h1 class="">Features</h1>
@@ -67,7 +67,7 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+
   line-height: 1.6;
 }
 

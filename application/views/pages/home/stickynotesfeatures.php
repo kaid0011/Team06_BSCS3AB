@@ -73,7 +73,7 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+ 
   line-height: 1.6;
 }
 

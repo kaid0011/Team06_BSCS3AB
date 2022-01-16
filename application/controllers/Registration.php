@@ -171,6 +171,8 @@
             }
         }
 
+        
+
         public function termsofservice() {
             $data['navbar'] = 'registration';
             $this->sitelayout->loadTemplate('pages/registration/termsofservice', $data); 

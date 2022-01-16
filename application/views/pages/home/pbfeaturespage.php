@@ -1,4 +1,4 @@
-<section class="features-head text-light bg-dark py-5">
+<section class="features-head text-light bg-dark py-5 pt-5 pb-5">
         <div class="container grid">
             <div>
                 <h1 class="">Features</h1>
@@ -27,7 +27,7 @@
         <div class="container grid grid-3">
             <div class="card flex">
                 <i class="bi bi-journal h1"></i>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nemo saepe corrupti et dolorem voluptate at, nostrum rem voluptatem ab alias quia molestiae ea, libero nihil deserunt. Molestias, eum? Necessitatibus!</p>
+                <p>You start right away by creating a notebook.Public Notebooks are suitable for all users and give easy access to other users.</p>
             </div>
             <div class="card flex">
                 <i class="bi bi-calendar-date h1"></i>
@@ -50,15 +50,13 @@
             <div class="card flex">
                 <i class="bi bi-images h1"></i>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis,
-                    magnam.
+                You can share photos to public notebook from your computer or phone.
                 </p>
             </div>
             <div class="card flex">
                 <i class="bi bi-chat-left-dots h1"></i>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis,
-                    magnam.
+                 You can comment on other people notebook post. 
                 </p>
             </div>
         </div>
@@ -72,7 +70,6 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
   line-height: 1.6;
 }
 

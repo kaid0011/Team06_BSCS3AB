@@ -3,9 +3,10 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2022 at 02:30 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.3.33
+
+-- Generation Time: Jan 25, 2022 at 01:08 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -409,7 +410,7 @@ ALTER TABLE `publicnb_pages`
 -- Constraints for table `publicpage_reacts`
 --
 ALTER TABLE `publicpage_reacts`
-  ADD CONSTRAINT `publicpage_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `public_notebook` (`user_ID`),
+  ADD CONSTRAINT `publicpage_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `user` (`user_ID`),
   ADD CONSTRAINT `publicpage_reacts_ibfk_2` FOREIGN KEY (`publicNBPage_ID`) REFERENCES `publicnb_pages` (`publicNBPage_ID`);
 
 --
@@ -429,7 +430,7 @@ ALTER TABLE `report`
 -- Constraints for table `stickynotes_reacts`
 --
 ALTER TABLE `stickynotes_reacts`
-  ADD CONSTRAINT `stickynotes_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `sticky_notes` (`user_ID`),
+  ADD CONSTRAINT `stickynotes_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `user` (`user_ID`),
   ADD CONSTRAINT `stickynotes_reacts_ibfk_2` FOREIGN KEY (`stickyNotes_ID`) REFERENCES `sticky_notes` (`stickyNotes_ID`);
 
 --

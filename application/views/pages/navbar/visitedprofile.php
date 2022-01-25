@@ -97,10 +97,10 @@
                             <div class="card-footer bg-transparent border-dark">
                               <div>
                                 <!-- React Button -->
-                                <!-- <button class="btn btn-none btn-sm float-start"><i class="bi bi-star h4"></i></button> -->
+                                <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
 
-                                <input type="submit" name="action" value="React" class="btn btn-none btn-sm float-start"><?php echo $row->pageReact_Count; ?>
-
+                                <button id="react" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i class="bi bi-star h4"></i></button>
+                                <span id="pageReact_Count"><?php echo $row->pageReact_Count; ?></span>
 
                                 <!-- Report Button -->
                                 <input type="submit" name="action" value="Report" class="btn btn-secondary btn-sm float-end mt-1">
@@ -139,6 +139,42 @@
     </div>
   </div>
 </section>
+
+<!-- AJAX for Reactions -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+  $(document).on("click", "#react", function(e) {
+    e.preventDefault();
+
+    var accountVisitor_ID = $("#accountVisitor_ID").val();
+    var publicNBPage_ID = $(this).attr("value");
+    var pageReact_Count = $("#pageReact_Count").val();
+
+    $.ajax({
+      url: "<?php echo base_url(); ?>React/addReact_PublicPage",
+      type: "post",
+      dataType: "json",
+      data: {
+        accountVisitor_ID: accountVisitor_ID,
+        publicNBPage_ID: publicNBPage_ID,
+      },
+      success: function(data) {
+        if(data.response == "added")
+        {
+          alert("added");
+        }
+        else
+        {
+          alert("deleted");
+        }
+      }
+    });
+  });
+</script>
+
+<!-- End of AJAX for Reactions -->
+
 
 <style>
   .scrollspy-example {

@@ -27,7 +27,6 @@
                               <option>Harassment</option>
                               <option>Suicide or Self Injury</option>
                               <option>False Information</option>
-                              <option>Hate Speech</option>
                               <option>Terrorism</option>
                               <option>Something else</option>
                             </select>

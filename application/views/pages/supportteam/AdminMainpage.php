@@ -13,7 +13,7 @@
             </a>
         </div>
         <div class="project-col">
-        <a href="<?=base_url('recommendation')?>">
+        <a href="<?=base_url('supportteam/recommendation')?>">
             <img src="<?=base_url('assets/images/login/pic1.png')?>" alt="project2">
             <div class="layer">
                 <h3>RECOMMENDATION</h3>
@@ -21,7 +21,7 @@
             </a>
         </div>
         <div class="project-col">
-        <a href="<?=base_url('bugreport')?>">
+        <a href="<?=base_url('supportteam/bugreport')?>">
             <img src="<?=base_url('assets/images/login/pic1.png')?>" alt="project3">
             <div class="layer">
                 <h3>BUG REPORT</h3>

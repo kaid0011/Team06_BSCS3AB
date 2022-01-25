@@ -12,10 +12,10 @@
       </div>
       
       <form method="post" enctype="multipart/form-data" action="<?= base_url('updateprofile/image') ?>">
-        <div class="align-items-center text-center justify-content-center pt-3 ps-5">
-          <input type="file" name="file" id="file" />
+        <div class="inp pt-3">
+          <input type="file" name="file" id="file"/>
         </div>
-        <div class="d-flex justify-content-center pt-3">
+        <div class="d-flex inp2 pt-3">
           <input type="submit" name="action" id="remove" value="Remove Image" class="input-group-text me-3" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />
           <input type="submit" name="action" id="insert" value="Update Image" class="input-group-text" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />
         </div>
@@ -74,9 +74,15 @@
     </div>
 
   </div>
-
   <div class="py-5">&nbsp;</div>
-  <style>
+</section>
+<style>
+  @media(min-width:375px) {
+    .pic {
+      width: 250px;
+      height: 250px;
+    }
+  }
     @media (min-width: 768px) {
       .inputbox {
         width: 600px;
@@ -93,22 +99,14 @@
         padding-left:20px;
       }
     }
-  </style>
-
-
-
-
-
-
-
-  </div>
-
-</section>
-<style>
-  @media(min-width:375px) {
-    .pic {
-      width: 250px;
-      height: 250px;
-    }
+    .inp {
+   text-align: center;
+   margin: auto;
+   margin-left:130px;
   }
-</style>
+  .inp2 {
+   justify-content:center;
+   margin: auto;
+   margin-left:52px;
+  }
+  </style>

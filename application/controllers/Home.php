@@ -20,5 +20,22 @@
             $data['navbar'] = 'home';
             $this->sitelayout->loadTemplate('pages/home/home', $data);
         }
+        public function pbfeaturespage() {
+            
+            $data['navbar'] = 'home';
+            $this->sitelayout->loadTemplate('pages/home/pbfeaturespage', $data);
+        }
+        public function privnbfeatures() {
+            
+            $data['navbar'] = 'home';
+            $this->sitelayout->loadTemplate('pages/home/privnbfeatures', $data);
+        }
+        
+        public function stickynotesfeatures() {
+            
+            $data['navbar'] = 'home';
+            $this->sitelayout->loadTemplate('pages/home/stickynotesfeatures', $data);
     }
+}
+    
 ?>

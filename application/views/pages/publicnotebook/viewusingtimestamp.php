@@ -1,17 +1,15 @@
-  <div class="">
-    <div class="d-flex justify-content-end pe-5 pt-3">
-      <!-- Timestamp -->
-      <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
-        <!--changes-->
-          <input type="date" name="date" class="form-control me-2" placeholder="Enter date (mm/dd/yy)">
-          <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Search</button>
-      </form>
-    </div>
-    <div class="d-flex justify-content-center">
+  <div class="row ms-5">
+  <div class="col ms-5 d-flex justify-content-between py-3">
+    <button type="submit" style="background-color: #f0b63a; justify-content-start" class="btn border border-2 border-dark">Back</button>
       <!-- New Page Button -->
       <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
-        <button class="py-2 px-3 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
+        <button class="ms-5 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
       </a>
+      <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
+        <!--changes-->
+          <input type="date" name="date" class="form-control me-2">
+          <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark me-3">Search</button>
+      </form>
     </div>
   </div>
 
@@ -73,6 +71,7 @@
                     ?>
                     <div class="col mr-auto  h5">
                       <!-- New Page Button -->
+                      
                       <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
                         <button class="p-2 btn float-end" style="width:110px;">New Page</button>
                       </a>

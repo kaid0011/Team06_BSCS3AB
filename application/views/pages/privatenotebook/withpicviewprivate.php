@@ -57,6 +57,7 @@
                     <!-- Timer -->
                     <div class="col ml-auto h5">
                       <!-- Update Button-->
+                      <input type="submit" value= "Back" name="action" class="p-2 btn float-end ms-2 ">
                       <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
                         <button class="p-2 btn float-end">Update</button>
                       </a>
@@ -98,7 +99,7 @@
 
                 <hr id="inputbox" class="bg-light">
 
-                  
+              
             </div>
           </div>
         </div>
@@ -115,7 +116,8 @@
     background-image: url(<?= base_url($themeurl) ?>);
     overflow-x: hidden;
   }
-
+  textarea { 
+    resize: none; }
 
   .section {
     position: relative;

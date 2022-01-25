@@ -6,7 +6,6 @@
         public function __construct()
         {
             parent::__construct();
-            
             $this->load->library('form_validation');
             $this->load->model('ForgotPassword_model');
         }
@@ -28,12 +27,11 @@
                 if($this->form_validation->run())
                 {
                     $email = $this->input->post('email');
-
                     $result = $this->ForgotPassword_model->checkEmail($email);
+
                     if($result)
                     {
                         $code = random_string('numeric', 6);
-
                         $userdata = array(
                             'email' => $email,
                             'code'  =>  $code
@@ -64,7 +62,6 @@
         {
             $email = $this->session->userdata('email');
             $code = $this->session->userdata('code');
-
             $subject = "Forgot Password";
             $message = "
             This is an automated email for providing you a code to reset your password in Virtual Diary.
@@ -86,15 +83,11 @@
             
             $this->load->library('email');
             $this->email->initialize($config);
-
             $this->email->set_newline("\r\n");
-            
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($email);
-
             $this->email->subject($subject);
             $this->email->message($message);
-
             $send = $this->email->send();
 
             if($send)

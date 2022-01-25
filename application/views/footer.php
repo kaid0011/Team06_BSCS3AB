@@ -16,3 +16,8 @@
     <script type="text/javascript"></script>
 </body>
 </html>
+<style>
+        *{
+        font-family: 'Be Vietnam Pro', sans-serif;
+    }
+</style>

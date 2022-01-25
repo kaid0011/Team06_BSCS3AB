@@ -2,11 +2,13 @@
     <div class="h1 text-center p-4 mb-5 inputbox" style="color: black;">
         Report Users
     </div>
-        <div class="w-50 mx-auto mt-4 my-2 mb-5" style="display: flex; flex-direction: row;">
-        <form action="<?= base_url('supportteam/findReport') ?>" method="post">
+    
+        <div class="d-flex justify-content-end mt-4 my-2 mb-5" >
+        <form action="<?= base_url('supportteam/findReport') ?>" method="post" class="gap-1 d-md-flex justify-content-md-end me-5">
             <input type="text" name="findReport" class="form-control inputbox" placeholder="Enter Reported User ID..." aria-describedby="basic-addon1">
-            <input type="submit" name="action" value="Search" class="btn btn-outline-secondary btn-primary text-white fw-normal">
+            <input type="submit" name="action" value="Search" class="btn btn-outline-dark btn-warning border-3 me-5">
         </form>
+    
         </div>        
         <div class="container">
         <table class="table">

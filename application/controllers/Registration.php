@@ -119,8 +119,8 @@
                     }
                 }
             }
-            $data['navbar'] = 'registration';
-            $this->sitelayout->loadTemplate('pages/registration/registration', $data);
+            //$data['navbar'] = 'registration';
+            //$this->sitelayout->loadTemplate('pages/registration/registration', $data);
         }
 
         public function sendEmail()
@@ -136,8 +136,8 @@
 
             ".$key."
 
-            You’re receiving this email because you recently tried to create an account in Virtual Dary. 
-            If this wasn’t you, please ignore this email.
+            You are receiving this email because you recently tried to create an account in Virtual Dary. 
+            If this was not you, please ignore this email.
             ";
             $to = $this->input->post('email');
 
@@ -165,13 +165,7 @@
                 $data['navbar'] = 'registration';
                 $this->sitelayout->loadTemplate('pages/registration/verification', $data);
             }
-            else
-            {
-                echo "Error";
-            }
         }
-
-        
 
         public function termsofservice() {
             $data['navbar'] = 'registration';
@@ -183,5 +177,4 @@
             $this->sitelayout->loadTemplate('pages/registration/privacypolicy', $data); 
         }
     }
-
 ?>

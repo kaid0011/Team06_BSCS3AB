@@ -12,9 +12,9 @@
           <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
             <div class="text-white">
               <div class="justify-content-center align-items-center text-center ps-5">
-        <?php $source = $this->Mainpage_model->getImage($row->user_ID);?>
-        <a href="#"><img src="<?= base_url($source)?>" style="height: 300px; width: 300px; border-radius: 150px; object-fit: cover;"></a>
-      </div>
+                <?php $source = $this->Mainpage_model->getImage($row->user_ID); ?>
+                <a href="#"><img src="<?= base_url($source) ?>" style="height: 300px; width: 300px; border-radius: 150px; object-fit: cover;"></a>
+              </div>
 
               <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal"><?php echo $row->displayName; ?><br>
                 <a class="text-secondary" style="text-decoration: none;">@<?php echo $row->userName; ?></a>
@@ -102,8 +102,12 @@
                                 <span id="pageReact_Count"><?php echo $row->pageReact_Count; ?></span>
 
                                 <!-- Report Button -->
-                                <input type="submit" name="action" value="Report" class="btn btn-secondary btn-sm float-end mt-1">
+                                <form action="<?= base_url('reportuser/getPublicNBData') ?>" method="post">
+                                  <input type="text" name="page_ID" id="page_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->publicNBPage_ID ?>" hidden>
+                                  <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" hidden>
 
+                                  <input type="submit" name="action" value="Report" class="btn btn-secondary btn-sm float-end mt-1">
+                                </form>
                               </div>
                             </div>
 
@@ -159,12 +163,9 @@
         publicNBPage_ID: publicNBPage_ID,
       },
       success: function(data) {
-        if(data.response == "added")
-        {
+        if (data.response == "added") {
           alert("added");
-        }
-        else
-        {
+        } else {
           alert("deleted");
         }
       }

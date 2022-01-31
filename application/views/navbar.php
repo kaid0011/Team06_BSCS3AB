@@ -42,7 +42,7 @@ switch ($navbar) {
     case 'registration':
     ?>
         <!-- Navbar Registration Section -->
-        <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
+        <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-4">
             <div class="container">
 
                 <!-- Logo Image -->

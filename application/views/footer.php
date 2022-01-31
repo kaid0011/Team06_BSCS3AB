@@ -19,5 +19,6 @@
 <style>
         *{
         font-family: 'Be Vietnam Pro', sans-serif;
+        min-height:100%;
     }
 </style>

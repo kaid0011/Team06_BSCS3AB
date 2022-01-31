@@ -61,16 +61,16 @@
                 </div>
             </div>
             <!-- Sticky Notes Wall -->
-            <div class="col-md pb-5">
+            <div class="col-md">
                 <div class="card bg-dark text-light">
                     <div class="card-body text-center">
                         <div class="h1 mb-3">
                             <i class="bi bi-calendar" style="font-size: 50px;"></i>
                         </div>
-                        <h3 class="card-title" style="color: #f0b63a;">
+                        <h3 class="card-title mb-1" style="color: #f0b63a;">
                             Sticky Notes Wall
                         </h3>
-                        <p class="card-text">
+                        <p class="card-text mb-5">
                             Public anonymous posting area
                         </p>
                     </div>

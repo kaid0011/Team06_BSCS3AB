@@ -70,7 +70,7 @@
                         <h3 class="card-title mb-1" style="color: #f0b63a;">
                             Sticky Notes Wall
                         </h3>
-                        <p class="card-text mb-5">
+                        <p class="card-text">
                             Public anonymous posting area
                         </p>
                     </div>

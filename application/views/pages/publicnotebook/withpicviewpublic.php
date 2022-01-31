@@ -67,8 +67,7 @@
               <div class="col ml-auto h5">
                 <div class="row">
                     <?php
-                      $page_ID = $row->publicNBPage_ID;
-                      echo $page_ID;
+                      $page_ID = $row->publicNBPage_ID;                     
                     ?>
                     <div class="col mr-auto  h5">
                       <!-- New Page Button -->

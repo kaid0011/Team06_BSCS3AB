@@ -1,19 +1,17 @@
 <form method="post" id ="updateform" action="<?=base_url('stickynoteswall/createnotes')?>">
-<section style="min-height: 75vh;">
+<section style="min-height: 120vh;">
   <div class="container">
-    <div class="display-1 text-center my-4  " id="white">What's your Message?</div>
     <div class="row align-items-center my-5 g-4"> 
     <div class="card-3d-wrap mx-auto">
       <div class="card-front" id="card">
+      <div class="display-1 text-center my-4  " id="white">What's your Message?</div>
       <div class="section ">
-	
         <div class="d-flex p-5 justify-content-center">
 
-          
           <div class="row g-4">
             <!-- Light Theme Button -->   
             <div class="col">
-            <input type="button" onclick="changeColor('#e9ecef', 'url(<?=base_url('assets/images/themes/LightNote.jpg')?>)','url(<?=base_url('assets/images/themes/Card.jpg')?>)', 'Light');" value ="Light" class="p-2 btn">
+            <input type="button" onclick="changeColor('#e9ecef', 'url(<?=base_url('assets/images/themes/LightNote.jpg')?>)','url(<?=base_url('assets/images/themes/LightCard.jpg')?>)', 'Light');" value ="Light" class="p-2 btn">
               <!-- <button class="p-2 btn" disabled>Light</button> -->
             </div>
             
@@ -61,7 +59,7 @@
           </div>
           <div class="my-2" ></div>
           
-            <textarea class="form-control border border-3 border-secondary py-5 px-4 toinput inputSize" type="text"  id="noteInput" name="input"rows="10"></textarea>
+            <textarea class="form-control border border-3 border-secondary py-5 px-4 toinput inputSize" type="text"  style="background-image: url(<?=base_url('assets/images/themes/LightCard.jpg')?>);"id="noteInput" name="input"rows="10"></textarea>
 
           </div>
         </div>
@@ -89,6 +87,8 @@
     font-weight: 300;
     font-size: 15px;
     color: #212529;
+    background-image: url(<?=base_url('assets/images/themes/LightNote.jpg')?>);
+    
   
     
     /*if theme is dark,
@@ -112,6 +112,9 @@
   .btn {
     color: #212529;
     background-color: #dee2e6;
+    border-color: #808080;
+    border: 15;
+    border-width: 2.5px;
     /*if theme is dark,
       background-color: #adb5bd;
     if theme is light,
@@ -138,15 +141,20 @@
     width: 800px;
     max-width: 100%;
     height: 600px;
+    background-image: #e9ecef;
+    border: 10px;
   }
+
   .card-front {
     width: 100%;
     height: 100%;
     color:<?php echo $themecardcolor ?> ;
-    background-color: rgba(0,0,0,0.3);
+    background-color: url(<?=base_url('assets/images/themes/LightCard.jpg')?>);;
+    background-image: url(<?=base_url('assets/images/themes/LightNote.jpg')?>);
     border-radius: 10px;
+    border: 0;
+
   }
-  
 
 
   @media (max-width: 450px) {
@@ -154,6 +162,7 @@
       width: 300px;
       padding: 1px;
       margin: 1px;
+      
     }
     .inputbox{
     width: 1000px;
@@ -172,6 +181,8 @@
     display: block;
     margin : 0 auto;
   }
+
+  
   }
   .boxbox {
     padding: 3px;

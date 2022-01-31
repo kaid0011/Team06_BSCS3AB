@@ -13,19 +13,18 @@
                 {
 
                         $this->db->where('privateNB_ID', $privateNB_ID);
-                        $this->db->select('pageInput, pageTheme, pageTimer, page_InputImage');
+                        $this->db->select('pageInput, pageTheme, pageTimer');
                         $query = $this->db->get("privatenb_pages");
                         return $query;
                 }
 
-                public function updatePage($pageTimer, $pageTheme, $pageInput, $pageImage, $id)
+                public function updatePage($pageTimer, $pageTheme, $pageInput, $id)
                 {
 
                     $this->db->where('privateNB_ID',$id);
                     $this->db->set('pageTimer',$pageTimer);
                     $this->db->set('pageTheme',$pageTheme);
                     $this->db->set('pageInput',$pageInput);
-                    $this->db->set('page_InputImage', $pageImage);
                     
                     $result = $this->db->update('privatenb_pages');
 

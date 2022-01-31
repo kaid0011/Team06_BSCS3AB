@@ -1,0 +1,1 @@
+"C:\xampp\php\php.exe" -f "C:\xampp\htdocs\Team06_BSCS3AB\application\automatic_timer\automaticReset.php"

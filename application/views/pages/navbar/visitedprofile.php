@@ -11,11 +11,10 @@
 
           <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
             <div class="text-white">
-              <div class="d-flex">
+              <div class="justify-content-center align-items-center text-center ps-5">
                 <?php $source = $this->Mainpage_model->getImage($row->user_ID); ?>
-                <a href="#"><img src="<?= base_url($source) ?>" class="rounded-circle ms-5 border border-3 border-secondary mb-2" alt="..."></a>
+                <a href="#"><img src="<?= base_url($source) ?>" style="height: 300px; width: 300px; border-radius: 150px; object-fit: cover;"></a>
               </div>
-
 
               <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal"><?php echo $row->displayName; ?><br>
                 <a class="text-secondary" style="text-decoration: none;">@<?php echo $row->userName; ?></a>
@@ -36,7 +35,7 @@
                 <!-- if discussion is included:  
                       <div class="col-md-6 col-lg-7 mt-5">-->
                 <div class="card bg-light" style="min-height: 400px;width: 1000px;">
-                  <nav class="navbar navbar-light justify-content-center sticky-top" style="background-color: #495057;">
+                  <nav class="navbar navbar-light justify-content-center" style="background-color: #495057;">
                     <p class=" justify-content-center align-items-center mt-2" style=" color: #eee;"> Public Notebook</p>
                   </nav>
                   <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
@@ -76,7 +75,7 @@
 
                         <div>
 
-                          <div class="card border-dark mb-3 " style="max-width: 75rem;height:250px; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
+                          <div class="card border-dark my-5 " style="max-width: 75rem;height:250px; background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>;">
 
                             <!-- Hidden Page and User ID -->
                             <input type="text" name="page_ID" id="page_ID" class="btn float-end mt-1" value="<?php echo $row->publicNBPage_ID ?>" hidden>
@@ -97,14 +96,18 @@
                             <div class="card-footer bg-transparent border-dark">
                               <div>
                                 <!-- React Button -->
-                                <!-- <button class="btn btn-none btn-sm float-start"><i class="bi bi-star h4"></i></button> -->
+                                <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
 
-                                <input type="submit" name="action" value="React" class="btn btn-none btn-sm float-start"><?php echo $row->pageReact_Count; ?>
-
+                                <button id="react" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i class="bi bi-star h4"></i></button>
+                                <span id="pageReact_Count"><?php echo $row->pageReact_Count; ?></span>
 
                                 <!-- Report Button -->
-                                <input type="submit" name="action" value="Report" class="btn btn-secondary btn-sm float-end mt-1">
+                                <form action="<?= base_url('reportuser/getPublicNBData') ?>" method="post">
+                                  <input type="text" name="page_ID" id="page_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->publicNBPage_ID ?>" hidden>
+                                  <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" hidden>
 
+                                  <input type="submit" name="action" value="Report" class="btn btn-secondary btn-sm float-end mt-1">
+                                </form>
                               </div>
                             </div>
 
@@ -139,6 +142,39 @@
     </div>
   </div>
 </section>
+
+<!-- AJAX for Reactions -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+  $(document).on("click", "#react", function(e) {
+    e.preventDefault();
+
+    var accountVisitor_ID = $("#accountVisitor_ID").val();
+    var publicNBPage_ID = $(this).attr("value");
+    var pageReact_Count = $("#pageReact_Count").val();
+
+    $.ajax({
+      url: "<?php echo base_url(); ?>React/addReact_PublicPage",
+      type: "post",
+      dataType: "json",
+      data: {
+        accountVisitor_ID: accountVisitor_ID,
+        publicNBPage_ID: publicNBPage_ID,
+      },
+      success: function(data) {
+        if (data.response == "added") {
+          alert("added");
+        } else {
+          alert("deleted");
+        }
+      }
+    });
+  });
+</script>
+
+<!-- End of AJAX for Reactions -->
+
 
 <style>
   .scrollspy-example {

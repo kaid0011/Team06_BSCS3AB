@@ -15,6 +15,17 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/supportteam/adminmainpage', $data);
         }
+        public function recommendation()
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/supportteam/recommendation', $data);
+        }
+        public function bugreport()
+        {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/supportteam/bugreport', $data);
+        }
+        
 
         public function reportUserWall()
         {

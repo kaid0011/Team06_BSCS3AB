@@ -13,7 +13,7 @@
                     foreach ($publicnbdata->result() as $row) {
                  ?>
                 <input type="text" name="page_ID" id="post_ID" class="btn float-end mt-1" value="<?php echo $row->publicNBPage_ID ?>" hidden>
-                <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" hidden> 
+                <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" > 
                 <?php
                     }
                 }
@@ -27,7 +27,6 @@
                               <option>Harassment</option>
                               <option>Suicide or Self Injury</option>
                               <option>False Information</option>
-                              <option>Hate Speech</option>
                               <option>Terrorism</option>
                               <option>Something else</option>
                             </select>

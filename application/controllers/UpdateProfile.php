@@ -78,7 +78,7 @@
             if($action == "YES")
             {
                 $id = $this->session->userdata('user_ID');
-                $link = mysqli_connect("localhost", "root", "", "virtual_diary");
+                $link = mysqli_connect("localhost", "root", "team6", "virtual_diary");
                 $sql = "DELETE FROM user WHERE user_ID=$id";
 
                 if (mysqli_query($link, $sql)) 

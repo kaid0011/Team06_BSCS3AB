@@ -112,7 +112,7 @@
         public function getPageUsingDate($user, $date)
         {
             $this->db->where('publicNB_ID' , $user);
-            $this->db->where('pageDate', $date);
+            $this->db->where('DATE(pageDate)', $date);
             $this->db->select('publicNBPage_ID, pageInput, pageTheme');
             $this->db->order_by('publicNBPage_ID', 'desc');
             $query = $this->db->get('publicnb_pages');

@@ -48,9 +48,9 @@
               <!--Input Area-->
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
-                    <textarea name="input" class="form-control" id="" rows="13"></textarea> 
+                    <textarea name="input" class="form-control fixed" id="" rows="13"></textarea> 
                 <hr id="inputbox" class="bg-light">
-                <input type="file" name="file" id="file" class="custom-file-input me-3" accept="image/png, image/jpg, image/jpeg"/>
+                <input type="file" name="file" id="file" class="custom-file-input me-3" accept="image/png, image/jpg, image/jpeg"/ >
                 <input type="button" value="Remove" name="action" id="remove" class="p-2 btn mt-1" onclick="removeImage()"/>
                 <input type="text" name="remove" id="removeimage" class="btn float-end mt-1"  hidden value="">
                 <!-- Button-->
@@ -87,7 +87,9 @@
   .full-height {
     min-height: 100vh;
   }
-
+.fixed{
+  resize: none;   
+}
   
   .card-3d-wrap {
     position: relative;

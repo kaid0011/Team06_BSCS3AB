@@ -13,19 +13,18 @@
                 {
 
                         $this->db->where('privateNB_ID', $privateNB_ID);
-                        $this->db->select('pageInput, pageTheme, pageTimer, page_InputImage');
+                        $this->db->select('pageInput, pageTheme, pageTimer');
                         $query = $this->db->get("privatenb_pages");
                         return $query;
                 }
 
-                public function updatePage($pageTimer, $pageTheme, $pageInput, $pageImage, $id)
+                public function updatePage($pageTimer, $pageTheme, $pageInput, $id)
                 {
 
                     $this->db->where('privateNB_ID',$id);
                     $this->db->set('pageTimer',$pageTimer);
                     $this->db->set('pageTheme',$pageTheme);
                     $this->db->set('pageInput',$pageInput);
-                    $this->db->set('page_InputImage', $pageImage);
                     
                     $result = $this->db->update('privatenb_pages');
 
@@ -76,6 +75,16 @@
                             return "No image";
                         }
                 }
+
+                    public function resetPage()
+                {
+                date_default_timezone_set("Asia/Manila");
+                $currentTime = date("H:i s");
+
+                $reset = "UPDATE privatenb_pages SET pageInput = 'This is my private page.', pageTheme = 'Light', pageTimer = '00:00:00' WHERE pageTimer BETWEEN '00:00:00' AND '$currentTime'";
+                $this->db->query($reset);
+                return;
+            }
 
 
        }

@@ -13,7 +13,7 @@
                     foreach ($publicnbdata->result() as $row) {
                  ?>
                 <input type="text" name="page_ID" id="post_ID" class="btn float-end mt-1" value="<?php echo $row->publicNBPage_ID ?>" hidden>
-                <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" > 
+                <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" hidden> 
                 <?php
                     }
                 }
@@ -40,11 +40,11 @@
                     <!-- By report -->
                         <div class="mb-3">
                             <label class="form-check-label" for="exampleCheck1">
-                                <p class="text-muted"> Report Ticket will be checked by the support team.<br>It may take a few days. Thank you for your understanding. <br><a href="#" class="text-reset"> Terms of Service </a> and <a href="#" class="text-reset">Privacy Policy</a> </p>
+                                <p class="text-muted"> Report Ticket will be checked by the support team.<br>It may take a few days. Thank you for your understanding. <br><a href="<?=base_url('registration/termsofservice')?>" class="text-reset"> Terms of Service </a> and <a href="<?=base_url('registration/privacypolicy')?>" class="text-reset">Privacy Policy</a> </p>
                             </label>
                   <!-- Report Button -->
                   <div class="col-md d-flex justify-content-end align-items-center">
-                      <input type="submit" value="Submit" name="action" style="background-color: #f0b63a; width: 75px;" class="p-2 btn-sm border border-3 border-dark btn-end">
+                      <input type="submit" value="Submit" name="action" style="background-color: #f0b63a; width: 75px;" class="p-2 btn-sm border border-2 border-dark btn-end">
                     </div>
                     </form>
                 </p>

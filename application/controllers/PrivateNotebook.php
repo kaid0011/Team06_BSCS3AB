@@ -44,7 +44,7 @@
                 }
                 $pageTheme = $this->input->post('theme'); //Theme
                 $pageInput = $this->input->post('input'); //Input
-                $this->PrivateNotebook_model->updatePage($pageTimer,$pageTheme, $pageInput, "", $id);
+                $this->PrivateNotebook_model->updatePage($pageTimer,$pageTheme, $pageInput, $id);
 
                 if($_FILES['file']['name'] != "")
                 {
@@ -120,7 +120,7 @@
             }
             else if($action == 'Delete')
             {  
-                $this->PrivateNotebook_model->updatePage("00:00:00", "Light", NULL, NULL, $id);
+                $this->PrivateNotebook_model->updatePage("00:00:00", "Light", NULL, $id);
                 $this->index();
             }
   

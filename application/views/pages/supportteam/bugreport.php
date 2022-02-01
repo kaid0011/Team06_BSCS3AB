@@ -5,7 +5,7 @@
         <p style=" font-size: 35px;padding-bottom: 20px;"> 
         Sorry for the inconvenience but we’re performing some maintenance at the moment.
             we’ll be back online shortly!</p>
-        <a href="#"style=" background: #3867d6;
+        <a href="<?= base_url('supportteam') ?>"style=" background: #3867d6;
       border-radius:4px;
       outline: none;
       border: 0px;
@@ -13,7 +13,7 @@
       font-size: 34px;
       cursor: pointer;
       text-decoration: none;
-      padding: 5px 25px;">Home</a>
+      padding: 5px 25px;">Go Back</a>
       </section>
 <style>
     body{

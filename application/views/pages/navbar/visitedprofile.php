@@ -97,9 +97,7 @@
                               <div>
                                 <!-- React Button -->
                                 <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
-
                                 <button id="react" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i class="bi bi-star h4"></i></button>
-                                <span id="pageReact_Count"><?php echo $row->pageReact_Count; ?></span>
 
                                 <!-- Report Button -->
                                 <form action="<?= base_url('reportuser/getPublicNBData') ?>" method="post">
@@ -152,7 +150,6 @@
 
     var accountVisitor_ID = $("#accountVisitor_ID").val();
     var publicNBPage_ID = $(this).attr("value");
-    var pageReact_Count = $("#pageReact_Count").val();
 
     $.ajax({
       url: "<?php echo base_url(); ?>React/addReact_PublicPage",

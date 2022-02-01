@@ -1,4 +1,4 @@
-  <section class="text-light p-5 text-center text-sm-start" style="background-color:#A9A9A9;">
+<section class="text-light p-5 text-center text-sm-start" style="background-color:#A9A9A9;">
     <div class="container">
       <div class="my-2 mt-4  pe-2">
         <h1 class="mb-1 text-center">Terms of Services</h1>
@@ -11,7 +11,7 @@
     <h5><strong>Terms & Conditions</strong></h5>
     <hr>
     <h6><strong>General Terms</strong></h6>
-    <p>By accessing and placing an order with, you confirm that you are in agreement with and bound by the terms of service contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and
+    <p>By accessing, you confirm that you are in agreement with and bound by the terms of service contained in the Terms & Conditions outlined below. These terms apply to the entire website and any email or other type of communication between you and
       Under no circumstances shall team be liable for any direct, indirect, special, incidental or consequential damages, including, but not Limited to, loss of data or profit, arising out of the use, or the inability to use, the materials on this site, even if team or an authorized representative has been advised of the possibility of such damages. If your use of materials from this site results in the need for servicing, repair or correction of equipment or data, you assume any costs thereof.
       will not be responsible for any outcome that may occur during the course of usage of our resources. We reserve the rights to change prices and revise the resources usage policy in any moment.
     </p>
@@ -52,10 +52,6 @@
     <li>Modify, make derivative works of disassemble, decrypt, reverse compile or reverse engineer any part of the service. </li>
     <li>Remove, alter or obscure any proprietary notice (including any notice of copyright or trademark) of or its affiliates, partners,
       suppliers or the licensors of the service.</li>
-    <hr>
-    <div class="space"></div>
-    <h6><strong>Return and Refund Policy</strong></h6>
-    <p>Thanks for shopping with us. We appreciate the fact that you like to buy the stuff we build. We also want to make sure you have a rewarding experience while you're exploring, evaluating, and purchasing our products. As with any shopping experience, there are terms and conditions that apply to transactions at our company. We'll be as brief as our attorneys will allow. The main thing to remember is that by placing an order or making a purchase from us, you agree to the terms along with our Privacy Policy. If, for any reason, You are not completely satisfied with any good or service that we provide, don't hesitate to contact us and we will discuss any of the issues you are going through with our product.
     </p>
     <hr>
     <div class="space"></div>
@@ -116,14 +112,13 @@
     <p>In the event that you submit or post any ideas, creative suggestions, designs, photographs, information, advertisements, data or proposals, including ideas for new or improved products, services, features, technologies or promotions, you expressly agree that such submissions will automatically be treated as non-confidential and non-proprietary and will become the sole property of us without any compensation or credit to you whatsoever. We and our affiliates shall have no obligations with respect to such submissions or posts and may use the ideas contained in such submissions or posts for any purposes in any medium in perpetuity, including, but not limited to, developing, manufacturing, and marketing products and services using such ideas.</p>
     <div class="space"></div>
     <h6><strong>Disclaimer</strong></h6>
-    <p>We are not responsible for any content, code or any other imprecision. We do not provide warranties or guarantees. In no event shall we be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. We reserve the right to make additions, deletions, or modifications to the contents on the Service at any time without prior notice.
+    <p>We are not responsible for any content, code or any other imprecision. We do not provide guarantees. In no event shall we be liable for any special, direct, indirect, consequential, or incidental damages or any damages whatsoever, whether in an action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service. We reserve the right to make additions, deletions, or modifications to the contents on the Service at any time without prior notice.
       Our Service and its contents are provided "as is" and "as available" without any warranty or representations of any kind, whether express or implied. We are a distributor and not a publisher of the content supplied by third parties, as such, our exercises no editorial control over such content and makes no warranty or representation as to the accuracy, reliability or currency of any information, content, service or merchandise provided through or accessible via our Service. Without limiting the foregoing, We specifically disclaim all warranties and representations in any content transmitted on or in connection with our Service or on sites that may appear as links on our Service, or in the products provided as a part of, or otherwise in connection with, our Service, including without limitation any warranties of merchantability, fitness for a particular purpose or non-infringement of third party rights. No oral advice or written information given by us or any of its affiliates, employees, officers, directors, agents, or the like will create a warranty. Price and availability information is subject to change without notice. Without limiting the foregoing, we do not warrant that our Service will be uninterrupted, uncorrupted, timely, or error-free.</p>
     <hr>
     <div class="space"></div>
     <h6><strong>Contact Us</strong></h6>
     <p>Don't hesitate to contact us if you have any questions.</p>
     <li>Via Email: virtual.diary@gmail.com</li>
-    <li>Via Phone Number: 096969696969</li>
     <li>Via this Address: Ermita, Manila</li>
   </div>
   <br>

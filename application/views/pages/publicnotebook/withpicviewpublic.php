@@ -1,8 +1,10 @@
   <div class="row ms-5">
     
-    <div class="col ms-5 d-flex justify-content-between py-3">
+  <div class="col ms-5 d-flex justify-content-between py-3">
+    <a href= "<?= base_url('mainpage')?>"class="d-flex"style="text-decoration:none;">
     <button type="submit" style="background-color: #f0b63a; justify-content-start" class="btn border border-2 border-dark">Back</button>
-      <!-- New Page Button -->
+    </a>
+    <!-- New Page Button -->
       <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
         <button class="ms-5 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
       </a>
@@ -71,9 +73,7 @@
                     ?>
                     <div class="col mr-auto  h5">
                       <!-- New Page Button -->
-                      <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
-                        <button class="p-2 btn float-end" style="width:110px;">New Page</button>
-                      </a>
+                   
                       <!-- Update Button -->
                       <a href="<?= base_url(); ?>publicnotebook/updatepublicnotebook/<?php echo $page_ID;?>">
                         <button class="p-2 btn float-end me-4">Update</button>

@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Team06_BSCS3AB';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -521,3 +521,12 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+// For Update Profile resend email
+$config['email']['protocol'] = '';
+$config['email']['smtp_host'] = '';
+$config['email']['smtp_port'] = '';
+$config['email']['smtp_user'] = '';
+$config['email']['smtp_pass'] = '';
+$config['email']['mailtype'] = 'html';
+$config['email']['charset'] = 'iso-8859-1';

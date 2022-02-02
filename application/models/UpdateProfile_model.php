@@ -9,6 +9,13 @@ class UpdateProfile_model extends CI_Model
         $this->load->database();
     }
 
+    public function deleteUser($id)
+    {
+        $this->db->where('user_ID', $id);
+        $this->db->delete('user');
+        return;
+    }
+
     public function get_Email($id)
     {
         $this->db->where('user_ID', $id);

@@ -78,16 +78,12 @@
             if($action == "YES")
             {
                 $id = $this->session->userdata('user_ID');
-                $link = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                $sql = "DELETE FROM user WHERE user_ID=$id";
 
-                if (mysqli_query($link, $sql)) 
-                {
+                $this->UpdateProfile_model->deleteUser($id);
+
                     $this->session->sess_destroy();
-                    $data['navbar'] = 'home';
-                    $this->sitelayout->loadTemplate('pages/home/home', $data);   
-                } 
-                    
+                    redirect('/');   
+                
             }
             else
             {
@@ -305,19 +301,9 @@
             If this attempt wasn't made by you, please log-in immedietly and change your password to secure your account.
             ";
             $to = $this->session->userdata('email');
-
-            $config = array(
-                'protocol'  => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
-                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
-                'smtp_pass' => 'team6@3ab',
-                'mailtype'  => 'html', 
-                'charset'   => 'iso-8859-1'
-            );
             
             $this->load->library('email');
-            $this->email->initialize($config);
+            $this->email->initialize($this->config->item('email'));
             $this->email->set_newline("\r\n");
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($to);
@@ -446,3 +432,5 @@
             header("Refresh:0; url =../updateprofile");
         }
     }
+
+?>

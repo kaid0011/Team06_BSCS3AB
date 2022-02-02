@@ -215,5 +215,4 @@
     document.getElementById("removeimage").value = "Remove";
     document.getElementById("remove").style.backgroundColor = "gray";
   }
-
 </script>

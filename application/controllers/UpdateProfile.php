@@ -29,13 +29,13 @@
                 $this->form_validation->set_rules('oldPassword', 'Old Password', 'required|trim');
                 $this->form_validation->set_rules('newPassword', 'New Password', 'required|trim');
                 $this->form_validation->set_rules('confirmPassword', 'Confirm Password', 'required|matches[newPassword]');    #checks if confirm_password matches password
-                $oldPass = md5($this->input->post('oldPassword'));
+                $oldPass = hash("sha512", $this->input->post('oldPassword'));
 
                 if($originPass == $oldPass)
                 {
                     if($this->form_validation->run())
                     {
-                        $newPass = md5($this->input->post('newPassword'));
+                        $newPass = hash("sha512", $this->input->post('newPassword'));
                         $this->UpdateProfile_model->updatePassword($newPass, $id);
                         echo("Password changed successfully");
 

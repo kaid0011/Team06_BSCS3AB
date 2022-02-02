@@ -1,6 +1,5 @@
 <section>
-        <img src="<?=base_url('assets/images/registration/mainte.png')?>"style="height: 300px;
-      width: 400px;">
+        <img src="<?=base_url('assets/images/registration/mainte.png')?>"style="height: 300px; width: 400px;" alt="maintenance image">
         <h2>Under maintenance</h2>
         <p class="p-4 px-5"style=" font-size: 24px;padding-bottom: 20px;"> 
         Sorry for the inconvenience but we’re performing some maintenance at the moment.

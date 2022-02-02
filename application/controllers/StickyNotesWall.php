@@ -24,34 +24,45 @@
             $this->sitelayout->loadTemplate('pages/stickynoteswall/createstickynotes', $data); 
         }
 
-        public function createNotes() {
-            $id = $this->session->userdata('user_ID');
-            $action = $this->input->post('action');
-            $noteReceiver = $this->input->post('receiver');
-            $noteInput = $this->input->post('input');
-            $notetheme = $this->input->post('theme');
-            
-            if($notetheme == NULL)
-            {
-                $notetheme = 'Light';
-            }
+        public function createNotes() 
+        {
+            $this->form_validation->set_rules('input', 'Input', 'max_length[100]');
 
-            $data = array(
-                'user_ID' => $id,
-                'noteReceiver' => $noteReceiver,
-                'noteInput' => $noteInput,
-                'noteTheme' => $notetheme,
-                'noteReact_Count' => 0
-            );
+            if($this->form_validation->run())
+            {
+                $id = $this->session->userdata('user_ID');
+                $action = $this->input->post('action');
+                $noteReceiver = $this->input->post('receiver');
+                $noteInput = $this->input->post('input');
+                $notetheme = $this->input->post('theme');
+                
+                if($notetheme == NULL)
+                {
+                    $notetheme = 'Light';
+                }
 
-            if($action == 'Submit')
-            {
-                $this->StickyNotesWall_model->createStickyNotes($data);
-                redirect('stickynoteswall');
+                $data = array(
+                    'user_ID' => $id,
+                    'noteReceiver' => $noteReceiver,
+                    'noteInput' => $noteInput,
+                    'noteTheme' => $notetheme,
+                    'noteReact_Count' => 0
+                );
+
+                if($action == 'Submit')
+                {
+                    $this->StickyNotesWall_model->createStickyNotes($data);
+                    redirect('stickynoteswall');
+                }
+                else if($action == 'Back')
+                {
+                    $this->index();
+                }
             }
-            else if($action == 'Back')
+            else
             {
-                $this->index();
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/stickynoteswall/createstickynotes', $data); 
             }
         }
 
@@ -69,4 +80,3 @@
             }       
         }
     }
-?>

@@ -13,7 +13,7 @@
             <div class="text-white">
               <div class="justify-content-center align-items-center text-center ps-5">
                 <?php $source = $this->Mainpage_model->getImage($row->user_ID); ?>
-                <a href="#"><img src="<?= base_url($source) ?>" style="height: 300px; width: 300px; border-radius: 150px; object-fit: cover;"></a>
+                <a href="#"><img src="<?= base_url($source) ?>" style="height: 200px; width: 200px; border-radius: 100px; object-fit: cover;"></a>
               </div>
 
               <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal"><?php echo $row->displayName; ?><br>

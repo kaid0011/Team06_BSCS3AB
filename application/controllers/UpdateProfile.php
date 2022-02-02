@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
     
-    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/upload/";
+    $target_directory = APPPATH.'/uploads/profile/';
     class UpdateProfile extends CI_Controller
     {
 
@@ -78,7 +78,7 @@
             if($action == "YES")
             {
                 $id = $this->session->userdata('user_ID');
-                $link = mysqli_connect("localhost", "root", "", "virtual_diary");
+                $link = mysqli_connect("localhost", "root", "team6", "virtual_diary");
                 $sql = "DELETE FROM user WHERE user_ID=$id";
 
                 if (mysqli_query($link, $sql)) 
@@ -446,5 +446,3 @@
             header("Refresh:0; url =../updateprofile");
         }
     }
-
-?>

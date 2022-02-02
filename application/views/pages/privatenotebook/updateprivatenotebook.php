@@ -105,7 +105,8 @@
                   foreach($viewPageNotebook->result() as $row)
                   { 
                     ?>
-                    <textarea name="input" class="form-control" id="" rows="13"><?php echo $row->pageInput; ?></textarea>
+                    <textarea name="input" class="form-control fixed" id="" rows="13"><?php echo $row->pageInput; ?></textarea>
+                    <span class="text-danger"><?php echo form_error('input'); ?></span>
                     <?php
                   }
                 ?>     
@@ -159,7 +160,9 @@
     color: #212529;
     background-color: #e9ecef;
   }
-
+  .fixed{
+  resize: none;   
+}
   .card-front {
     width: 100%;
     height: 100%;

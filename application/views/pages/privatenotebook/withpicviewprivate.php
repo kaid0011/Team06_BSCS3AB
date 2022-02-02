@@ -75,7 +75,7 @@
                     <div class=" row">
                       <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
                             <?php $source = $this->PrivateNotebook_model->getImage();?>
-                            <a><img src="<?= base_url($source) ?>"></a>
+                            <a><img src="<?= base_url($source) ?>" alt="priv nb image"></a>
     
                       </div>
                       <div class="col-md-9">

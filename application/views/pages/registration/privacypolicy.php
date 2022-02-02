@@ -1,22 +1,22 @@
 <section class="text-light p-5 text-center text-sm-start" style="background-color:#A9A9A9;">
-        <div class="container">
-            <div class="my-2 mt-4  pe-2">
-                <h1 class="mb-1 text-center">Privacy Policy</h1>
-            </div>
+    <div class="container">
+        <div class="my-2 mt-4  pe-2">
+            <h1 class="mb-1 text-center">Privacy Policy</h1>
         </div>
-        </div>
-    </section>
+    </div>
+    </div>
+</section>
 
-    <div class="space"></div>
-    <div class="main">
-        <div class="text-center">
+<div class="space"></div>
+<div class="main">
+    <div class="text-center">
         <h5><strong>Privacy Policy</strong></h5>
         <hr>
         <p>Virtual Diary. ("we," "our," or "us") is committed to protecting your privacy.
         <p>This Privacy Policy explains how your personal information is collected, used, and disclosed by Virtual Diary. This Privacy Policy applies to our website, www.virtual-diary.com, and its associated subdomains (collectively, our "Service") alongside our application, Virtual Diary.
         <p>By accessing or using our Service, you signify that you have read, understood, and agree to our collection, storage, use,
         <p>and disclosure of your personal information as described in this Privacy Policy and our Terms of Service
-        <hr>
+            <hr>
         <p><strong>Your Consent</p></strong>
         By using our service, registering an account, you consent to this Privacy Policy.
         <hr>
@@ -36,24 +36,23 @@
         We take precautions to protect the security of your information. We have physical, electronic, and managerial procedures to help safeguard, prevent unauthorized access, maintain data security, and correctly use your information. However, neither people nor security systems are foolproof, including encryption systems. In addition, people can commit intentional crimes, make mistakes or fail to follow policies. Therefore, while we use reasonable efforts to protect your personal information, we cannot guarantee its absolute security. If applicable law imposes any non-disclaimable duty to protect your personal information, you agree that intentional misconduct will be the standards used to measure our compliance with that duty.
         <hr>
         <p><strong>What Information Do We Collect?</p></strong>
-        <ul>We collect information from you when you visit our service, register, subscribe to our newsletter, respond to a survey or fill out a form</div><div>
+        <ul>We collect information from you when you visit our service, register, subscribe to our newsletter, respond to a survey or fill out a form
             <li>Name / Username</li>
             <li>Email Addresses</li>
-            <li>Password</li> 
+            <li>Password</li>
         </ul>
-        </div>
-        <hr>
-        <div class="text-center">
+    </div>
+    <hr>
+    <div class="text-center">
         <p><strong>How Do We Use The Information We Collect?</p></strong>
-        <ul>Any of the information we collect from you may be used in one of the following ways: </div>
-        <div>
-            <li>To personalize your experience (your information helps us to better respond to your individual needs)</li> 
-            <li>To improve our service (offerings based on the information and feedback we receive from you and other users)</li> 
-            <li>To improve user service and experience (your information helps us to more effectively respond to your user service requests)</li> 
-        </div>
-        </ul> 
-        <hr>
-        <div class="text-center">
+        <ul>Any of the information we collect from you may be used in one of the following ways:
+            <li>To personalize your experience (your information helps us to better respond to your individual needs)</li>
+            <li>To improve our service (offerings based on the information and feedback we receive from you and other users)</li>
+            <li>To improve user service and experience (your information helps us to more effectively respond to your user service requests)</li>
+        </ul>
+    </div>
+    <hr>
+    <div class="text-center">
         <p><strong>Can I update or correct my information?</p></strong>
         The rights you have to request updates or corrections to the information we collect depend on your relationship with us. Pe"If you are a current user and has an account in Virtual Diary, you have the authority to personally update or delete your information and the account itself. However, the rights such updates, corrections, changes and deletions will have no effect on other information that we maintain. To protect your privacy and security, we may take reasonable steps (such as requesting a unique password) to verify your identity before granting you profile access or making corrections. You are responsible for maintaining the secrecy of your unique password and account information at all times. You should be aware that it is not technologically possible to remove each and every record of the information you have provided to us from our system. The need to back up our systems to protect information from inadvertent loss means that a copy of your information may exist in a non-erasable form that will be difficult or impossible for us to locate. Promptly after receiving your request, all personal information stored in databases we actively use, and other readily searchable media will be updated, corrected, changed or deleted, as appropriate, as soon as and to the extent reasonably and technically practicable.
         <hr>
@@ -74,44 +73,40 @@
         <hr>
         <p><strong>Contact Us</strong></p>
         <p>Don't hesitate to contact us if you have any questions.</p>
-        <li>Via Email: virtual.diary@gmail.com</li>
-        <li>Via this Address: Ermita, Manila</li>
-        </div>
+        <ul>
+            <li>Via Email: virtual.diary@gmail.com</li>
+            <li>Via this Address: Ermita, Manila</li>
+        </ul>
     </div>
-    <br>
+</div>
+<br>
 
-    <style>
+<style>
+    body {
+        background-color: #eee;
+        font-family: Monospace, Verdana, sans-serif;
+    }
 
-        body 
-        {
-            background-color: #eee;
-            font-family: Monospace, Verdana, sans-serif;
-        }
+    .content {
+        width: 600px;
+        margin: 50px auto;
+        background-color: white;
 
-        .content 
-        {
-            width: 600px;
-            margin: 50px auto;
-            background-color: white;
+    }
 
-        }
+    .div.align-center {
+        text-align: center;
+    }
 
-        .div.align-center
-        {
-            text-align: center;
-        }
+    .main {
+        color: #000;
+        width: 50%;
+        margin: 0 auto;
+    }
 
-        .main 
-        {
-            color: #000;
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        .space 
-        {
-            width: 600px;
-            margin: 50px auto;
-            padding: 0px;
-        }
-    </style>
+    .space {
+        width: 600px;
+        margin: 50px auto;
+        padding: 0px;
+    }
+</style>

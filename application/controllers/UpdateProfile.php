@@ -446,5 +446,3 @@
             header("Refresh:0; url =../updateprofile");
         }
     }
-
-?>

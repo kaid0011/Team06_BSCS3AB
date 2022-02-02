@@ -269,4 +269,3 @@
             $this->sitelayout->loadTemplate('pages/publicnotebook/viewusingtimestamp', $data); 
         }
     }
-?>

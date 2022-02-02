@@ -92,7 +92,7 @@
                     <div class=" row">
                       <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
                             <?php $source = $this->PublicNotebook_model->getImage($page_ID);?>
-                            <a><img src="<?= base_url($source) ?>" style="height: 250px; width: 250px; margin-left: -13px; padding: 0px;"></a>
+                            <a><img src="<?= base_url($source) ?>" style="height: 250px; width: 250px; margin-left: -13px; padding: 0px;" alt="pub nb image"></a>
     
                       </div>
                       <div class="col-md-9">

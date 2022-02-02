@@ -48,7 +48,8 @@
               <!--Input Area-->
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
-                    <textarea name="input" class="form-control fixed" id="" rows="13"></textarea> 
+                    <textarea name="input" class="form-control fixed" id="input" rows="13"><?php echo set_value('input'); ?></textarea> 
+                    <span class="text-danger"><?php echo form_error('input'); ?></span>
                 <hr id="inputbox" class="bg-light">
                 <input type="file" name="file" id="file" class="custom-file-input me-3" accept="image/png, image/jpg, image/jpeg"/ >
                 <input type="button" value="Remove" name="action" id="remove" class="p-2 btn mt-1" onclick="removeImage()"/>
@@ -56,7 +57,7 @@
                 <!-- Button-->
                 <input type="submit" value= "Submit" name="action"  class="p-2 btn float-end mt-1">
                 <!-- Back Button -->
-                <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">      
+                <input type="submit" value= "Back" name="action" class="p-2 btn float-end mt-1 me-4">  
               </div>
               </form>
             </div>

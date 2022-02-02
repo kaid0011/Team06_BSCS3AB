@@ -25,7 +25,6 @@
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/supportteam/bugreport', $data);
         }
-        
 
         public function reportUserWall()
         {
@@ -89,6 +88,10 @@
                 {
                     $this->reportUserWall();
                 }
+            }
+            else if($action == 'Back')
+            {
+                $this->reportUserWall();
             }
         }
     }

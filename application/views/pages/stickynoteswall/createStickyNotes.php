@@ -59,8 +59,8 @@
                 </div>
                 <div class="my-2"></div>
 
-                <textarea class="form-control border border-3 border-secondary py-5 px-4 toinput inputSize" type="text" style="background-image: url(<?= base_url('assets/images/themes/LightCard.jpg') ?>);" id="noteInput" name="input" rows="10"></textarea>
-
+                <textarea class="form-control border border-3 border-secondary py-5 px-4 toinput inputSize" type="text" style="background-image: url(<?= base_url('assets/images/themes/LightCard.jpg') ?>);" id="noteInput" name="input" rows="10"><?php echo set_value('input'); ?></textarea>
+                <span class="text-danger"><?php echo form_error('input'); ?></span>
               </div>
 
 

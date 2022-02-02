@@ -106,6 +106,7 @@
                   { 
                     ?>
                     <textarea name="input" class="form-control fixed" id="" rows="13"><?php echo $row->pageInput; ?></textarea>
+                    <span class="text-danger"><?php echo form_error('input'); ?></span>
                     <?php
                   }
                 ?>     

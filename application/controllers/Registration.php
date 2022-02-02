@@ -38,7 +38,7 @@
             if($this->form_validation->run())   #If no error,
             {
                 $verification_key = random_string('numeric', 6);                #create random string for verification,
-                $encrypted_password = md5($this->input->post('password'));      #create hash value for password,
+                $encrypted_password = hash("sha512", $this->input->post('password'));      #create hash value for password,
                 $this->addUser($verification_key, $encrypted_password);         #then proceed to addUser function.
             }
             else    #If there is error,

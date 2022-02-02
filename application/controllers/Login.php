@@ -26,7 +26,7 @@
             $this->sitelayout->loadTemplate('pages/authentication/login', $data);
         }
 
-        function validation()
+        public function validation()
         {
             $action = $this->input->post('action');
 
@@ -96,5 +96,4 @@
             }
         }
     }
-?>
 

@@ -177,4 +177,3 @@
             $this->sitelayout->loadTemplate('pages/registration/privacypolicy', $data); 
         }
     }
-?>

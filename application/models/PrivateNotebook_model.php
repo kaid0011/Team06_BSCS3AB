@@ -42,7 +42,7 @@
                 public function getImage()
                 {
                     $id = $this->session->userdata('user_ID');
-                    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/privatenotebook/";
+                    $target_directory = APPPATH.'/uploads/privatenotebook/';
                     $filename = $id."_privateNotebookImage";
                     $extension = ".jpg";
                     $path_filename_ext = $target_directory.$filename.$extension;
@@ -68,7 +68,7 @@
                     $file = $id."_privateNotebookImage".$extension;
                     if(file_exists($path_filename_ext))
                         {
-                            return "assets/images/privatenotebook/$file";
+                            return "/application/uploads/privatenotebook/$file";
                         }
                         else
                         {

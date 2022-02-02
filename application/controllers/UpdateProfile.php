@@ -1,7 +1,7 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
     
-    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/upload/";
+    $target_directory = APPPATH.'/uploads/profile/';
     class UpdateProfile extends CI_Controller
     {
 

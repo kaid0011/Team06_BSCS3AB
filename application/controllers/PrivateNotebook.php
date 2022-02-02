@@ -1,6 +1,6 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
-    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/privatenotebook/";
+    $target_directory = APPPATH.'/uploads/privatenotebook/';
 
     class PrivateNotebook extends CI_Controller
     {

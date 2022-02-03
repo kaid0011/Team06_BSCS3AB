@@ -104,18 +104,9 @@
             If this wasn’t you, please ignore this email
             ";
             $to = $this->session->userdata('email');
-            $config = array(
-                'protocol'  => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
-                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
-                'smtp_pass' => 'team6@3ab',
-                'mailtype'  => 'html', 
-                'charset'   => 'iso-8859-1'
-            );
-            
+           
             $this->load->library('email');
-            $this->email->initialize($config);
+            $this->email->initialize($this->config->item('email'));
             $this->email->set_newline("\r\n");
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($to);
@@ -130,4 +121,3 @@
             }
         }
     }
-?>

@@ -176,4 +176,4 @@
             $data['navbar'] = 'registration';
             $this->sitelayout->loadTemplate('pages/registration/privacypolicy', $data); 
         }
-    }git 
+    }

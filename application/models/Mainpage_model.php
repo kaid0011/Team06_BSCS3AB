@@ -25,7 +25,7 @@
 
                 public function getImage($id)
                 {
-                    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/upload/";
+                    $target_directory = APPPATH.'/uploads/profile/';
                     $filename = $id."_profileImage";
                     $extension = ".jpg";
                     $path_filename_ext = $target_directory.$filename.$extension;
@@ -50,13 +50,12 @@
                     $file = $id."_profileImage".$extension;
                     if(file_exists($path_filename_ext))
                         {    
-                            return "assets/images/upload/$file";
+                            return "/application/uploads/profile/$file";
                         }
                         else
                         {
-                            return "assets/images/upload/profile.png";
+                            return "/application/uploads/profile/profile.png";
                         }
                         
                 }
         }
-?>

@@ -107,15 +107,15 @@
 
         public function updatePublicPage()
         {
+            $id = $this->session->userdata('user_ID');
+            $page_ID = $this->input->post('page_ID');
+            $action = $this->input->post('action');
+            $pageTheme = $this->input->post('theme');
+
             $this->form_validation->set_rules('input', 'Input', 'max_length[1000]');
 
             if($this->form_validation->run())
-            {
-                $id = $this->session->userdata('user_ID');
-                $page_ID = $this->input->post('page_ID');
-                $action = $this->input->post('action');
-                $pageTheme = $this->input->post('theme');
-                
+            {   
                 if($action == 'Update')
                 {
                     $pageInput = $this->input->post('input');
@@ -206,7 +206,8 @@
             else
             {
                 $data['navbar'] = 'main';
-                $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data); 
+                $data['pageID'] = $page_ID;
+                $this->sitelayout->loadTemplate('pages/publicnotebook/updatepublicnotebookfd', $data); 
             }
         }
 

@@ -29,14 +29,14 @@
 
         public function updateprivatepage()
         {
+            $id = $this->session->userdata('user_ID');
+            $action = $this->input->post('action');
+            $pageTheme = $this->input->post('theme');
+
             $this->form_validation->set_rules('input', 'Input', 'max_length[1000]');
 
             if($this->form_validation->run())
             {
-                $id = $this->session->userdata('user_ID');
-                $action = $this->input->post('action');
-                $pageTheme = $this->input->post('theme');
-                
                 if($action == 'Update')
                 {
                     $pageTimer = $this->input->post('appt'); //Timer
@@ -131,7 +131,7 @@
                 $id = $this->session->userdata('user_ID');
                 $data['viewPageNotebook']=$this->PrivateNotebook_model->get_PrivateNotebookInput($id);
                 $data['navbar'] = 'main';
-                $this->sitelayout->loadTemplate('pages/privatenotebook/updateprivatenotebook', $data);  
+                $this->sitelayout->loadTemplate('pages/privatenotebook/updateprivatenotebookfd', $data);  
             }
         }
 

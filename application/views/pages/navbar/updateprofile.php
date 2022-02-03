@@ -11,9 +11,9 @@
         <a href="#"><img src="<?= base_url($source)?>" style="height: 200px; width: 200px; border-radius: 100px; object-fit: cover;" alt="user profile"></a>
       </div>
       
-      <form method="post" enctype="multipart/form-data" action="<?= base_url('updateprofile/image') ?>">
+      <form method="post" enctype="multipart/form-data" action="<?= base_url('updateprofile/do_upload') ?>">
         <div class="inp pt-3">
-          <input type="file" name="file" id="file"/>
+          <input type="file" name="userfile" id="file"/>
         </div>
         <div class="d-flex inp2 pt-3">
           <input type="submit" name="action" id="remove" value="Remove Image" class="input-group-text me-3" style="background-color:#ced4da; font-size: 15px; Height: 41px;" />

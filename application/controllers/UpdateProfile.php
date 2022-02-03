@@ -29,13 +29,13 @@
                 $this->form_validation->set_rules('oldPassword', 'Old Password', 'required|trim');
                 $this->form_validation->set_rules('newPassword', 'New Password', 'required|trim');
                 $this->form_validation->set_rules('confirmPassword', 'Confirm Password', 'required|matches[newPassword]');    #checks if confirm_password matches password
-                $oldPass = md5($this->input->post('oldPassword'));
+                $oldPass = hash("sha512", $this->input->post('oldPassword'));
 
                 if($originPass == $oldPass)
                 {
                     if($this->form_validation->run())
                     {
-                        $newPass = md5($this->input->post('newPassword'));
+                        $newPass = hash("sha512", $this->input->post('newPassword'));
                         $this->UpdateProfile_model->updatePassword($newPass, $id);
                         echo("Password changed successfully");
 
@@ -78,16 +78,12 @@
             if($action == "YES")
             {
                 $id = $this->session->userdata('user_ID');
-                $link = mysqli_connect("localhost", "root", "team6", "virtual_diary");
-                $sql = "DELETE FROM user WHERE user_ID=$id";
 
-                if (mysqli_query($link, $sql)) 
-                {
+                $this->UpdateProfile_model->deleteUser($id);
+
                     $this->session->sess_destroy();
-                    $data['navbar'] = 'home';
-                    $this->sitelayout->loadTemplate('pages/home/home', $data);   
-                } 
-                    
+                    redirect('/');   
+                
             }
             else
             {
@@ -305,19 +301,9 @@
             If this attempt wasn't made by you, please log-in immedietly and change your password to secure your account.
             ";
             $to = $this->session->userdata('email');
-
-            $config = array(
-                'protocol'  => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
-                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
-                'smtp_pass' => 'team6@3ab',
-                'mailtype'  => 'html', 
-                'charset'   => 'iso-8859-1'
-            );
             
             $this->load->library('email');
-            $this->email->initialize($config);
+            $this->email->initialize($this->config->item('email'));
             $this->email->set_newline("\r\n");
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($to);
@@ -446,3 +432,5 @@
             header("Refresh:0; url =../updateprofile");
         }
     }
+
+?>

@@ -2,7 +2,7 @@
     
   <div class="col ms-5 d-flex justify-content-between py-3">
     <a href= "<?= base_url('mainpage')?>"class="d-flex"style="text-decoration:none;">
-    <button type="submit" style="background-color: #f0b63a; justify-content-start" class="btn border border-2 border-dark">Back</button>
+    <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Back</button>
     </a>
     <!-- New Page Button -->
       <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">

@@ -1,6 +1,6 @@
 <section class="p-5" style="background-color: #e9ecef;">
     <div class="h1 text-center p-4 mb-5 inputbox" style="color: black;">
-        Report Users
+        User Reports
     </div>
     
         <div class="d-flex justify-content-end mt-4 my-2 mb-5" >

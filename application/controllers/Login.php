@@ -49,7 +49,7 @@
 
                         if($response)
                         {
-                            if($username == "admin" && $raw_password == "team6")
+                            if($username == "admin" && $raw_password == "team6bscs3ab")
                             {
                                 $userdata = array(
                                     'user_ID' => $response->user_ID,

@@ -82,7 +82,7 @@
           <div class="container boxtype">
             <div>
               <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
-                <h1 style="font-size: 100px;" class="mb-4">Are you sure?</h1>
+                <h4 style="font-size: 80px;" class="mb-4 pt-2">Are you sure?</h4>
               </div>
 
               <form method="post" action="<?= base_url('updateprofile/deleteaccount') ?>" autocomplete="off">
@@ -153,11 +153,12 @@
 
   /* overlay style */
   .popup {
-    position: absolute;
+    position: fixed;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
+    top: 5%;
     visibility: hidden;
     background-color: #555;
   }
@@ -165,7 +166,8 @@
   .boxtype {
     border-radius: 35px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
+    color: #e9ecef;
+    background-color: rgba(49, 55, 59, 1);
   }
 
   /* The actual popup */
@@ -182,7 +184,7 @@
 
   @media(min-width:768px) {
     .resp {
-      margin-left: 100px;
+      margin-left: 80px;
     }
   }
 

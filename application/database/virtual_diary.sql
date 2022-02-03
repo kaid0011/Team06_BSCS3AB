@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2022 at 08:11 PM
+-- Generation Time: Feb 03, 2022 at 01:42 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -57,11 +57,7 @@ CREATE TABLE `privatenb_pages` (
 --
 
 INSERT INTO `privatenb_pages` (`privateNBPage_ID`, `privateNB_ID`, `pageInput`, `pageTheme`, `pageTimer`) VALUES
-(1, 1, 'This is my private page.', 'Light', '00:00:00'),
-(3, 3, 'This is my private page.', 'Light', '00:00:00'),
-(4, 4, 'This is my first private page.', 'Light', '00:00:00'),
-(6, 6, 'This is my first private page.', 'Light', '00:00:00'),
-(7, 7, 'This is my first private page.', 'Light', '00:00:00');
+(1, 1, 'This is my first private page.', 'Light', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -79,11 +75,7 @@ CREATE TABLE `private_notebook` (
 --
 
 INSERT INTO `private_notebook` (`privateNB_ID`, `user_ID`) VALUES
-(1, 1),
-(3, 3),
-(4, 4),
-(6, 6),
-(7, 7);
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -105,13 +97,7 @@ CREATE TABLE `publicnb_pages` (
 --
 
 INSERT INTO `publicnb_pages` (`publicNBPage_ID`, `publicNB_ID`, `pageInput`, `pageTheme`, `pageDate`, `pageReact_Count`) VALUES
-(1, 1, 'This is my first public page.', 'Light', '2021-12-13 19:26:56', 0),
-(5, 3, 'This is my first public page.', 'Light', '2022-01-31 02:51:26', 0),
-(6, 3, '', 'Apple', '2022-01-31 02:51:40', 0),
-(7, 4, 'This is my first public page.', 'Light', '2022-01-31 22:49:46', 0),
-(9, 1, 'eto ngayon :)', 'Orange', '2022-01-31 23:57:11', 0),
-(11, 6, 'This is my first public page.', 'Light', '2022-02-02 01:15:23', 0),
-(13, 7, 'This is my first public page.', 'Light', '2022-02-02 20:45:26', 0);
+(1, 1, 'This is my first public page.', 'Light', '2022-02-03 19:06:24', 0);
 
 -- --------------------------------------------------------
 
@@ -142,11 +128,7 @@ CREATE TABLE `public_notebook` (
 --
 
 INSERT INTO `public_notebook` (`publicNB_ID`, `user_ID`, `publicPages_Count`) VALUES
-(1, 1, 2),
-(3, 3, 2),
-(4, 4, 1),
-(6, 6, 1),
-(7, 7, 1);
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -162,7 +144,7 @@ CREATE TABLE `report` (
   `type` enum('Sticky Notes','Public Notebook') NOT NULL,
   `reportCategory` enum('Violence','Harassment','Suicide or Self Injury','False Information','Terrorism','Something else') DEFAULT NULL,
   `reportDetails` text DEFAULT NULL,
-  `reportDate` date DEFAULT NULL,
+  `reportDate` datetime DEFAULT current_timestamp(),
   `staff_Comment` text DEFAULT NULL,
   `reportStatus` enum('For Review','Reviewed') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -193,13 +175,6 @@ CREATE TABLE `sticky_notes` (
   `noteReceiver` varchar(255) NOT NULL,
   `noteReact_Count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `sticky_notes`
---
-
-INSERT INTO `sticky_notes` (`stickyNotes_ID`, `user_ID`, `noteTheme`, `noteInput`, `noteReceiver`, `noteReact_Count`) VALUES
-(1, 1, 'Light', 'Welcome to Sticky Notes Wall\r\n\r\n- Support Team ♥', 'Users', 0);
 
 -- --------------------------------------------------------
 
@@ -235,11 +210,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_ID`, `userName`, `displayName`, `email`, `password`, `status`, `dateCreated`, `verification_Key`, `is_verification_correct`) VALUES
-(1, 'admin', 'Admin', 'team6.virtualdiary2022@gmail.com', '73de29021fd0d8d2cfd204d2d955a46d', 'Banned', '2021-12-13 19:26:55', '021754', 1),
-(3, 'aaaa', 'aaaa', 'as_1@as.com', '3dbe00a167653a1aaee01d93e77e730e', 'Active', '2022-01-31 02:51:26', '107365', 1),
-(4, 'hahaha', 'hahaha', 'haha@haha.com', '4f0b36a34946153c358f8b243428a1eb', 'Active', '2022-01-31 22:49:46', '392176', 1),
-(6, 'qweqwe', 'qweqwe', 'qweqweqwe@qwe.com', 'b26986ceee60f744534aaab928cc12df', 'Pending', '2022-02-02 01:15:23', '257618', 0),
-(7, 'zxczxczxc', 'zxczxczxc', 'zzz@2.com', '7aa3262b9526ff30025c2f389263399e', 'Pending', '2022-02-02 20:45:25', '476509', 0);
+(1, 'admin', 'Admin', 'team6.virtualdiary2022@gmail.com', 'b3e3e2c7f959b2cee611e1c2b3e7a2c46092933a7780f0ab14866fefffcfdc28eccd19b403ddfa8b3ebb37b1c869c7a8f5b5637d918cec1f588756d375a91c28', 'Active', '2022-02-03 19:06:24', '361754', 1);
 
 --
 -- Indexes for dumped tables
@@ -341,37 +312,37 @@ ALTER TABLE `penalty`
 -- AUTO_INCREMENT for table `privatenb_pages`
 --
 ALTER TABLE `privatenb_pages`
-  MODIFY `privateNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `privateNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `private_notebook`
 --
 ALTER TABLE `private_notebook`
-  MODIFY `privateNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `privateNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `publicnb_pages`
 --
 ALTER TABLE `publicnb_pages`
-  MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `publicNBPage_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `publicpage_reacts`
 --
 ALTER TABLE `publicpage_reacts`
-  MODIFY `reaction_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `reaction_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `public_notebook`
 --
 ALTER TABLE `public_notebook`
-  MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `publicNB_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `report_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `report_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `stickynotes_reacts`
@@ -383,7 +354,7 @@ ALTER TABLE `stickynotes_reacts`
 -- AUTO_INCREMENT for table `sticky_notes`
 --
 ALTER TABLE `sticky_notes`
-  MODIFY `stickyNotes_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `stickyNotes_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `support_team`
@@ -395,7 +366,7 @@ ALTER TABLE `support_team`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables

@@ -73,7 +73,7 @@
                 <hr id ="inputbox" class="bg-light">
                 <!-- Submit Button-->
                 <div class="col ">
-                  <i class="bi bi-star " disabled></i> # of reacts
+                  <i class="bi bi-star " disabled></i><?php echo $row->pageReact_Count; ?>
                 </div>
               </div>
             </div>

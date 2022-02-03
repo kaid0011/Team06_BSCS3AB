@@ -7,7 +7,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image-->
-                <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('assets/images/vdLogo.png')?>" alt="vd logo" height="40px" /></a>
+                <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('assets/images/vdLogo.png') ?>" alt="vd logo" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -117,7 +117,6 @@ switch ($navbar) {
                 <ul class="navbar-nav align-items-center navbar-right w-100">
                     <!-- Logo Image -->
                     <div class="roww">
-<<<<<<< HEAD
                         <li class="block1">
                             <?php
                             if ($this->session->userdata('userName') == 'admin') {
@@ -132,37 +131,12 @@ switch ($navbar) {
                                     ?>
                                     <picture>
                                         <source media="(max-width: 990px)" srcset="<?= base_url('assets/images/vd_Logo.png') ?>">
-                                        <img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" />
+                                        <img src="<?= base_url('assets/images/vdLogo.png') ?>" alt="vd logo" height="40px" />
                                     </picture>
                                     </a>
                         </li>
 
                         <!-- Toggler Menu -->
-=======
-                    <li class="block1">
-                        <?php
-                            if($this->session->userdata('userName') == 'admin')
-                            {
-                        ?>
-                            <a href="<?= base_url('supportteam') ?>" class="navbar-brand h1 text-light mr-auto">
-                        <?php
-                            }
-                            else
-                            {
-                        ?>
-                            <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
-                        <?php
-                            }
-                        ?>
-                            <picture>
-                                <source media="(max-width: 990px)" srcset="<?= base_url('assets/images/vd_Logo.png') ?>">
-                                <img src="<?= base_url('assets/images/vdLogo.png') ?>" alt="vd logo" height="40px" />
-                            </picture>
-                    </a>
-                    </li>
-
-                    <!-- Toggler Menu -->
->>>>>>> 46f3bf1893db97c511b492cc6f379800c01fdb64
                         <!-- Search Bar -->
                         <button class="navbar-toggler block2 mx-auto resp align-items-center" style="color: white; width:100px;" data-bs-toggle="collapse" data-bs-target="#searcharea" class="navbar-toggler" aria-controls="searcharea" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="bi bi-search"></span>
@@ -195,13 +169,8 @@ switch ($navbar) {
                             </a>
                         </li>
                         <li class="mb-1">
-<<<<<<< HEAD
                             <?php $source = $this->UpdateProfile_model->getImage(); ?>
-                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px; object-fit: cover;" ; src="<?= base_url($source) ?>"></a>
-=======
-                        <?php $source = $this->UpdateProfile_model->getImage();?>
-                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px; object-fit: cover;" ; src="<?= base_url($source) ?>"  alt="user profile"></a>
->>>>>>> 46f3bf1893db97c511b492cc6f379800c01fdb64
+                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px; object-fit: cover;" ; src="<?= base_url($source) ?>" alt="user profile"></a>
                         </li>
 
                         <li class="ms-2 navbar-item dropdown mb-2">

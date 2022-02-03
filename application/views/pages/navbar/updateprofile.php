@@ -7,13 +7,8 @@
     <div class="align-items-center justify-content-center">
 
       <div class="justify-content-center align-items-center text-center ps-5">
-<<<<<<< HEAD
         <?php $source = $this->UpdateProfile_model->getImage(); ?>
-        <a href="#"><img src="<?= base_url($source) ?>" style="height: 200px; width: 200px; border-radius: 100px; object-fit: cover;"></a>
-=======
-        <?php $source = $this->UpdateProfile_model->getImage();?>
-        <a href="#"><img src="<?= base_url($source)?>" style="height: 200px; width: 200px; border-radius: 100px; object-fit: cover;" alt="user profile"></a>
->>>>>>> 46f3bf1893db97c511b492cc6f379800c01fdb64
+        <a href="#"><img src="<?= base_url($source) ?>" style="height: 200px; width: 200px; border-radius: 100px; object-fit: cover;" alt="user profile"></a>
       </div>
 
       <form method="post" enctype="multipart/form-data" action="<?= base_url('updateprofile/image') ?>">

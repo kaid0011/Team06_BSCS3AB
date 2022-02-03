@@ -7,7 +7,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image-->
-                <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
+                <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('assets/images/vdLogo.png')?>" alt="vd logo" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -46,7 +46,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image -->
-                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
+                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" alt="vd logo" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -77,7 +77,7 @@ switch ($navbar) {
             <div class="container">
 
                 <!-- Logo Image -->
-                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" /></a>
+                <a href="<?= base_url() ?>" class="navbar-brand"><img src="<?= base_url('assets/images/vdLogo.png') ?>" alt="vd logo" height="40px" /></a>
 
                 <!-- Hamburger Menu -->
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -128,7 +128,7 @@ switch ($navbar) {
                         ?>
                             <picture>
                                 <source media="(max-width: 990px)" srcset="<?= base_url('assets/images/vd_Logo.png') ?>">
-                                <img src="<?= base_url('assets/images/vdLogo.png') ?>" height="40px" />
+                                <img src="<?= base_url('assets/images/vdLogo.png') ?>" alt="vd logo" height="40px" />
                             </picture>
                     </a>
                     </li>
@@ -167,7 +167,7 @@ switch ($navbar) {
                         </li>
                         <li class="mb-1">
                         <?php $source = $this->UpdateProfile_model->getImage();?>
-                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px; object-fit: cover;" ; src="<?= base_url($source) ?>"></a>
+                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px; object-fit: cover;" ; src="<?= base_url($source) ?>"  alt="user profile"></a>
                         </li>
                         
                          <li class="ms-2 navbar-item dropdown mb-2">

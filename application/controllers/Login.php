@@ -26,7 +26,7 @@
             $this->sitelayout->loadTemplate('pages/authentication/login', $data);
         }
 
-        function validation()
+        public function validation()
         {
             $action = $this->input->post('action');
 
@@ -39,7 +39,7 @@
                 {
                     $username = $this->input->post('userName');
                     $raw_password = $this->input->post('password');
-                    $password = md5($this->input->post('password'));
+                    $password = hash("sha512", $this->input->post('password'));
                     $result = $this->Login_model->can_login($username, $password);
 
                     if($result) 
@@ -96,5 +96,4 @@
             }
         }
     }
-?>
 

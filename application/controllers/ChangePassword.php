@@ -28,7 +28,7 @@
 
                 if($this->form_validation->run())
                 {
-                    $encrypted_password = md5($this->input->post('password'));
+                    $encrypted_password = hash("sha512", $this->input->post('password'));
                     $this->updatePassword($encrypted_password);
                 }
                 else
@@ -57,4 +57,3 @@
             }
         }
     }
-?>

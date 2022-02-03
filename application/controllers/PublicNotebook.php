@@ -1,6 +1,6 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
-    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
+    $target_directory = APPPATH.'/uploads/publicnotebook/';
 
     class PublicNotebook extends CI_Controller
     {
@@ -15,6 +15,7 @@
         {
             $publicNB_ID = $this->session->userdata('user_ID');
             $data['viewPublicNotebook']=$this->PublicNotebook_model->get_PublicNotebookInput($publicNB_ID);
+            print_r($data);
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/publicnotebook/withpicviewpublic', $data); 
         }
@@ -269,4 +270,3 @@
             $this->sitelayout->loadTemplate('pages/publicnotebook/viewusingtimestamp', $data); 
         }
     }
-?>

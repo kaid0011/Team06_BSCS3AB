@@ -1,19 +1,10 @@
 <section>
-        <img src="<?=base_url('assets/images/registration/mainte.png')?>"style="height: 300px;
-      width: 400px;">
+        <img src="<?=base_url('assets/images/registration/mainte.png')?>"style="height: 300px; width: 400px;" alt="maintenance image">
         <h2>Under maintenance</h2>
-        <p style=" font-size: 35px;padding-bottom: 20px;"> 
+        <p class="p-4 px-5"style=" font-size: 24px;padding-bottom: 20px;"> 
         Sorry for the inconvenience but we’re performing some maintenance at the moment.
-            we’ll be back online shortly!</p>
-        <a href="<?= base_url('supportteam') ?>"style=" background: #3867d6;
-      border-radius:4px;
-      outline: none;
-      border: 0px;
-      color: #fff;
-      font-size: 34px;
-      cursor: pointer;
-      text-decoration: none;
-      padding: 5px 25px;">Go Back</a>
+            <br>we’ll be back online shortly!</p>
+        <a href="<?= base_url('supportteam') ?>"><input type="submit" value="Go Back" name="action" style="background-color: #f0b63a; width: 75px;" class="p-2 mb-5 btn-sm border border-2 border-dark btn-end"></a>
       </section>
 <style>
     body{

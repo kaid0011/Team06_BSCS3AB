@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row align-items-center justify-content-between">
       <div class="col-md p-0 mt-0 ">
-        <img src="<?= base_url('assets/images/registration/pic3.png') ?>" class="img-fluid">
+        <img src="<?= base_url('assets/images/registration/pic3.png') ?>" class="img-fluid" alt="reg image">
       </div>
       <div class="col-md p-5">
         <h1 class="h1 mb-4 pt-1 text-dark">Registration</h1>

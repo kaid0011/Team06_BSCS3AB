@@ -184,6 +184,7 @@
                 );
 
                 $this->session->set_userdata($userdata); 
+                $this->resendCode();
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
             }
@@ -291,15 +292,14 @@
         public function resendEmail()
         {
             $key = $this->session->userdata('verification_Key');
-            $name = $this->session->userdata('userName');
             $subject = "Verify your email";
-            $message = "
-            Heads up! You recently tried to update your account settings! Use the code below in order to verify it's you to accept the changes.
+            $message = '
+            <h4 align="center">Heads up! You recently tried to update your account settings! Use the code below in order to verify it is you to accept the changes.</h4>
 
-            ".$key."
-
-            If this attempt wasn't made by you, please log-in immedietly and change your password to secure your account.
-            ";
+            <h1 align="center">'.$key.'</h1>
+            
+            <h4 align="center">If this attempt was not made by you, please log-in immedietly and change your password to secure your account.</h4>
+            ';
             $to = $this->session->userdata('email');
             
             $this->load->library('email');

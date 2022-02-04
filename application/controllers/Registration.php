@@ -128,17 +128,17 @@
             $key = $this->session->userdata('verification_Key');
             $name = $this->session->userdata('userName');
             $subject = "Verify your email";
-            $message = "
-            Welcome to Virtual Diary, ".$name."!\n
+            $message = '
+            <h1 align="center">Welcome to Virtual Diary, '.$name.'!</h1>
  
-            Thank you for joining our community! In order to verify your account creation, 
-            use the code below on your page registration!\n\n
+            <h4>Thank you for joining our community! In order to verify your account creation, 
+            use the code below on your page registration!</h4>
 
-            ".$key."\n\n
+            <h1 align="center">'.$key.'</h1>
 
-            You are receiving this email because you recently tried to create an account in Virtual Dary. 
-            If this was not you, please ignore this email.
-            ";
+            <h4>You are receiving this email because you recently tried to create an account in Virtual Dary. 
+            If this was not you, please ignore this email.</h4>
+            ';
             $to = $this->input->post('email');
             
             $this->load->library('email');

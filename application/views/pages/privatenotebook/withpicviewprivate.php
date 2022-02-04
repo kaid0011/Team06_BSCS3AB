@@ -57,10 +57,16 @@
                     <!-- Timer -->
                     <div class="col ml-auto h5">
                       <!-- Update Button-->
-                      <input type="submit" value= "Back" name="action" class="p-2 btn float-end ms-2 ">
+
+                      
+
                       <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
-                        <button class="p-2 btn float-end">Update</button>
+                        <button class="p-2 ms-2 btn float-end">Update</button>
                       </a>
+                      <a href= "<?= base_url('mainpage')?>">
+                      <button class="p-2 btn float-end">Back</button>
+                      </a>
+                      
                       <div class="mb-2 me-5 float-end">Reset Timer<span><br><?php $time = date("g:i a", strtotime($row->pageTimer));
                           echo $time; ?></span> 
                       </div>

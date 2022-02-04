@@ -148,4 +148,7 @@
     color: #dee2e6;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
   }
+  *{
+  min-height: 75vh;
+}
 </style>

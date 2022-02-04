@@ -63,13 +63,14 @@
             $email = $this->session->userdata('email');
             $code = $this->session->userdata('code');
             $subject = "Forgot Password";
-            $message = "
-            This is an automated email for providing you a code to reset your password in Virtual Diary.
-            ".$code."
+            $message = '
+            <h4 align="center">This is an automated email for providing you a code to reset your password in Virtual Diary.</h4>
 
-            If this request is done by you, take the code above in order to progress.
-            If you did not request this, ignore this message.
-            ";
+            <h1 align="center">'.$code.'</h1>
+
+            <h4 align="center">If this request is done by you, take the code above in order to progress.
+            If you did not request this, ignore this message.</h4>
+            ';
 
             $this->load->library('email');
             $this->email->initialize($this->config->item('email'));

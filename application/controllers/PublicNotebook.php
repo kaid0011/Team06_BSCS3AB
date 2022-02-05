@@ -141,7 +141,7 @@
                 {
                     redirect('publicnotebook');
                 }
-                else
+                else if($action == 'YES')
                 {  
                     $this->deletePublicPage();
                 }

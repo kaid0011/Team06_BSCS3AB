@@ -102,7 +102,6 @@
                   <input type="file" name="file" id="file" />
                   <input type="button" value="Remove" name="action" id="remove" class="p-2 btn mt-1" onclick="removeImage()" />
                   <input type="text" name="remove" id="removeimage" class="btn float-end mt-1" hidden value="">
-                  <!-- Page ID hidden -->
                   <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
                   <!-- Button-->
                   <input type="submit" value="Update" name="action" class="p-2 btn float-end mt-1">
@@ -120,28 +119,30 @@
 </div>
 </div>
 </div>
-<button class="popup" onclick="myFunction()">
-  <span class="popuptext justify-content-center resp2" id="myPopup" style="background-color: #555;">
-    <div class="container boxtype">
-      <div>
-        <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
-          <h4 style="font-size: 30px;" class="mb-4 pt-2">Are you sure?</h4>
-        </div>
+<div class="container my-5">
+    <button class="popup" onclick="myFunction()">
+      <span class="popuptext justify-content-center resp2" id="myPopup" style="background-color: #555;">
+        <div class="container boxtype">
+          <div>
+            <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
+              <h4 style="font-size: 30px;" class="mb-4 pt-2">Are you sure?</h4>
+            </div>
 
-        <form method="post" action="" autocomplete="off">
-          <div class="row text-center py-5">
-            <div class="col resp">
-              <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
-            </div>
-            <div class="col resp">
-              <input type="submit" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
-            </div>
+            <form method="post" id="updateform" enctype='multipart/form-data' action="<?= base_url('publicnotebook/updatepublicpage') ?>">
+              <div class="row text-center py-5">
+                <div class="col resp">
+                  <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
+                  <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
+                </div>
+                <div class="col resp">
+                  <input type="button" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
+                </div>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-    </div>
-  </span>
-</button>
+        </div>
+      </span>
+    </button>
 </section>
 
 <style>

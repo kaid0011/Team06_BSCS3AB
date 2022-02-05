@@ -92,10 +92,12 @@
                     $this->index();
                     header("Refresh:0; url = ../privatenotebook");
                 }
-                else if($action == 'Delete')
+                else if($action == 'YES')
                 {  
                     $this->PrivateNotebook_model->updatePage("00:00:00", "Light", NULL, $id);
+                    $this->removeImage();
                     $this->index();
+                    header("Refresh:0; url = ../privatenotebook");
                 }
             }
             else

@@ -129,13 +129,13 @@
               <h4 style="font-size: 30px;" class="mb-4 pt-2">Are you sure?</h4>
             </div>
 
-            <form method="post" action="" autocomplete="off">
+            <form method="post" id="updateform" enctype='multipart/form-data' action="<?= base_url('privatenotebook/updateprivatepage') ?>">
               <div class="row text-center py-5">
                 <div class="col resp">
                   <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
                 </div>
                 <div class="col resp">
-                  <input type="submit" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
+                  <input type="button" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
                 </div>
               </div>
             </form>

@@ -87,9 +87,7 @@
                         <div>
                           <!-- React to Sticky Note -->
                           <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
-
-                          <button id="react" class="btn btn-none btn-sm float-start" value="<?php echo $row->stickyNotes_ID ?>"><i id="icon" class="bi bi-star h4"></i></button>
-                          <span id="noteReact_Count"><?php echo $row->noteReact_Count; ?></span>
+                          <button id="react_<?php echo $row->stickyNotes_ID ?>" class="btn btn-none btn-sm float-start" value="<?php echo $row->stickyNotes_ID ?>"><i id="icon" class="bi bi-star-fill h4"></i></button>
                           <!-- End of React to Sticky Note -->
                         </div>
                         <!-- Report Sticky Note -->
@@ -117,34 +115,29 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script>
-  $(document).on("click", "#react", function(e) {
-    e.preventDefault();
+  $(document).ready(function(){
+      $(".btn.btn-none.btn-sm.float-start").click(function(){
+        var accountVisitor_ID = $("#accountVisitor_ID").val();
+        var stickyNotes_ID = $(this).attr("value");
 
-    var accountVisitor_ID = $("#accountVisitor_ID").val();
-    var stickyNotes_ID = $(this).attr("value");
-    var noteReact_Count = $("#noteReact_Count").val();
-    var display = document.getElementById("noteReact_Count");
-
-    $.ajax({
-      url: "<?php echo base_url(); ?>React/addReact_StickyNote",
-      type: "post",
-      dataType: "json",
-      data: {
-        accountVisitor_ID: accountVisitor_ID,
-        stickyNotes_ID: stickyNotes_ID,
-      },
-      success: function(data) {
-        if(data.response == "added")
-        {
-          alert("added");
+        $.ajax({
+        url: "<?php echo base_url(); ?>React/addReact_StickyNote",
+        type: "post",
+        dataType: "json",
+        data: {
+          accountVisitor_ID: accountVisitor_ID,
+          stickyNotes_ID: stickyNotes_ID,
+        },
+        success: function(data) {
+          if (data.response == "added") {
+            $("#react_"+stickyNotes_ID).css("color","#329bba");
+          } else {
+            $("#react_"+stickyNotes_ID).css("color","#212529");
+          }
         }
-        else
-        {
-          alert("deleted");
-        }
-      }
+      });
+      });
     });
-  });
 </script>
 
 <!-- End of AJAX for Reactions -->

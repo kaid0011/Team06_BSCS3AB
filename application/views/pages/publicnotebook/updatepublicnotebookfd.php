@@ -35,10 +35,6 @@
                       <input type="button" onclick="changeImgFruits('url(<?= base_url('assets/images/themes/Theme5_Kiwi.jpg') ?>)', 'url(<?= base_url('assets/images/themes/KiwiCard.jpg') ?>)', '#212529', 'Kiwi');" value="Kiwi" class="p-2 btn"></input>
                       <!--  <button class="p-2 btn" disabled>Kiwi</button>-->
                     </div>
-                    <div class="col mt-3">
-                      <!-- Delete -->
-                      <input type="button" onclick="myFunction()" value="Delete" class="p-2 btn float-end me-3"></input>
-                    </div>
                   </div>
                 </div>
 
@@ -204,7 +200,7 @@
     padding: 0;
     top: 25%;
     width: 320px;
-    visibility: hidden;
+    visibility: visible;
     background-color: #555;
     border-radius: 35px;
     text-align: center;

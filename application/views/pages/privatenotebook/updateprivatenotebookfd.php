@@ -136,7 +136,7 @@
                   <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
                 </div>
                 <div class="col resp">
-                  <input type="submit" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
+                  <input type="submit" name="action" onclick="myBack()" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
                 </div>
               </div>
             </form>
@@ -214,7 +214,7 @@
     background-color: #555;
     border-radius: 35px;
     text-align: center;
-    visibility: hidden;
+    visibility: visible;
     align-items: center;
   }
 
@@ -265,4 +265,10 @@
   function myFunction() {
     var popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
+  }
+
+  function myBack() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.visibility("hidden");
+  }
 </script>

@@ -32,8 +32,8 @@
     </a>
   </div>
   <div class="mb-4"></div>
-  <div class="container" style="width: 1500px; ">
-    <div class="row text-center g-4">
+  <div class="container wide pm">
+    <div class="row text-center g-4 pm">
       <?php
       if ($viewStickyNotes->num_rows() > 0) {
         foreach ($viewStickyNotes->result() as $row) {
@@ -67,38 +67,42 @@
           }
 
       ?>
-          <div class="col justify-content-center">
-            <div class="col justify-content-center">
+          <div class="col justify-content-center marge">
+            <div class="col justify-content-center marge">
               <div class="card responsive stickyNote" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
                 <!-- style="@media (min-width: 989px) {width: 25vw; height: 390px;}  @media (max-width: 990px) {width: 70vw; height: 390px;}" -->
-                  <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
-                    <div class="card-body text-center" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
-                      <div class="h1 mb-3" > 
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example " tabindex="0" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
+                  <div class="card-body text-center" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
+                    <div class="h1 mb-3">
+                    </div>
+                    <input type="text" name="post_ID" id="post_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->stickyNotes_ID ?>" hidden>
+                    <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->user_ID ?>" hidden>
+                    <h3 class="card-title text-light">
+                      To: <?php echo $row->noteReceiver; ?><br>
+                    </h3>
+                    <p class="card-text py-5 stickyNotesHeight">
+                      <?php echo $row->noteInput; ?><br>
+                    </p>
+                    <div class="reactButton pb-2 pe-3" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
+                      <div>
+                        <!-- React to Sticky Note -->
+                        <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
+
+                        <button id="react" class="btn btn-none btn-sm float-start" value="<?php echo $row->stickyNotes_ID ?>"><i id="icon" class="bi bi-star h4"></i></button>
+                        <span id="noteReact_Count"><?php echo $row->noteReact_Count; ?></span>
+                        <!-- End of React to Sticky Note -->
                       </div>
-                      <input type="text" name="post_ID" id="post_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->stickyNotes_ID ?>" hidden>
-                      <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->user_ID ?>" hidden>
-                      <h3 class="card-title text-light">
-                        To: <?php echo $row->noteReceiver; ?><br>
-                      </h3>
-                      <p class="card-text py-5 stickyNotesHeight">
-                        <?php echo $row->noteInput; ?><br>
-                      </p>
-                      <div class="reactButton pb-2 pe-3" style="background-image: url(<?= base_url($themecardbgurl) ?>);">                      
-                        <div>
-                          <!-- React to Sticky Note -->
-                          <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
-                          <button id="react_<?php echo $row->stickyNotes_ID ?>" class="btn btn-none btn-sm float-start" value="<?php echo $row->stickyNotes_ID ?>"><i id="icon" class="bi bi-star-fill h4"></i></button>
-                          <!-- End of React to Sticky Note -->
-                        </div>
-                        <!-- Report Sticky Note -->
-                        <form action="<?= base_url('reportuser/getnotedata') ?>" method="post">
-                          <input type="text" name="post_ID" id="post_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->stickyNotes_ID ?>" hidden>
-                          <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->user_ID ?>" hidden>
-                          <input type="submit" name="action" value="Report" class="d-flex ms-4 me-2" style="text-decoration: none;">
-                        </form>
-                        <!-- End of Report Sticky Note -->
-                      </div>
-                      <!-- End-->
+                      <!-- Report Sticky Note -->
+                      <form action="<?= base_url('reportuser/getnotedata') ?>" method="post">
+                        <input type="text" name="post_ID" id="post_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->stickyNotes_ID ?>" hidden>
+                        <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->user_ID ?>" hidden>
+                        <input type="submit" name="action" value="Report" class="d-flex ms-4 me-2" style="text-decoration: none;">
+                      </form>
+                      <!-- End of Report Sticky Note -->
+                    </div>
+                    <!-- End-->
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -115,29 +119,31 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script>
-  $(document).ready(function(){
-      $(".btn.btn-none.btn-sm.float-start").click(function(){
-        var accountVisitor_ID = $("#accountVisitor_ID").val();
-        var stickyNotes_ID = $(this).attr("value");
+  $(document).on("click", "#react", function(e) {
+    e.preventDefault();
 
-        $.ajax({
-        url: "<?php echo base_url(); ?>React/addReact_StickyNote",
-        type: "post",
-        dataType: "json",
-        data: {
-          accountVisitor_ID: accountVisitor_ID,
-          stickyNotes_ID: stickyNotes_ID,
-        },
-        success: function(data) {
-          if (data.response == "added") {
-            $("#react_"+stickyNotes_ID).css("color","#329bba");
-          } else {
-            $("#react_"+stickyNotes_ID).css("color","#212529");
-          }
+    var accountVisitor_ID = $("#accountVisitor_ID").val();
+    var stickyNotes_ID = $(this).attr("value");
+    var noteReact_Count = $("#noteReact_Count").val();
+    var display = document.getElementById("noteReact_Count");
+
+    $.ajax({
+      url: "<?php echo base_url(); ?>React/addReact_StickyNote",
+      type: "post",
+      dataType: "json",
+      data: {
+        accountVisitor_ID: accountVisitor_ID,
+        stickyNotes_ID: stickyNotes_ID,
+      },
+      success: function(data) {
+        if (data.response == "added") {
+          alert("added");
+        } else {
+          alert("deleted");
         }
-      });
-      });
+      }
     });
+  });
 </script>
 
 <!-- End of AJAX for Reactions -->
@@ -225,13 +231,29 @@
       margin-top: 30px;
 
     }
+
+    .wide {
+      width: 100vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    .marge {
+      margin-right: 1200px;
+      margin-left: 0;
+    }
+
+    .pm {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   .reactButton {
-    position:absolute;
+    position: absolute;
     bottom: 0px;
     justify-content: flex-end;
-    display: flex;  
+    display: flex;
     right: 0px;
   }
 
@@ -240,12 +262,13 @@
     flex-direction: column;
     margin: auto;
     display: flex;
-
-
   }
 
   .stickyNotesHeight {
     height: 250px;
+  }
 
+  .wide {
+    width: 1500px;
   }
 </style>

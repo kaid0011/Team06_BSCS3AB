@@ -3,7 +3,7 @@
             <div>
                 <h1 class="">Features</h1>
                 <p class="lead">
-                    Check out the features of Private Notebook
+                    Check out the features of the Private Notebook
                 </p>
             </div>
            
@@ -16,7 +16,7 @@
             <div>
                 <h2 class="md">The Private Notebook Platform</h2>
                 <p>
-                  Private Notebook allow you to create, update, and share notes using the app and protect them behind a strong password.
+                  Private Notebook allows you to create, update, and share notes using the app and protect them behind a strong password.
                 </p>
             </div>
             <img src="<?=base_url('assets/images/registration/haha.png')?>" alt="">
@@ -24,36 +24,36 @@
     </section>
 
     <section class="features-main my-2 mb-5">
-        <div class="container grid grid-3">
+        <div class="container grid grid-3 text-center align-items-center">
            
             <div class="card flex">
-                <i class="bi bi-journal-check h1"></i>
+                <i class="bi bi-journal-check h1 pb-3 ps-4"></i>
                 <p>
                     It allows you to organize notes, pictures, and more information in a single page notebook.
                 </p>
             </div>
             <div class="card flex">
-                <i class="bi bi-palette h1"></i>
+                <i class="bi bi-palette h1 pb-3 ps-4"></i>
                 <p>
-                    Choose between multiple themes, and background color.
+                    Choose between multiple themes and background color.
                 </p>
             </div>
             <div class="card flex">
-                <i class="bi bi-images h1"></i>
+                <i class="bi bi-images h1 pb-3 ps-4"></i>
                 <p>
-                    it allows you to put some image.
+                    It allows you to put images you like.
                 </p>
             </div>
             <div class="card flex">
-                <i class="bi bi-stopwatch h1"></i>
+                <i class="bi bi-stopwatch h1 pb-3 ps-4"></i>
                 <p>
-                    A Timer When a Stopwatch just will not do! This timer is very easy to use.
+                    It contains a timer that automatically resets you Private Notebook Page not longer than 24 hours.
                 </p>
             </div>
             <div class="card flex">
-                <i class="bi bi-shield-lock h1"></i>
+                <i class="bi bi-shield-lock h1 pb-3 ps-4"></i>
                 <p>
-                    Strong database encryption for maximum security and privacy
+                    Strong database encryption for maximum security and privacy.
                 </p>
             </div>
         </div>

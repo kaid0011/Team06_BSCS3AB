@@ -97,7 +97,7 @@
                               <div>
                                 <!-- React Button -->
                                 <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
-                                <button id="react" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i class="bi bi-star h4"></i></button>
+                                <button id="react_<?php echo $row->publicNBPage_ID ?>" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i id="icon" class="bi bi-star-fill h4"></i></button>
 
                                 <!-- Report Button -->
                                 <form action="<?= base_url('reportuser/getPublicNBData') ?>" method="post">
@@ -145,29 +145,29 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script>
-  $(document).on("click", "#react", function(e) {
-    e.preventDefault();
+    $(document).ready(function(){
+      $(".btn.btn-none.btn-sm.float-start").click(function(){
+        var accountVisitor_ID = $("#accountVisitor_ID").val();
+        var publicNBPage_ID = $(this).attr("value");
 
-    var accountVisitor_ID = $("#accountVisitor_ID").val();
-    var publicNBPage_ID = $(this).attr("value");
-
-    $.ajax({
-      url: "<?php echo base_url(); ?>React/addReact_PublicPage",
-      type: "post",
-      dataType: "json",
-      data: {
-        accountVisitor_ID: accountVisitor_ID,
-        publicNBPage_ID: publicNBPage_ID,
-      },
-      success: function(data) {
-        if (data.response == "added") {
-          alert("added");
-        } else {
-          alert("deleted");
+        $.ajax({
+        url: "<?php echo base_url(); ?>React/addReact_PublicPage",
+        type: "post",
+        dataType: "json",
+        data: {
+          accountVisitor_ID: accountVisitor_ID,
+          publicNBPage_ID: publicNBPage_ID,
+        },
+        success: function(data) {
+          if (data.response == "added") {
+            $("#react_"+publicNBPage_ID).css("color","#329bba");
+          } else {
+            $("#react_"+publicNBPage_ID).css("color","#212529");
+          }
         }
-      }
+      });
+      });
     });
-  });
 </script>
 
 <!-- End of AJAX for Reactions -->

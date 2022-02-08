@@ -160,7 +160,8 @@
         },
         success: function(data) {
           if (data.response == "added") {
-            $("#react_"+publicNBPage_ID).css("color","#329bba");
+            $("#react_"+publicNBPage_ID).css("color","#fcff5c");
+            $("#react_"+publicNBPage_ID).css("text-shadow","0 0 7px #464709");
           } else {
             $("#react_"+publicNBPage_ID).css("color","#212529");
           }

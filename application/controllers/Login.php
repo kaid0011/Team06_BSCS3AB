@@ -56,7 +56,7 @@
 
                         if($response)
                         {
-                            if($username == "admin" && $raw_password == "team6bscs3ab")
+                            if($username == $this->config->item('stUsername') && $raw_password == $this->config->item('stPassword'))
                             {
                                 $userdata = array(
                                     'user_ID' => $response->user_ID,

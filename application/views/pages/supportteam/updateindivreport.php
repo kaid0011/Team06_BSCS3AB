@@ -91,7 +91,7 @@
                 </p>
                     <div>
                         <label for="exampleInputEmail1" class="lead fw-bold p-2">Comments:</label>
-                        <textarea name="comment" class="form-control p-2 responsive justify-content-center border border-3 border-dark" id="" rows="3" ></textarea>    
+                        <textarea name="comment" class="form-control p-2 responsive justify-content-center border border-3 border-dark" id="" rows="3" ><?php echo $row->staff_Comment; ?></textarea>    
                     </div>
             </div>
             <div class="d-flex justify-content-center mt-5" style="right:0;">

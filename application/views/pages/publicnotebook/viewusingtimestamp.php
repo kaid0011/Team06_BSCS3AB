@@ -1,4 +1,4 @@
- <div class="" style="height: 80vh; background-color: #DFDFDE;"> 
+ <div class="" style="min-height: 80vh; background-color: #DFDFDE;"> 
   <div class="row" style="background-color: #DFDFDE;">
     <div class="col d-flex justify-content-between px-5 py-3">
       <a href= "<?= base_url('mainpage')?>"class="form d-flex"style="text-decoration:none;">

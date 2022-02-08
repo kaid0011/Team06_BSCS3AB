@@ -12,8 +12,17 @@
 
         public function index() 
         {
-            $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+            $id = $this->session->userdata('user_ID');
+            if($id == '1')
+            {
+                $data['navbar'] = 'admin';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+            }
+            else
+            {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+            }
         }
         
         public function updatepassword() 
@@ -173,7 +182,7 @@
 
         public function updateemail()
         {
-            $this->form_validation->set_rules('email', 'Email', 'trim|min_length[8]|valid_email|is_unique[user.email]',
+            $this->form_validation->set_rules('email', 'E-mail', 'trim|required|min_length[8]|valid_email|is_unique[user.email]',
                 array(
                     'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in email
                 ));

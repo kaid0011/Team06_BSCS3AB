@@ -104,4 +104,14 @@
                 }
             }
         }
+
+        public function termsofservice() {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/registration/termsofservice', $data); 
+        }
+        
+        public function privacypolicy() {
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/registration/privacypolicy', $data); 
+        }
     }

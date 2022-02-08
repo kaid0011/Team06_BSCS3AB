@@ -1,14 +1,23 @@
-<section class="p-5" style="background-color: #e9ecef;">
+<section class="p-5" style="background-color: #e9ecef; min-height: 75vh;">
     <div class="h1 text-center p-4 mb-5 inputbox" style="color: black;">
-        Report Users
+        User Reports
     </div>
-        <div class="w-50 mx-auto mt-4 my-2 mb-5" style="display: flex; flex-direction: row;">
-        <form action="<?= base_url('supportteam/findReport') ?>" method="post">
-            <input type="text" name="findReport" class="form-control inputbox" placeholder="Enter Reported User ID..." aria-describedby="basic-addon1">
-            <input type="submit" name="action" value="Search" class="btn btn-outline-secondary btn-primary text-white fw-normal">
+    
+        <form method="post" action="<?= base_url('supportteam/findReport') ?>">
+            <div class="my-4">&nbsp;</div>
+                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                    <div class="input-group input-group-lg inv-amount-block">
+                    <div class="w-50 mx-auto" style="display: flex; flex-direction: row;">
+
+                        <input type="text" name="findReport" class="form-control inputbox" placeholder="Enter Complainee ID" aria-describedby="basic-addon1">
+
+                        <input type="submit" name="action" value="Search" style="background-color: #f0b63a;" class="ms-2 btn border border-2 border-dark">
+                    </div>
+                    </div>
+                </div>
         </form>
-        </div>        
-        <div class="container">
+
+        <div class="container mt-5">
         <table class="table">
             <thead class="table-dark">
                 <tr>

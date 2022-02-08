@@ -52,7 +52,7 @@
         
         public function createPublicPage() 
         {
-            $this->form_validation->set_rules('input', 'Input', 'max_length[1000]');
+            $this->form_validation->set_rules('input', 'Input', 'max_length[300]');
 
             if($this->form_validation->run())
             {
@@ -114,7 +114,7 @@
             $action = $this->input->post('action');
             $pageTheme = $this->input->post('theme');
 
-            $this->form_validation->set_rules('input', 'Input', 'max_length[1000]');
+            $this->form_validation->set_rules('input', 'Input', 'max_length[300]');
 
             if($this->form_validation->run())
             {   
@@ -144,6 +144,10 @@
                 else if($action == 'YES')
                 {  
                     $this->deletePublicPage();
+                }
+                else if($action == 'NO')
+                {
+                    header("Refresh:0; url = ../publicnotebook/updatepublicnotebook/$page_ID");
                 }
             }
             else

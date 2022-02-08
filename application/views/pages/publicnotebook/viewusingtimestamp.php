@@ -1,4 +1,4 @@
- <div class="" style="height: 80vh; background-color: #DFDFDE;"> 
+ <div class="" style="min-height: 80vh; background-color: #DFDFDE;"> 
   <div class="row" style="background-color: #DFDFDE;">
     <div class="col d-flex justify-content-between px-5 py-3">
       <a href= "<?= base_url('mainpage')?>"class="form d-flex"style="text-decoration:none;">
@@ -117,8 +117,8 @@
                 <hr id ="inputbox" class="bg-light">
                 <!-- Submit Button-->
                 <div class="col ">
-                  <i class="bi bi-star " disabled></i>
-                  <span><?php echo $row->pageReact_Count; ?></span>
+                  <i class="bi bi-star-fill fa-lg" style="color: #fcff5c; text-shadow: 0 0 5px #464709;" disabled></i>
+                  <span class="ps-2"><strong><?php echo $row->pageReact_Count; ?></strong></span>
                 </div>
               </div>
             </div>

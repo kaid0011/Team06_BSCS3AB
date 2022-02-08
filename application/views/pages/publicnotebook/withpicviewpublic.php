@@ -1,18 +1,18 @@
-  <div class="row ms-5">
-    
-  <div class="col ms-5 d-flex justify-content-between py-3">
-    <a href= "<?= base_url('mainpage')?>"class="d-flex"style="text-decoration:none;">
-    <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Back</button>
-    </a>
-    <!-- New Page Button -->
-      <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
-        <button class="ms-5 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>-</h2></button>
+  <div class="row" style="background-color: #DFDFDE;">
+    <div class="col d-flex justify-content-between px-5 py-3">
+      <a href= "<?= base_url('mainpage')?>"class="form d-flex"style="text-decoration:none;">
+      <button type="submit" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark">Back</button>
+      <input type="date" name="date" class="form-control me-2 ms-2" style="color: rgba(16, 39, 112, 0); background-color:rgba(16, 39, 112, 0); border: 0px solid green; " disabled>
       </a>
-      <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
-        <!--changes-->
-          <input type="date" name="date" class="form-control me-2">
-          <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark me-3">Search</button>
-      </form>
+      <!-- New Page Button -->
+        <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
+          <button style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark">+ New Page</button>
+        </a>
+        <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
+          <!--changes-->
+            <input type="date" name="date" class="form-control me-2">
+            <span><button type="submit" style="background-color: #f0b63a;" class="btn-lg border border-2 border-dark">Search</button></span>
+        </form>
     </div>
   </div>
 

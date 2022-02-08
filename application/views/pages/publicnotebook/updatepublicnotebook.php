@@ -3,7 +3,7 @@
     <div class="container my-5">
       <div class="card-3d-wrap mx-auto">
         <div class="card-front" id="card">
-          <div class="d-flex p-5">
+          <div class="d-flex p-5" id="card">
             <div class="section ">
               <?php
               if ($viewPublicPage->num_rows() > 0) {
@@ -120,66 +120,77 @@
 </div>
 </div>
 <div class="container my-5">
-    <button class="popup" onclick="myFunction()">
-      <span class="popuptext justify-content-center resp2" id="myPopup" style="background-color: #555;">
-        <div class="container boxtype">
-          <div>
-            <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
-              <h4 style="font-size: 30px;" class="mb-4 pt-2">Are you sure?</h4>
-            </div>
-
-            <form method="post" id="updateform" enctype='multipart/form-data' action="<?= base_url('publicnotebook/updatepublicpage') ?>">
-              <div class="row text-center py-5">
-                <div class="col resp">
-                  <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
-                  <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
-                </div>
-                <div class="col resp">
-                  <input type="button" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
-                </div>
-              </div>
-            </form>
+  <button class="popup" onclick="myFunction()">
+    <span class="popuptext justify-content-center resp2" id="myPopup" style="background-color: #555;">
+      <div class="container boxtype">
+        <div>
+          <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
+            <h4 style="font-size: 30px;" class="mb-4 pt-2">Are you sure?</h4>
           </div>
+
+          <form method="post" id="updateform" enctype='multipart/form-data' action="<?= base_url('publicnotebook/updatepublicpage') ?>">
+            <div class="row text-center py-5 ps-3">
+              <div class="col resp">
+                <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
+                <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
+              </div>
+              <div class="col resp">
+                <input type="button" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
+              </div>
+            </div>
+          </form>
         </div>
-      </span>
-    </button>
-</section>
+      </div>
+    </span>
+  </button>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  </section>
 
-<style>
-  body {
-    font-weight: 300;
-    font-size: 15px;
-    color: <?php echo $fontcolor ?>;
-    background-color: <?php echo $themecolor ?>;
-    background-image: url(<?= base_url($themeurl) ?>);
-    overflow-x: hidden;
-  }
+  <style>
+    body {
+      font-weight: 300;
+      font-size: 15px;
+      color: <?php echo $fontcolor ?>;
+      background-color: <?php echo $themecolor ?>;
+      background-image: url(<?= base_url($themeurl) ?>);
+      overflow-x: hidden;
+    }
 
-  .section {
-    position: relative;
-    width: 100%;
-  }
+    .section {
+      position: relative;
+      width: 100%;
+    }
 
-  .full-height {
-    min-height: 100vh;
-  }
+    .full-height {
+      min-height: 100vh;
+    }
 
-  .card-3d-wrap {
-    position: relative;
-    width: 1200px;
-    max-width: 100%;
-    height: 600px;
-  }
+    .card-3d-wrap {
+      position: relative;
+      width: 1200px;
+      max-width: 100%;
+      height: 600px;
+    }
 
-  .fixed {
-    resize: none;
-  }
+    .fixed {
+      resize: none;
+    }
 
-  .btn {
-    width: 80px;
-    color: #212529;
-    background-color: #e9ecef;
-    /*if theme is dark,
+    .btn {
+      width: 80px;
+      color: #212529;
+      background-color: #e9ecef;
+      /*if theme is dark,
          background-color: #adb5bd;
     if theme is light,
          background-color: #adb5bd;
@@ -189,100 +200,105 @@
         background-color: #adb5bd;
      if theme is Kiwi,
        background-color: #adb5bd; */
-  }
-
-  .card-front {
-    width: 100%;
-    height: 100%;
-    color: <?php echo $themecardcolor ?>;
-    background-color: <?php echo $themecardbgcolor ?>;
-    background-image: url(<?= base_url($themecardbgurl) ?>);
-    position: absolute;
-    border-radius: 10px;
-  }
-
-  .form-group {
-    position: relative;
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  .btn:hover {
-    background-color: #6c757d;
-    color: #dee2e6;
-    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
-  }
-
-  /* popup */
-  .popup {
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    top: 25%;
-    width: 320px;
-    visibility: hidden;
-    background-color: #555;
-    border-radius: 35px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .boxtype {
-    border-radius: 35px;
-    padding: 20px;
-    color: #e9ecef;
-    text-align: center;
-    align-items: center;
-    background-color: rgba(49, 55, 59, 1);
-  }
-
-  /* The actual popup */
-  .popup .popuptext {
-    background-color: #555;
-  }
-
-  /* Toggle this class - hide and show the popup */
-  .popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-  }
-
-  @media(max-width:768px) {
-    .resp2 {
-      margin-left: -20%;
-      margin-right: 0%;
     }
-  }
 
-  @media(max-width:480px) {
+    .card-front {
+      width: 100%;
+      height: 100%;
+      color: <?php echo $themecardcolor ?>;
+      background-color: <?php echo $themecardbgcolor ?>;
+      background-image: url(<?= base_url($themecardbgurl) ?>);
+      position: absolute;
+      border-radius: 10px;
+    }
+
+    .form-group {
+      position: relative;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .btn:hover {
+      background-color: #6c757d;
+      color: #dee2e6;
+      box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
+    }
+
+    /* popup */
     .popup {
-      width: 200px;
+      position: fixed;
+      left: 50%;
+      transform: translate(-50%, 0);
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      top: 25%;
+      width: 360px;
+      visibility: hidden;
+      background-color: #555;
+      border-radius: 35px;
+      text-align: center;
+      align-items: center;
     }
-  }
-</style>
 
-<script>
-  const name = document.querySelector(".name");
+    .boxtype {
+      border-radius: 35px;
+      padding: 20px;
+      color: #e9ecef;
+      text-align: center;
+      align-items: center;
+      background-color: rgba(49, 55, 59, 1);
+    }
 
-  function changeImgFruits(color, cardcolor, textcolor, theme) {
-    document.body.style.backgroundImage = color;
-    document.getElementById("card").style.backgroundImage = cardcolor;
-    document.getElementById("card").style.color = textcolor;
-    document.getElementById("submittext").value = theme;
-  }
+    /* The actual popup */
+    .popup .popuptext {
+      background-color: #555;
+    }
 
-  function removeImage() {
-    document.getElementById("removeimage").value = "Remove";
-    document.getElementById("remove").style.backgroundColor = "gray";
-  }
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
 
-  function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
-</script>
+    @media(max-width:768px) {
+      .resp2 {
+        margin-left: 5%;
+        margin-right: 0%;
+      }
+
+      .resp1 {
+        margin-left: 30px;
+        margin-right: 0%;
+      }
+    }
+
+    @media(max-width:480px) {
+      .popup {
+        width: 200px;
+      }
+    }
+  </style>
+
+  <script>
+    const name = document.querySelector(".name");
+
+    function changeImgFruits(color, cardcolor, textcolor, theme) {
+      document.body.style.backgroundImage = color;
+      document.getElementById("card").style.backgroundImage = cardcolor;
+      document.getElementById("card").style.color = textcolor;
+      document.getElementById("submittext").value = theme;
+    }
+
+    function removeImage() {
+      document.getElementById("removeimage").value = "Remove";
+      document.getElementById("remove").style.backgroundColor = "gray";
+    }
+
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+  </script>

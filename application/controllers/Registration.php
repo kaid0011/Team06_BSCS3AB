@@ -128,31 +128,21 @@
             $key = $this->session->userdata('verification_Key');
             $name = $this->session->userdata('userName');
             $subject = "Verify your email";
-            $message = "
-            Welcome to Virtual Diary, ".$name."!
+            $message = '
+            <h1 align="center">Welcome to Virtual Diary, '.$name.'!</h1>
  
-            Thank you for joining our community! In order to verify your account creation, 
-            use the code below on your page registration!
+            <h4 align="center">Thank you for joining our community! In order to verify your account creation, 
+            use the code below on your page registration!</h4>
 
-            ".$key."
+            <h1 align="center">'.$key.'</h1>
 
-            You are receiving this email because you recently tried to create an account in Virtual Dary. 
-            If this was not you, please ignore this email.
-            ";
+            <h4 align="center">You are receiving this email because you recently tried to create an account in Virtual Dary. 
+            If this was not you, please ignore this email.</h4>
+            ';
             $to = $this->input->post('email');
-
-            $config = array(
-                'protocol'  => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' =>  465,
-                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
-                'smtp_pass' => 'team6@3ab',
-                'mailtype'  => 'html', 
-                'charset'   => 'iso-8859-1'
-            );
             
             $this->load->library('email');
-            $this->email->initialize($config);
+            $this->email->initialize($this->config->item('email'));
             $this->email->set_newline("\r\n");
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($to);
@@ -165,15 +155,19 @@
                 $data['navbar'] = 'registration';
                 $this->sitelayout->loadTemplate('pages/registration/verification', $data);
             }
+            else
+            {
+                show_error($this->email->print_debugger());
+            }
         }
 
         public function termsofservice() {
-            $data['navbar'] = 'registration';
+            $data['navbar'] = 'plain';
             $this->sitelayout->loadTemplate('pages/registration/termsofservice', $data); 
         }
         
         public function privacypolicy() {
-            $data['navbar'] = 'registration';
+            $data['navbar'] = 'plain';
             $this->sitelayout->loadTemplate('pages/registration/privacypolicy', $data); 
         }
     }

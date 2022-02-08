@@ -3,7 +3,7 @@
             <div>
                 <h1 class="">Features</h1>
                 <p class="lead">
-                    Check out the features of Public Notebook
+                    Check out the features of the Public Notebook
                 </p>
             </div>
            
@@ -16,47 +16,47 @@
             <div>
                 <h2 class="md">The Public Notebook Platform</h2>
                 <p>
-                  Public Notebook allow you to create, update, and share your thought with the world.
+                  Public Notebook allows you to create, update, and share your thoughts with the world.
                 </p>
             </div>
             <img src="<?=base_url('assets/images/registration/ha.png')?>" alt="">
         </div>
     </section>
 
-    <section class="features-main my-2 mb-5">
-        <div class="container grid grid-3">
+    <section class="features-main mb-5">
+        <div class="container grid grid-3 text-center align-items-center">
             <div class="card flex">
-                <i class="bi bi-journal h1"></i>
-                <p>You start right away by creating a notebook.Public Notebooks are suitable for all users and give easy access to other users.</p>
+                <i class="bi bi-journal h1 pb-3 ps-4"></i>
+                <p>You start right away by creating a notebook. Public Notebooks are suitable for all users and give easy access to other users.</p>
             </div>
             <div class="card flex">
-                <i class="bi bi-calendar-date h1"></i>
+                <i class="bi bi-calendar-date h1 pb-3 ps-4"></i>
                 <p>
-                  it can shows the time at which something happened or was done.
+                  It can show the time at which something happened or was done.
                 </p>
             </div>
             <div class="card flex">
-                <i class="bi bi-star h1"></i>
+                <i class="bi bi-star h1 pb-3 ps-4"></i>
                 <p>
-                   you can react to the other people.
+                   You can react to the other people's pages.
                 </p>
             </div>
             <div class="card flex">
-                <i class="bi bi-person-circle h1"></i>
+                <i class="bi bi-person-circle h1 pb-3 ps-4"></i>
                 <p>
-                you can now create a Profile. This is the start of social features on Public Notebook!
+                You can now create a Profile. This is the start of social features on Public Notebook!
                 </p>
             </div>
             <div class="card flex">
-                <i class="bi bi-images h1"></i>
+                <i class="bi bi-images h1 pb-3 ps-4"></i>
                 <p>
                 You can share photos to public notebook from your computer or phone.
                 </p>
             </div>
             <div class="card flex">
-                <i class="bi bi-chat-left-dots h1"></i>
+                <i class="bi bi-chat-left-dots h1 pb-3 ps-4"></i>
                 <p>
-                 You can comment on other people notebook post. 
+                 You can know other people's thoughts. 
                 </p>
             </div>
         </div>

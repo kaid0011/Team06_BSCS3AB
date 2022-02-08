@@ -47,9 +47,16 @@
                         $status = 'Active';
                         $response = $this->Login_model->checkStatus($username, $status);
 
+                        // $response =  $this->Login_model->checkStatus($username);
+                        // foreach($response->result() as $row)
+                        // {
+                        //     $status = $row->status;
+                        //     echo $status;
+                        // }  
+
                         if($response)
                         {
-                            if($username == "admin" && $raw_password == "team6")
+                            if($username == $this->config->item('stUsername') && $raw_password == $this->config->item('stPassword'))
                             {
                                 $userdata = array(
                                     'user_ID' => $response->user_ID,
@@ -62,6 +69,19 @@
                                 redirect('supportteam');
                             }
                             else
+                            {
+                                $userdata = array(
+                                    'user_ID' => $response->user_ID,
+                                    'userName' => $response->userName,
+                                    'displayName' => $response->displayName,
+                                    'password' => $response->password,
+                                    'email' => $response->email
+                                );
+                                $this->session->set_userdata($userdata);
+                                redirect('mainpage'); 
+                            }
+                        }
+                        else
                             {
                                 $userdata = array(
                                     'user_ID' => $response->user_ID,
@@ -95,5 +115,4 @@
                 }
             }
         }
-    }
 

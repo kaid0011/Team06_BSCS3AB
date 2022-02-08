@@ -35,7 +35,7 @@
                         </p>
                     </div>
                     <a href="<?=base_url('home/pbfeaturespage')?>"><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
-                            <h6 class="mb-1"><span>Learn More</span></h6>
+                            <h6 class="mb-1 pt-1"><span>Learn More</span></h6>
                         </button>
                     </a>
                 </div>
@@ -51,11 +51,11 @@
                             Private Notebook
                         </h3>
                         <p class="card-text">
-                            Only you can access this Section
+                            Only you can access this section
                         </p>
                     </div>
                     <a href="<?=base_url('home/privnbfeatures')?>"><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
-                            <h6 class="mb-1"><span>Learn More</span></h6>
+                            <h6 class="mb-1 pt-1"><span>Learn More</span></h6>
                         </button>
                     </a>
                 </div>
@@ -75,7 +75,7 @@
                         </p>
                     </div>
                     <a href="<?=base_url('home/stickynotesfeatures')?>"><button class="btn btn-sm mt-2 mb-4 p-2 hover" style="background-color: #f0b63a;">
-                            <h6 class="mb-1"><span>Learn More</span></h6>
+                            <h6 class="mb-1 pt-1"><span>Learn More</span></h6>
                         </button>
                     </a>
                 </div>

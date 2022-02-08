@@ -66,8 +66,8 @@
 
               <div class="row justify-content-center">
                 <div class="mb-3 col-8 text-center">
-                  <input class="me-2 py-3 px-5 btn btn-sm " type="submit" value="Back" name="action"></input>
-                  <input class="py-3 px-5 btn btn-sm " type="submit" value="Submit" name="action"></input>
+                  <input class="me-2 py-3 px-5 btn btn-sm mt-3" type="submit" value="Back" name="action"></input>
+                  <input class="py-3 px-5 btn btn-sm mt-3" type="submit" value="Submit" name="action"></input>
                 </div>
               </div>
             </div>
@@ -78,6 +78,16 @@
     </div>
 
     </div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
+    <div class="my-5">&nbsp;</div>
   </section>
 </form>
 
@@ -170,7 +180,7 @@
     }
   }
 
-  @media (max-width:620px) and (min-width:451px) {
+  @media (max-width:767px) and (min-width:451px) {
     .inputbox {
       width: 400px;
       display: block;
@@ -178,12 +188,14 @@
     }
   }
 
-  @media (max-width:764 px) and (min-width:620 px) {
+  /* @media (max-width:764 px) and (min-width:620 px) {
     .inputbox {
-      width: 200px;
+      width: 180px;
       display: block;
       margin: 0 auto;
-    }
+      margin-right: 20px;
+      margin-left: 0;
+    } */
 
 
   }
@@ -208,7 +220,7 @@
 
   @media (max-width:320px) {
     .orange {
-      margin-left: 35px;
+      margin-left: 0px;
     }
 
     .light {
@@ -220,7 +232,21 @@
     }
   }
 
-  @media (max-width:375px) and (min-width:321px) {
+  @media (max-width:355px) {
+    .orange {
+      margin-left: 0;
+    }
+
+    .light {
+      margin-left: 10px;
+    }
+
+    .dark {
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width:375px) and (min-width:356px) {
     .light {
       margin: 0 35px;
     }

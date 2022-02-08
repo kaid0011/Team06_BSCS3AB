@@ -1,7 +1,5 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
-    
-    $target_directory = APPPATH.'/uploads/profile/';
     class UpdateProfile extends CI_Controller
     {
 
@@ -14,8 +12,17 @@
 
         public function index() 
         {
-            $data['navbar'] = 'main';
-            $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+            $id = $this->session->userdata('user_ID');
+            if($id == '1')
+            {
+                $data['navbar'] = 'admin';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+            }
+            else
+            {
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/navbar/updateprofile', $data); 
+            }
         }
         
         public function updatepassword() 
@@ -37,7 +44,10 @@
                     {
                         $newPass = hash("sha512", $this->input->post('newPassword'));
                         $this->UpdateProfile_model->updatePassword($newPass, $id);
-                        echo("Password changed successfully");
+                        
+                        echo '<script language="javascript">';
+                        echo 'alert("Password successfully changed.")';
+                        echo '</script>';
 
                         $userdata = array(
                                 'userName' => $this->session->userdata('userName'),
@@ -128,8 +138,13 @@
                     'password' => $this->session->userdata('password')
                 );
 
+                echo '<script language="javascript">';
+                echo 'alert("Username successfully changed.")';
+                echo '</script>';
+
                 $this->session->set_userdata($userdata); 
-                $this->index();
+
+                header("Refresh:0; url =../updateprofile"); 
 
             }
             else
@@ -167,7 +182,7 @@
 
         public function updateemail()
         {
-            $this->form_validation->set_rules('email', 'Email', 'trim|min_length[8]|valid_email|is_unique[user.email]',
+            $this->form_validation->set_rules('email', 'E-mail', 'trim|required|min_length[8]|valid_email|is_unique[user.email]',
                 array(
                     'is_unique'     => 'This %s already exists.'    #custom error message for is_unique in email
                 ));
@@ -184,6 +199,7 @@
                 );
 
                 $this->session->set_userdata($userdata); 
+                $this->resendCode();
                 $data['navbar'] = 'main';
                 $this->sitelayout->loadTemplate('pages/navbar/updateverification', $data); 
             }
@@ -291,15 +307,14 @@
         public function resendEmail()
         {
             $key = $this->session->userdata('verification_Key');
-            $name = $this->session->userdata('userName');
             $subject = "Verify your email";
-            $message = "
-            Heads up! You recently tried to update your account settings! Use the code below in order to verify it's you to accept the changes.
+            $message = '
+            <h4 align="center">Heads up! You recently tried to update your account settings! Use the code below in order to verify it is you to accept the changes.</h4>
 
-            ".$key."
-
-            If this attempt wasn't made by you, please log-in immedietly and change your password to secure your account.
-            ";
+            <h1 align="center">'.$key.'</h1>
+            
+            <h4 align="center">If this attempt was not made by you, please log-in immedietly and change your password to secure your account.</h4>
+            ';
             $to = $this->session->userdata('email');
             
             $this->load->library('email');
@@ -318,89 +333,48 @@
             }
         }
 
-        public function image()
+        public function do_upload()
         {
+            $id = $this->session->userdata('user_ID');
             $action = $this->input->post('action');
-
+            
             if($action == 'Update Image')
             {
-                $id = $this->session->userdata('user_ID');
 
-                if(($_FILES['file']['name'] != ""))
+                $config['upload_path'] = APPPATH.'/uploads/profile/';
+                $config['allowed_types'] = 'gif|jpg|jpeg|png';
+                $config['file_name'] = $id.'_profileImage';
+                $config['max_size'] = 10240;
+                $config['overwrite'] = TRUE;
+
+                $this->load->library('upload', $config);
+
+                if( ! $this->upload->do_upload('userfile'))
                 {
-                    $file = $_FILES['file']['name'];
-                    $path = pathinfo($file);
-                    $filename = $id."_profileImage";
-                    $ext = $path['extension'];
-
-                    if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
-                    {
-                        $temp_name = $_FILES['file']['tmp_name'];
-                        $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-
-                        if(file_exists($path_filename_ext))
-                        {
-                            unlink($path_filename_ext);
-                            $file = $_FILES['file']['name'];
-                            $path = pathinfo($file);
-                            $filename = $id."_profileImage";
-                            $ext = $path['extension'];
-                            $temp_name = $_FILES['file']['tmp_name'];
-                            $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-                            move_uploaded_file($temp_name, $path_filename_ext);
-                        }
-                        else
-                        {
-                            $ext = "jpg";
-                            $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-                            if(file_exists($path_filename_ext))
-                            {
-                                unlink($path_filename_ext);
-                            }
-                            else
-                            {
-                                $ext = "jpeg";
-                                $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-                                if(file_exists($path_filename_ext))
-                                {
-                                    unlink($path_filename_ext);
-                                }
-                                else
-                                {
-                                    $ext = "png";
-                                    $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-                                    if(file_exists($path_filename_ext))
-                                    {
-                                        unlink($path_filename_ext);
-                                    }
-                                }
-                            }
-
-                            move_uploaded_file($temp_name, $path_filename_ext);
-                        }
-                        header("Refresh:0; url =../updateprofile");
-                    }
-                    else
-                    {
-                        echo("Error uploading image.");
-                        $this->index();
-                    }
-                    header("Refresh:0; url =../updateprofile");
+                    echo '<script language="javascript">';
+                    echo 'alert("Error Uploading")';
+                    echo '</script>';
+                }
+                else
+                {
+                    header("Refresh:0; url =../updateprofile"); 
                 }
             }
             else
             {
                 $this->removeImage();
             }
-            header("Refresh:0; url =../updateprofile");
+
+            header("Refresh:0; url =../updateprofile"); 
         }
 
         public function removeImage()
         {
             $id = $this->session->userdata('user_ID');
+            $target_directory = APPPATH.'/uploads/profile/';
             $filename = $id."_profileImage";
             $extension = ".jpg";
-            $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+            $path_filename_ext = $target_directory.$filename.$extension;
 
             if(file_exists($path_filename_ext))
             {
@@ -410,7 +384,7 @@
             else
             {
                 $extension = ".jpeg";
-                $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+                $path_filename_ext = $target_directory.$filename.$extension;
                 if(file_exists($path_filename_ext))
                 {
                             
@@ -420,7 +394,7 @@
                 else
                 {
                     $extension = ".png";
-                    $path_filename_ext = $GLOBALS['target_directory'].$filename.$extension;
+                    $path_filename_ext = $target_directory.$filename.$extension;
                     if(file_exists($path_filename_ext))
                     {
                         $extension = ".png";

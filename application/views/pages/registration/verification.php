@@ -23,8 +23,8 @@
                                     name="ver_code" value="<?php echo set_value('ver_code'); ?>">
                                 <!-- Resend Button -->
                                 <input type="submit" value="Resend" name ="action" class="input-group-text"style="background-color:#ced4da;" id="basic-addon2">
-                                <span class="text-danger"><?php echo form_error('ver_code'); ?></span>
                             </div>   
+                                <div class="text-danger"><?php echo form_error('ver_code'); ?></div>
                         </div>
 
                         <!-- Verify Button -->

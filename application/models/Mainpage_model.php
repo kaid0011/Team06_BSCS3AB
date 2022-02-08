@@ -58,4 +58,41 @@
                         }
                         
                 }
+
+                public function getImagePage($data)
+                {
+                    $id = $this->session->userdata('user_ID');
+                    $target_directory = APPPATH.'/uploads/publicnotebook/';
+                    $filename = $id."_".$data."_publicNotebookImage";
+                    $extension = ".jpg";
+                    $path_filename_ext = $target_directory.$filename.$extension;
+                    if(file_exists($path_filename_ext))
+                    {
+                        $extension = ".jpg";
+                    }
+                    else
+                    {
+                        $extension = ".jpeg";
+                        $path_filename_ext = $target_directory.$filename.$extension;
+                        if(file_exists($path_filename_ext))
+                        {
+                                    
+                            $extension = ".jpeg";
+                        }
+                        else
+                        {
+                            $extension = ".png";
+                        }
+                    }
+                        $path_filename_ext = $target_directory.$filename.$extension;
+                        $file = $id."_".$data."_publicNotebookImage".$extension;
+                        if(file_exists($path_filename_ext))
+                        {
+                            return "application/uploads/publicnotebook/$file";
+                        }
+                        else
+                        {
+                            return "No image";
+                        }
+                }
         }

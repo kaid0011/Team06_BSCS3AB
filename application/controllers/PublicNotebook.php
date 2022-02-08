@@ -145,6 +145,10 @@
                 {  
                     $this->deletePublicPage();
                 }
+                else if($action == 'NO')
+                {
+                    header("Refresh:0; url = ../publicnotebook/updatepublicnotebook/$page_ID");
+                }
             }
             else
             {

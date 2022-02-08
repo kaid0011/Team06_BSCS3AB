@@ -135,7 +135,7 @@
                 <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
               </div>
               <div class="col resp">
-                <input type="button" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
+                <input type="submit" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
               </div>
             </div>
           </form>

@@ -118,8 +118,6 @@
       </div>
     </div>
   </div>
-  </div>
-  </div>
   <div class="container my-5">
     <button class="popup" onclick="myFunction()">
       <span class="popuptext justify-content-center resp2" id="myPopup" style="background-color: #555;">

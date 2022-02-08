@@ -22,18 +22,18 @@
         }
         public function pbfeaturespage() {
             
-            $data['navbar'] = 'home';
+            $data['navbar'] = 'plain';
             $this->sitelayout->loadTemplate('pages/home/pbfeaturespage', $data);
         }
         public function privnbfeatures() {
             
-            $data['navbar'] = 'home';
+            $data['navbar'] = 'plain';
             $this->sitelayout->loadTemplate('pages/home/privnbfeatures', $data);
         }
         
         public function stickynotesfeatures() {
             
-            $data['navbar'] = 'home';
+            $data['navbar'] = 'plain';
             $this->sitelayout->loadTemplate('pages/home/stickynotesfeatures', $data);
     }
 }

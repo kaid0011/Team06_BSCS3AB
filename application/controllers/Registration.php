@@ -162,12 +162,12 @@
         }
 
         public function termsofservice() {
-            $data['navbar'] = 'registration';
+            $data['navbar'] = 'plain';
             $this->sitelayout->loadTemplate('pages/registration/termsofservice', $data); 
         }
         
         public function privacypolicy() {
-            $data['navbar'] = 'registration';
+            $data['navbar'] = 'plain';
             $this->sitelayout->loadTemplate('pages/registration/privacypolicy', $data); 
         }
     }

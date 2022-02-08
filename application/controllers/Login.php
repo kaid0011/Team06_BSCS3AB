@@ -82,6 +82,19 @@
                             }
                         }
                         else
+                            {
+                                $userdata = array(
+                                    'user_ID' => $response->user_ID,
+                                    'userName' => $response->userName,
+                                    'displayName' => $response->displayName,
+                                    'password' => $response->password,
+                                    'email' => $response->email
+                                );
+                                $this->session->set_userdata($userdata);
+                                redirect('mainpage'); 
+                            }
+                        }
+                        else
                         {
                             $this->session->set_userdata('userName', $username);
                             $data['navbar'] = 'registration';
@@ -102,5 +115,4 @@
                 }
             }
         }
-    }
 

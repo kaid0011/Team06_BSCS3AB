@@ -32,7 +32,7 @@ switch ($navbar) {
                         </li>
                         <!-- About Us -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url('home')?>" class="nav-link text-light ms-4 pe-0 pt-3">
+                            <a href="<?php echo base_url('home') ?>" class="nav-link text-light ms-4 pe-0 pt-3">
                                 <h6>About Us</h6>
                             </a>
                         </li>
@@ -42,6 +42,117 @@ switch ($navbar) {
             </div>
         </nav>
         <!-- (end) Navbar Home Section -->
+
+    <?php
+        break;
+    case 'admin':
+    ?>
+        <!-- Navbar Admin Section-->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark py-3">
+            <div class="container">
+
+                <ul class="navbar-nav align-items-center navbar-right w-100">
+                    <!-- Logo Image -->
+                    <div class="roww">
+                        <li class="block1">
+                            <?php
+                            if ($this->session->userdata('userName') == 'admin') {
+                            ?>
+                                <a href="<?= base_url('supportteam') ?>" class="navbar-brand h1 text-light mr-auto">
+                                <?php
+                            } else {
+                                ?>
+                                    <a href="<?= base_url('mainpage') ?>" class="navbar-brand h1 text-light mr-auto">
+                                    <?php
+                                }
+                                    ?>
+                                    <picture>
+                                        <source media="(max-width: 990px)" srcset="<?= base_url('assets/images/vd_Logo.png') ?>">
+                                        <img src="<?= base_url('assets/images/vdLogo.png') ?>" alt="vd logo" height="40px" />
+                                    </picture>
+                                    </a>
+                        </li>
+
+                        <!-- Hamburger Menu -->
+                        <button class="navbar-toggler collapsed block3" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon top-bar"></span>
+                            <span class="toggler-icon middle-bar"></span>
+                            <span class="toggler-icon bottom-bar"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse ml-auto " id="searcharea" style="margin-left: 180px; margin-right: 100px;">
+                        
+                    </div>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <li class="navbar-item text-light me-2">
+                            <!-- added echo to display user info -->
+                            <a href="#" class="nav-link text-light" style="font-size: 15px; font-weight: 300;"> <?php echo $this->session->userdata('displayName'); ?> <br><span class="text-secondary"> <?php echo $this->session->userdata('userName'); ?> </span>
+                                <!-- added echo to display user info -->
+                            </a>
+                        </li>
+                        <li class="mb-1">
+                            <?php $source = $this->UpdateProfile_model->getImage(); ?>
+                            <a href="#"><img style="width: 50px; height: 50px; border-radius: 100px; object-fit: cover;" ; src="<?= base_url($source) ?>" alt="user profile"></a>
+                        </li>
+
+                        <li class="ms-2 navbar-item dropdown mb-2">
+                            <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            </a>
+                            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                                <li><a href="<?= base_url('updateprofile') ?>" class="dropdown-item ">Edit Profile</a></li>
+                                <li><a href="<?= base_url('logout') ?>" class="dropdown-item ">Logout</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+
+
+            </div>
+        </nav>
+        <!-- (end) Navbar Admin Section -->
+
+
+    <?php
+        break;
+    case 'plain':
+    ?>
+        <!-- Navbar Plain Section-->
+        <nav class="navbar sticky-top navbar-expand-md bg-dark navbar-dark py-3">
+            <div class="container">
+
+                <!-- Logo Image-->
+                <a href="<?= base_url() ?>" class="navbar-brand logo"><img src="<?= base_url('assets/images/vdLogo.png') ?>" alt="vd logo" height="40px" /></a>
+
+                <!-- Hamburger Menu -->
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Register -->
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('registration') ?>" class="nav-link text-light ms-4 pt-3">
+                                <h6>Register</h6>
+                            </a>
+                        </li>
+                        <!-- Log In -->
+                        <li class="nav-item">
+                            <a href="<?php echo base_url('login') ?>" class="nav-link text-light ms-4 pt-3">
+                                <h6>Log In</h6>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+        <!-- (end) Navbar Plain Section -->
+
 
     <?php
         break;

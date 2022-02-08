@@ -1,5 +1,5 @@
 <!-- background -->
-<div style="background-color: #ced4da; min-height: 75vh;">
+<div style="background-color: #e9ecef; min-height: 75vh;">
 <section class="projects">
     <h1 class="display-3 text-dark fw-normal p-2"style="font-size:38px;">Support Team</h1>
     <p class="lead p-4 pb-5 px-5"style="font-size:18px;">Support team members' duties generally include performing administrative tasks, familiarizing and adhering to the company's policies and procedures, providing recommendations for improving customer's experience, developing strategies to increase the company's revenue and profitability, and maintaining a positive work</p>

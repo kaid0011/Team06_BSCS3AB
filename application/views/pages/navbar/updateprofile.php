@@ -33,14 +33,14 @@
 
         <form method="post" class="responsiveInput" action="<?= base_url('updateprofile/updateusername') ?>" autocomplete="off">
           <!-- UserName -->
-          <span class="text-danger"><?php echo form_error('userName'); ?></span>
           <label for="exampleInputname1" class="form-label ps-2 mt-2">Username</label>
           <div class="input-group input-group-lg">
             <input type="text" class="form-control mb-1" style="font-size: 15px;" id="examplelastname1" name="userName" aria-describedby="emailHelp" value="<?php echo $this->session->userdata('userName'); ?>" />
             <!-- Resend Button -->
             <input type="submit" value="Update" name="action" class="input-group-text" style="background-color:#ced4da; font-size: 15px; Height: 41px;" id="basic-addon2">
           </div>
-          <span class="text-danger"><?php echo form_error('displayName'); ?></span>
+          <div class="text-danger"><?php echo form_error('userName'); ?></div>
+          <divgi class="text-danger"><?php echo form_error('displayName'); ?></divgi>
         </form>
 
         <form method="post" class="responsiveInput" action="<?= base_url('updateprofile/updatedisplayname') ?>" autocomplete="off">

@@ -97,7 +97,7 @@
                               <div>
                                 <!-- React Button -->
                                 <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
-                                <button id="react_<?php echo $row->publicNBPage_ID ?>" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i id="icon" class="bi bi-star-fill h4"></i></button>
+                                <button id="react_<?php echo $row->publicNBPage_ID ?>" class="btn btn-none btn-sm float-start" style="color: #f8f9fa;" value="<?php echo $row->publicNBPage_ID ?>"><i id="icon_<?php echo $row->publicNBPage_ID ?>" class="bi bi-star h4"></i></button>
 
                                 <!-- Report Button -->
                                 <form action="<?= base_url('reportuser/getPublicNBData') ?>" method="post">
@@ -160,10 +160,16 @@
         },
         success: function(data) {
           if (data.response == "added") {
+            $("#icon_"+publicNBPage_ID).removeClass("bi bi-star h4");
+            $("#icon_"+publicNBPage_ID).addClass("bi bi-star-fill h4");
             $("#react_"+publicNBPage_ID).css("color","#fcff5c");
             $("#react_"+publicNBPage_ID).css("text-shadow","0 0 7px #464709");
-          } else {
-            $("#react_"+publicNBPage_ID).css("color","#212529");
+          } 
+          else {
+            $("#icon_"+publicNBPage_ID).removeClass("bi bi-star-fill h4");
+            $("#icon_"+publicNBPage_ID).addClass("bi bi-star h4");
+            $("#react_"+publicNBPage_ID).css("color","#f8f9fa");
+            $("#react_"+publicNBPage_ID).css("text-shadow","0 0 0px #464709");
           }
         }
       });

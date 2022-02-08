@@ -8,6 +8,11 @@
             parent::__construct();
             $this->load->model('SupportTeam_model');
             $this->load->model('UpdateProfile_model');
+
+            if($this->session->userdata('userName') != 'admin')
+            {
+                redirect('mainpage');
+            }
         }
 
         public function index()

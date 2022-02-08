@@ -23,6 +23,7 @@
                                 <!-- Resend Button -->
                                 <input type="submit" value="Resend" name ="action" class="input-group-text"style="background-color:#ced4da;"  id="basic-addon2">
                             </div>   
+                            <div class="text-danger"><?php echo form_error('conf_code'); ?></div>
                         </div>
 
                         <!-- Confirm Button -->

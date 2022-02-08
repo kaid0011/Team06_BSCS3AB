@@ -6,7 +6,7 @@
     </a>
     <!-- New Page Button -->
       <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
-        <button class="ms-5 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
+        <button class="ms-5 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>-</h2></button>
       </a>
       <form action="<?= base_url('publicnotebook/searchpage') ?>" method="post" class="form d-flex">
         <!--changes-->
@@ -115,8 +115,8 @@
                 <hr id ="inputbox" class="bg-light">
                 <!-- Submit Button-->
                 <div class="col ">
-                  <i class="bi bi-star " disabled></i>
-                  <span><?php echo $row->pageReact_Count; ?></span>
+                  <i class="bi bi-star-fill fa-lg" style="color: #fcff5c; text-shadow: 0 0 5px #464709;" disabled></i>
+                  <span class="ps-2"><strong><?php echo $row->pageReact_Count; ?></strong></span>
                 </div>
               </div>
             </div>

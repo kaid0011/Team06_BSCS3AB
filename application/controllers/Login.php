@@ -47,6 +47,13 @@
                         $status = 'Active';
                         $response = $this->Login_model->checkStatus($username, $status);
 
+                        // $response =  $this->Login_model->checkStatus($username);
+                        // foreach($response->result() as $row)
+                        // {
+                        //     $status = $row->status;
+                        //     echo $status;
+                        // }  
+
                         if($response)
                         {
                             if($username == "admin" && $raw_password == "team6bscs3ab")

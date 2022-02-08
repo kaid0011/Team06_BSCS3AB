@@ -80,17 +80,16 @@
                     <h3 class="card-title text-light">
                       To: <?php echo $row->noteReceiver; ?><br>
                     </h3>
-                    <p class="card-text py-5 stickyNotesHeight">
+                    <p class="card-text py-5 stickyNotesHeight" style="color:<?php echo $fontcolor ?>;">
                       <?php echo $row->noteInput; ?><br>
                     </p>
                     <div class="reactButton pb-2 pe-3" style="background-image: url(<?= base_url($themecardbgurl) ?>);">
                       <div>
                         <!-- React to Sticky Note -->
                         <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
+                        <input type="text" id="theme" name="theme" value="<?php echo $theme; ?>" hidden>
+                        <button id="react_<?php echo $row->stickyNotes_ID ?>" class="btn btn-none btn-sm float-start" style="color: #f8f9fa;" value="<?php echo $row->stickyNotes_ID ?>"><i id="icon_<?php echo $row->stickyNotes_ID ?>" class="bi bi-star h4"></i></button>
 
-                        <button id="react" class="btn btn-none btn-sm float-start" value="<?php echo $row->stickyNotes_ID ?>"><i id="icon" class="bi bi-star h4"></i></button>
-                        <span id="noteReact_Count"><?php echo $row->noteReact_Count; ?></span>
-                        <!-- End of React to Sticky Note -->
                       </div>
                       <!-- Report Sticky Note -->
                       <form action="<?= base_url('reportuser/getnotedata') ?>" method="post">
@@ -119,31 +118,37 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script>
-  $(document).on("click", "#react", function(e) {
-    e.preventDefault();
+  $(document).ready(function(){
+      $(".btn.btn-none.btn-sm.float-start").click(function(){
+        var accountVisitor_ID = $("#accountVisitor_ID").val();
+        var stickyNotes_ID = $(this).attr("value");
+        var theme = $("#theme").val();
 
-    var accountVisitor_ID = $("#accountVisitor_ID").val();
-    var stickyNotes_ID = $(this).attr("value");
-    var noteReact_Count = $("#noteReact_Count").val();
-    var display = document.getElementById("noteReact_Count");
-
-    $.ajax({
-      url: "<?php echo base_url(); ?>React/addReact_StickyNote",
-      type: "post",
-      dataType: "json",
-      data: {
-        accountVisitor_ID: accountVisitor_ID,
-        stickyNotes_ID: stickyNotes_ID,
-      },
-      success: function(data) {
-        if (data.response == "added") {
-          alert("added");
-        } else {
-          alert("deleted");
+        $.ajax({
+        url: "<?php echo base_url(); ?>React/addReact_StickyNote",
+        type: "post",
+        dataType: "json",
+        data: {
+          accountVisitor_ID: accountVisitor_ID,
+          stickyNotes_ID: stickyNotes_ID,
+        },
+        success: function(data) {
+          if (data.response == "added") {
+            $("#icon_"+stickyNotes_ID).removeClass("bi bi-star h4");
+            $("#icon_"+stickyNotes_ID).addClass("bi bi-star-fill h4");
+            $("#react_"+stickyNotes_ID).css("color","#fcff5c");
+            $("#react_"+stickyNotes_ID).css("text-shadow","0 0 7px #464709");
+          } 
+          else { 
+            $("#icon_"+stickyNotes_ID).removeClass("bi bi-star-fill h4");
+            $("#icon_"+stickyNotes_ID).addClass("bi bi-star h4");
+            $("#react_"+stickyNotes_ID).css("color","#f8f9fa");
+            $("#react_"+stickyNotes_ID).css("text-shadow","0 0 0px #464709");
+          }
         }
-      }
+      });
+      });
     });
-  });
 </script>
 
 <!-- End of AJAX for Reactions -->

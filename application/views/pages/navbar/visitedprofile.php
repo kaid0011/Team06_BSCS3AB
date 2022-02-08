@@ -55,9 +55,7 @@
           $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
           $fontcolor = '#212529';
         }
-      ?>
-
-        <section id="learn" class="p-5" style="min-height: 75vh; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
+      ?> <section id="learn" class="p-5" style="min-height: 75vh; background-image: url(<?= base_url($themeurl) ?>); color: <?php echo $fontcolor ?>;">
           <div class="container my-5">
             <div class="card-3d-wrap mx-auto">
               <div class="card-front" style="background-image: url(<?= base_url($themecardbgurl) ?>); color: <?php echo $themecardcolor ?>; border-radius: 10px;">
@@ -67,8 +65,11 @@
                       <div class="col ml-auto h5">
                         <div class="row">
                           <?php
-                            $page_ID = $row->publicNBPage_ID;
+                          $page_ID = $row->publicNBPage_ID;
                           ?>
+                          <!-- Hidden Page and User ID -->
+                          <input type="text" name="page_ID" id="page_ID" class="btn float-end mt-1" value="<?php echo $row->publicNBPage_ID ?>" hidden>
+                          <input type="text" name="visitedUser_ID" id="visitedUser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" hidden>
                           <div class="col mr-auto  h5">
                             <ul class="nav nav-pills ms-2">
                               <li class="nav-item  ">
@@ -85,18 +86,18 @@
                         <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
                         <hr id="inputbox" class="bg-light">
                         <!-- Submit Button-->
-                          <div>
-                            <!-- React Button -->
-                            <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
-                            <button id="react_<?php echo $row->publicNBPage_ID ?>" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i id="icon" class="bi bi-star-fill h4"></i></button>
+                        <div>
+                          <!-- React Button -->
+                          <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
+                          <button id="react_<?php echo $row->publicNBPage_ID ?>" class="btn btn-none btn-sm float-start" style="color: #f8f9fa;" value="<?php echo $row->publicNBPage_ID ?>"><i id="icon_<?php echo $row->publicNBPage_ID ?>" class="bi bi-star h4"></i></button>
 
-                            <!-- Report Button -->
-                            <form action="<?= base_url('reportuser/getPublicNBData') ?>" method="post">
-                              <input type="text" name="page_ID" id="page_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->publicNBPage_ID ?>" hidden>
-                              <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" hidden>
+                          <!-- Report Button -->
+                          <form action="<?= base_url('reportuser/getPublicNBData') ?>" method="post">
+                            <input type="text" name="page_ID" id="page_ID" style="color: #e9ecef;" class="btn float-end mt-1" value="<?php echo $row->publicNBPage_ID ?>" hidden>
+                            <input type="text" name="reporteduser_ID" id="reporteduser_ID" class="btn float-end mt-1" value="<?php echo $row->publicNB_ID ?>" hidden>
 
-                              <input type="submit" name="action" value="Report" style="background-color: #dcdcdc; width: 75px;" class="p-2 btn-sm border border-2 border-dark btn-end float-end">
-                            </form>
+                            <input type="submit" name="action" value="Report" style="background-color: #dcdcdc; width: 75px;" class="p-2 btn-sm border border-2 border-dark btn-end float-end">
+                          </form>
                         </div>
                       </div>
                     </div>
@@ -107,54 +108,52 @@
           </div>
         </section>
 
-
-
       <?php
       }
       ?>
 </div>
 
 <?php
-
   } else {
 ?>
-
   <h1 class="lead text-center text-dark mt-4 ms-5 mb-5 fw-normal" style="padding-top: 25vh;">User doesn't exists.<br>
-
   <?php
   }
   ?>
 
-  </div>
 
   <!-- AJAX for Reactions -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <script>
     $(document).ready(function() {
-      $(".btn.btn-none.btn-sm.float-start").click(function() {
-        var accountVisitor_ID = $("#accountVisitor_ID").val();
-        var publicNBPage_ID = $(this).attr("value");
+          $(".btn.btn-none.btn-sm.float-start").click(function() {
+              var accountVisitor_ID = $("#accountVisitor_ID").val();
+              var publicNBPage_ID = $(this).attr("value");
 
-        $.ajax({
-          url: "<?php echo base_url(); ?>React/addReact_PublicPage",
-          type: "post",
-          dataType: "json",
-          data: {
-            accountVisitor_ID: accountVisitor_ID,
-            publicNBPage_ID: publicNBPage_ID,
-          },
-          success: function(data) {
-            if (data.response == "added") {
-              $("#react_" + publicNBPage_ID).css("color", "#fcff5c");
-              $("#react_" + publicNBPage_ID).css("text-shadow", "0 0 7px #464709");
-            } else {
-              $("#react_" + publicNBPage_ID).css("color", "#212529");
-            }
-          }
-        });
-      });
-    });
+              $.ajax({
+                  url: "<?php echo base_url(); ?>React/addReact_PublicPage",
+                  type: "post",
+                  dataType: "json",
+                  data: {
+                    accountVisitor_ID: accountVisitor_ID,
+                    publicNBPage_ID: publicNBPage_ID,
+                  },
+                  success: function(data) {
+                    if (data.response == "added") {
+                      $("#icon_" + publicNBPage_ID).removeClass("bi bi-star h4");
+                      $("#icon_" + publicNBPage_ID).addClass("bi bi-star-fill h4");
+                      $("#react_" + publicNBPage_ID).css("color", "#fcff5c");
+                      $("#react_" + publicNBPage_ID).css("text-shadow", "0 0 7px #464709");
+                    } else {
+                      $("#icon_" + publicNBPage_ID).removeClass("bi bi-star-fill h4");
+                      $("#icon_" + publicNBPage_ID).addClass("bi bi-star h4");
+                      $("#react_" + publicNBPage_ID).css("color", "#f8f9fa");
+                      $("#react_" + publicNBPage_ID).css("text-shadow", "0 0 0px #464709");
+                    }
+                  }
+              });
+          });
   </script>
 
   <!-- End of AJAX for Reactions -->

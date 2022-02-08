@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2022 at 01:42 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.30
+-- Generation Time: Feb 08, 2022 at 09:27 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,7 +57,7 @@ CREATE TABLE `privatenb_pages` (
 --
 
 INSERT INTO `privatenb_pages` (`privateNBPage_ID`, `privateNB_ID`, `pageInput`, `pageTheme`, `pageTimer`) VALUES
-(1, 1, 'This is my first private page.', 'Light', '00:00:00');
+(1, 1, 'This is my private page.', 'Light', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -422,8 +422,8 @@ ALTER TABLE `report`
 -- Constraints for table `stickynotes_reacts`
 --
 ALTER TABLE `stickynotes_reacts`
-  ADD CONSTRAINT `stickynotes_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `user` (`user_ID`),
-  ADD CONSTRAINT `stickynotes_reacts_ibfk_2` FOREIGN KEY (`stickyNotes_ID`) REFERENCES `sticky_notes` (`stickyNotes_ID`);
+  ADD CONSTRAINT `stickynotes_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `stickynotes_reacts_ibfk_2` FOREIGN KEY (`stickyNotes_ID`) REFERENCES `sticky_notes` (`stickyNotes_ID`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `sticky_notes`

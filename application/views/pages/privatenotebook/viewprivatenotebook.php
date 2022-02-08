@@ -1,44 +1,34 @@
-<section id="learn" class="p-5" style="min-height: 75vh;">
+<section id="learn" class="p-5">
   <?php
-    foreach ($viewPrivateNotebook->result() as $row) 
-    {
-      $theme = $row->pageTheme;
-      if ($theme == "Dark") 
-      {
-        $themeurl = "assets/images/themes/Theme2_Dark.jpg";
-        $themecardcolor = '#f8f9fa';
-        $themecardbgurl = 'assets/images/themes/Darkcard.jpg';
-        $fontcolor = '#f8f9fa';
-      } 
-      else if ($theme == "Light") 
-      {
-        $themeurl = "assets/images/themes/Theme1_Light.jpg";
-        $themecardcolor = '#212529';
-        $themecardbgurl = 'assets/images/themes/LightCard.jpg';
-        $fontcolor = '#212529';
-      } 
-      else if ($theme == "Apple") 
-      {
-        $themeurl = "assets/images/themes/Theme3_Apple.jpg";
-        $themecardcolor = '#212529';
-        $themecardbgurl = 'assets/images/themes/AppleCard.jpg';
-        $fontcolor = '#212529';
-      } 
-      else if ($theme == "Orange") 
-      {
-        $themeurl = "assets/images/themes/Theme4_Orange.jpg";
-        $themecardcolor = '#212529';
-        $themecardbgurl = 'assets/images/themes/OrangeCard.jpg';
-        $fontcolor = '#212529';
-      } 
-      else if ($theme == "Kiwi") 
-      {
-        $themeurl = "assets/images/themes/Theme5_Kiwi.jpg";
-        $themecardcolor = '#212529';
-        $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
-        $fontcolor = '#212529';
-      }
+  foreach ($viewPrivateNotebook->result() as $row) {
+    $theme = $row->pageTheme;
+    if ($theme == "Dark") {
+      $themeurl = "assets/images/themes/Theme2_Dark.jpg";
+      $themecardcolor = '#f8f9fa';
+      $themecardbgurl = 'assets/images/themes/Darkcard.jpg';
+      $fontcolor = '#f8f9fa';
+    } else if ($theme == "Light") {
+      $themeurl = "assets/images/themes/Theme1_Light.jpg";
+      $themecardcolor = '#212529';
+      $themecardbgurl = 'assets/images/themes/LightCard.jpg';
+      $fontcolor = '#212529';
+    } else if ($theme == "Apple") {
+      $themeurl = "assets/images/themes/Theme3_Apple.jpg";
+      $themecardcolor = '#212529';
+      $themecardbgurl = 'assets/images/themes/AppleCard.jpg';
+      $fontcolor = '#212529';
+    } else if ($theme == "Orange") {
+      $themeurl = "assets/images/themes/Theme4_Orange.jpg";
+      $themecardcolor = '#212529';
+      $themecardbgurl = 'assets/images/themes/OrangeCard.jpg';
+      $fontcolor = '#212529';
+    } else if ($theme == "Kiwi") {
+      $themeurl = "assets/images/themes/Theme5_Kiwi.jpg";
+      $themecardcolor = '#212529';
+      $themecardbgurl = 'assets/images/themes/KiwiCard.jpg';
+      $fontcolor = '#212529';
     }
+  }
   ?>
   <div class="container my-5">
     <div class="card-3d-wrap mx-auto">
@@ -51,13 +41,12 @@
 
                 foreach ($viewPrivateNotebook->result() as $row) {
               ?>
-                  <div class="col mr-auto  h5">
-
+                  <div class="col mr-auto h5">
 
                     <!-- Timer -->
                     <div class="col ml-auto h5">
                       <!-- Update Button-->
-                      <input type="submit" value= "Back" name="action" class="p-2 btn float-end ms-2">
+                      <input type="submit" value="Back" name="action" class="p-2 btn float-end ms-2">
                       <a href="<?= base_url('privatenotebook/updateprivatenotebook') ?>">
                         <button class="p-2 btn float-end">Update</button>
                       </a>
@@ -74,7 +63,6 @@
                 }
               }
                 ?>
-                <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
 
                 <hr id="inputbox" class="bg-light">
 

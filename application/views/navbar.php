@@ -32,7 +32,7 @@ switch ($navbar) {
                         </li>
                         <!-- About Us -->
                         <li class="nav-item">
-                            <a href="#aboutUs" class="nav-link text-light ms-4 pe-0 pt-3">
+                            <a href="<?php echo base_url('home')?>" class="nav-link text-light ms-4 pe-0 pt-3">
                                 <h6>About Us</h6>
                             </a>
                         </li>

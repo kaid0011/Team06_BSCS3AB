@@ -21,8 +21,7 @@
 
             if($action == 'Resend')     #Resend button
             {
-                $resend_code = random_string('numeric', 6);
-                $this->resendEmail($resend_code);
+                $this->resendCode();
             }
             else if($action == 'Confirm')   #Confirm button
             {
@@ -46,9 +45,16 @@
             }
         }
 
+        public function resendCode()
+        {
+            $resend_code = random_string('numeric', 6);
+            $this->session->set_userdata('resend_code', $resend_code);
+            $this->resendEmail($resend_code);
+        }
+
         public function verifyCode($input_code)
         {
-            $code = $this->session->userdata('code');
+            $code = $this->session->userdata('resend_code');
 
             if($code == $input_code)
             {
@@ -67,26 +73,17 @@
         {
             $email = $this->session->userdata('email');
             $subject = "Forgot Password";
-            $message = "
-            This is an automated email for providing you a code to reset your password in Virtual Diary.
-            ".$resend_code."
+            $message = '
+            <h4 align="center">This is an automated email for providing you a code to reset your password in Virtual Diary.</h4>
 
-            If this request is done by you, take the code above in order to progress.
-            If you did not request this, ignore this message.
-            ";
+            <h1 align="center">'.$resend_code.'</h1>
 
-            $config = array(
-                'protocol'  => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
-                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
-                'smtp_pass' => 'team6@3ab',
-                'mailtype'  => 'html', 
-                'charset'   => 'iso-8859-1'
-            );
-            
+            <h4 align="center">If this request is done by you, take the code above in order to progress.
+            If you did not request this, ignore this message.</h4>
+            ';
+
             $this->load->library('email');
-            $this->email->initialize($config);
+            $this->email->initialize($this->config->item('email'));
             $this->email->set_newline("\r\n");
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($email);
@@ -98,8 +95,7 @@
             if($send)
             {
                 $data['navbar'] = 'login';
-                $this->sitelayout->loadTemplate('pages/authentication/changepassword', $data);
+                $this->sitelayout->loadTemplate('pages/authentication/confirmation', $data);
             }
         }
     }
-?>

@@ -1,8 +1,10 @@
   <div class="row ms-5">
     
-    <div class="col ms-5 d-flex justify-content-between py-3">
-    <button type="submit" style="background-color: #f0b63a; justify-content-start" class="btn border border-2 border-dark">Back</button>
-      <!-- New Page Button -->
+  <div class="col ms-5 d-flex justify-content-between py-3">
+    <a href= "<?= base_url('mainpage')?>"class="d-flex"style="text-decoration:none;">
+    <button type="submit" style="background-color: #f0b63a;" class="btn border border-2 border-dark">Back</button>
+    </a>
+    <!-- New Page Button -->
       <a href= "<?= base_url('publicnotebook/createpublicnotebook')?>">
         <button class="ms-5 m-3 btn border border-secondary border-3" style="border-radius: 100px;"><h2>+</h2></button>
       </a>
@@ -67,14 +69,11 @@
               <div class="col ml-auto h5">
                 <div class="row">
                     <?php
-                      $page_ID = $row->publicNBPage_ID;
-                      echo $page_ID;
+                      $page_ID = $row->publicNBPage_ID;                     
                     ?>
                     <div class="col mr-auto  h5">
                       <!-- New Page Button -->
-                      <a href="<?= base_url('publicnotebook/createpublicnotebook') ?>">
-                        <button class="p-2 btn float-end" style="width:110px;">New Page</button>
-                      </a>
+                   
                       <!-- Update Button -->
                       <a href="<?= base_url(); ?>publicnotebook/updatepublicnotebook/<?php echo $page_ID;?>">
                         <button class="p-2 btn float-end me-4">Update</button>
@@ -93,7 +92,7 @@
                     <div class=" row">
                       <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
                             <?php $source = $this->PublicNotebook_model->getImage($page_ID);?>
-                            <a><img src="<?= base_url($source) ?>" style="height: 250px; width: 250px; margin-left: -13px; padding: 0px;"></a>
+                            <a><img src="<?= base_url($source) ?>" style="height: 250px; width: 250px; margin-left: -13px; padding: 0px;" alt="pub nb image"></a>
     
                       </div>
                       <div class="col-md-9">
@@ -116,8 +115,8 @@
                 <hr id ="inputbox" class="bg-light">
                 <!-- Submit Button-->
                 <div class="col ">
-                  <i class="bi bi-star " disabled></i> # of reacts
-                  
+                  <i class="bi bi-star " disabled></i>
+                  <span><?php echo $row->pageReact_Count; ?></span>
                 </div>
               </div>
             </div>

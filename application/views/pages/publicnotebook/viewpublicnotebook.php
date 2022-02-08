@@ -51,7 +51,6 @@
                 <div class="row">
                     <?php
                       $page_ID = $row->publicNBPage_ID;
-                      echo $page_ID;
                     ?>
                     <div class="col mr-auto  h5">
                       <!-- New Page Button -->
@@ -74,7 +73,7 @@
                 <hr id ="inputbox" class="bg-light">
                 <!-- Submit Button-->
                 <div class="col ">
-                  <i class="bi bi-star " disabled></i> # of reacts
+                  <i class="bi bi-star " disabled></i><?php echo $row->pageReact_Count; ?>
                 </div>
               </div>
             </div>
@@ -149,4 +148,7 @@
     color: #dee2e6;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
   }
+  *{
+  min-height: 75vh;
+}
 </style>

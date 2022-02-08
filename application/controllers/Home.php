@@ -37,5 +37,3 @@
             $this->sitelayout->loadTemplate('pages/home/stickynotesfeatures', $data);
     }
 }
-    
-?>

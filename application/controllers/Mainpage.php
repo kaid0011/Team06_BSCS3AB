@@ -10,7 +10,11 @@
             $this->load->model('Mainpage_model');
             $this->load->model('UpdateProfile_model');
 
-            if(!$this->session->userdata('user_ID'))
+            if($this->session->userdata('userName') == 'admin')
+            {
+                redirect('supportteam');
+            }
+            else if(!$this->session->userdata('user_ID'))
             {
                 redirect('login');
             }
@@ -43,5 +47,3 @@
         }
         
     }
-
-?>

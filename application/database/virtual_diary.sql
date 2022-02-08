@@ -3,8 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-
--- Generation Time: Jan 25, 2022 at 01:08 PM
+-- Generation Time: Feb 03, 2022 at 01:42 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -58,7 +57,7 @@ CREATE TABLE `privatenb_pages` (
 --
 
 INSERT INTO `privatenb_pages` (`privateNBPage_ID`, `privateNB_ID`, `pageInput`, `pageTheme`, `pageTimer`) VALUES
-(1, 1, 'This is my private page.', 'Light', '00:00:00');
+(1, 1, 'This is my first private page.', 'Light', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -98,7 +97,7 @@ CREATE TABLE `publicnb_pages` (
 --
 
 INSERT INTO `publicnb_pages` (`publicNBPage_ID`, `publicNB_ID`, `pageInput`, `pageTheme`, `pageDate`, `pageReact_Count`) VALUES
-(1, 1, 'This is my first public page.', 'Light', '2021-12-13 19:26:56', 0);
+(1, 1, 'This is my first public page.', 'Light', '2022-02-03 19:06:24', 0);
 
 -- --------------------------------------------------------
 
@@ -145,7 +144,7 @@ CREATE TABLE `report` (
   `type` enum('Sticky Notes','Public Notebook') NOT NULL,
   `reportCategory` enum('Violence','Harassment','Suicide or Self Injury','False Information','Terrorism','Something else') DEFAULT NULL,
   `reportDetails` text DEFAULT NULL,
-  `reportDate` date DEFAULT NULL,
+  `reportDate` datetime DEFAULT current_timestamp(),
   `staff_Comment` text DEFAULT NULL,
   `reportStatus` enum('For Review','Reviewed') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -176,13 +175,6 @@ CREATE TABLE `sticky_notes` (
   `noteReceiver` varchar(255) NOT NULL,
   `noteReact_Count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `sticky_notes`
---
-
-INSERT INTO `sticky_notes` (`stickyNotes_ID`, `user_ID`, `noteTheme`, `noteInput`, `noteReceiver`, `noteReact_Count`) VALUES
-(1, 1, 'Light', 'Welcome to Sticky Notes Wall\r\n\r\n- Support Team ♥', 'Users', 0);
 
 -- --------------------------------------------------------
 
@@ -218,7 +210,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_ID`, `userName`, `displayName`, `email`, `password`, `status`, `dateCreated`, `verification_Key`, `is_verification_correct`) VALUES
-(1, 'admin', 'Admin', 'team6.virtualdiary2022@gmail.com', '73de29021fd0d8d2cfd204d2d955a46d', 'Active', '2021-12-13 19:26:55', '021754', 1);
+(1, 'admin', 'Admin', 'team6.virtualdiary2022@gmail.com', 'b3e3e2c7f959b2cee611e1c2b3e7a2c46092933a7780f0ab14866fefffcfdc28eccd19b403ddfa8b3ebb37b1c869c7a8f5b5637d918cec1f588756d375a91c28', 'Active', '2022-02-03 19:06:24', '361754', 1);
 
 --
 -- Indexes for dumped tables
@@ -362,7 +354,7 @@ ALTER TABLE `stickynotes_reacts`
 -- AUTO_INCREMENT for table `sticky_notes`
 --
 ALTER TABLE `sticky_notes`
-  MODIFY `stickyNotes_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `stickyNotes_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `support_team`
@@ -410,8 +402,8 @@ ALTER TABLE `publicnb_pages`
 -- Constraints for table `publicpage_reacts`
 --
 ALTER TABLE `publicpage_reacts`
-  ADD CONSTRAINT `publicpage_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `user` (`user_ID`),
-  ADD CONSTRAINT `publicpage_reacts_ibfk_2` FOREIGN KEY (`publicNBPage_ID`) REFERENCES `publicnb_pages` (`publicNBPage_ID`);
+  ADD CONSTRAINT `publicpage_reacts_ibfk_1` FOREIGN KEY (`accountVisitor_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `publicpage_reacts_ibfk_2` FOREIGN KEY (`publicNBPage_ID`) REFERENCES `publicnb_pages` (`publicNBPage_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `public_notebook`
@@ -423,8 +415,8 @@ ALTER TABLE `public_notebook`
 -- Constraints for table `report`
 --
 ALTER TABLE `report`
-  ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`),
-  ADD CONSTRAINT `report_ibfk_2` FOREIGN KEY (`reportedUser_ID`) REFERENCES `user` (`user_ID`);
+  ADD CONSTRAINT `report_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `report_ibfk_2` FOREIGN KEY (`reportedUser_ID`) REFERENCES `user` (`user_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `stickynotes_reacts`

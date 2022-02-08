@@ -13,7 +13,7 @@
             <div class="text-white">
               <div class="justify-content-center align-items-center text-center ps-5">
                 <?php $source = $this->Mainpage_model->getImage($row->user_ID); ?>
-                <a href="#"><img src="<?= base_url($source) ?>" style="height: 300px; width: 300px; border-radius: 150px; object-fit: cover;"></a>
+                <a href="#"><img src="<?= base_url($source) ?>" style="height: 200px; width: 200px; border-radius: 100px; object-fit: cover;" alt="user profile"></a>
               </div>
 
               <h1 class="lead text-center text-dark mt-1 ms-5 mb-5 fw-normal"><?php echo $row->displayName; ?><br>
@@ -97,9 +97,7 @@
                               <div>
                                 <!-- React Button -->
                                 <input type="text" id="accountVisitor_ID" name="accountVisitor_ID" value="<?php echo $this->session->userdata('user_ID'); ?>" hidden>
-
-                                <button id="react" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i class="bi bi-star h4"></i></button>
-                                <span id="pageReact_Count"><?php echo $row->pageReact_Count; ?></span>
+                                <button id="react_<?php echo $row->publicNBPage_ID ?>" class="btn btn-none btn-sm float-start" value="<?php echo $row->publicNBPage_ID ?>"><i id="icon" class="bi bi-star-fill h4"></i></button>
 
                                 <!-- Report Button -->
                                 <form action="<?= base_url('reportuser/getPublicNBData') ?>" method="post">
@@ -147,30 +145,30 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script>
-  $(document).on("click", "#react", function(e) {
-    e.preventDefault();
+    $(document).ready(function(){
+      $(".btn.btn-none.btn-sm.float-start").click(function(){
+        var accountVisitor_ID = $("#accountVisitor_ID").val();
+        var publicNBPage_ID = $(this).attr("value");
 
-    var accountVisitor_ID = $("#accountVisitor_ID").val();
-    var publicNBPage_ID = $(this).attr("value");
-    var pageReact_Count = $("#pageReact_Count").val();
-
-    $.ajax({
-      url: "<?php echo base_url(); ?>React/addReact_PublicPage",
-      type: "post",
-      dataType: "json",
-      data: {
-        accountVisitor_ID: accountVisitor_ID,
-        publicNBPage_ID: publicNBPage_ID,
-      },
-      success: function(data) {
-        if (data.response == "added") {
-          alert("added");
-        } else {
-          alert("deleted");
+        $.ajax({
+        url: "<?php echo base_url(); ?>React/addReact_PublicPage",
+        type: "post",
+        dataType: "json",
+        data: {
+          accountVisitor_ID: accountVisitor_ID,
+          publicNBPage_ID: publicNBPage_ID,
+        },
+        success: function(data) {
+          if (data.response == "added") {
+            $("#react_"+publicNBPage_ID).css("color","#fcff5c");
+            $("#react_"+publicNBPage_ID).css("text-shadow","0 0 7px #464709");
+          } else {
+            $("#react_"+publicNBPage_ID).css("color","#212529");
+          }
         }
-      }
+      });
+      });
     });
-  });
 </script>
 
 <!-- End of AJAX for Reactions -->

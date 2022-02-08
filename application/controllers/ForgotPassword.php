@@ -63,26 +63,17 @@
             $email = $this->session->userdata('email');
             $code = $this->session->userdata('code');
             $subject = "Forgot Password";
-            $message = "
-            This is an automated email for providing you a code to reset your password in Virtual Diary.
-            ".$code."
+            $message = '
+            <h4 align="center">This is an automated email for providing you a code to reset your password in Virtual Diary.</h4>
 
-            If this request is done by you, take the code above in order to progress.
-            If you did not request this, ignore this message.
-            ";
+            <h1 align="center">'.$code.'</h1>
 
-            $config = array(
-                'protocol'  => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' =>  465,
-                'smtp_user' => 'Team6.VirtualDiary2022@gmail.com',
-                'smtp_pass' => 'team6@3ab',
-                'mailtype'  => 'html', 
-                'charset'   => 'iso-8859-1'
-            );
-            
+            <h4 align="center">If this request is done by you, take the code above in order to progress.
+            If you did not request this, ignore this message.</h4>
+            ';
+
             $this->load->library('email');
-            $this->email->initialize($config);
+            $this->email->initialize($this->config->item('email'));
             $this->email->set_newline("\r\n");
             $this->email->from('Team6.VirtualDiary2022@gmail.com', 'Virtual Diary');
             $this->email->to($email);
@@ -97,4 +88,3 @@
             }
         }
     }
-?>

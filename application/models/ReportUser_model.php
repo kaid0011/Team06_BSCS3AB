@@ -34,7 +34,4 @@
             $this->db->insert('report',$data);
             return true;
         }
-
-        
     }
-?>

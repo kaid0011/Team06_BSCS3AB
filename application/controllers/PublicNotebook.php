@@ -1,6 +1,6 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
-    $target_directory = "C:/xampp/htdocs/Team06_BSCS3AB/assets/images/publicnotebook/";
+    $target_directory = APPPATH.'/uploads/publicnotebook/';
 
     class PublicNotebook extends CI_Controller
     {
@@ -21,73 +21,82 @@
 
         public function createPublicNotebook() 
         {
-                $data['navbar'] = 'main';
-                $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data);         
+            $data['navbar'] = 'main';
+            $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data);         
+        }
+
+        public function do_upload($file, $page_ID)
+        {
+            $id = $this->session->userdata('user_ID');
+
+            $config['upload_path'] = APPPATH.'/uploads/publicnotebook/';
+            $config['allowed_types'] = 'gif|jpg|jpeg|png';
+            $config['file_name'] = $id."_".$page_ID."_publicNotebookImage";
+            $config['max_size'] = 10240;
+            $config['overwrite'] = TRUE;
+
+            $this->load->library('upload', $config);
+            $this->upload->do_upload($file);
+
+            if( ! $this->upload->do_upload($file))
+            {
+                echo '<script language="javascript">';
+                echo 'alert("Error Uploading")';
+                echo '</script>';
+            }
+            else
+            {
+                header("Refresh:0; url =../publicnotebook"); 
+            }
         }
         
         public function createPublicPage() 
         {
-            $id = $this->session->userdata('user_ID');
-            $action = $this->input->post('action');
-            $input = $this->input->post('input');
-            $pageTheme = $this->input->post('theme');
-            $pageReact_Count = 0;
+            $this->form_validation->set_rules('input', 'Input', 'max_length[1000]');
 
-            if($pageTheme == NULL)
+            if($this->form_validation->run())
             {
-                $pageTheme = 'Light';
+                $id = $this->session->userdata('user_ID');
+                $action = $this->input->post('action');
+                $input = $this->input->post('input');
+                $pageTheme = $this->input->post('theme');
+                $pageReact_Count = 0;
 
-            }          
-          
-            if($action == 'Submit')
-            {
-                $this->PublicNotebook_model->createPublicPage($id, $input, $pageTheme, $pageReact_Count);
-                $this->PublicNotebook_model->pageCount($id);
-                $data = $this->PublicNotebook_model->get_PublicNotebookInput($id);
-
-                foreach($data->result() as $row)
+                if($pageTheme == NULL)
                 {
-                    if($input == $row->pageInput && $pageTheme == $row->pageTheme)
+                    $pageTheme = 'Light';
+                }          
+            
+                if($action == 'Submit')
+                {
+                    $this->PublicNotebook_model->createPublicPage($id, $input, $pageTheme, $pageReact_Count);
+                    $this->PublicNotebook_model->pageCount($id);
+                    $data = $this->PublicNotebook_model->get_PublicNotebookInput($id);
+
+                    foreach($data->result() as $row)
                     {
-                        $page_ID = $row->publicNBPage_ID;
-
-                        if($_FILES['file']['name'] != "")
+                        if($input == $row->pageInput && $pageTheme == $row->pageTheme)
                         {
-                            $file = $_FILES['file']['name'];
-                            $path = pathinfo($file);
-                            $filename = $id."_".$page_ID."_publicNotebookImage";
-                            $ext = $path['extension'];
-                            $temp_name = $_FILES['file']['tmp_name'];
+                            $page_ID = $row->publicNBPage_ID;
 
-                            if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
+                            if(($_FILES['file']['name'] != ""))
                             {
-                                $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-                                move_uploaded_file($temp_name, $path_filename_ext);
-                                $this->index();
-                            }
-                            else
-                            {
-                                echo("Error uploading image.");
-                                $this->PublicNotebook_model->deletePublicPage($id, $page_ID);
-                                $this->createPublicNotebook();
+                                $this->do_upload('file', $page_ID);
                             }
                         }
-                        $remove = $this->input->post('remove');
-                        if($remove == 'Remove')
-                            {
-                                $this->removeImage($page_ID);
-                                header("Refresh:0; url = ../publicnotebook");
-                            }
                     }
+                    header("Refresh:0; url = ../publicnotebook");
                 }
-                header("Refresh:0; url = ../publicnotebook");
+                else if($action == 'Back')
+                {
+                    $this->index();
+                }
             }
-            else if($action == 'Back')
+            else
             {
-                $this->index();
+                $data['navbar'] = 'main';
+                $this->sitelayout->loadTemplate('pages/publicnotebook/createpublicnotebook', $data); 
             }
-
-     
         }
 
         public function updatePublicNotebook()
@@ -104,92 +113,44 @@
             $page_ID = $this->input->post('page_ID');
             $action = $this->input->post('action');
             $pageTheme = $this->input->post('theme');
-            
-            if($action == 'Update')
-            {
-                $pageInput = $this->input->post('input');
-                $this->PublicNotebook_model->updatePage($id, $page_ID, $pageTheme, $pageInput);
-        
-                if($_FILES['file']['name'] != "")
+
+            $this->form_validation->set_rules('input', 'Input', 'max_length[1000]');
+
+            if($this->form_validation->run())
+            {   
+                if($action == 'Update')
                 {
-                    $file = $_FILES['file']['name'];
-                    $path = pathinfo($file);
-                    $filename = $id."_".$page_ID."_publicNotebookImage";
-                    $ext = $path['extension'];
-
-                    if($ext == "jpg" || $ext == "jpeg" || $ext == "png")
+                    $pageInput = $this->input->post('input');
+                    $this->PublicNotebook_model->updatePage($id, $page_ID, $pageTheme, $pageInput);
+            
+                    if(($_FILES['file']['name'] != ""))
                     {
-                        $temp_name = $_FILES['file']['tmp_name'];
-                        $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
+                        $this->do_upload('file', $page_ID);
+                    }
+                    
+                    $remove = $this->input->post('remove');
 
-                        if(file_exists($path_filename_ext))
+                    if($remove == 'Remove')
                         {
-                            unlink($path_filename_ext);
-                            $file = $_FILES['file']['name'];
-                            $path = pathinfo($file);
-                            $filename = $id."_".$page_ID."_publicNotebookImage";
-                            $ext = $path['extension'];
-                            $temp_name = $_FILES['file']['tmp_name'];
-                            $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-                            move_uploaded_file($temp_name, $path_filename_ext);
-                        }
-                        else
-                        {
-                            $ext = "jpg";
-                            $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-
-                            if(file_exists($path_filename_ext))
-                            {
-                                unlink($path_filename_ext);
-                            }
-                            else
-                            {
-                                $ext = "jpeg";
-                                $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-
-                                if(file_exists($path_filename_ext))
-                                {
-                                    unlink($path_filename_ext);
-                                }
-                                else
-                                {
-                                    $ext = "png";
-                                    $path_filename_ext = $GLOBALS['target_directory'].$filename.".".$ext;
-
-                                    if(file_exists($path_filename_ext))
-                                    {
-                                        unlink($path_filename_ext);
-                                    }
-                                }
-                            }
-                            move_uploaded_file($temp_name, $path_filename_ext);
+                            $this->removeImage($page_ID);
                             header("Refresh:0; url = ../publicnotebook");
                         }
-                        
-                        header("Refresh:0; url = ../publicnotebook");
-                    }
-                    else
-                    {
-                        echo("Error uploading image.");
-                        $this->index();
-                    } 
+                    header("Refresh:0; url = ../publicnotebook");
                 }
-                $remove = $this->input->post('remove');
-
-                if($remove == 'Remove')
-                    {
-                        $this->removeImage($page_ID);
-                        header("Refresh:0; url = ../publicnotebook");
-                    }
-                header("Refresh:0; url = ../publicnotebook");
-            }
-            else if($action == 'Back')
-            {
-                redirect('publicnotebook');
+                else if($action == 'Back')
+                {
+                    redirect('publicnotebook');
+                }
+                else if($action == 'YES')
+                {  
+                    $this->deletePublicPage();
+                }
             }
             else
-            {  
-                $this->deletePublicPage();
+            {
+                $data['navbar'] = 'main';
+                $data['pageID'] = $page_ID;
+                $this->sitelayout->loadTemplate('pages/publicnotebook/updatepublicnotebookfd', $data); 
             }
         }
 
@@ -247,8 +208,8 @@
             $date = $this->input->post('date');
             $publicNB_ID = $this->session->userdata('user_ID');
             $data['viewPublicNotebook']=$this->PublicNotebook_model->getPageUsingDate($publicNB_ID, $date);
+            
             $data['navbar'] = 'main';
             $this->sitelayout->loadTemplate('pages/publicnotebook/viewusingtimestamp', $data); 
         }
     }
-?>

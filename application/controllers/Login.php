@@ -26,7 +26,7 @@
             $this->sitelayout->loadTemplate('pages/authentication/login', $data);
         }
 
-        function validation()
+        public function validation()
         {
             $action = $this->input->post('action');
 
@@ -39,7 +39,7 @@
                 {
                     $username = $this->input->post('userName');
                     $raw_password = $this->input->post('password');
-                    $password = md5($this->input->post('password'));
+                    $password = hash("sha512", $this->input->post('password'));
                     $result = $this->Login_model->can_login($username, $password);
 
                     if($result) 
@@ -47,9 +47,16 @@
                         $status = 'Active';
                         $response = $this->Login_model->checkStatus($username, $status);
 
+                        // $response =  $this->Login_model->checkStatus($username);
+                        // foreach($response->result() as $row)
+                        // {
+                        //     $status = $row->status;
+                        //     echo $status;
+                        // }  
+
                         if($response)
                         {
-                            if($username == "admin" && $raw_password == "team6")
+                            if($username == "admin" && $raw_password == "team6bscs3ab")
                             {
                                 $userdata = array(
                                     'user_ID' => $response->user_ID,
@@ -96,5 +103,4 @@
             }
         }
     }
-?>
 

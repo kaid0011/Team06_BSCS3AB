@@ -24,10 +24,9 @@ class Login_model extends CI_model
         }
     }
 
-    public function checkStatus($username, $status)
+    public function checkStatus($username)
     {
         $this->db->where('userName', $username);
-        $this->db->where('status', $status);
 
         $this->db->limit(1);
         $query = $this->db->get('user');

@@ -82,8 +82,34 @@
 
                       <!--Input Area-->
                       <div class="mb-3">
-                        <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
-                        <!-- <textarea class="form-control" id="" rows="13" disabled></textarea>-->
+                        
+                      <?php 
+                  if($this->Mainpage_model->getImagePage($page_ID) != 'No image')
+                  {
+                    ?>
+                    <div class=" row">
+                      <div class=" my-5 col-md-3 justify-content-center align-items-center text-center border border-3">
+                            <?php $source = $this->Mainpage_model->getImagePage($page_ID);?>
+                            <a><img src="<?= base_url($source) ?>" style="height: 250px; width: 250px; margin-left: -13px; padding: 0px;" alt="pub nb image"></a>
+    
+                      </div>
+                      <div class="col-md-9">
+                      <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                      </div>
+                    </div>
+                    <?php
+                  }
+                  else
+                  {
+                    ?>
+                    <div class=" row">
+                      <div class="col mb-3">
+                      <textarea class="form-control" id="" rows="14" disabled><?php echo $row->pageInput; ?></textarea>
+                      </div>
+                    </div>
+                  <?php
+                  }
+              ?>
                         <hr id="inputbox" class="bg-light">
                         <!-- Submit Button-->
                         <div>

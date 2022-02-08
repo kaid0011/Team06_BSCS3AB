@@ -35,7 +35,10 @@
                     {
                         $newPass = hash("sha512", $this->input->post('newPassword'));
                         $this->UpdateProfile_model->updatePassword($newPass, $id);
-                        echo("Password changed successfully");
+                        
+                        echo '<script language="javascript">';
+                        echo 'alert("Password successfully changed.")';
+                        echo '</script>';
 
                         $userdata = array(
                                 'userName' => $this->session->userdata('userName'),
@@ -126,8 +129,13 @@
                     'password' => $this->session->userdata('password')
                 );
 
+                echo '<script language="javascript">';
+                echo 'alert("Username successfully changed.")';
+                echo '</script>';
+
                 $this->session->set_userdata($userdata); 
-                $this->index();
+
+                header("Refresh:0; url =../updateprofile"); 
 
             }
             else

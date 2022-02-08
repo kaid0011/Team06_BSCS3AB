@@ -33,6 +33,7 @@
 
         <form method="post" class="responsiveInput" action="<?= base_url('updateprofile/updateusername') ?>" autocomplete="off">
           <!-- UserName -->
+          <span class="text-danger"><?php echo form_error('userName'); ?></span>
           <label for="exampleInputname1" class="form-label ps-2 mt-2">Username</label>
           <div class="input-group input-group-lg">
             <input type="text" class="form-control mb-1" style="font-size: 15px;" id="examplelastname1" name="userName" aria-describedby="emailHelp" value="<?php echo $this->session->userdata('userName'); ?>" />

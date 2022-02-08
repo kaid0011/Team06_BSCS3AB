@@ -1,7 +1,7 @@
 <section id="learn" class="p-5" style="min-height: 75vh;">
   <div class="card-3d-wrap mx-auto">
     <div class="card-front" id="card">
-      <div class="d-flex p-5">
+      <div class="d-flex p-5" style>
         <div class="section ">
           <?php
           foreach ($viewPageNotebook->result() as $row) {
@@ -128,7 +128,7 @@
             </div>
 
             <form method="post" id="updateform" enctype='multipart/form-data' action="<?= base_url('privatenotebook/updateprivatepage') ?>">
-              <div class="row text-center py-5">
+              <div class="row text-center py-5 ps-3">
                 <div class="col resp">
                   <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
                 </div>
@@ -207,7 +207,7 @@
     align-items: center;
     padding: 0;
     top: 25%;
-    width: 320px;
+    width: 360px;
     background-color: #555;
     border-radius: 35px;
     text-align: center;
@@ -238,7 +238,12 @@
 
   @media(max-width:768px) {
     .resp2 {
-      margin-left: -20%;
+      margin-left: 5%;
+      margin-right: 0%;
+    }
+
+    .resp1 {
+      margin-left: 30px;
       margin-right: 0%;
     }
   }

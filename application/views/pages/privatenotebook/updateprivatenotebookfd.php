@@ -90,7 +90,7 @@
               <hr class="bg-light">
 
               <!--Input Area-->
-              <div class="mb-3">
+              <div class="mb-1">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
                 <?php
                 foreach ($viewPageNotebook->result() as $row) {
@@ -131,7 +131,7 @@
             </div>
 
             <form method="post" action="" autocomplete="off">
-              <div class="row text-center py-5">
+              <div class="row text-center py-5 ps-3">
                 <div class="col resp">
                   <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
                 </div>
@@ -210,11 +210,11 @@
     align-items: center;
     padding: 0;
     top: 25%;
-    width: 320px;
+    width: 360px;
     background-color: #555;
     border-radius: 35px;
     text-align: center;
-    visibility: visible;
+    visibility: hidden;
     align-items: center;
   }
 
@@ -241,7 +241,12 @@
 
   @media(max-width:768px) {
     .resp2 {
-      margin-left: -20%;
+      margin-left: 5%;
+      margin-right: 0%;
+    }
+
+    .resp1 {
+      margin-left: 30px;
       margin-right: 0%;
     }
   }

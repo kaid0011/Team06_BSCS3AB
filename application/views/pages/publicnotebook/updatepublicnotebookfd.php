@@ -8,8 +8,8 @@
               <div class="row">
                 <div class="col mr-auto  h5">
                   <div class="mb-2">Theme</div>
-                  <div class="row">
 
+                  <div class="row">
                     <!-- Light Theme Button -->
                     <div class="col">
                       <input type="button" onclick="changeImgFruits('url(<?= base_url('assets/images/themes/Theme1_Light.jpg') ?>)', 'url(<?= base_url('assets/images/themes/LightCard.jpg') ?>)', '#212529', 'Light' );" value="Light" class="p-2 btn"></input>
@@ -39,9 +39,17 @@
                 </div>
 
                 <div class="col ml-auto h5">
+
                   <div class="row">
-                    <!-- Theme cheat hidden -->
-                    <input type="text" name="theme" id="submittheme" class="btn float-end mt-1" hidden> </input>
+                    <div class="col mt-2">
+                      <!-- Theme cheat hidden -->
+                      <input type="text" name="theme" id="submittext" class="btn float-end mt-1" hidden value="<?php echo $row->pageTheme ?>">
+                    </div>
+                    <div class="col mt-3">
+                      <!-- Delete -->
+                      <!-- <input type="submit" value="Delete" name="action" class="p-2 btn float-end mt-3 me-4"> -->
+                      <input type="button" onclick="myFunction()" value="Delete" class="p-2 btn float-end me-3"></input>
+                    </div>
                   </div>
                 </div>
                 <hr class="bg-light">
@@ -67,67 +75,80 @@
 </div>
 </div>
 </div>
-<button class="popup" onclick="myFunction()">
-  <span class="popuptext justify-content-center resp2" id="myPopup" style="background-color: #555;">
-    <div class="container boxtype">
-      <div>
-        <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
-          <h4 style="font-size: 30px;" class="mb-4 pt-2">Are you sure?</h4>
-        </div>
-
-        <form method="post" action="" autocomplete="off">
-          <div class="row text-center py-5">
-            <div class="col resp">
-              <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
-            </div>
-            <div class="col resp">
-              <input type="submit" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
-            </div>
+<div class="container my-5">
+  <button class="popup" onclick="myFunction()">
+    <span class="popuptext justify-content-center resp2" id="myPopup" style="background-color: #555;">
+      <div class="container boxtype">
+        <div>
+          <div class="d-flex justify-content-center align-items-center h-100 ms-5 me-5">
+            <h4 style="font-size: 30px;" class="mb-4 pt-2">Are you sure?</h4>
           </div>
-        </form>
+
+          <form method="post" id="updateform" enctype='multipart/form-data' action="<?= base_url('publicnotebook/updatepublicpage') ?>">
+            <div class="row text-center py-5 ps-3">
+              <div class="col resp">
+                <input type="submit" name="action" value="YES" class="input-group-text  p-5 bg-success text-white fw-normal button" id="basic-addon2">
+                <input type="hidden" name="page_ID" value="<?php echo $row->publicNBPage_ID; ?>">
+              </div>
+              <div class="col resp">
+                <input type="button" name="action" value="NO" class="input-group-text  p-5 bg-danger text-white fw-normal button" id="basic-addon2">
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </span>
-</button>
-</section>
+    </span>
+  </button>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  <div class="my-5">&nbsp;</div>
+  </section>
 
 
-<style>
-  body {
-    font-weight: 300;
-    font-size: 15px;
-    color: #212529;
-    background-color: #e9ecef;
-    background-image: NULL;
-    overflow-x: hidden;
-  }
+  <style>
+    body {
+      font-weight: 300;
+      font-size: 15px;
+      color: #212529;
+      background-color: #e9ecef;
+      background-image: NULL;
+      overflow-x: hidden;
+    }
 
 
-  .section {
-    position: relative;
-    width: 100%;
-  }
+    .section {
+      position: relative;
+      width: 100%;
+    }
 
-  .full-height {
-    min-height: 100vh;
-  }
+    .full-height {
+      min-height: 100vh;
+    }
 
-  .fixed {
-    resize: none;
-  }
+    .fixed {
+      resize: none;
+    }
 
-  .card-3d-wrap {
-    position: relative;
-    width: 1200px;
-    max-width: 100%;
-    height: 600px;
-  }
+    .card-3d-wrap {
+      position: relative;
+      width: 1200px;
+      max-width: 100%;
+      height: 600px;
+    }
 
-  .btn {
-    width: 80px;
-    color: #212529;
-    background-color: #e9ecef;
-    /*if theme is dark,
+    .btn {
+      width: 80px;
+      color: #212529;
+      background-color: #e9ecef;
+      /*if theme is dark,
          background-color: #adb5bd;
     if theme is light,
          background-color: #adb5bd;
@@ -137,127 +158,133 @@
         background-color: #adb5bd;
      if theme is Kiwi,
        background-color: #adb5bd; */
-  }
-
-  .card-front {
-    width: 100%;
-    height: 100%;
-    color: #212529;
-    background-color: #adb5bd;
-    background-image: NULL;
-    position: absolute;
-    border-radius: 10px;
-  }
-
-  .form-group {
-    position: relative;
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-
-  .btn:hover {
-    background-color: #6c757d;
-    color: #dee2e6;
-    box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
-  }
-
-  .custom-file-input::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-
-  .custom-file-input::before {
-    content: 'Choose Image';
-    display: inline-block;
-    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
-    border: 1px solid #999;
-    border-radius: 5px;
-    padding: 11px 8px;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    cursor: pointer;
-    text-shadow: 1px 1px #fff;
-    font-weight: 600;
-    font-size: 10pt;
-  }
-
-  .custom-file-input:hover::before {
-    border-color: black;
-  }
-
-  .custom-file-input:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-  }
-
-  /* popup */
-  .popup {
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 0);
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    top: 25%;
-    width: 320px;
-    visibility: visible;
-    background-color: #555;
-    border-radius: 35px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .boxtype {
-    border-radius: 35px;
-    padding: 20px;
-    color: #e9ecef;
-    text-align: center;
-    align-items: center;
-    background-color: rgba(49, 55, 59, 1);
-  }
-
-  /* The actual popup */
-  .popup .popuptext {
-    background-color: #555;
-  }
-
-  /* Toggle this class - hide and show the popup */
-  .popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-  }
-
-  @media(max-width:768px) {
-    .resp2 {
-      margin-left: -20%;
-      margin-right: 0%;
     }
-  }
 
-  @media(max-width:480px) {
+    .card-front {
+      width: 100%;
+      height: 100%;
+      color: #212529;
+      background-color: #adb5bd;
+      background-image: NULL;
+      position: absolute;
+      border-radius: 10px;
+    }
+
+    .form-group {
+      position: relative;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .btn:hover {
+      background-color: #6c757d;
+      color: #dee2e6;
+      box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
+    }
+
+    .custom-file-input::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    .custom-file-input::before {
+      content: 'Choose Image';
+      display: inline-block;
+      background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+      border: 1px solid #999;
+      border-radius: 5px;
+      padding: 11px 8px;
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      text-shadow: 1px 1px #fff;
+      font-weight: 600;
+      font-size: 10pt;
+    }
+
+    .custom-file-input:hover::before {
+      border-color: black;
+    }
+
+    .custom-file-input:active::before {
+      background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+    }
+
+    /* popup */
     .popup {
-      width: 200px;
+      position: fixed;
+      left: 50%;
+      transform: translate(-50%, 0);
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      top: 25%;
+      width: 360px;
+      visibility: hidden;
+      background-color: #555;
+      border-radius: 35px;
+      text-align: center;
+      align-items: center;
     }
-  }
-</style>
 
-<script>
-  const name = document.querySelector(".name");
+    .boxtype {
+      border-radius: 35px;
+      padding: 20px;
+      color: #e9ecef;
+      text-align: center;
+      align-items: center;
+      background-color: rgba(49, 55, 59, 1);
+    }
 
-  function changeImgFruits(color, cardcolor, textcolor, theme) {
-    document.getElementById("submittheme").value = theme;
-    document.body.style.backgroundImage = color;
-    document.getElementById("card").style.backgroundImage = cardcolor;
-    document.getElementById("card").style.color = textcolor;
-  }
+    /* The actual popup */
+    .popup .popuptext {
+      background-color: #555;
+    }
 
-  function removeImage() {
-    document.getElementById("removeimage").value = "Remove";
-    document.getElementById("remove").style.backgroundColor = "gray";
-  }
+    /* Toggle this class - hide and show the popup */
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s;
+    }
 
-  function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-</script>
+    @media(max-width:768px) {
+      .resp {
+        margin-left: 30px;
+        margin-right: 0%;
+      }
+
+      .resp2 {
+        margin-left: 5%;
+        margin-right: 0%;
+      }
+    }
+
+    @media(max-width:480px) {
+      .popup {
+        width: 200px;
+      }
+    }
+  </style>
+
+  <script>
+    const name = document.querySelector(".name");
+
+    function changeImgFruits(color, cardcolor, textcolor, theme) {
+      document.getElementById("submittheme").value = theme;
+      document.body.style.backgroundImage = color;
+      document.getElementById("card").style.backgroundImage = cardcolor;
+      document.getElementById("card").style.color = textcolor;
+    }
+
+    function removeImage() {
+      document.getElementById("removeimage").value = "Remove";
+      document.getElementById("remove").style.backgroundColor = "gray";
+    }
+
+    function myFunction() {
+      var popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    }
+  </script>

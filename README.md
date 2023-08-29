@@ -3,6 +3,7 @@
   <b>Technological University of the Philippines - Manila</b> <br> 
   under the course of <b>BS in Computer Science</b> (2021-2022)
 </p>
+<p>old repository name: Team06_BSCS3AB</p>
   
 <p align="center">
   <img width="500" src="https://user-images.githubusercontent.com/91128947/134713292-e5b1eaff-2854-489c-9d92-cab6d1159ca9.gif">
